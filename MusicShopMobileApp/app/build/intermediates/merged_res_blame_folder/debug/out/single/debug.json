@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_sign_in.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_sign_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_fioactivity.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_fioactivity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_addresses.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_addresses.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_order_list_item.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\order_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_profile_main.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\profile_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_show_product.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_show_product.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_shopping_cart.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_shopping_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_sessions.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_sessions.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_order.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_order.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_orders.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_orders.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_url_edit.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_url_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.musicshopmobileapp-merged_res-29:/layout_activity_fioactivity.xml.flat",
+        "source": "com.example.musicshopmobileapp-main-31:/layout/activity_fioactivity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_traiding_point.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_traiding_point.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-merged_res-29:\\layout_activity_categories.xml.flat",
+        "source": "C:\\Users\\Anton\\.gradle\\daemon\\7.3.3\\com.example.musicshopmobileapp-main-31:\\layout\\activity_categories.xml"
+    }
+]

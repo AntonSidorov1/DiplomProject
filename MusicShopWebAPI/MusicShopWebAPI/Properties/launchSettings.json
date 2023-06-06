@@ -1,0 +1,37 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:4000",
+      "sslPort": 0
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "music-shop/api/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "MusicShopWebAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "music-shop/api/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "http://localhost:4000;http://192.168.0.7:4000"
+    },
+    "WebAPI": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "music-shop/api/swagger",
+      "applicationUrl": "http://localhost:4000"
+    }
+  }
+}

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TraidingPointActivity">
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MusicShopRus"
+        android:textAlignment="center"
+        android:textSize="24sp"  />
+
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:onClick="Exit"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/button25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Update"
+        android:onClick="Update_Click"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Установить пункт получения"
+        android:textAllCaps="false"
+        android:onClick="SetPickupPoint"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Организация"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/spinnerOrganizations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/button26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Information"
+                    android:onClick="GetOrgInfo_Click"
+                    android:textAllCaps="false"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/view11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9" />
+
+                    <ImageView
+                        android:id="@+id/imageViewOrgLogotip"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_launcher_foreground"
+                        android:scaleType="centerCrop"/>
+
+                    <View
+                        android:id="@+id/view12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Город"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/spinnerSities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Склад"
+                    android:textAlignment="center" />
+
+                <Spinner
+                    android:id="@+id/spinnerStocks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/button28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:onClick="GetStockInfo_Click"
+                        android:text="@string/Information"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/button27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Задать город"
+                        android:onClick="SetSityByStock_Click"
+                        android:textAllCaps="false"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Торговый пункт \n (Пункт получения)"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/spinnerShops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Information"
+                android:onClick="GetShopInfo_Click"
+                android:textAllCaps="false"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9" />
+
+                <ImageView
+                    android:id="@+id/imageViewShopLogotip"
+                    android:layout_width="184dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:id="@+id/view14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Задать"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Город"
+                    android:onClick="SetSityByPoint"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/button31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Склад"
+                    android:onClick="SetStockByPoint"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Организацию"
+                android:onClick="SetOrgByPoint"
+                android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/button33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="SetDataByPoint"
+                    android:text="Все данные"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Типы торговых пунктов" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="Без фильтров"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="Магазины" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPounktOfIssue"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="Пункты выдачи" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonBoth"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:text="Оба типа" />
+            </RadioGroup>
+
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

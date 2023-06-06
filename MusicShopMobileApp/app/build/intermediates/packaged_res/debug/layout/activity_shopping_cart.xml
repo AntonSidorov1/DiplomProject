@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ShoppingCartActivity">
+
+    <TextView
+        android:id="@+id/textViewShopNameCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/MusicShopRus"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/buttonCartBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:onClick="Exit"
+        android:textAllCaps="false"/>
+    <TextView
+        android:id="@+id/textViewNameCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Корзина"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"/>
+    <Button
+        android:id="@+id/UpdateCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Update"
+        android:onClick="UpdateCart_Click"
+        android:textAllCaps="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="GetInformation"
+            android:text="Информация о заказе" />
+
+        <Button
+            android:id="@+id/button41"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:onClick="TraidingPoint_Click"
+            android:text="Пункт получения" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ClearOrder"
+            android:text="Очистить корзину" />
+
+        <Button
+            android:id="@+id/button43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Оформить заказ"
+            android:onClick="CreateOrder_Click" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

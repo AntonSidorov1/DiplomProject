@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicShopDesktopApp", "MusicShopDesktopApp\MusicShopDesktopApp.csproj", "{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManegerJson", "FileManegerJson\FileManegerJson.csproj", "{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C3A4CC1-E7C6-4D25-BDBA-2636E980CFEC}
+	EndGlobalSection
+EndGlobal

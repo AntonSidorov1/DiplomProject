@@ -1,0 +1,1 @@
+Json Catalog Files (*.jcat)|*.jcat|Json Disk Files (*.disk)|*.disk|Json Catalog disk Files (*.cdisk)|*.cdisk|Json Folder disk Files (*.fdisk)|*.fdisk|Json Json disk Files (*.jdisk)|*.jdisk|All Json disk Files (*.jcat;*.disk;*.cdisk;*.fdisk;*.jdisk)|*.jcat;*.disk;*.cdisk;*.fdisk;*.jdisk|All Files (*.*)|*.*

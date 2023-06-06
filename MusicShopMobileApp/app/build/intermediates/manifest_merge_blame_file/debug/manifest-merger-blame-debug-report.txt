@@ -1,0 +1,166 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.mobile.MusicShop"
+4    android:versionCode="2"
+5    android:versionName="1.5" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:6:5-67
+11-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:6:22-64
+12
+13    <permission
+13-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.mobile.MusicShop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.mobile.MusicShop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:8:5-64:19
+20        android:allowBackup="true"
+20-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:9:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.9.0] C:\Users\Anton\.gradle\caches\transforms-3\6572e896cf691f4b13ad10c561cb3105\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22        android:dataExtractionRules="@xml/data_extraction_rules"
+22-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:10:9-65
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:fullBackupContent="@xml/backup_rules"
+25-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:11:9-54
+26        android:icon="@mipmap/ic_launcher"
+26-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:12:9-43
+27        android:label="@string/app_name"
+27-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:13:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:14:9-54
+29        android:supportsRtl="true"
+29-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:15:9-35
+30        android:testOnly="true"
+31        android:theme="@style/Theme.MusicShopMobileApp"
+31-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:16:9-56
+32        android:usesCleartextTraffic="true" >
+32-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:17:9-44
+33        <activity
+33-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:19:9-21:40
+34            android:name="com.example.musicshopmobileapp.OrderActivity"
+34-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:20:13-42
+35            android:exported="false" />
+35-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:21:13-37
+36        <activity
+36-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:22:9-24:40
+37            android:name="com.example.musicshopmobileapp.OrdersActivity"
+37-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:23:13-43
+38            android:exported="false" />
+38-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:24:13-37
+39        <activity
+39-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:25:9-27:40
+40            android:name="com.example.musicshopmobileapp.ShoppingCartActivity"
+40-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:26:13-49
+41            android:exported="false" />
+41-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:27:13-37
+42        <activity
+42-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:28:9-30:40
+43            android:name="com.example.musicshopmobileapp.TraidingPointActivity"
+43-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:29:13-50
+44            android:exported="false" />
+44-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:30:13-37
+45        <activity
+45-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:31:9-33:40
+46            android:name="com.example.musicshopmobileapp.CategoriesActivity"
+46-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:32:13-47
+47            android:exported="false" />
+47-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:33:13-37
+48        <activity
+48-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:34:9-36:40
+49            android:name="com.example.musicshopmobileapp.ShowProductActivity"
+49-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:35:13-48
+50            android:exported="false" />
+50-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:36:13-37
+51        <activity
+51-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:37:9-39:40
+52            android:name="com.example.musicshopmobileapp.SessionsActivity"
+52-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:38:13-45
+53            android:exported="false" />
+53-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:39:13-37
+54        <activity
+54-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:40:9-42:40
+55            android:name="com.example.musicshopmobileapp.AddressesActivity"
+55-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:41:13-46
+56            android:exported="false" />
+56-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:42:13-37
+57        <activity
+57-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:43:9-45:40
+58            android:name="com.example.musicshopmobileapp.FIOActivity"
+58-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:44:13-40
+59            android:exported="false" />
+59-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:45:13-37
+60        <activity
+60-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:46:9-54:20
+61            android:name="com.example.musicshopmobileapp.MainActivity"
+61-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:47:13-41
+62            android:exported="true" >
+62-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:48:13-36
+63            <intent-filter>
+63-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:49:13-53:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:50:17-69
+64-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:50:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:52:17-77
+66-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:52:27-74
+67            </intent-filter>
+68        </activity>
+69        <activity
+69-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:55:9-57:40
+70            android:name="com.example.musicshopmobileapp.UrlEditActivity"
+70-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:56:13-44
+71            android:exported="false" />
+71-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:57:13-37
+72        <activity
+72-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:58:9-60:40
+73            android:name="com.example.musicshopmobileapp.SignInActivity"
+73-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:59:13-43
+74            android:exported="false" />
+74-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:60:13-37
+75        <activity
+75-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:61:9-63:40
+76            android:name="com.example.musicshopmobileapp.ProfileActivity"
+76-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:62:13-44
+77            android:exported="false" />
+77-->D:\RiderProjects\Diplom\MusicShopMobileApp\app\src\main\AndroidManifest.xml:63:13-37
+78
+79        <provider
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+80            android:name="androidx.startup.InitializationProvider"
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+81            android:authorities="com.example.mobile.MusicShop.androidx-startup"
+81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+82            android:exported="false" >
+82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+83            <meta-data
+83-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+84-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+85                android:value="androidx.startup" />
+85-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Anton\.gradle\caches\transforms-3\9f99c19470d8bf18ee15270d078c3173\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+86            <meta-data
+86-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Anton\.gradle\caches\transforms-3\a68586d9ac6fc4872d4884a947d1c1d5\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+87                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+87-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Anton\.gradle\caches\transforms-3\a68586d9ac6fc4872d4884a947d1c1d5\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+88                android:value="androidx.startup" />
+88-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Anton\.gradle\caches\transforms-3\a68586d9ac6fc4872d4884a947d1c1d5\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+89        </provider>
+90    </application>
+91
+92</manifest>

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E45E693D-9C4B-43A0-B20B-73599AF9A2BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MusicShopDesktopApp</RootNamespace>
+    <AssemblyName>MusicShopDesktopApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logotip.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Data\Company\Contact\Contact.cs" />
+    <Compile Include="Classes\Data\Company\GeographyPoint.cs" />
+    <Compile Include="Classes\Data\Company\GeorafyPointList.cs" />
+    <Compile Include="Classes\Data\Company\Organization\Organization.cs" />
+    <Compile Include="Classes\Data\Company\Organization\OrganizationsList.cs" />
+    <Compile Include="Classes\Data\Company\Organization\OrganizationValue.cs" />
+    <Compile Include="Classes\Data\Company\Pounkt.cs" />
+    <Compile Include="Classes\Data\Company\Sity\SitiesList.cs" />
+    <Compile Include="Classes\Data\Company\Sity\Sity.cs" />
+    <Compile Include="Classes\Data\Company\Stock\Stock.cs" />
+    <Compile Include="Classes\Data\Company\Stock\StocksList.cs" />
+    <Compile Include="Classes\Data\Company\TradingPoint\TradeArea\TradeArea.cs" />
+    <Compile Include="Classes\Data\Company\TradingPoint\TradingPoint.cs" />
+    <Compile Include="Classes\Data\Company\TradingPoint\TradingPointsList.cs" />
+    <Compile Include="Classes\Data\Order\OrderFullInfo.cs" />
+    <Compile Include="Classes\Data\Order\OrdersList.cs" />
+    <Compile Include="Classes\Data\Order\OrdersWithStatusesList.cs" />
+    <Compile Include="Classes\Data\Order\OrderValue.cs" />
+    <Compile Include="Classes\Data\Order\OrderWithOutNumber.cs" />
+    <Compile Include="Classes\Data\Order\OrderWithStatus.cs" />
+    <Compile Include="Classes\Data\Products\AbstractProductsList.cs" />
+    <Compile Include="Classes\Data\Products\Categories\AbstractCategoriesList.cs" />
+    <Compile Include="Classes\Data\Products\Categories\CategoriesList.cs" />
+    <Compile Include="Classes\Data\Products\Categories\Category.cs" />
+    <Compile Include="Classes\Data\Products\Categories\Filters\CategoriesFiltersList.cs" />
+    <Compile Include="Classes\Data\Products\Categories\Filters\CategoryFilter.cs" />
+    <Compile Include="Classes\Data\Products\ListProductsWithInfo.cs" />
+    <Compile Include="Classes\Data\Products\Parts\Part.cs" />
+    <Compile Include="Classes\Data\Products\Parts\PartList.cs" />
+    <Compile Include="Classes\Data\Products\Parts\PartValue.cs" />
+    <Compile Include="Classes\Data\Products\Parts\ProductWithCount.cs" />
+    <Compile Include="Classes\Data\Products\Product.cs" />
+    <Compile Include="Classes\Data\Products\ProductInOrder\ProductInOrder.cs" />
+    <Compile Include="Classes\Data\Products\ProductInOrder\ProductsInOrderList.cs" />
+    <Compile Include="Classes\Data\Products\ProductInPounkt\ProductInPounkt.cs" />
+    <Compile Include="Classes\Data\Products\ProductInPounkt\ProductsInPounktList.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\OrderCart.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\OrderSession.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\OrderShoppingCart.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ProductInShoppingCart.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ProductQuantity.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ProductsInShoppingCartList.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ProductsQuantitiesSession.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\SessionWithTraidingPoint.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ShoppingCartSession.cs" />
+    <Compile Include="Classes\Data\Products\ProductsInShoppingCart\ShoppingCartsList.cs" />
+    <Compile Include="Classes\Data\Products\ProductsList.cs" />
+    <Compile Include="Classes\Data\Products\Manufacture\Manufacture.cs" />
+    <Compile Include="Classes\Data\Products\Manufacture\ManufacturesList.cs" />
+    <Compile Include="Classes\Data\Products\Supplier\SuppliersList.cs" />
+    <Compile Include="Classes\Data\Products\Supplier\Supplier.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountWithAddress.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Address.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\AddressesList.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\AddressValue.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Emails\Email.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Emails\EmailSession.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Emails\EmailsList.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Emails\EmailValue.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Telefons\Telefon.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Telefons\TelefonSession.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Telefons\TelefonsList.cs" />
+    <Compile Include="Classes\Data\Users\Adresses\Telefons\TelefonValue.cs" />
+    <Compile Include="Classes\Data\Users\FIO\FIO.cs" />
+    <Compile Include="Classes\Data\Users\FIO\Initials.cs" />
+    <Compile Include="Classes\Data\Users\FIO\InitialsSession.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\SessionWithEnvirontment\SessionActive.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\SessionWithEnvirontment\SessionsWithEnvirontmentList.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\SessionWithEnvirontment\SessionWithEnvirontment.cs" />
+    <Compile Include="Classes\EventArgs\ListWithNameItemEventArgs.cs" />
+    <Compile Include="Classes\Exceptions\UserException.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Interfaces\IProductsList.cs" />
+    <Compile Include="Classes\Services\AccountsController.cs" />
+    <Compile Include="Classes\Services\CategoriesController.cs" />
+    <Compile Include="Classes\Services\CategoriesFiltersController.cs" />
+    <Compile Include="Classes\Services\DataBaseConnectionEdit.cs" />
+    <Compile Include="Classes\Services\EmailsController.cs" />
+    <Compile Include="Classes\Services\EnvirontmentTokenController.cs" />
+    <Compile Include="Classes\Services\LoginForEditConnection.cs" />
+    <Compile Include="Classes\Services\OrdersController.cs" />
+    <Compile Include="Classes\Services\OrganizationsController.cs" />
+    <Compile Include="Classes\Services\PasswordController.cs" />
+    <Compile Include="Classes\Services\ProductsController.cs" />
+    <Compile Include="Classes\Services\ProductsInShopsController.cs" />
+    <Compile Include="Classes\Services\ProductsInStocksController.cs" />
+    <Compile Include="Classes\Services\RolesController.cs" />
+    <Compile Include="Classes\Services\SessionsController.cs" />
+    <Compile Include="Classes\Services\ShoppingCartController.cs" />
+    <Compile Include="Classes\Services\SitiesController.cs" />
+    <Compile Include="Classes\Services\StocksController.cs" />
+    <Compile Include="Classes\Services\TelefonsController.cs" />
+    <Compile Include="Classes\Services\TradingPointsController.cs" />
+    <Compile Include="Classes\Services\UserController.cs" />
+    <Compile Include="Classes\Services\UserRolesController.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConfiguration.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\ConnectionDataBase.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\ConnectionDataBaseWithToken.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\ConnectionStringDataBase.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\SessionEdit\CheckToken.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs" />
+    <Compile Include="Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEditList.cs" />
+    <Compile Include="Classes\Data\Environtment\ApplicationProgram.cs" />
+    <Compile Include="Classes\Data\Environtment\Browser.cs" />
+    <Compile Include="Classes\Data\Environtment\Device.cs" />
+    <Compile Include="Classes\Data\Environtment\Environtment.cs" />
+    <Compile Include="Classes\Data\Environtment\EnvirontmentObject.cs" />
+    <Compile Include="Classes\Data\Environtment\EnvirontmentSession.cs" />
+    <Compile Include="Classes\Data\Format\StringNormalize.cs" />
+    <Compile Include="Classes\Data\Users\Account\Account.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountEnvirontment.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountsList.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountWithGoestToken.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountWithID.cs" />
+    <Compile Include="Classes\Data\Users\Account\AccountWithRoles.cs" />
+    <Compile Include="Classes\Data\Users\Roles\Role.cs" />
+    <Compile Include="Classes\Data\Users\Roles\RolesList.cs" />
+    <Compile Include="Classes\Data\Users\Secret.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\AbstracSignInSession.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\RegistrateEnvirontmentSession.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\RegistrateSession.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\SecretSession.cs" />
+    <Compile Include="Classes\Data\Users\Tokens\Session.cs" />
+    <Compile Include="Controls\ComboBoxWithName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxWithName.designer.cs">
+      <DependentUpon>ComboBoxWithName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListWithName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListWithName.Designer.cs">
+      <DependentUpon>ListWithName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListWithNameItem.cs" />
+    <Compile Include="Controls\ListWithNameItemsCollection.cs" />
+    <Compile Include="Controls\NumericControlWithName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericControlWithName.designer.cs">
+      <DependentUpon>NumericControlWithName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PictureBoxWithName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PictureBoxWithName.Designer.cs">
+      <DependentUpon>PictureBoxWithName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ResizePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextInput.designer.cs">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConnectionForm.designer.cs">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConnectionSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConnectionSettingsForm.Designer.cs">
+      <DependentUpon>ConnectionSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Authorize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Authorize.Designer.cs">
+      <DependentUpon>Authorize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdressesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdressesEdit.Designer.cs">
+      <DependentUpon>AdressesEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrderViewForm.Designer.cs">
+      <DependentUpon>OrderViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CategoriesEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CategoriesEditForm.Designer.cs">
+      <DependentUpon>CategoriesEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManufacturesEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ManufacturesEditForm.Designer.cs">
+      <DependentUpon>ManufacturesEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrganizationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrganizationsForm.Designer.cs">
+      <DependentUpon>OrganizationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShopEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShopEditForm.Designer.cs">
+      <DependentUpon>ShopEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductInTraidingPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductInTraidingPoint.Designer.cs">
+      <DependentUpon>ProductInTraidingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SuppliersEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuppliersEditForm.Designer.cs">
+      <DependentUpon>SuppliersEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UsersEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UsersEditForm.Designer.cs">
+      <DependentUpon>UsersEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TraidingPounktsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TraidingPounktsForm.Designer.cs">
+      <DependentUpon>TraidingPounktsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SessionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SessionsForm.Designer.cs">
+      <DependentUpon>SessionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserEditForm.Designer.cs">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductEditForm.Designer.cs">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pattern.Designer.cs">
+      <DependentUpon>Pattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ComboBoxWithName.resx">
+      <DependentUpon>ComboBoxWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListWithName.resx">
+      <DependentUpon>ListWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumericControlWithName.resx">
+      <DependentUpon>NumericControlWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PictureBoxWithName.resx">
+      <DependentUpon>PictureBoxWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextInput.resx">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ConnectionForm.resx">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConnectionSettingsForm.resx">
+      <DependentUpon>ConnectionSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Authorize.resx">
+      <DependentUpon>Authorize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdressesEdit.resx">
+      <DependentUpon>AdressesEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OrderViewForm.resx">
+      <DependentUpon>OrderViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CategoriesEditForm.resx">
+      <DependentUpon>CategoriesEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ManufacturesEditForm.resx">
+      <DependentUpon>ManufacturesEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OrganizationsForm.resx">
+      <DependentUpon>OrganizationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShopEditForm.resx">
+      <DependentUpon>ShopEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductInTraidingPoint.resx">
+      <DependentUpon>ProductInTraidingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SuppliersEditForm.resx">
+      <DependentUpon>SuppliersEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UsersEditForm.resx">
+      <DependentUpon>UsersEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TraidingPounktsForm.resx">
+      <DependentUpon>TraidingPounktsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SessionsForm.resx">
+      <DependentUpon>SessionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserEditForm.resx">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductEditForm.resx">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pattern.resx">
+      <DependentUpon>Pattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\Data\Autotification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logotip.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logotip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileManegerJson\FileManegerJson.csproj">
+      <Project>{2a0a116e-4f9d-4ef5-a70d-c58d66cafc95}</Project>
+      <Name>FileManegerJson</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

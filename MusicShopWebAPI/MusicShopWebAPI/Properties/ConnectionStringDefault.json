@@ -1,0 +1,8 @@
+{
+  "DataSource": "DESKTOP-OLHVHM0\\SQLEXPRESS",
+  "InitialCatalog": "MusicShop",
+  "IntegratedSecurity": true,
+  "PersistSecurityInfo": false,
+  "Password": "",
+  "UserID": ""
+}

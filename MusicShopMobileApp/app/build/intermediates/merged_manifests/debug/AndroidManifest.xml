@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobile.MusicShop"
+    android:versionCode="2"
+    android:versionName="1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="33" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <permission
+        android:name="com.example.mobile.MusicShop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.mobile.MusicShop.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.MusicShopMobileApp"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.musicshopmobileapp.OrderActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.ShoppingCartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.TraidingPointActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.CategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.ShowProductActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.SessionsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.AddressesActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.FIOActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.musicshopmobileapp.UrlEditActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.musicshopmobileapp.ProfileActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.mobile.MusicShop.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

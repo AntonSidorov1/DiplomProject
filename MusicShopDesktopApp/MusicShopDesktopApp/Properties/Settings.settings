@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MusicShopDesktopApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=DESKTOP-OLHVHM0\SQLEXPRESS;Initial Catalog=MusicShop;Integrated Security=True;Persist Security Info=False;User ID=;Password=</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConnectionStringDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=DESKTOP-OLHVHM0\SQLEXPRESS;Initial Catalog=MusicShop;Integrated Security=True;Persist Security Info=False;User ID=;Password=</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

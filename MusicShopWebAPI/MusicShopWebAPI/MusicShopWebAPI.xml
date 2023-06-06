@@ -1,0 +1,2736 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MusicShopWebAPI</name>
+    </assembly>
+    <members>
+        <member name="F:MusicShopWebAPI.LoginOptions.ISSUER">
+            <summary>
+            издатель токена
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.LoginOptions.AUDIENCE">
+            <summary>
+            потребитель токена
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.LoginOptions.KEY">
+            <summary>
+            ключ для шифрации
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.LoginOptions.LIFETIME">
+            <summary>
+            время жизни токена - 1 минута
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Contact">
+            <summary>
+            Контактные данные
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Contact.Telephone">
+            <summary>
+            Телефон
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Contact.Email">
+            <summary>
+            Email-адрес
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Contact.ToString">
+            <summary>
+            Получить полностью контактые данные
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.Contact.CopyContact">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Organization">
+            <summary>
+            Организация
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Organization.Logotip">
+            <summary>
+            Логотип
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Organization.SetLogotip(System.Byte[])">
+            <summary>
+            Установить логотип
+            </summary>
+            <param name="photo"></param>
+        </member>
+        <member name="T:MusicShopWebAPI.OrganizationsList">
+            <summary>
+            Список организаций
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrganizationValue.Site">
+            <summary>
+            Сайт
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationValue.CopyValue">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Pounkt">
+            <summary>
+            Торговый пункт
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Pounkt.Address">
+            <summary>
+            Адрес
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Pounkt.Contact">
+            <summary>
+            Контактные данные
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Pounkt.ToString">
+            <summary>
+            Получить данные
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.Pounkt.Data">
+            <summary>
+            Данные
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Pounkt.CopyPounkt">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.SitiesList">
+            <summary>
+            Список организаций
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Sity">
+            <summary>
+            Город
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Sity.ToString">
+            <summary>
+            Получить данные
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.Sity.Data">
+            <summary>
+            Данные
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Sity.CopySity">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Stock">
+            <summary>
+            Склад
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Stock.Sity">
+            <summary>
+            Город
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Stock.SetSityByID(System.Int32)">
+            <summary>
+            Установить город из базы данных, по его идентификатору
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:MusicShopWebAPI.Stock.SityID">
+            <summary>
+            ID города
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Stock.SetSityByID">
+            <summary>
+            Установить город из базы данных, по идентификатору SityID
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Stock.ToString">
+            <summary>
+            Вывести данные склада
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.Stock.CopyStock">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.StocksList">
+            <summary>
+            Список организаций
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.TradeArea">
+            <summary>
+            Тогровая площадь
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradeArea.Existence">
+            <summary>
+            Существует ли объект
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.TradingPoint">
+            <summary>
+            торговый пункт
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.Stock">
+            <summary>
+            Склад
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.SityID">
+            <summary>
+            ID города
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetStockByID(System.Int32)">
+            <summary>
+            Установить склад из базы данных, по его идентификатору
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetStockByID">
+            <summary>
+            Установить склад из базы данных, по идентификатору StockID
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetStockByID(System.Int32,MusicShopWebAPI.StocksList)">
+            <summary>
+            Установить склад из базы данных, по его идентификатору
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetStockByID(MusicShopWebAPI.StocksList)">
+            <summary>
+            Установить склад из базы данных, по идентификатору StockID
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.Organization">
+            <summary>
+            Организация
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.OrganizationID">
+            <summary>
+            ID организации
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.StockID">
+            <summary>
+            ID склада
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetOrganizationByID(System.Int32)">
+            <summary>
+            Установить огранизацию из базы данных, по его идентификатору
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetOrganizationByID">
+            <summary>
+            Установить огранизацию из базы данных, по идентификатору OrganizationID
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetOrganizationByID(System.Int32,MusicShopWebAPI.OrganizationsList)">
+            <summary>
+            Установить огранизацию из базы данных, по его идентификатору
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetOrganizationByID(MusicShopWebAPI.OrganizationsList)">
+            <summary>
+            Установить огранизацию из базы данных, по идентификатору OrganizationID
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.Schedule">
+            <summary>
+            Режим работы
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.Shop">
+            <summary>
+            Магазин
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.PounktOfIssue">
+            <summary>
+            Пункт выдачи
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.ExistenceShop">
+            <summary>
+            Существует ли магазин
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.ExistencePounktOfIssue">
+            <summary>
+            Существует ли пункт выдачи
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetShopByID(System.Int32)">
+            <summary>
+            Установить магазин по ID из базы данных
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetShopByID">
+            <summary>
+            Установить магазин по ID данного торгового пункта из базы данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetPounktOfIssueByID(System.Int32)">
+            <summary>
+            Установить пункт выдачи по ID из базы данных
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetPounktOfIssueByID">
+            <summary>
+            Установить пункт выдачи по ID данного торгового пункта из базы данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetPointByID(System.Int32)">
+            <summary>
+            Установить магазин и пункт выдачи по ID пункта из базы данных
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetPointByID">
+            <summary>
+            Установить магазин и пункт выдачи по данного торгового ID пункта из базы данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.SetDataByIDs">
+            <summary>
+            Установить полные данные из базы данных, по их идентификаторам
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPoint.ToString">
+            <summary>
+            Получить данные
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.SitePath">
+            <summary>
+            Путь на сайте организации
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TradingPoint.Site">
+            <summary>
+            Сайт
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.TradingPointsList">
+            <summary>
+            Список организаций
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.DataBaseConfiguration.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ConnectionDataBase.ToString">
+            <summary>
+            Возвращает стркоу подключения к базе данных
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.ConnectionDataBase.Connsection">
+            <summary>
+            Строка подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ConnectionDataBase.Connection">
+            <summary>
+            Строка подключения к базе данных
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MusicShopWebAPI.ConnectionDataBase.ConnectionString" -->
+        <member name="P:MusicShopWebAPI.ConnectionDataBase.ServerDB">
+            <summary>
+            Сервер и база данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ConnectionDataBase.JsonWrite(System.Object,System.Type,System.String)">
+            <summary>
+            Сохраняет объект obj с типом type в Json-файл namefile
+            </summary>
+            <param name="obj"></param>
+            <param name="type"></param>
+            <param name="namefile"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.ConnectionDataBase.JsonRead(System.String,System.Type)">
+            <summary>
+            Чтение из Json-файла
+            </summary>
+            <param name="namefile"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Application">
+            <summary>
+            иложение</summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Application.Version">
+            <summary>
+            Версия
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Browser">
+            <summary>
+            Браузер
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Browser.Use">
+            <summary>
+            Используется
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Device">
+            <summary>
+            Устройство
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Device.OperationSystem">
+            <summary>
+            Операционная система
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Environtment">
+            <summary>
+            Окружение
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Environtment.Device">
+            <summary>
+            Устройство
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Environtment.Application">
+            <summary>
+            Браузер
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Environtment.Browser">
+            <summary>
+            Браузер
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.EnvirontmentObject">
+            <summary>
+            Объект окружени
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.EnvirontmentObject.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.EnvirontmentSession">
+            <summary>
+            Токен окружения
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.EnvirontmentSession.EnvirontmentToken">
+            <summary>
+            Токен окружения
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.EnvirontmentSession.Token">
+            <summary>
+            Токен сессии
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderFullInfo.Order">
+            <summary>
+            Заказ
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderFullInfo.Products">
+            <summary>
+            Список товаров в заказе
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.OrdersList">
+            <summary>
+            Список заказов
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.OrderValue">
+            <summary>
+            Заказ
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.Number">
+            <summary>
+            Номер заказа
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.Cost">
+            <summary>
+            Стоимость заказа без скидки
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.CostWithDiscount">
+            <summary>
+            Стоимость заказа со скидкой
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.StatusID">
+            <summary>
+            ID статуса
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.DateCreate">
+            <summary>
+            Дата оформления заказа
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderValue.DateStatusChange">
+            <summary>
+            Дата смены статуса заказа
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.OrderWithStatus">
+            <summary>
+            Заказ со статусом
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderWithStatus.Status">
+            <summary>
+            Статус
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderWithStatus.PositionsCount">
+            <summary>
+            Количество позиций в заказе
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderWithStatus.ProductsQuantity">
+            <summary>
+            Общее количество товаров в заказе
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderWithStatus.Information">
+            <summary>
+            Информация о заказе
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderWithStatus.PickupPoint">
+            <summary>
+            Пункт получения
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.CategoriesList">
+            <summary>
+            Список категорий
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Category">
+            <summary>
+            Категория
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Category.Filter">
+            <summary>
+            Фильтр категории
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.CategoryFilter">
+            <summary>
+            Фильтр катероий
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ListProductsWithInfo`1.Products">
+            <summary>
+            Список товаров
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ListProductsWithInfo`1.Count">
+            <summary>
+            Количество товаров
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Part">
+            <summary>
+            Параметр товара
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Part.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Part.CopyPart">
+            <summary>
+            Создать копию объекта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.PartValue.Name">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ProductWithCount.Quantity">
+            <summary>
+            Количество
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Product">
+            <summary>
+            Товар
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Articul">
+            <summary>
+            Артикул
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Category">
+            <summary>
+            Категория
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Supplier">
+            <summary>
+            Поставщик
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Manufacture">
+            <summary>
+            Производитель
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.PriceWithOutDiscount">
+            <summary>
+            Цена без скидки
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Discount">
+            <summary>
+            Скидка
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.PriceWithDiscount">
+            <summary>
+            Цена со скидкой
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Product.Information">
+            <summary>
+            Информация о товаре
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductInPounkt">
+            <summary>
+            Товар в торговом пункте
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductInPounkt.SetPounktType(MusicShopWebAPI.PounktType)">
+            <summary>
+            Задать тип торгового пункта
+            </summary>
+            <param name="pounktType"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductInPounkt.GetPounktType">
+            <summary>
+            Получить тип торгового пункта
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.PounktType">
+            <summary>
+            Тип торгового пункта
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.PounktType.Shop">
+            <summary>
+            Магазин
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.PounktType.Stock">
+            <summary>
+            Склад
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.PounktType.All">
+            <summary>
+            Все торговые пункты
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductsInPounktList">
+            <summary>
+            Список товаров
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.OrderSession.AuthorizeToken">
+            <summary>
+            Токен авторизации
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ProductsQuantitiesSession.OrderToken">
+            <summary>
+            Токен для формирования заказа
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.ShoppingCartSession">
+            <summary>
+            Сессия для формирования заказа
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.ShoppingCartSession.OrderToken">
+            <summary>
+            Токен для формирования заказа
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductsList">
+            <summary>
+            Список товаров
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Order">
+            <summary>
+            Параметры стортировки
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.Order.None">
+            <summary>
+            Нет
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.Order.Asc">
+            <summary>
+            По возрастанию
+            </summary>
+        </member>
+        <member name="F:MusicShopWebAPI.Order.Desc">
+            <summary>
+            По убыванию
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Account">
+            <summary>
+            Аккаунт
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Account.Login">
+            <summary>
+            Логин
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Account.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountEnvirontment">
+            <summary>
+            Аккаунт с токеном окружени
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AccountEnvirontment.EnvirontmentToken">
+            <summary>
+            Токен окружения
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountsList">
+            <summary>
+            Список аккаунтов
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsList.DeleteFromDB(System.Int32)">
+            <summary>
+            Удалить пользователя из базы данных
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountWithGoestToken">
+            <summary>
+            Аккаунт с гостевым токеном
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AccountWithGoestToken.GoestToken">
+            <summary>
+            Гостевой токен
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountWithID">
+            <summary>
+            Аккаунт с ID
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AccountWithID.ID">
+            <summary>
+            ID пользователя
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountWithRoles">
+            <summary>
+            Аккаунт с нобором ролей
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AccountWithRoles.Roles">
+            <summary>
+            Роли пользователя в системе
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AccountWithRoles.FIO">
+            <summary>
+            ФИО
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountWithRoles.IsGoest">
+            <summary>
+            Пользователь - Гость?
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountWithRoles.IsClient">
+            <summary>
+            Пользователь - Клиент?
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Address">
+            <summary>
+            Адрес
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Address.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AddressesList`1">
+            <summary>
+            Список адресов
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:MusicShopWebAPI.AddressesList">
+            <summary>
+            Список адресов
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AddressValue">
+            <summary>
+            Адрес
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AddressValue.Value">
+            <summary>
+            Значение адреса
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Email">
+            <summary>
+            E-mail
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.EmailSession">
+            <summary>
+            Сессия с Email-адресом
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.EmailSession.Email">
+            <summary>
+            Email-адрес
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailSession.CopyEmail">
+            <summary>
+            Получить телефон
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.EmailsList">
+            <summary>
+            Список телефонов
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsList.AddToDB(System.Int32,MusicShopWebAPI.Email)">
+            <summary>
+            Добавить Email-адрес в базу данных
+            </summary>
+            <param name="user"></param>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsList.DeleteFromDB(System.Int32,System.Int32)">
+            <summary>
+            Удалить Email-адрес из базы данных
+            </summary>
+            <param name="user"></param>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.EmailValue">
+            <summary>
+            Email-адрес
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.EmailValue.Email">
+            <summary>
+            Email-адрес
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Telefon">
+            <summary>
+            Телефон
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.TelefonSession">
+            <summary>
+            Сессия с номером телефона
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TelefonSession.Telefon">
+            <summary>
+            Номер телефона
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonSession.CopyTelefon">
+            <summary>
+            Получить телефон
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.TelefonsList">
+            <summary>
+            Список телефонов
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsList.AddToDB(System.Int32,MusicShopWebAPI.Telefon)">
+            <summary>
+            Добавить телефон в базу данных
+            </summary>
+            <param name="user"></param>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsList.DeleteFromDB(System.Int32,System.Int32)">
+            <summary>
+            Удалить телефон из базы данных
+            </summary>
+            <param name="user"></param>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.TelefonValue">
+            <summary>
+            Телефон
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.TelefonValue.Telefon">
+            <summary>
+            Номер телефоны
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.FIO">
+            <summary>
+            ФИО
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.FIO.Initials">
+            <summary>
+            ФИО
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.Initials">
+            <summary>
+            Инициалы
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Initials.FamilyName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Initials.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Initials.SurName">
+            <summary>
+            Отчество
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.InitialsSession">
+            <summary>
+            Инициалы пользователя с его токеном
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.InitialsSession.Token">
+            <summary>
+            Токен
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.RolesList.Get(System.Predicate{MusicShopWebAPI.Role})">
+            <summary>
+            Получить список ролей по заданному условию
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.AbstracSignInSession">
+            <summary>
+            Сессия для возможностьи авторизироваться
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.AbstracSignInSession.Token">
+            <summary>
+            Токен сессии
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.AbstracSignInSession.Copy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.JwtSession">
+            <summary>
+            Сессия с JWT-Токеном
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.JwtSession.JwtToken">
+            <summary>
+            Jwt-токен
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.RegistrateEnvirontmentSession">
+            <summary>
+            Сессия для входа в зарегистрированный аккаунт
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.RegistrateEnvirontmentSession.EnvirontmentToken">
+            <summary>
+            Токен окружения
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.RegistrateSession">
+            <summary>
+            Сессия регистрации пользователя
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.RegistrateSession.RegistrateToken">
+            <summary>
+            Токен окружения
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.RegistrateSession.Token">
+            <summary>
+            Токен сессии
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Session.Copy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.Session.CopyWithEnvirontment(MusicShopWebAPI.Environtment)">
+            <summary>
+            Создаёт копию с окружением
+            </summary>
+            <param name="environtment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.Session.CopyWithEnvirontment">
+            <summary>
+            Создаёт копию с окружением из базы данных
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionActive.CopyWithEnvirontment(MusicShopWebAPI.Environtment)">
+            <summary>
+            Создаёт копию с окружением
+            </summary>
+            <param name="environtment"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.Active">
+            <summary>
+            Активна ли сессия
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.Successfully">
+            <summary>
+            Удачно ли открыта сессия
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.Login">
+            <summary>
+            Логин
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.This">
+            <summary>
+            Является ли сессия текущей
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionActive.SetThisUseEquals(MusicShopWebAPI.Session)">
+            <summary>
+            Устанавливает, является ли сессия session данной сессией. Результат - This
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.DateOpen">
+            <summary>
+            Дата открытия сессиии
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.DateTimeText">
+            <summary>
+            Дата открытия сессиии
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionActive.FullDescription">
+            <summary>
+            Полное описание
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.SessionsWithEnvirontmentList">
+            <summary>
+            Список сессий с окружением
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.SessionWithEnvirontment">
+            <summary>
+            Сессия с окружением
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.SessionWithEnvirontment.Environtment">
+            <summary>
+            Окружение
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.AccountsController">
+            <summary>
+            Контроллер для работы с аккаунтами
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.GetAccount(MusicShopWebAPI.Session)">
+            <summary>
+            Получить данные аккаунта по токену сессии
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.GetAccount">
+            <summary>
+            Зарегистрироваться (Добавить клиента), используя Jwt-токен сессии гостя
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.Registrate(MusicShopWebAPI.Account)">
+            <summary>
+            Зарегистрироваться (Добавить клиента), используя Jwt-токен сессии гостя
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.AddClient(MusicShopWebAPI.AccountWithGoestToken)">
+            <summary>
+            Зарегистрироваться (Добавить клиента), используя токен сессии гостя
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.ChangePassword(MusicShopWebAPI.SecretSession)">
+            <summary>
+            Поменять пароль
+            </summary>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.ChangePassword(MusicShopWebAPI.Secret)">
+            <summary>
+            Поменять пароль
+            </summary>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.SetFIO(MusicShopWebAPI.InitialsSession)">
+            <summary>
+            Изменить ФИО у пользователя
+            </summary>
+            <param name="initials"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.SetFIO(MusicShopWebAPI.Initials)">
+            <summary>
+            Изменить ФИО у пользователя
+            </summary>
+            <param name="initials"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.DeleteUser">
+            <summary>
+            Удалить номер телефона
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.AccountsController.DeleteUser(MusicShopWebAPI.Session)">
+            <summary>
+            Удалить номер телефона
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.CategoriesController">
+            <summary>
+            Контроллер категорий
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategories(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить список категорий
+            </summary>
+            <param name="session"></param>
+            <param name="filterID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategoriesByJwt(System.Int32)">
+            <summary>
+            Получить список категорий
+            </summary>
+            <param name="filterID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategories(System.Int32)">
+            <summary>
+            Получить список категорий
+            </summary>
+            <param name="filterID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategory(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить категорию по её ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetSubCategories(MusicShopWebAPI.Session,System.Int32,System.Int32)">
+            <summary>
+            Получить подкатегории в категории по её ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetRootCategory(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить надкатегорию для категории по её ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategory(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить категорию по её названию
+            </summary>
+            <param name="session"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategory(System.String)">
+            <summary>
+            Получить категорию по её названию
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetCategory(System.Int32)">
+            <summary>
+            Получить категорию по её ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetSubCategories(System.Int32,System.Int32)">
+            <summary>
+            Получить подкатегории в категории по её ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesController.GetRootCategory(System.Int32)">
+            <summary>
+            Получить надкатегорию для категории по её ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.CategoriesFiltersController">
+            <summary>
+            Контроллер категорий
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoriesFilters(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список фильтров категорий
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoriesByJwt">
+            <summary>
+            Получить список фильтров категорий
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoriesFilters">
+            <summary>
+            Получить список фильтров категорий
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoryFilter(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить фильтр категории по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoryFilter(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить фильтр категории по его названию
+            </summary>
+            <param name="session"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoryFilter(System.String)">
+            <summary>
+            Получить фильтр категории по его названию
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.CategoriesFiltersController.GetCategoryFilter(System.Int32)">
+            <summary>
+            Получить фильтр категорий по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.DataBaseConnectionStringController">
+            <summary>
+            Строка подключения к базе данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.DataBaseConnectionStringController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить строку подключения к базе данных
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.DataBaseConnectionStringController.GetParts(MusicShopWebAPI.Session)">
+            <summary>
+            Получить отдельные параметры из строки подключения к базе данных
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.DataBaseConnectionStringController.Post(MusicShopWebAPI.ConnectionDataBaseWithToken)">
+            <summary>
+            Изменить строку подключения к базе данных
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.DataBaseConnectionStringController.Delete(MusicShopWebAPI.Session)">
+            <summary>
+            Установить строку подключения к базе данных По-умолчанию
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.DataBaseConnectionStringController.Check">
+            <summary>
+            Рабочая ли строка подключения к базе данных
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.EmailsController">
+            <summary>
+            Телефоны
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список электронных почт
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.Get">
+            <summary>
+            Получить список электронных почт
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.Get(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить электронную почту по её ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.Get(System.Int32)">
+            <summary>
+            Получить электронную почту по её ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.AddEmail(MusicShopWebAPI.EmailSession)">
+            <summary>
+            Добавить Email-адрес
+            </summary>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.AddEmail(MusicShopWebAPI.EmailValue)">
+            <summary>
+            Добавить Email-адрес
+            </summary>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.DeleteEmail(System.Int32)">
+            <summary>
+            Удалить Email-адрес
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EmailsController.DeleteEmail(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Удалить Email-адрес
+            </summary>
+            <param name="id"></param>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.EnvirontmentController">
+            <summary>
+            Контроллер окружения
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentController.GetByUser(MusicShopWebAPI.Session)">
+            <summary>
+            Получить параметры окружения по ключу сессии
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentController.GetByUser">
+            <summary>
+            Получить параметры окружения по ключу сессии
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.EnvirontmentTokenController">
+            <summary>
+            Токен окружения для последующей авторизации
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.GetSessions">
+            <summary>
+            Получить список сессий
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Get(MusicShopWebAPI.Environtment)">
+            <summary>
+            Получить токен окружения для последующей авторизации
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Get(MusicShopWebAPI.EnvirontmentSession)">
+            <summary>
+            Получить параметры окружения по его токену
+            </summary>
+            <param name="session1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Get(MusicShopWebAPI.EnvirontmentSession,System.Int32)">
+            <summary>
+            Получить параметры окружения по его токену
+            </summary>
+            <param name="session1"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Close(MusicShopWebAPI.EnvirontmentSession)">
+            <summary>
+            Закрыть токен окружения (Делает невозможным авторизироваться)
+            </summary>
+            <param name="session1"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить токен окружения по токену гостя, для возможности авторизации с логином и паролем
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.EnvirontmentTokenController.Get">
+            <summary>
+            Получить токен окружения по JWT-токену гостя, для возможности авторизации с логином и паролем
+            </summary>
+        </member>
+        <member name="T:MusicShopWebAPI.LoginForEditConnectionParametersController">
+            <summary>
+            Аутотификация для редактирования строки подключения к базе данных
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить пароль, по токену для редактирования строки подключения к базе данных
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.Delete(MusicShopWebAPI.Session)">
+            <summary>
+            Закрыть сессию для редактирования строки подключения к базе данных
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.Check(MusicShopWebAPI.Session)">
+            <summary>
+            Проверить можно ли с данным токеном редактировать строку подключения к базе данных (AllowEditConnection) и менять пароль для этого (working)
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.Post(MusicShopWebAPI.Secret)">
+            <summary>
+            Авторизироваться для редактирования строки подключения к базе данных
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.GetByAdmin">
+            <summary>
+            Авторизироваться, используя токен администратора для работы с паролем для редактирования строки подключения
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.PostByAdmin(MusicShopWebAPI.Session)">
+            <summary>
+            Авторизироваться, используя токен администратора для работы с паролем для редактирования строки подключения
+            </summary>
+            <param name="session">Токен сессии</param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.LoginForEditConnectionParametersController.Put(MusicShopWebAPI.SecretSession)">
+            <summary>
+            Сменить пароль для редактирования строки подключения к базе данных
+            </summary>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.OrdersController">
+            <summary>
+            Контроллер заказов
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MusicShopWebAPI.OrdersController.ShoppingCarts">
+            <summary>
+            Корзины пользователей
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.SetOrder(MusicShopWebAPI.OrderSession)">
+            <summary>
+            Оформить заказ
+            </summary>
+            <param name="orderSession"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.SetOrder(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Оформить заказ
+            </summary>
+            <param name="orderSession"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Get(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить историю заказов
+            </summary>
+            <param name="session"></param>
+            <param name="numberFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Get(System.String)">
+            <summary>
+            Получить историю заказов
+            </summary>
+            <param name="numberFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Get(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить заказ по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Get(System.Int32)">
+            <summary>
+            Получить заказ по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetOrder(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить заказ по его номеру
+            </summary>
+            <param name="session"></param>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetOrder(System.String)">
+            <summary>
+            Получить заказ по его номеру
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetProducts(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить заказ по его ID, включая список товаров в нём
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetProducts(System.Int32)">
+            <summary>
+            Получить заказ по его ID, включая список товаров в нём
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetProducts(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить заказ по его номеру, включая список товаров в нём
+            </summary>
+            <param name="session"></param>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.GetProducts(System.String)">
+            <summary>
+            Получить заказ по его номеру
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Reapeart(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Повторить заказ по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Reapeart(System.Int32)">
+            <summary>
+            Повторить заказ по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Reapeart(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Повторить заказ по его номеру
+            </summary>
+            <param name="session"></param>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Reapeart(System.String)">
+            <summary>
+            Повторить заказ по его номеру
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Cancel(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Отменить заказ по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Cancel(System.Int32)">
+            <summary>
+            Отменить заказ по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Cancel(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Отменить заказ по его номеру
+            </summary>
+            <param name="session"></param>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrdersController.Cancel(System.String)">
+            <summary>
+            Отменить заказ по его номеру
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.OrganizationsController">
+            <summary>
+            Организации
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetOrganizations(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список организаций
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetOrganizationsByJwt">
+            <summary>
+            Получить список организаций
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetOrganizations">
+            <summary>
+            Получить список организаций
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetOrganization(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить организацию по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.OrganizationsController.GetOrganization(System.Int32)">
+            <summary>
+            Получить организацию по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductsController">
+            <summary>
+            Контроллер для работы с товарами
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProducts(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Получить список товаров
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProductsWithInfo(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProductsWithInfo(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProducts(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Получить список товаров
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProduct(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить товар по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProduct(MusicShopWebAPI.Session,System.String)">
+            <summary>
+            Получить товар по его Артиклю
+            </summary>
+            <param name="session"></param>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProduct(System.String)">
+            <summary>
+            Получить товар по его Артиклю
+            </summary>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Получить товар по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductsInShopsController">
+            <summary>
+            Контроллер для работы с товарами
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProducts(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получить список товаров в магазине с введённым id
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProducts(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получить список товаров в магазине с введённым id
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProductsWithInfo(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProductsWithInfo(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProduct(MusicShopWebAPI.Session,System.Int32,System.Int32)">
+            <summary>
+            Получить товар по его ID в магазине с введённым pounktID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProduct(MusicShopWebAPI.Session,System.String,System.Int32)">
+            <summary>
+            Получить товар по его Артиклю в магазине с введённым pounktID
+            </summary>
+            <param name="session"></param>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProduct(System.String,System.Int32)">
+            <summary>
+            Получить товар по его Артиклю в магазине с введённым pounktID
+            </summary>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInShopsController.GetProduct(System.Int32,System.Int32)">
+            <summary>
+            Получить товар по его ID в магазине с введённым pounktID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.ProductsInStocksController">
+            <summary>
+            Контроллер для работы с товарами
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProducts(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получить список товаров на складе с введённым id
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProducts(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Получить список товаров на складе с введённым id
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProductsWithInfo(MusicShopWebAPI.Session,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="session"></param>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProductsWithInfo(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Список товаров с количеством
+            </summary>
+            <param name="sortByName"></param>
+            <param name="sortByPrice"></param>
+            <param name="category"></param>
+            <param name="nameFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProduct(MusicShopWebAPI.Session,System.Int32,System.Int32)">
+            <summary>
+            Получить товар по его ID на складе с введённым pounktID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProduct(MusicShopWebAPI.Session,System.String,System.Int32)">
+            <summary>
+            Получить товар по его Артиклю на складе с введённым pounktID
+            </summary>
+            <param name="session"></param>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProduct(System.String,System.Int32)">
+            <summary>
+            Получить товар по его Артиклю на складе с введённым pounktID
+            </summary>
+            <param name="articul"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ProductsInStocksController.GetProduct(System.Int32,System.Int32)">
+            <summary>
+            Получить товар по его ID на складе с введённым pounktID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.RolesController">
+            <summary>
+            Роли
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.RolesController.Get">
+            <summary>
+            Получить список ролей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.RolesController.Get(System.Int32)">
+            <summary>
+            Получить роль по её ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.RolesController.GetByName(System.String)">
+            <summary>
+            Получить роль по её имени
+            </summary>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.SessionsController">
+            <summary>
+            Управление сессиями
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetSessions(System.Boolean,System.Int32)">
+            <summary>
+            Получить список сессий
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.SignIn(MusicShopWebAPI.AccountEnvirontment)">
+            <summary>
+            Войти в систему (авторизироваться)
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.SignInByRegistrateToken(MusicShopWebAPI.RegistrateEnvirontmentSession)">
+            <summary>
+            Войти с токеном регистрации
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.LoginGoest(MusicShopWebAPI.EnvirontmentSession)">
+            <summary>
+            Войти госем
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.UpdateActiveToken(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Изменяет время последней активности токена окружения
+            </summary>
+            <param name="token"></param>
+            <param name="connection"></param>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetEnvirontment(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Получить токен окружения по заданному ключу сессии
+            </summary>
+            <param name="token"></param>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetAndUpdateEnvirontment(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Получить токен окружения по заданному ключу сессии
+            </summary>
+            <param name="token"></param>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetAndUpdateEnvirontmentSession(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Получить токен окружения по заданному ключу сессии
+            </summary>
+            <param name="token"></param>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetAndUpdateEnvirontmentSession(System.String)">
+            <summary>
+            Получить токен окружения по заданному ключу сессии
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.LogOut">
+            <summary>
+            Закрытие сессии (выход из системы)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.SignOut(MusicShopWebAPI.Session)">
+            <summary>
+            Закрытие сессии (выход из системы)
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CheckActive(MusicShopWebAPI.Session)">
+            <summary>
+            Можно ли пользоваться данным токеном сессии
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CheckActive">
+            <summary>
+            Можно ли пользоваться данным токеном сессии
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetController">
+            <summary>
+            Получить контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.GetByJWT">
+            <summary>
+            Получить токен сессии по JWT-токену
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CheckActiveAndNoGoest(MusicShopWebAPI.Session)">
+            <summary>
+            Пользователь активен и не гость
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CheckActiveAndNoGoest">
+            <summary>
+            Пользователь активен и не гость
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить историю входов пользователя с заданной сессией
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.Get">
+            <summary>
+            Получить историю входов пользователя с заданной сессией
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CloseSession">
+            <summary>
+            Закрытие сессии (выход из системы)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CloseSession(MusicShopWebAPI.Session)">
+            <summary>
+            Закрытие сессии (выход из системы)
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.SessionClose(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Закрытие сессии (выход из системы)
+            </summary>
+            <param name="session"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CloseAllSessions(MusicShopWebAPI.Session)">
+            <summary>
+            Закрыть все сессии, кроме текущей
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SessionsController.CloseAllSessions">
+            <summary>
+            Закрыть все сессии, кроме текущей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.ShoppingCartController">
+            <summary>
+            Корзина
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetOrderSession(MusicShopWebAPI.Session)">
+            <summary>
+            Открыть сессию для формирования корзины
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetOrderSession">
+            <summary>
+            Открыть сессию для формирования корзины
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetOrder(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Получить содержимое корзины
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetOrder(MusicShopWebAPI.ProductsQuantitiesSession)">
+            <summary>
+            Задать список товаров в заказе
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetOrderWithTraidingPoint(MusicShopWebAPI.SessionWithTraidingPoint)">
+            <summary>
+            Задать список товаров в заказе
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetOrderFullInfo(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Получить содержимое корзины
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.Check(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Проверка возможности формирования корзины с заданным токеном
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.AddProductToOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            Добавить товар в корзину по его ID
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.AddProductToOrder(MusicShopWebAPI.ShoppingCartSession,System.String)">
+            <summary>
+            Добавить товар в корзину по его артиклю
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.AddProductToOrder(MusicShopWebAPI.ShoppingCartSession,MusicShopWebAPI.Product)">
+            <summary>
+            Добавить товар в корзину
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.DeleteProductFromOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            Удалить товар из корзины
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetProductFromOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            получить информацию о товаре в корзине по его индексу
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.GetProductFromOrder(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Получить информацию о заказе
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.AddProductToOrderByIndex(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            Добавить товар в корзину по его индексу
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SubProductFromOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            уменьшить количество товара в корзине по его индексу
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.ChangeProductAtOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32,System.Int32)">
+            <summary>
+            Поменять количество товара в корзине по его индексу
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.ClearOrder(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Очистить корзину
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetProductToOrder(MusicShopWebAPI.ShoppingCartSession,System.Int32,System.Int32)">
+            <summary>
+            Добавить товар по id в корзину с определённым количеством
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetProductToOrder(MusicShopWebAPI.ShoppingCartSession,MusicShopWebAPI.Product,System.Int32)">
+            <summary>
+            Добавить товар в корзину с определённым количеством
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetProductToOrder(MusicShopWebAPI.ShoppingCartSession,System.String,System.Int32)">
+            <summary>
+            Добавить товар по артиклю в корзину с определённым количеством
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetShop(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            Установить магазин для получения заказа
+            </summary>
+            <param name="session"></param>
+            <param name="shopID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.SetPountOfIssue(MusicShopWebAPI.ShoppingCartSession,System.Int32)">
+            <summary>
+            Установить магазин для получения заказа
+            </summary>
+            <param name="session"></param>
+            <param name="pountOfIssueID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.ShoppingCartController.DeletePountOfIssue(MusicShopWebAPI.ShoppingCartSession)">
+            <summary>
+            Удалить пункт получения
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.SitiesController">
+            <summary>
+            Города
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetSities(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список городов
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetSitiesByJwt">
+            <summary>
+            Получить список городов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetSities">
+            <summary>
+            Получить список организаций
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetSity(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить город по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.SitiesController.GetSity(System.Int32)">
+            <summary>
+            Получить город по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Controllers.SortParamsController">
+            <summary>
+            Параметры сортировки
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.Controllers.SortParamsController.Get">
+            <summary>
+            Список параметров сортировки
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.Controllers.SortParamsController.Get(System.Int32)">
+            <summary>
+            Параметр сортировки с данным id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.StocksController">
+            <summary>
+            Склады
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetStocks(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить список складов
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetStocksByJwt(System.Int32)">
+            <summary>
+            Получить список складов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetStocks(System.Int32)">
+            <summary>
+            Получить список складов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetStock(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить склад по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.StocksController.GetStock(System.Int32)">
+            <summary>
+            Получить склад по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.TelefonsController">
+            <summary>
+            Телефоны
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.Get(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список телефонов
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.Get">
+            <summary>
+            Получить список телефонов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.Get(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить телефон по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.Get(System.Int32)">
+            <summary>
+            Получить телефон по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.AddTelefon(MusicShopWebAPI.TelefonSession)">
+            <summary>
+            Добавить номер телефона
+            </summary>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.AddTelefon(MusicShopWebAPI.TelefonValue)">
+            <summary>
+            Добавить номер телефона
+            </summary>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.DeleteTelefon(System.Int32)">
+            <summary>
+            Удалить номер телефона
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TelefonsController.DeleteTelefon(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Удалить номер телефона
+            </summary>
+            <param name="id"></param>
+            <param name="telefon"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.TradingPointsController">
+            <summary>
+            Торговые пункты
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetController">
+            <summary>
+            Создать контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetShops(MusicShopWebAPI.Session,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список магазинов
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetShops(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список магазинов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetBothType(MusicShopWebAPI.Session,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список торговых пунктов, которые и магазины и пункты выдачи одновременно
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetBothType(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список торговых пунктов, которые и магазины и пункты выдачи одновременно
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetPounktsOfIssue(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список пунктов выдачи
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetPounktsOfIssue(MusicShopWebAPI.Session,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список пунктов выдачи
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetTradingPoints(MusicShopWebAPI.Session,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список торговых пунктов
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetTradingPointsByJwt(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список торговых пунктов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetTradingPoints(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Получить список торговых пунктов
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetTradingPoint(MusicShopWebAPI.Session,System.Int32)">
+            <summary>
+            Получить торговый пункт по его ID
+            </summary>
+            <param name="session"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.TradingPointsController.GetTradingPoint(System.Int32)">
+            <summary>
+            Получить торговый пункт по его ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.UserRolesController">
+            <summary>
+            Роли пользователя в системе
+            </summary>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.GetController">
+            <summary>
+            Получить контроллер
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.GetRolesByJWT">
+            <summary>
+            Получить список ролей у пользователя с заданной сессией
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.GetRoles(MusicShopWebAPI.Session)">
+            <summary>
+            Получить список ролей у пользователя с заданной сессией
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.IsGoest(MusicShopWebAPI.Session)">
+            <summary>
+            Пользователь - гость
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.IsGoest">
+            <summary>
+            Пользователь - гость
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MusicShopWebAPI.UserRolesController.UserIsGoest(MusicShopWebAPI.Session)">
+            <summary>
+            Пользователь - Гость
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicShopWebAPI.Properties.Resources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Properties.Resources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Properties.Resources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Properties.Resources.ConnectionString">
+            <summary>
+              Ищет локализованную строку, похожую на .
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Properties.Resources.Logotip">
+            <summary>
+              Поиск локализованного ресурса типа System.Byte[].
+            </summary>
+        </member>
+        <member name="P:MusicShopWebAPI.Properties.Resources.Logotip1">
+            <summary>
+              Поиск локализованного ресурса типа System.Byte[].
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ApiName"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ApiNameRus"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AuthorName"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:onClick="Exit"/>
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Update"
+        android:onClick="UpdateProfile_Click"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/addressUrlDefault"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textViewLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/YourLogin"
+                android:textAlignment="center"
+                tools:text="Ваш логин" />
+
+            <Button
+                android:id="@+id/buttonLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="SignIn_Click"
+                android:text="@string/SignInToSystem" />
+
+            <Button
+                android:id="@+id/buttonLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="SignOut_Click"
+                android:text="@string/SignOutFromSystem" />
+
+            <Button
+                android:id="@+id/buttonRegistrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Registrate_Click"
+                android:text="@string/Registrate" />
+
+            <Button
+                android:id="@+id/buttonCahngePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Changepassword"
+                android:onClick="ChangePassword_Click"/>
+
+            <Button
+                android:id="@+id/buttonUserData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="UserData_Click"
+                android:text="@string/UserData" />
+
+            <Button
+                android:id="@+id/buttonEditFIO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Редактировать ФИО"
+                android:onClick="FIO_Click"
+                />
+
+            <Button
+                android:id="@+id/buttonProgramInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ProgramInfo_Click"
+                android:text="@string/ProgramInfo" />
+
+            <Button
+                android:id="@+id/buttonTelefons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Telefons"
+                android:onClick="Telefons_Click"/>
+
+            <Button
+                android:id="@+id/buttonEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Emails"
+                android:onClick="Emails_Click"/>
+
+            <Button
+                android:id="@+id/buttonHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="История входов"
+                android:onClick="LoginHistory_Click"/>
+
+            <Button
+                android:id="@+id/buttonDropAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DropAccount"
+                android:onClick="DropAccount_Click"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

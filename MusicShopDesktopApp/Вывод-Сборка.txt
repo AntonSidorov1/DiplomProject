@@ -1,0 +1,82 @@
+﻿Сборка начата…
+1>------ Сборка начата: проект: MusicShopDesktopApp, Конфигурация: Debug Any CPU ------
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\TextInput.cs(10,7,10,21): warning CS0105: Директива using для "System.Drawing" ранее встречалась в этом пространстве имен
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Roles\Role.cs(8,18,8,22): warning CS0660: "Role" определяет оператор "==" или оператор "!=", но не переопределяет Object.Equals(object o).
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Roles\Role.cs(8,18,8,22): warning CS0661: "Role" определяет оператор "==" или оператор "!=", но не переопределяет Object.GetHashCode().
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Products\AbstractProductsList.cs(10,40,10,55): warning CS0108: "AbstractProductsList<T>.GetAbstractThis()" скрывает наследуемый член "PartList<T>.GetAbstractThis()". Если скрытие было намеренным, используйте ключевое слово new.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Products\Categories\Filters\CategoriesFiltersList.cs(89,31,89,38): warning CS0108: "CategoriesFiltersList.GetByID(int)" скрывает наследуемый член "PartList<CategoryFilter>.GetByID(int)". Если скрытие было намеренным, используйте ключевое слово new.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Products\Categories\Filters\CategoriesFiltersList.cs(93,31,93,34): warning CS0108: "CategoriesFiltersList.Get(int)" скрывает наследуемый член "PartList<CategoryFilter>.Get(int)". Если скрытие было намеренным, используйте ключевое слово new.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Products\Categories\Filters\CategoriesFiltersList.cs(95,20,95,31): warning CS0108: "CategoriesFiltersList.IndexOfByID(int)" скрывает наследуемый член "PartList<CategoryFilter>.IndexOfByID(int)". Если скрытие было намеренным, используйте ключевое слово new.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Products\Categories\Filters\CategoriesFiltersList.cs(97,20,97,31): warning CS0108: "CategoriesFiltersList.IndexOfByID(Part)" скрывает наследуемый член "PartList<CategoryFilter>.IndexOfByID(Part)". Если скрытие было намеренным, используйте ключевое слово new.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\Account.cs(11,18,11,25): warning CS0660: "Account" определяет оператор "==" или оператор "!=", но не переопределяет Object.Equals(object o).
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\Account.cs(11,18,11,25): warning CS0661: "Account" определяет оператор "==" или оператор "!=", но не переопределяет Object.GetHashCode().
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Adresses\Telefons\TelefonsList.cs(117,30,117,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Adresses\Telefons\TelefonsList.cs(153,30,153,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Helper.cs(136,30,136,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConfiguration.cs(65,13,65,19): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Services\SessionsController.cs(253,13,253,19): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Services\UserRolesController.cs(53,34,53,35): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Services\SessionsController.cs(693,34,693,35): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\AccountWithID.cs(80,34,80,35): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\AccountsList.cs(194,30,194,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\AccountsList.cs(241,30,241,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Account\AccountsList.cs(280,30,280,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithNameItem.cs(51,46,51,47): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithNameItem.cs(55,47,55,48): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithNameItem.cs(71,46,71,47): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithNameItem.cs(74,47,74,48): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(42,45,42,46): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(46,47,46,48): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(85,46,85,47): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(89,47,89,48): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(104,46,104,47): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Controls\ListWithName.cs(107,47,107,48): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\View\Authorize.cs(110,33,110,35): warning CS0168: Переменная "ex" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\View\ProductsForm.cs(330,38,330,40): warning CS0168: Переменная "ex" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Adresses\Emails\EmailsList.cs(116,30,116,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Adresses\Emails\EmailsList.cs(151,30,151,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Users\Tokens\SessionWithEnvirontment\SessionsWithEnvirontmentList.cs(92,41,92,42): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Format\StringNormalize.cs(34,20,34,26): warning CS0219: Переменной "result" присвоено значение, но оно ни разу не использовано.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(85,37,85,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(86,37,86,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(87,37,87,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(88,37,88,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(89,37,89,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(90,37,90,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(91,37,91,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(92,37,92,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(93,37,93,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(94,37,94,42): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(95,38,95,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(96,38,96,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(97,38,97,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(98,38,98,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(99,38,99,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(100,38,100,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(101,38,101,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(102,38,102,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(103,38,103,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(104,38,104,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(105,38,105,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(106,38,106,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(107,38,107,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(108,38,108,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(109,38,109,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(110,38,110,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(111,38,111,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(112,38,112,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(113,38,113,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(114,38,114,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(115,38,115,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(116,38,116,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(117,38,117,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(118,38,118,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(119,38,119,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(120,38,120,43): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\SessionEdit\SessionEdit.cs(127,24,127,29): warning CS0162: Обнаружен недостижимый код
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\View\ProductEditForm.cs(642,29,642,30): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\View\ProductEditForm.cs(714,29,714,30): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\View\ProductEditForm.cs(756,30,756,31): warning CS0168: Переменная "e" объявлена, но ни разу не использована.
+1>D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\Classes\Data\Configuration\DataBaseConnection\ConnectionStringDataBase.cs(14,70,14,81): warning CS0414: Полю "ConnectionStringDataBase.localServer" присвоено значение, но оно ни разу не использовано.
+1>  MusicShopDesktopApp -> D:\RiderProjects\Diplom\MusicShopDesktopApp\MusicShopDesktopApp\bin\Debug\MusicShopDesktopApp.exe
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 0, пропущено: 0 ==========

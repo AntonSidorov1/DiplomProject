@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A0A116E-4F9D-4EF5-A70D-C58D66CAFC95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FileManegerJson</RootNamespace>
+    <AssemblyName>FileManegerJson</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Controls\ButtonTagString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ComboBoxnameClear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ComboBoxnameClear.Designer.cs">
+      <DependentUpon>ComboBoxnameClear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\FileClassImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\FilePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\FolderButon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\IKeyBordControl.cs" />
+    <Compile Include="Classes\Controls\ITagStringControl.cs" />
+    <Compile Include="Classes\Controls\ITextValueControl.cs" />
+    <Compile Include="Classes\Controls\IValueComboBox.cs" />
+    <Compile Include="Classes\Controls\KeyBordControl.cs" />
+    <Compile Include="Classes\Controls\KeyBordTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PanelTagString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxBynary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxDataBaseFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxOrg.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxSity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxNote.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxTextFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxFileClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\ContextMenuFileClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TextBoxPole.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TextBoxWihSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TextBoxWihSet.Designer.cs">
+      <DependentUpon>TextBoxWihSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\TextInputEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\TextInputEdit.designer.cs">
+      <DependentUpon>TextInputEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Controls\ValueComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Exception\FileInFolderClassArgumentException.cs" />
+    <Compile Include="Classes\Exception\FileEpsendInFolderClassException.cs" />
+    <Compile Include="Classes\Exception\NoFolderInFolderClassException.cs" />
+    <Compile Include="Classes\Files\AbstractFile.cs" />
+    <Compile Include="Classes\Files\AbstractFileClass.cs" />
+    <Compile Include="Classes\DataBase\ConnectionDataBase.cs" />
+    <Compile Include="Classes\DataBase\ConnectionStringDataBase.cs" />
+    <Compile Include="Classes\Files\Databases\DataBaseFile.cs" />
+    <Compile Include="Classes\Files\Disks\DiskClass.cs" />
+    <Compile Include="Classes\Files\Disks\DiskPartClass.cs" />
+    <Compile Include="Classes\Files\Disks\DisksFew.cs" />
+    <Compile Include="Classes\Files\Disks\HardDiskClass.cs" />
+    <Compile Include="Classes\Files\FileClass.cs" />
+    <Compile Include="Classes\Files\Folders\FolderClass.cs" />
+    <Compile Include="Classes\Files\Images\BynaryImageFileJson.cs" />
+    <Compile Include="Classes\Files\Images\ImageFile.cs" />
+    <Compile Include="Classes\Files\Images\ImageFileJson.cs" />
+    <Compile Include="Classes\Files\Images\ImageFilesList.cs" />
+    <Compile Include="Classes\Files\Link\IndexLink\IndexLinkFile.cs" />
+    <Compile Include="Classes\Files\Link\LinkFile.cs" />
+    <Compile Include="Classes\Files\NameFile.cs" />
+    <Compile Include="Classes\Files\Note\NoteFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Organization\OrganizaionFile.cs" />
+    <Compile Include="Classes\Products\Parts\DisributingFacilities\DisributingFacilities.cs" />
+    <Compile Include="Classes\Products\Parts\Pounkt\DistributingPoint.cs" />
+    <Compile Include="Classes\Files\Product\Part\ProductParameterFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Sity\SityFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Stock\StoreHouse.cs" />
+    <Compile Include="Classes\NoteClass.cs" />
+    <Compile Include="Classes\Products\Parts\Town\Town.cs" />
+    <Compile Include="Classes\Files\SecurityFile.cs" />
+    <Compile Include="Classes\Files\Texts\TextFile.cs" />
+    <Compile Include="Classes\HelperSettings.cs" />
+    <Compile Include="Classes\LanguagesListClass.cs" />
+    <Compile Include="Classes\LangugeClass.cs" />
+    <Compile Include="Classes\LettersClass.cs" />
+    <Compile Include="Classes\Products\Parts\ProductParameter.cs" />
+    <Compile Include="Classes\Text\EditTextByFile.cs" />
+    <Compile Include="View\Organization\OrganizationEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Organization\OrganizationEditForm.Designer.cs">
+      <DependentUpon>OrganizationEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\Parts\Sities\SityEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Products\Parts\Sities\SityEditForm.Designer.cs">
+      <DependentUpon>SityEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Notes\FormNoteEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notes\FormNoteEdit.Designer.cs">
+      <DependentUpon>FormNoteEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataBase\ConnectionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DataBase\ConnectionEditForm.designer.cs">
+      <DependentUpon>ConnectionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShowCode\CodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShowCode\CodeForm.Designer.cs">
+      <DependentUpon>CodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IFileList.cs" />
+    <Compile Include="Interfaces\IFileParent.cs" />
+    <Compile Include="Interfaces\ISecurityClasses.cs" />
+    <Compile Include="Interfaces\ITagInfoClass.cs" />
+    <Compile Include="Interfaces\ITagInfoSecurity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ImageForm\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImageForm\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManegerForms\DiskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ManegerForms\DiskForm.Designer.cs">
+      <DependentUpon>DiskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Text\KeyBordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Text\KeyBordForm.designer.cs">
+      <DependentUpon>KeyBordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Text\LanguageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Text\LanguageForm.designer.cs">
+      <DependentUpon>LanguageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Text\LanguageMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Text\LanguageMenu.designer.cs">
+      <DependentUpon>LanguageMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Text\LanguagesListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Text\LanguagesListForm.designer.cs">
+      <DependentUpon>LanguagesListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Text\TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Text\TextForm.designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Classes\Controls\ComboBoxnameClear.resx">
+      <DependentUpon>ComboBoxnameClear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TextBoxWihSet.resx">
+      <DependentUpon>TextBoxWihSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\TextInputEdit.resx">
+      <DependentUpon>TextInputEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Notes\FormNoteEdit.resx">
+      <DependentUpon>FormNoteEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\DataBase\ConnectionEditForm.resx">
+      <DependentUpon>ConnectionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageForm\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ManegerForms\DiskForm.resx">
+      <DependentUpon>DiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Organization\OrganizationEditForm.resx">
+      <DependentUpon>OrganizationEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Products\Parts\Sities\SityEditForm.resx">
+      <DependentUpon>SityEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShowCode\CodeForm.resx">
+      <DependentUpon>CodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Text\KeyBordForm.resx">
+      <DependentUpon>KeyBordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Text\LanguageForm.resx">
+      <DependentUpon>LanguageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Text\LanguageMenu.resx">
+      <DependentUpon>LanguageMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Text\LanguagesListForm.resx">
+      <DependentUpon>LanguagesListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Text\TextForm.resx">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\Controls\CheckConrol\" />
+    <Folder Include="View\WPF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Мой блокнот.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Клиент-сервер.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Индексная ссылка.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Заметка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Город.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Торговая сеть.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
