@@ -65,6 +65,17 @@ namespace MusicShopDesktopApp
             return string.Join(".", results);
         }
 
+        public static string DropDefices(string text)
+        {
+            text = text.Replace('_', ' ');
+            text = text.Replace('+', ' ');
+            text = text.Replace('-', ' ');
+            text = text.Replace('.', ' ');
+            text = text.Replace(',', ' ');
+            text = text.Trim();
+            return string.Join("", text.Split(' '));
+        }
+
         public static string Normalize(string text, bool snakeCase = true, bool lower = true, char newSymwol = ' ', FormatEnd formatEnd = FormatEnd.FromEnd)
         {
             if (snakeCase)

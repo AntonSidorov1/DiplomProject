@@ -163,27 +163,46 @@ namespace MusicShopDesktopApp
 
         public virtual bool EqualsName(string name)
         {
-            if (this.Name == name)
+            string Login = Name;
+            string login = name;
+            if (Login == login)
                 return true;
-            if (StringNormalize.Normalize(this.Name, formatEnd: FormatEnd.None) == StringNormalize.Normalize(name, formatEnd: FormatEnd.None))
+            if (StringNormalize.Normalize(Login, formatEnd: FormatEnd.None).ToLower() == StringNormalize.Normalize(login, formatEnd: FormatEnd.None).ToLower())
                 return true;
-            if (this.Name.ToLower() == name.ToLower())
+            if (Login.ToLower() == login.ToLower())
                 return true;
-            if (StringNormalize.Normalize(this.Name, formatEnd: FormatEnd.None) == name.ToLower())
+            if (StringNormalize.Normalize(Login, formatEnd: FormatEnd.None).ToLower() == login.ToLower())
                 return true;
-            if (this.Name.ToLower() == StringNormalize.Normalize(name, formatEnd: FormatEnd.None))
+            if (Login.ToLower() == StringNormalize.Normalize(login, formatEnd: FormatEnd.None).ToLower())
                 return true;
 
-            if (StringNormalize.Normalize(this.Name, formatEnd: FormatEnd.None) == StringNormalize.Normalize(name, snakeCase: false, formatEnd: FormatEnd.None))
+            if (StringNormalize.Normalize(Login, formatEnd: FormatEnd.None).ToLower() == StringNormalize.Normalize(login, snakeCase: false, formatEnd: FormatEnd.None).ToLower())
                 return true;
-            if (StringNormalize.Normalize(this.Name, snakeCase: false, formatEnd: FormatEnd.None) == StringNormalize.Normalize(name, formatEnd: FormatEnd.None))
+            if (StringNormalize.Normalize(Login, snakeCase: false, formatEnd: FormatEnd.None).ToLower() == StringNormalize.Normalize(login, formatEnd: FormatEnd.None).ToLower())
                 return true;
-            if (this.Name.ToLower() == StringNormalize.Normalize(name, snakeCase: false, formatEnd: FormatEnd.None))
+            if (Login.ToLower() == StringNormalize.Normalize(login, snakeCase: false, formatEnd: FormatEnd.None).ToLower())
                 return true;
-            if (StringNormalize.Normalize(this.Name, snakeCase: false, formatEnd: FormatEnd.None) == name.ToLower())
+            if (StringNormalize.Normalize(Login, snakeCase: false, formatEnd: FormatEnd.None).ToLower() == login.ToLower())
                 return true;
-            if (StringNormalize.Normalize(this.Name, snakeCase: false, formatEnd: FormatEnd.None) == StringNormalize.Normalize(name, snakeCase: false, formatEnd: FormatEnd.None))
+            if (StringNormalize.Normalize(Login, snakeCase: false, formatEnd: FormatEnd.None).ToLower() == StringNormalize.Normalize(login, snakeCase: false, formatEnd: FormatEnd.None).ToLower())
                 return true;
+
+
+            if (Login.ToLower() == StringNormalize.DropDefices(login).ToLower())
+                return true;
+            if (StringNormalize.DropDefices(Login).ToLower() == login.ToLower())
+                return true;
+
+            if (StringNormalize.Normalize(Login, formatEnd: FormatEnd.None).ToLower() == StringNormalize.DropDefices(login).ToLower())
+                return true;
+            if (StringNormalize.DropDefices(Login).ToLower() == StringNormalize.Normalize(login, formatEnd: FormatEnd.None).ToLower())
+                return true;
+
+            if (StringNormalize.DropDefices(Login).ToLower() == StringNormalize.Normalize(login, snakeCase: false, formatEnd: FormatEnd.None).ToLower())
+                return true;
+            if (StringNormalize.Normalize(Login, snakeCase: false, formatEnd: FormatEnd.None).ToLower() == StringNormalize.DropDefices(login).ToLower())
+                return true;
+
             return false;
         }
 

@@ -79,6 +79,7 @@ namespace MusicShopDesktopApp
             if (!UpdateForm())
                 return false;
 
+            timerUpdateSities_Tick(timerUpdateSities, new EventArgs());
             timerUpdate.Start();
             return true;
         }
@@ -469,6 +470,33 @@ namespace MusicShopDesktopApp
                 {
                     stock.Sity = sities.GetOfName(sity);
                 }
+                else
+                {
+                    if(MessageBox.Show("Введённый город не существует. Вы хотите его добавить?", "Изменение города", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        == DialogResult.No)
+                    {
+                        if (stock.ID > 0)
+                        {
+                            if (!UpdateForm())
+                            {
+                                return;
+                            }
+                        }
+                        return;
+                    }
+                    Sity sity1 = new Sity()
+                    {
+                        Name = sity
+                    };
+                    if(!sity1.AddToDB())
+                    {
+                        MessageBox.Show("Не удалось добавить город", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw new Exception();
+                    }
+                    MessageBox.Show("Город успешно добавлен", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sities.GetFromBD();
+                    stock.Sity = sities.GetOfName(sity);
+                }
             }
             catch
             {
@@ -501,11 +529,155 @@ namespace MusicShopDesktopApp
                 }
 
             }
+            timerUpdateSities_Tick(sender, e);
         }
 
         private void timerUpdateSity_Tick(object sender, EventArgs e)
         {
             labelSity.Text = stock.Sity.Name;
+
+            
+        }
+
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            if (stock.ID > 0)
+            {
+                if (!UpdateForm())
+                {
+                    return;
+                }
+            }
+            timerUpdate.Stop();
+
+            try
+            {
+                textInputSity.Text = GetSity().Name;
+            }
+            catch
+            {
+                MessageBox.Show("Не удалость скопировать город", "Выбор города", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (stock.ID > 0)
+            {
+                if (!UpdateForm())
+                {
+                    return;
+                }
+            }
+        }
+
+
+        SitiesList Sities = new SitiesList();
+
+        Sity GetSity()
+        {
+            Sity sity = Sities.Get(comboBoxWithNameSities.SelectedIndex);
+            sity = Sities.GetByID(sity);
+            return sity;
+        }
+
+        private void buttonDropSity_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Вы действительно хотите удалить город?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.No)
+                return;
+
+            if(stock.ID > 0)
+            {
+                if(!UpdateForm())
+                {
+                    return;
+                }
+            }
+            timerUpdate.Stop();
+
+            try
+            {
+                if (!GetSity().DeleteFromDB())
+                    throw new Exception();
+                MessageBox.Show("Город успешно удалён", "Удалние города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+
+                MessageBox.Show("Не удалось удалить город", "Удалние города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            timerUpdateSities_Tick(sender, e);
+            timerUpdateSities_Tick(sender, e);
+
+            if (stock.ID > 0)
+            {
+                if (!UpdateForm())
+                {
+                    return;
+                }
+            }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+
+            
+                timerUpdate_Tick(sender, e);
+            
+            timerUpdateSities_Tick(sender, e);
+        }
+
+        private void timerUpdateSities_Tick(object sender, EventArgs e)
+        {
+            int id = 0;
+            try
+            {
+                id = GetSity().ID;
+            }
+            catch
+            {
+
+            }
+
+            try
+            {
+                Sities.GetFromBD();
+            }
+            catch
+            {
+
+            }
+
+            try
+            {
+                comboBoxWithNameSities.Items.Clear();
+                for (int i = 0; i < Sities.Count; i++)
+                {
+                    comboBoxWithNameSities.Items.Add(Sities[i].Name);
+                }
+            }
+            catch
+            {
+
+            }
+
+            try
+            {
+                int index = Sities.IndexOfByID(id);
+                if (index < 0)
+                    throw new Exception();
+                comboBoxWithNameSities.SelectedIndex = index;
+            }
+            catch
+            {
+                try
+                {
+                    comboBoxWithNameSities.SelectedIndex = 0;
+                }
+                catch
+                {
+
+                }
+            }
+
         }
     }
 }

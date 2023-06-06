@@ -64,9 +64,14 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSitySet = new System.Windows.Forms.Button();
             this.buttonUpdateTextSity = new System.Windows.Forms.Button();
+            this.comboBoxWithNameSities = new MusicShopDesktopApp.ComboBoxWithName();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSet = new System.Windows.Forms.Button();
+            this.buttonDropSity = new System.Windows.Forms.Button();
             this.buttonCopySity = new System.Windows.Forms.Button();
             this.timerSaveShow = new System.Windows.Forms.Timer(this.components);
             this.timerUpdateSity = new System.Windows.Forms.Timer(this.components);
+            this.timerUpdateSities = new System.Windows.Forms.Timer(this.components);
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -78,6 +83,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -231,7 +237,7 @@ namespace MusicShopDesktopApp
             this.buttonUpdate.TabIndex = 0;
             this.buttonUpdate.Text = "Обновить";
             this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.timerUpdate_Tick);
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -327,6 +333,8 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel5.Controls.Add(this.buttonEmailSet, 1, 3);
             this.tableLayoutPanel5.Controls.Add(this.textInputSity, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.comboBoxWithNameSities, 2, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 2, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -565,9 +573,65 @@ namespace MusicShopDesktopApp
             this.buttonUpdateTextSity.Name = "buttonUpdateTextSity";
             this.buttonUpdateTextSity.Size = new System.Drawing.Size(163, 28);
             this.buttonUpdateTextSity.TabIndex = 4;
-            this.buttonUpdateTextSity.Text = "Обновить";
+            this.buttonUpdateTextSity.Text = "Установить";
             this.buttonUpdateTextSity.UseVisualStyleBackColor = true;
             this.buttonUpdateTextSity.Click += new System.EventHandler(this.buttonUpdateTextSity_Click);
+            // 
+            // comboBoxWithNameSities
+            // 
+            this.comboBoxWithNameSities.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.comboBoxWithNameSities.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxWithNameSities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWithNameSities.DropDownWith = 423;
+            this.comboBoxWithNameSities.Location = new System.Drawing.Point(690, 123);
+            this.comboBoxWithNameSities.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comboBoxWithNameSities.Name = "comboBoxWithNameSities";
+            this.comboBoxWithNameSities.NoReadOnly = true;
+            this.comboBoxWithNameSities.ReadOnly = false;
+            this.comboBoxWithNameSities.SelectedIndex = -1;
+            this.comboBoxWithNameSities.SelectedItem = null;
+            this.comboBoxWithNameSities.Size = new System.Drawing.Size(335, 74);
+            this.comboBoxWithNameSities.TabIndex = 5;
+            this.comboBoxWithNameSities.Title = "Города";
+            this.comboBoxWithNameSities.ToolTipTextVisible = true;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.buttonSet, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.buttonDropSity, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(689, 203);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(337, 34);
+            this.tableLayoutPanel7.TabIndex = 6;
+            // 
+            // buttonSet
+            // 
+            this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSet.Location = new System.Drawing.Point(3, 3);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(162, 28);
+            this.buttonSet.TabIndex = 0;
+            this.buttonSet.Text = "Задать";
+            this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
+            // 
+            // buttonDropSity
+            // 
+            this.buttonDropSity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDropSity.Location = new System.Drawing.Point(171, 3);
+            this.buttonDropSity.Name = "buttonDropSity";
+            this.buttonDropSity.Size = new System.Drawing.Size(163, 28);
+            this.buttonDropSity.TabIndex = 1;
+            this.buttonDropSity.Text = "Удалить";
+            this.buttonDropSity.UseVisualStyleBackColor = true;
+            this.buttonDropSity.Click += new System.EventHandler(this.buttonDropSity_Click);
             // 
             // buttonCopySity
             // 
@@ -589,6 +653,12 @@ namespace MusicShopDesktopApp
             // 
             this.timerUpdateSity.Enabled = true;
             this.timerUpdateSity.Tick += new System.EventHandler(this.timerUpdateSity_Tick);
+            // 
+            // timerUpdateSities
+            // 
+            this.timerUpdateSities.Enabled = true;
+            this.timerUpdateSities.Interval = 30000;
+            this.timerUpdateSities.Tick += new System.EventHandler(this.timerUpdateSities_Tick);
             // 
             // StockForm
             // 
@@ -622,6 +692,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -664,6 +735,11 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button buttonUpdateTextSity;
         private System.Windows.Forms.Timer timerUpdateSity;
+        private ComboBoxWithName comboBoxWithNameSities;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Button buttonSet;
+        private System.Windows.Forms.Button buttonDropSity;
+        private System.Windows.Forms.Timer timerUpdateSities;
     }
 }
 

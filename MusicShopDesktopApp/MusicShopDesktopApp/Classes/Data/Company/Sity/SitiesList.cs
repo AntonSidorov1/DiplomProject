@@ -109,5 +109,6 @@ namespace MusicShopDesktopApp
         public bool ContainsOfName(string name) => GetThis().Any(s => s.EqualsName(name));
 
         public override Sity Get() => new Sity();
+
     }
 }

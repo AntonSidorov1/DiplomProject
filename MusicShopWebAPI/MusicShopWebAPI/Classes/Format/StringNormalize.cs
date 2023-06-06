@@ -7,6 +7,17 @@ namespace MusicShopWebAPI
     public static class StringNormalize
     {
 
+        public static string DropDefices(string text)
+        {
+            text = text.Replace('_', ' ');
+            text = text.Replace('+', ' ');
+            text = text.Replace('-', ' ');
+            text = text.Replace('.', ' ');
+            text = text.Replace(',', ' ');
+            text = text.Trim();
+            return string.Join("", text.Split(' '));
+        }
+
         public static string FormatToEnd(string text)
         {
             string result = "";
