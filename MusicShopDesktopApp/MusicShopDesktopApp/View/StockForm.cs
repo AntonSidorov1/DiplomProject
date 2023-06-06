@@ -679,5 +679,72 @@ namespace MusicShopDesktopApp
             }
 
         }
+
+        private void buttonAddSiy_Click(object sender, EventArgs e)
+        {
+            if (textInputSity.Text.Length < 1)
+            {
+                MessageBox.Show("Введите название города в строке поиска", "Редактирование склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (stock.ID > 0)
+            {
+                if (!UpdateForm())
+                {
+                    return;
+                }
+                timerUpdate.Stop();
+            }
+
+            try
+            {
+                SitiesList sities = SitiesList.GetListFromDB();
+                string sity = textInputSity.Text;
+                if (sities.ContainsOfName(sity))
+                {
+                    MessageBox.Show("Введённый город уже существут?", "Добавление города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (MessageBox.Show("Введённый город не существует. Вы хотите его добавить?", "Добавление города", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        == DialogResult.No)
+                    {
+                        if (stock.ID > 0)
+                        {
+                            if (!UpdateForm())
+                            {
+                                return;
+                            }
+                        }
+                        return;
+                    }
+                    Sity sity1 = new Sity()
+                    {
+                        Name = sity
+                    };
+                    if (!sity1.AddToDB())
+                    {
+                        MessageBox.Show("Не удалось добавить город", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw new Exception();
+                    }
+                    MessageBox.Show("Город успешно добавлен", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sities.GetFromBD();
+                }
+            }
+            catch
+            {
+                if (stock.ID > 0)
+                {
+                    if (!UpdateForm())
+                    {
+                        return;
+                    }
+                }
+            }
+
+
+            timerUpdateSities_Tick(sender, e);
+        }
     }
 }

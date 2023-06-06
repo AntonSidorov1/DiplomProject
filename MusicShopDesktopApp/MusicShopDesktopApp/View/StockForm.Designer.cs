@@ -72,6 +72,7 @@ namespace MusicShopDesktopApp
             this.timerSaveShow = new System.Windows.Forms.Timer(this.components);
             this.timerUpdateSity = new System.Windows.Forms.Timer(this.components);
             this.timerUpdateSities = new System.Windows.Forms.Timer(this.components);
+            this.buttonAddSiy = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -320,9 +321,9 @@ namespace MusicShopDesktopApp
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel5, 3);
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.11738F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.1198F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.76281F));
             this.tableLayoutPanel5.Controls.Add(this.textInputAddress, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.textInputName, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.textInputEmail, 1, 2);
@@ -367,7 +368,7 @@ namespace MusicShopDesktopApp
             this.textInputAddress.ReadOnly = false;
             this.textInputAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textInputAddress.ShortcutsEnabled = true;
-            this.textInputAddress.Size = new System.Drawing.Size(335, 74);
+            this.textInputAddress.Size = new System.Drawing.Size(301, 74);
             this.textInputAddress.TabIndex = 0;
             this.textInputAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputAddress.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -397,7 +398,7 @@ namespace MusicShopDesktopApp
             this.textInputName.ReadOnly = false;
             this.textInputName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textInputName.ShortcutsEnabled = true;
-            this.textInputName.Size = new System.Drawing.Size(333, 74);
+            this.textInputName.Size = new System.Drawing.Size(299, 74);
             this.textInputName.TabIndex = 0;
             this.textInputName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -416,7 +417,7 @@ namespace MusicShopDesktopApp
             this.textInputEmail.InputKeyPressToBox = null;
             this.textInputEmail.InputText = "";
             this.textInputEmail.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textInputEmail.Location = new System.Drawing.Point(348, 123);
+            this.textInputEmail.Location = new System.Drawing.Point(314, 123);
             this.textInputEmail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textInputEmail.MaxLength = 32767;
             this.textInputEmail.MinimumSize = new System.Drawing.Size(154, 56);
@@ -427,7 +428,7 @@ namespace MusicShopDesktopApp
             this.textInputEmail.ReadOnly = false;
             this.textInputEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textInputEmail.ShortcutsEnabled = true;
-            this.textInputEmail.Size = new System.Drawing.Size(333, 74);
+            this.textInputEmail.Size = new System.Drawing.Size(299, 74);
             this.textInputEmail.TabIndex = 0;
             this.textInputEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputEmail.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -446,7 +447,7 @@ namespace MusicShopDesktopApp
             this.textInputPhone.InputKeyPressToBox = null;
             this.textInputPhone.InputText = "";
             this.textInputPhone.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textInputPhone.Location = new System.Drawing.Point(349, 3);
+            this.textInputPhone.Location = new System.Drawing.Point(315, 3);
             this.textInputPhone.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.textInputPhone.MaxLength = 32767;
             this.textInputPhone.MinimumSize = new System.Drawing.Size(192, 59);
@@ -457,7 +458,7 @@ namespace MusicShopDesktopApp
             this.textInputPhone.ReadOnly = false;
             this.textInputPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textInputPhone.ShortcutsEnabled = true;
-            this.textInputPhone.Size = new System.Drawing.Size(331, 74);
+            this.textInputPhone.Size = new System.Drawing.Size(297, 74);
             this.textInputPhone.TabIndex = 0;
             this.textInputPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputPhone.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -472,7 +473,7 @@ namespace MusicShopDesktopApp
             this.buttonNameSet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonNameSet.Location = new System.Drawing.Point(3, 83);
             this.buttonNameSet.Name = "buttonNameSet";
-            this.buttonNameSet.Size = new System.Drawing.Size(337, 34);
+            this.buttonNameSet.Size = new System.Drawing.Size(303, 34);
             this.buttonNameSet.TabIndex = 1;
             this.buttonNameSet.Text = "Задать";
             this.buttonNameSet.UseVisualStyleBackColor = true;
@@ -481,9 +482,9 @@ namespace MusicShopDesktopApp
             // buttonPhoneSet
             // 
             this.buttonPhoneSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPhoneSet.Location = new System.Drawing.Point(346, 83);
+            this.buttonPhoneSet.Location = new System.Drawing.Point(312, 83);
             this.buttonPhoneSet.Name = "buttonPhoneSet";
-            this.buttonPhoneSet.Size = new System.Drawing.Size(337, 34);
+            this.buttonPhoneSet.Size = new System.Drawing.Size(303, 34);
             this.buttonPhoneSet.TabIndex = 1;
             this.buttonPhoneSet.Text = "Задать";
             this.buttonPhoneSet.UseVisualStyleBackColor = true;
@@ -494,7 +495,7 @@ namespace MusicShopDesktopApp
             this.buttonAddressSet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAddressSet.Location = new System.Drawing.Point(3, 203);
             this.buttonAddressSet.Name = "buttonAddressSet";
-            this.buttonAddressSet.Size = new System.Drawing.Size(337, 34);
+            this.buttonAddressSet.Size = new System.Drawing.Size(303, 34);
             this.buttonAddressSet.TabIndex = 1;
             this.buttonAddressSet.Text = "Задать";
             this.buttonAddressSet.UseVisualStyleBackColor = true;
@@ -503,9 +504,9 @@ namespace MusicShopDesktopApp
             // buttonEmailSet
             // 
             this.buttonEmailSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonEmailSet.Location = new System.Drawing.Point(346, 203);
+            this.buttonEmailSet.Location = new System.Drawing.Point(312, 203);
             this.buttonEmailSet.Name = "buttonEmailSet";
-            this.buttonEmailSet.Size = new System.Drawing.Size(337, 34);
+            this.buttonEmailSet.Size = new System.Drawing.Size(303, 34);
             this.buttonEmailSet.TabIndex = 1;
             this.buttonEmailSet.Text = "Задать";
             this.buttonEmailSet.UseVisualStyleBackColor = true;
@@ -520,7 +521,7 @@ namespace MusicShopDesktopApp
             this.textInputSity.InputKeyPressToBox = null;
             this.textInputSity.InputText = "";
             this.textInputSity.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textInputSity.Location = new System.Drawing.Point(690, 3);
+            this.textInputSity.Location = new System.Drawing.Point(622, 3);
             this.textInputSity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textInputSity.MaxLength = 32767;
             this.textInputSity.MinimumSize = new System.Drawing.Size(124, 53);
@@ -531,7 +532,7 @@ namespace MusicShopDesktopApp
             this.textInputSity.ReadOnly = false;
             this.textInputSity.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textInputSity.ShortcutsEnabled = true;
-            this.textInputSity.Size = new System.Drawing.Size(335, 74);
+            this.textInputSity.Size = new System.Drawing.Size(403, 74);
             this.textInputSity.TabIndex = 2;
             this.textInputSity.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputSity.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -541,18 +542,19 @@ namespace MusicShopDesktopApp
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.buttonSitySet, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.buttonUpdateTextSity, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.buttonAddSiy, 2, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(689, 83);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(621, 83);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(337, 34);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(405, 34);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // buttonSitySet
@@ -560,7 +562,7 @@ namespace MusicShopDesktopApp
             this.buttonSitySet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSitySet.Location = new System.Drawing.Point(3, 3);
             this.buttonSitySet.Name = "buttonSitySet";
-            this.buttonSitySet.Size = new System.Drawing.Size(162, 28);
+            this.buttonSitySet.Size = new System.Drawing.Size(128, 28);
             this.buttonSitySet.TabIndex = 3;
             this.buttonSitySet.Text = "Задать";
             this.buttonSitySet.UseVisualStyleBackColor = true;
@@ -569,9 +571,9 @@ namespace MusicShopDesktopApp
             // buttonUpdateTextSity
             // 
             this.buttonUpdateTextSity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonUpdateTextSity.Location = new System.Drawing.Point(171, 3);
+            this.buttonUpdateTextSity.Location = new System.Drawing.Point(137, 3);
             this.buttonUpdateTextSity.Name = "buttonUpdateTextSity";
-            this.buttonUpdateTextSity.Size = new System.Drawing.Size(163, 28);
+            this.buttonUpdateTextSity.Size = new System.Drawing.Size(128, 28);
             this.buttonUpdateTextSity.TabIndex = 4;
             this.buttonUpdateTextSity.Text = "Установить";
             this.buttonUpdateTextSity.UseVisualStyleBackColor = true;
@@ -583,14 +585,14 @@ namespace MusicShopDesktopApp
             this.comboBoxWithNameSities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxWithNameSities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWithNameSities.DropDownWith = 423;
-            this.comboBoxWithNameSities.Location = new System.Drawing.Point(690, 123);
+            this.comboBoxWithNameSities.Location = new System.Drawing.Point(622, 123);
             this.comboBoxWithNameSities.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBoxWithNameSities.Name = "comboBoxWithNameSities";
             this.comboBoxWithNameSities.NoReadOnly = true;
             this.comboBoxWithNameSities.ReadOnly = false;
             this.comboBoxWithNameSities.SelectedIndex = -1;
             this.comboBoxWithNameSities.SelectedItem = null;
-            this.comboBoxWithNameSities.Size = new System.Drawing.Size(335, 74);
+            this.comboBoxWithNameSities.Size = new System.Drawing.Size(403, 74);
             this.comboBoxWithNameSities.TabIndex = 5;
             this.comboBoxWithNameSities.Title = "Города";
             this.comboBoxWithNameSities.ToolTipTextVisible = true;
@@ -603,12 +605,12 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel7.Controls.Add(this.buttonSet, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.buttonDropSity, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(689, 203);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(621, 203);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(337, 34);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(405, 34);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
             // buttonSet
@@ -616,7 +618,7 @@ namespace MusicShopDesktopApp
             this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSet.Location = new System.Drawing.Point(3, 3);
             this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(162, 28);
+            this.buttonSet.Size = new System.Drawing.Size(196, 28);
             this.buttonSet.TabIndex = 0;
             this.buttonSet.Text = "Задать";
             this.buttonSet.UseVisualStyleBackColor = true;
@@ -625,9 +627,9 @@ namespace MusicShopDesktopApp
             // buttonDropSity
             // 
             this.buttonDropSity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDropSity.Location = new System.Drawing.Point(171, 3);
+            this.buttonDropSity.Location = new System.Drawing.Point(205, 3);
             this.buttonDropSity.Name = "buttonDropSity";
-            this.buttonDropSity.Size = new System.Drawing.Size(163, 28);
+            this.buttonDropSity.Size = new System.Drawing.Size(197, 28);
             this.buttonDropSity.TabIndex = 1;
             this.buttonDropSity.Text = "Удалить";
             this.buttonDropSity.UseVisualStyleBackColor = true;
@@ -659,6 +661,17 @@ namespace MusicShopDesktopApp
             this.timerUpdateSities.Enabled = true;
             this.timerUpdateSities.Interval = 30000;
             this.timerUpdateSities.Tick += new System.EventHandler(this.timerUpdateSities_Tick);
+            // 
+            // buttonAddSiy
+            // 
+            this.buttonAddSiy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAddSiy.Location = new System.Drawing.Point(271, 3);
+            this.buttonAddSiy.Name = "buttonAddSiy";
+            this.buttonAddSiy.Size = new System.Drawing.Size(131, 28);
+            this.buttonAddSiy.TabIndex = 5;
+            this.buttonAddSiy.Text = "Добавить";
+            this.buttonAddSiy.UseVisualStyleBackColor = true;
+            this.buttonAddSiy.Click += new System.EventHandler(this.buttonAddSiy_Click);
             // 
             // StockForm
             // 
@@ -740,6 +753,7 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.Button buttonSet;
         private System.Windows.Forms.Button buttonDropSity;
         private System.Windows.Forms.Timer timerUpdateSities;
+        private System.Windows.Forms.Button buttonAddSiy;
     }
 }
 
