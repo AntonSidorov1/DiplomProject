@@ -32,9 +32,9 @@ namespace FileManegerJson
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textInputNewValue = new FileManegerJson.TextInputEdit();
             this.buttonTextChange = new System.Windows.Forms.Button();
             this.buttonSetDialog = new System.Windows.Forms.Button();
-            this.textInputNewValue = new FileManegerJson.TextInputEdit();
             this.checkBoxKeyBord = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,31 +88,6 @@ namespace FileManegerJson
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // buttonTextChange
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.buttonTextChange, 2);
-            this.buttonTextChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonTextChange.Location = new System.Drawing.Point(124, 15);
-            this.buttonTextChange.Margin = new System.Windows.Forms.Padding(15);
-            this.buttonTextChange.Name = "buttonTextChange";
-            this.buttonTextChange.Size = new System.Drawing.Size(383, 50);
-            this.buttonTextChange.TabIndex = 3;
-            this.buttonTextChange.Text = "Загрузить/сохранить/заменить";
-            this.buttonTextChange.UseVisualStyleBackColor = true;
-            this.buttonTextChange.Click += new System.EventHandler(this.buttonTextChange_Click);
-            // 
-            // buttonSetDialog
-            // 
-            this.buttonSetDialog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSetDialog.Location = new System.Drawing.Point(119, 193);
-            this.buttonSetDialog.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonSetDialog.Name = "buttonSetDialog";
-            this.buttonSetDialog.Size = new System.Drawing.Size(181, 76);
-            this.buttonSetDialog.TabIndex = 4;
-            this.buttonSetDialog.Text = "Задать через диалоговое окно";
-            this.buttonSetDialog.UseVisualStyleBackColor = true;
-            this.buttonSetDialog.Click += new System.EventHandler(this.buttonSetDialog_Click);
-            // 
             // textInputNewValue
             // 
             this.textInputNewValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -143,6 +118,32 @@ namespace FileManegerJson
             this.textInputNewValue.Title = "Ново значение";
             this.textInputNewValue.UseSystemPasswordChar = false;
             this.textInputNewValue.Value = "";
+            this.textInputNewValue.VirtualKeyBord = false;
+            // 
+            // buttonTextChange
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonTextChange, 2);
+            this.buttonTextChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonTextChange.Location = new System.Drawing.Point(124, 15);
+            this.buttonTextChange.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonTextChange.Name = "buttonTextChange";
+            this.buttonTextChange.Size = new System.Drawing.Size(383, 50);
+            this.buttonTextChange.TabIndex = 3;
+            this.buttonTextChange.Text = "Загрузить/сохранить/заменить";
+            this.buttonTextChange.UseVisualStyleBackColor = true;
+            this.buttonTextChange.Click += new System.EventHandler(this.buttonTextChange_Click);
+            // 
+            // buttonSetDialog
+            // 
+            this.buttonSetDialog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSetDialog.Location = new System.Drawing.Point(119, 193);
+            this.buttonSetDialog.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonSetDialog.Name = "buttonSetDialog";
+            this.buttonSetDialog.Size = new System.Drawing.Size(181, 76);
+            this.buttonSetDialog.TabIndex = 4;
+            this.buttonSetDialog.Text = "Задать через диалоговое окно";
+            this.buttonSetDialog.UseVisualStyleBackColor = true;
+            this.buttonSetDialog.Click += new System.EventHandler(this.buttonSetDialog_Click);
             // 
             // checkBoxKeyBord
             // 
@@ -165,6 +166,7 @@ namespace FileManegerJson
             this.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNoteEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактирование";
             this.Load += new System.EventHandler(this.FormNoteEdit_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

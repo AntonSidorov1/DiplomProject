@@ -37,6 +37,9 @@ namespace FileManegerJson
         public bool IsSity => this is SityFile;
         public SityFile AsSity => this as SityFile;
 
+        public bool IsTraidingPoint => this is TraidingPointFile;
+        public TraidingPointFile AsTraidingPoint => this as TraidingPointFile;
+
         public override void FromFile(AbstractFileClass file)
         {
             base.FromFile(file);

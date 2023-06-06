@@ -336,5 +336,24 @@ namespace FileManegerJson
             UpdateOrganization();
 
         }
+
+        private void buttonTraidingPoint_Click(object sender, EventArgs e)
+        {
+            TraidingPointEditForm form = new TraidingPointEditForm(organization);
+            form.ChangeName += Form_ChangeName;
+            form.ChangeAddress += Form_ChangeAddress;
+            form.ChangePhone += Form_ChangePhone;
+            form.ChangeEmail += Form_ChangeEmail;
+            form.ChangeOrganization += Form_ChangeOrganization1;
+
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void Form_ChangeOrganization1(DistributingPoint organization)
+        {
+            UpdateOrganization();
+        }
     }
 }

@@ -220,6 +220,7 @@ namespace FileManegerJson
         public void ClearNotes() => Remove(f => f.IsNote);
         public void ClearOrganizaions() => Remove(f => f.IsOrganizaion);
         public void ClearSities() => Remove(f => f.IsSity);
+        public void ClearTraidingPoints() => Remove(f => f.IsTraidingPoint);
 
 
         public ImageFilesList ImageList
@@ -582,6 +583,40 @@ namespace FileManegerJson
         {
             get => OrganizaionList.ToArray();
             set => OrganizaionList = new List<OrganizaionFile>(value);
+        }
+
+        public List<TraidingPointFile> TraidingPointList
+        {
+            get
+            {
+                List<TraidingPointFile> folders = new List<TraidingPointFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsTraidingPoint);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsTraidingPoint)
+                        folders.Add(folders1[i].AsTraidingPoint);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearTraidingPoints();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
+        public TraidingPointFile[] TraidingPointsArray
+        {
+            get => TraidingPointList.ToArray();
+            set => TraidingPointList = new List<TraidingPointFile>(value);
         }
 
         public List<OrganizaionFile> OrganizaionList

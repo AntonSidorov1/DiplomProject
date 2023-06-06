@@ -64,6 +64,7 @@ namespace FileManegerJson
             this.buttonAll = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonTraidingPoint = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -215,17 +216,18 @@ namespace FileManegerJson
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.Controls.Add(this.buttonRunWindowEdit, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.buttonByManager, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.buttonByManager, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.buttonTraidingPoint, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(764, 42);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
@@ -234,7 +236,7 @@ namespace FileManegerJson
             this.buttonRunWindowEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonRunWindowEdit.Location = new System.Drawing.Point(3, 3);
             this.buttonRunWindowEdit.Name = "buttonRunWindowEdit";
-            this.buttonRunWindowEdit.Size = new System.Drawing.Size(376, 36);
+            this.buttonRunWindowEdit.Size = new System.Drawing.Size(248, 36);
             this.buttonRunWindowEdit.TabIndex = 0;
             this.buttonRunWindowEdit.Text = "Через отдельное окно";
             this.buttonRunWindowEdit.UseVisualStyleBackColor = true;
@@ -243,11 +245,11 @@ namespace FileManegerJson
             // buttonByManager
             // 
             this.buttonByManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonByManager.Location = new System.Drawing.Point(385, 3);
+            this.buttonByManager.Location = new System.Drawing.Point(511, 3);
             this.buttonByManager.Name = "buttonByManager";
-            this.buttonByManager.Size = new System.Drawing.Size(376, 36);
+            this.buttonByManager.Size = new System.Drawing.Size(250, 36);
             this.buttonByManager.TabIndex = 1;
-            this.buttonByManager.Text = "Через менджер";
+            this.buttonByManager.Text = "Через менеджер";
             this.buttonByManager.UseVisualStyleBackColor = true;
             this.buttonByManager.Click += new System.EventHandler(this.buttonByManager_Click);
             // 
@@ -612,6 +614,17 @@ namespace FileManegerJson
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // buttonTraidingPoint
+            // 
+            this.buttonTraidingPoint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonTraidingPoint.Location = new System.Drawing.Point(257, 3);
+            this.buttonTraidingPoint.Name = "buttonTraidingPoint";
+            this.buttonTraidingPoint.Size = new System.Drawing.Size(248, 36);
+            this.buttonTraidingPoint.TabIndex = 2;
+            this.buttonTraidingPoint.Text = "Как торговую точку";
+            this.buttonTraidingPoint.UseVisualStyleBackColor = true;
+            this.buttonTraidingPoint.Click += new System.EventHandler(this.buttonTraidingPoint_Click);
+            // 
             // OrganizationEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -621,7 +634,8 @@ namespace FileManegerJson
             this.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "OrganizationEditForm";
-            this.Text = "Организация";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Организация (Торговая сеть)";
             this.Load += new System.EventHandler(this.OrganizationForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -684,5 +698,6 @@ namespace FileManegerJson
         private System.Windows.Forms.PictureBox pictureBoxLogotip;
         private System.Windows.Forms.Button buttonSet;
         private System.Windows.Forms.Button buttonDrop;
+        private System.Windows.Forms.Button buttonTraidingPoint;
     }
 }

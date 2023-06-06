@@ -29,6 +29,7 @@ namespace FileManegerJson
         public NoteClass ParametrNote => Parameter.CopyNote();
         public Town ParametrSity => Parameter.CopySity();
         public DisributingFacilities ParametrOrganizaion => Parameter.CopyOrganization();
+        public DistributingPoint ParameterTraidingPoint => Parameter.CopyTraidingPoint();
 
 
 

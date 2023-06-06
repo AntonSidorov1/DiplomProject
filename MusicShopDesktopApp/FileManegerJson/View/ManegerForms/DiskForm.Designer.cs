@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiskForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Program_Close = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDoingFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.buttonDropFile = new System.Windows.Forms.ToolStripMenuItem();
             this.переиминоватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNameChange = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +68,9 @@
             this.SaveOrganization = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveOrgContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveOrgJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveTraidingPoint = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveTraidingPointContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveTraidingPointJson = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +84,7 @@
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.Image = new System.Windows.Forms.PictureBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.TimerDateTime = new System.Windows.Forms.Timer();
+            this.TimerDateTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -128,9 +132,11 @@
             this.подключениеКБазеДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DataBaseCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.DataBaseLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadDataBaseContent = new System.Windows.Forms.ToolStripMenuItem();
             this.заметкустрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNoteCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNoteFromFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.NoteLoadContent = new System.Windows.Forms.ToolStripMenuItem();
             this.городToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSityCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSityLoad = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,6 +145,10 @@
             this.OrganizationCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadOrganizationFile = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadOrgContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.торговуюТочкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TraidingPointCreae = new System.Windows.Forms.ToolStripMenuItem();
+            this.TraidingPointJsonLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.TraidingPointContentLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.связьСФайломкаталогомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateLink = new System.Windows.Forms.ToolStripMenuItem();
@@ -382,11 +392,10 @@
             this.DataBaseSave,
             this.SaveNote,
             this.buttonSaveSity,
-            this.SaveOrganization});
+            this.SaveOrganization,
+            this.buttonSaveTraidingPoint});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
-            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 316);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 340);
             // 
             // buttonDropFile
             // 
@@ -575,6 +584,29 @@
             this.buttonSaveOrgJson.Size = new System.Drawing.Size(212, 26);
             this.buttonSaveOrgJson.Text = "Как Json";
             this.buttonSaveOrgJson.Click += new System.EventHandler(this.buttonSaveOrgJson_Click);
+            // 
+            // buttonSaveTraidingPoint
+            // 
+            this.buttonSaveTraidingPoint.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonSaveTraidingPointContent,
+            this.buttonSaveTraidingPointJson});
+            this.buttonSaveTraidingPoint.Name = "buttonSaveTraidingPoint";
+            this.buttonSaveTraidingPoint.Size = new System.Drawing.Size(582, 24);
+            this.buttonSaveTraidingPoint.Text = "Сохранить торговую точку";
+            // 
+            // buttonSaveTraidingPointContent
+            // 
+            this.buttonSaveTraidingPointContent.Name = "buttonSaveTraidingPointContent";
+            this.buttonSaveTraidingPointContent.Size = new System.Drawing.Size(260, 26);
+            this.buttonSaveTraidingPointContent.Text = "Как содержимое";
+            this.buttonSaveTraidingPointContent.Click += new System.EventHandler(this.buttonSaveTraidingPointContent_Click);
+            // 
+            // buttonSaveTraidingPointJson
+            // 
+            this.buttonSaveTraidingPointJson.Name = "buttonSaveTraidingPointJson";
+            this.buttonSaveTraidingPointJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonSaveTraidingPointJson.Text = "Как Json";
+            this.buttonSaveTraidingPointJson.Click += new System.EventHandler(this.buttonSaveTraidingPointJson_Click);
             // 
             // выборФайлаToolStripMenuItem1
             // 
@@ -1149,7 +1181,8 @@
             this.подключениеКБазеДанныхToolStripMenuItem,
             this.заметкустрокуToolStripMenuItem,
             this.городToolStripMenuItem,
-            this.торговуюСетьToolStripMenuItem});
+            this.торговуюСетьToolStripMenuItem,
+            this.торговуюТочкуToolStripMenuItem});
             this.добавитьВКаталогToolStripMenuItem.Name = "добавитьВКаталогToolStripMenuItem";
             this.добавитьВКаталогToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.добавитьВКаталогToolStripMenuItem.Text = "Добавить в каталог";
@@ -1231,7 +1264,8 @@
             // 
             this.подключениеКБазеДанныхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DataBaseCreate,
-            this.DataBaseLoad});
+            this.DataBaseLoad,
+            this.LoadDataBaseContent});
             this.подключениеКБазеДанныхToolStripMenuItem.Name = "подключениеКБазеДанныхToolStripMenuItem";
             this.подключениеКБазеДанныхToolStripMenuItem.Size = new System.Drawing.Size(410, 26);
             this.подключениеКБазеДанныхToolStripMenuItem.Text = "Строка подключение к базе данных";
@@ -1239,22 +1273,30 @@
             // DataBaseCreate
             // 
             this.DataBaseCreate.Name = "DataBaseCreate";
-            this.DataBaseCreate.Size = new System.Drawing.Size(170, 26);
+            this.DataBaseCreate.Size = new System.Drawing.Size(330, 26);
             this.DataBaseCreate.Text = "Создать";
             this.DataBaseCreate.Click += new System.EventHandler(this.DataBaseCreate_Click);
             // 
             // DataBaseLoad
             // 
             this.DataBaseLoad.Name = "DataBaseLoad";
-            this.DataBaseLoad.Size = new System.Drawing.Size(170, 26);
+            this.DataBaseLoad.Size = new System.Drawing.Size(330, 26);
             this.DataBaseLoad.Text = "Из файла";
             this.DataBaseLoad.Click += new System.EventHandler(this.DataBaseLoad_Click);
+            // 
+            // LoadDataBaseContent
+            // 
+            this.LoadDataBaseContent.Name = "LoadDataBaseContent";
+            this.LoadDataBaseContent.Size = new System.Drawing.Size(330, 26);
+            this.LoadDataBaseContent.Text = "Из файла, как содержимое";
+            this.LoadDataBaseContent.Click += new System.EventHandler(this.LoadDataBaseContent_Click);
             // 
             // заметкустрокуToolStripMenuItem
             // 
             this.заметкустрокуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buttonNoteCreate,
-            this.buttonNoteFromFile});
+            this.buttonNoteFromFile,
+            this.NoteLoadContent});
             this.заметкустрокуToolStripMenuItem.Name = "заметкустрокуToolStripMenuItem";
             this.заметкустрокуToolStripMenuItem.Size = new System.Drawing.Size(410, 26);
             this.заметкустрокуToolStripMenuItem.Text = "Заметку (строку)";
@@ -1262,16 +1304,23 @@
             // buttonNoteCreate
             // 
             this.buttonNoteCreate.Name = "buttonNoteCreate";
-            this.buttonNoteCreate.Size = new System.Drawing.Size(170, 26);
+            this.buttonNoteCreate.Size = new System.Drawing.Size(320, 26);
             this.buttonNoteCreate.Text = "Создать";
             this.buttonNoteCreate.Click += new System.EventHandler(this.buttonNoteCreate_Click);
             // 
             // buttonNoteFromFile
             // 
             this.buttonNoteFromFile.Name = "buttonNoteFromFile";
-            this.buttonNoteFromFile.Size = new System.Drawing.Size(170, 26);
+            this.buttonNoteFromFile.Size = new System.Drawing.Size(320, 26);
             this.buttonNoteFromFile.Text = "Из файла";
             this.buttonNoteFromFile.Click += new System.EventHandler(this.buttonNoteFromFile_Click);
+            // 
+            // NoteLoadContent
+            // 
+            this.NoteLoadContent.Name = "NoteLoadContent";
+            this.NoteLoadContent.Size = new System.Drawing.Size(320, 26);
+            this.NoteLoadContent.Text = "Из файла, как содржимое";
+            this.NoteLoadContent.Click += new System.EventHandler(this.NoteLoadContent_Click);
             // 
             // городToolStripMenuItem
             // 
@@ -1334,6 +1383,37 @@
             this.LoadOrgContent.Size = new System.Drawing.Size(330, 26);
             this.LoadOrgContent.Text = "Из файла, как содержимое";
             this.LoadOrgContent.Click += new System.EventHandler(this.LoadOrgContent_Click);
+            // 
+            // торговуюТочкуToolStripMenuItem
+            // 
+            this.торговуюТочкуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TraidingPointCreae,
+            this.TraidingPointJsonLoad,
+            this.TraidingPointContentLoad});
+            this.торговуюТочкуToolStripMenuItem.Name = "торговуюТочкуToolStripMenuItem";
+            this.торговуюТочкуToolStripMenuItem.Size = new System.Drawing.Size(410, 26);
+            this.торговуюТочкуToolStripMenuItem.Text = "Торговую точку";
+            // 
+            // TraidingPointCreae
+            // 
+            this.TraidingPointCreae.Name = "TraidingPointCreae";
+            this.TraidingPointCreae.Size = new System.Drawing.Size(320, 26);
+            this.TraidingPointCreae.Text = "Создать";
+            this.TraidingPointCreae.Click += new System.EventHandler(this.TraidingPointCreae_Click);
+            // 
+            // TraidingPointJsonLoad
+            // 
+            this.TraidingPointJsonLoad.Name = "TraidingPointJsonLoad";
+            this.TraidingPointJsonLoad.Size = new System.Drawing.Size(320, 26);
+            this.TraidingPointJsonLoad.Text = "Из файла";
+            this.TraidingPointJsonLoad.Click += new System.EventHandler(this.TraidingPointJsonLoad_Click);
+            // 
+            // TraidingPointContentLoad
+            // 
+            this.TraidingPointContentLoad.Name = "TraidingPointContentLoad";
+            this.TraidingPointContentLoad.Size = new System.Drawing.Size(320, 26);
+            this.TraidingPointContentLoad.Text = "Из файла, как содржимое";
+            this.TraidingPointContentLoad.Click += new System.EventHandler(this.TraidingPointContentLoad_Click);
             // 
             // menuStrip3
             // 
@@ -1686,5 +1766,14 @@
         private System.Windows.Forms.ToolStripMenuItem SaveOrganization;
         private System.Windows.Forms.ToolStripMenuItem buttonSaveOrgContent;
         private System.Windows.Forms.ToolStripMenuItem buttonSaveOrgJson;
+        private System.Windows.Forms.ToolStripMenuItem торговуюТочкуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TraidingPointCreae;
+        private System.Windows.Forms.ToolStripMenuItem TraidingPointJsonLoad;
+        private System.Windows.Forms.ToolStripMenuItem TraidingPointContentLoad;
+        private System.Windows.Forms.ToolStripMenuItem NoteLoadContent;
+        private System.Windows.Forms.ToolStripMenuItem LoadDataBaseContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveTraidingPoint;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveTraidingPointContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveTraidingPointJson;
     }
 }

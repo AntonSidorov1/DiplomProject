@@ -103,6 +103,11 @@ namespace FileManegerJson
             return new DisributingFacilities(this);
         }
 
+        public DistributingPoint CopyTraidingPoint()
+        {
+            return new DistributingPoint(this);
+        }
+
 
     }
 }

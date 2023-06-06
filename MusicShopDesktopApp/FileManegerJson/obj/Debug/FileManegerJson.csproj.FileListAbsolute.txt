@@ -31,36 +31,4 @@ D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.SityEditForm.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.TextBoxWihSet.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.OrganizationEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\FileManegerJson.exe.config
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\FileManegerJson.exe
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\FileManegerJson.pdb
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Text.Json.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Memory.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Text.Encodings.Web.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Numerics.Vectors.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\bin\Debug\System.Buffers.dll
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.csproj.AssemblyReference.cache
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.exe.config
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.ComboBoxNameClear.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.TextBoxWihSet.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.TextInputEdit.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.FormNoteEdit.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.Properties.Resources.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.ConnectionEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.ImageForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.DiskForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.OrganizationEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.SityEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.CodeForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.KeyBordEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.LangugeEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.LanguageMenuView.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.LanguagesListEditForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.TextForm.resources
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.csproj.GenerateResource.cache
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.csproj.CoreCompileInputs.cache
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.csproj.CopyComplete
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.exe
-D:\RiderProjects\Diplom\MusicShopDesktopApp\FileManegerJson\obj\Debug\FileManegerJson.pdb
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.TraidingPointEditForm.resources
