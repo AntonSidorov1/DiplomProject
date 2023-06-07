@@ -179,7 +179,10 @@ namespace MusicShopDesktopApp
             if(stock.AddToDB())
             {
                 MessageBox.Show("Склад успешно добавлен", "Добавление склада", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                if (stock.ID < 1)
+                    Close();
+                else
+                    timerUpdate_Tick(sender, e);
             }
             else
             {

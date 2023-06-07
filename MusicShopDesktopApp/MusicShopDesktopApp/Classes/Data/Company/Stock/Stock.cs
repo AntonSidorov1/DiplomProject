@@ -137,14 +137,22 @@ namespace MusicShopDesktopApp
                 {
                     SqlCommand command = connection.CreateCommand();
                     command.CommandText = $"Insert Into [Stock] " +
-                        $"([StockName],[StockAddress],[StockSityID],[StockTelephone],[StockEmail])" +
+                        $"([StockName],[StockAddress],[StockSityID],[StockTelephone],[StockEmail]) " +
+                        $"Output INSERTED.StockID " +
                         $" Values (@name, @address, {stock.SityID}, @phone, @email)";
                     SqlParameterCollection parameters = command.Parameters;
                     parameters.AddWithValue("@name", stock.Name);
                     parameters.AddWithValue("@address", stock.Address);
                     parameters.AddWithValue("@phone", stock.Contact.Telephone);
                     parameters.AddWithValue("@email", stock.Contact.Email);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        stock.ID = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    catch
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
                 catch (Exception e)
                 {
