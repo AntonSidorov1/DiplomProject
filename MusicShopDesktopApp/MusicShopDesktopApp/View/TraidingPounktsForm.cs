@@ -1445,7 +1445,20 @@ namespace MusicShopDesktopApp
                 }
             }
 
-            tradingPoint.Shop.Name = Interaction.InputBox("Введите новое название", "Редактирование магазина", tradingPoint.Shop.Name);
+            FormNoteEdit form = new FormNoteEdit(tradingPoint.Shop.Name);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if(!form.Save)
+            {
+
+                timerUpdate.Start();
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            tradingPoint.Shop.Name = form.Value;
+
+            //tradingPoint.Shop.Name = Interaction.InputBox("Введите новое название", "Редактирование магазина", tradingPoint.Shop.Name);
             if (tradingPoint.SetShopAtDB())
             { 
                 MessageBox.Show("Магазин успешно изменён", "Редактирование магазина", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1505,7 +1518,20 @@ namespace MusicShopDesktopApp
                 }
             }
 
-            tradingPoint.PounktOfIssue.Name = Interaction.InputBox("Введите новое название", "Редактирование пункта выдачи", tradingPoint.PounktOfIssue.Name);
+            FormNoteEdit form = new FormNoteEdit(tradingPoint.PounktOfIssue.Name);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if (!form.Save)
+            {
+
+                timerUpdate.Start();
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            tradingPoint.PounktOfIssue.Name = form.Value;
+
+            //tradingPoint.PounktOfIssue.Name = Interaction.InputBox("Введите новое название", "Редактирование пункта выдачи", tradingPoint.PounktOfIssue.Name);
             if (tradingPoint.SetPounktOfIssueAtDB())
             {
                 MessageBox.Show("Пункт выдачи успешно изменён", "Редактирование пункта выдачи", MessageBoxButtons.OK, MessageBoxIcon.Information);

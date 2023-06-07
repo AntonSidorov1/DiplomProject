@@ -40,6 +40,9 @@ namespace FileManegerJson
         public bool IsTraidingPoint => this is TraidingPointFile;
         public TraidingPointFile AsTraidingPoint => this as TraidingPointFile;
 
+        public bool IsStore => this is StoreFile;
+        public StoreFile AsStore => this as StoreFile;
+
         public override void FromFile(AbstractFileClass file)
         {
             base.FromFile(file);

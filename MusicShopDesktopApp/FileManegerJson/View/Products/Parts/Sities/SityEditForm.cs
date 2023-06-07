@@ -106,5 +106,17 @@ namespace FileManegerJson
         {
             textInputNewValue.Value = Value;
         }
+
+        private void buttonFewWindow_Click(object sender, EventArgs e)
+        {
+            SityEditForm form = new SityEditForm(textInputNewValue.Text);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if (form.Save)
+            {
+                textInputNewValue.Text = form.Value;
+            }
+        }
     }
 }

@@ -114,5 +114,18 @@ namespace FileManegerJson
         {
             textInputNewValue.VirtualKeyBord = (sender as CheckBox).Checked;
         }
+
+
+        private void buttonFewWindow_Click(object sender, EventArgs e)
+        {
+            FormNoteEdit form = new FormNoteEdit(textInputNewValue.Text);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if (form.Save)
+            {
+                textInputNewValue.Text = form.Value;
+            }
+        }
     }
 }

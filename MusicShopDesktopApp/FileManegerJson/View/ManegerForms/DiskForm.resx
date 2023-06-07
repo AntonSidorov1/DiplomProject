@@ -153,4 +153,7 @@
   <data name="OpenFolder.Filter" xml:space="preserve">
     <value>Json Catalog Files (*.jcat)|*.jcat|Json Disk Files (*.disk)|*.disk|Json Catalog disk Files (*.cdisk)|*.cdisk|Json Folder disk Files (*.fdisk)|*.fdisk|Json Json disk Files (*.jdisk)|*.jdisk|All Json disk Files (*.jcat;*.disk;*.cdisk;*.fdisk;*.jdisk)|*.jcat;*.disk;*.cdisk;*.fdisk;*.jdisk|All Files (*.*)|*.*</value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>71</value>
+  </metadata>
 </root>

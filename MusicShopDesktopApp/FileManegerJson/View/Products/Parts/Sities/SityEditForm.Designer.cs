@@ -41,6 +41,7 @@ namespace FileManegerJson
             this.buttonOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLogotip = new System.Windows.Forms.PictureBox();
+            this.buttonFewWindow = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -58,12 +59,13 @@ namespace FileManegerJson
             this.tableLayoutPanel1.Controls.Add(this.checkBoxKeyBord, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonBack, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSity, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSity, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.textInputNewValue, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonTexInput, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonCamcel, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonOK, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonFewWindow, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -127,11 +129,11 @@ namespace FileManegerJson
             // 
             // buttonSity
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.buttonSity, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonSity, 2);
             this.buttonSity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSity.Location = new System.Drawing.Point(179, 53);
+            this.buttonSity.Location = new System.Drawing.Point(355, 53);
             this.buttonSity.Name = "buttonSity";
-            this.buttonSity.Size = new System.Drawing.Size(522, 44);
+            this.buttonSity.Size = new System.Drawing.Size(346, 44);
             this.buttonSity.TabIndex = 2;
             this.buttonSity.Text = "задать/Установить/Сохранить";
             this.buttonSity.UseVisualStyleBackColor = true;
@@ -230,6 +232,17 @@ namespace FileManegerJson
             this.pictureBoxLogotip.TabIndex = 0;
             this.pictureBoxLogotip.TabStop = false;
             // 
+            // buttonFewWindow
+            // 
+            this.buttonFewWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonFewWindow.Location = new System.Drawing.Point(179, 53);
+            this.buttonFewWindow.Name = "buttonFewWindow";
+            this.buttonFewWindow.Size = new System.Drawing.Size(170, 44);
+            this.buttonFewWindow.TabIndex = 12;
+            this.buttonFewWindow.Text = "Отдельным окном";
+            this.buttonFewWindow.UseVisualStyleBackColor = true;
+            this.buttonFewWindow.Click += new System.EventHandler(this.buttonFewWindow_Click);
+            // 
             // SityEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -264,5 +277,6 @@ namespace FileManegerJson
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureBoxLogotip;
+        private System.Windows.Forms.Button buttonFewWindow;
     }
 }

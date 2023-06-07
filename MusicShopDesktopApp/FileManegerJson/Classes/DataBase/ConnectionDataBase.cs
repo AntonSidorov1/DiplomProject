@@ -72,12 +72,54 @@ namespace FileManegerJson
             get
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = DataSource;
-                builder.InitialCatalog = InitialCatalog;
-                builder.IntegratedSecurity = IntegratedSecurity;
-                builder.PersistSecurityInfo = PersistSecurityInfo;
-                builder.UserID = UserID;
-                builder.Password = Password;
+                try
+                {
+                    builder.DataSource = DataSource;
+                }
+                catch
+                {
+                    builder.DataSource = "";
+                }
+                try
+                {
+                    builder.InitialCatalog = InitialCatalog;
+                }
+                catch
+                {
+                    builder.InitialCatalog = "";
+                }
+                try
+                {
+                    builder.IntegratedSecurity = IntegratedSecurity;
+                }
+                catch
+                {
+                    builder.IntegratedSecurity = true;
+                }
+                try
+                {
+                    builder.PersistSecurityInfo = PersistSecurityInfo;
+                }
+                catch
+                {
+                    builder.PersistSecurityInfo = false;
+                }
+                try
+                {
+                    builder.UserID = UserID;
+                }
+                catch
+                {
+                    builder.UserID = "";
+                }
+                try
+                {
+                    builder.Password = Password;
+                }
+                catch
+                {
+                    builder.Password = "";
+                }
 
                 return builder.ConnectionString;
             }

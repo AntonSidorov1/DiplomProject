@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -600,6 +601,24 @@ namespace MusicShopDesktopApp
                     MessageBox.Show("Не удалось обновить логотип", "Обновление логотипа", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void linkLabelSite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+
+                Process.Start((sender as LinkLabel).Text);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void textInputSite_GetText(string text)
+        {
+            linkLabelSite.Text = text;
         }
     }
 }

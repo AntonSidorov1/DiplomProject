@@ -47,6 +47,7 @@ namespace MusicShopDesktopApp
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonSet = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.textInputName = new MusicShopDesktopApp.TextInput();
@@ -67,9 +68,9 @@ namespace MusicShopDesktopApp
             this.buttonImageChange = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonImageDrop = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.linkLabelSite = new System.Windows.Forms.LinkLabel();
             this.timerUpdateOrganization = new System.Windows.Forms.Timer(this.components);
             this.timerImage = new System.Windows.Forms.Timer(this.components);
-            this.buttonSet = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -264,6 +265,17 @@ namespace MusicShopDesktopApp
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // buttonSet
+            // 
+            this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSet.Location = new System.Drawing.Point(330, 3);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(365, 38);
+            this.buttonSet.TabIndex = 1;
+            this.buttonSet.Text = "Задать/Установить/Изменить";
+            this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -293,6 +305,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel4.Controls.Add(this.buttonPhoneSet, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.buttonEmailSet, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.groupBox1, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.linkLabelSite, 2, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -309,6 +322,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputName.GetTextProperty = null;
             this.textInputName.InputBackColor = System.Drawing.Color.White;
             this.textInputName.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputName.InputKeyPressToBox = null;
@@ -350,6 +364,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputAddress.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputAddress.GetTextProperty = null;
             this.textInputAddress.InputBackColor = System.Drawing.Color.White;
             this.textInputAddress.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputAddress.InputKeyPressToBox = null;
@@ -391,6 +406,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputSite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputSite.GetTextProperty = null;
             this.textInputSite.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputSite.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputSite.InputKeyPressToBox = null;
@@ -415,6 +431,7 @@ namespace MusicShopDesktopApp
             this.textInputSite.UseSystemPasswordChar = false;
             this.textInputSite.Value = "";
             this.textInputSite.InputText_Changed += new System.Action<object, System.EventArgs>(this.textInputSite_InputText_Changed);
+            this.textInputSite.GetText += new MusicShopDesktopApp.TextInput.GetTextControl(this.textInputSite_GetText);
             this.textInputSite.ReadOnlyChanged += new System.Action<object, System.EventArgs>(this.textInputSite_ReadOnlyChanged);
             // 
             // buttonSiteSet
@@ -432,6 +449,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputPhone.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputPhone.GetTextProperty = null;
             this.textInputPhone.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputPhone.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputPhone.InputKeyPressToBox = null;
@@ -462,6 +480,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputEmail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputEmail.GetTextProperty = null;
             this.textInputEmail.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputEmail.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputEmail.InputKeyPressToBox = null;
@@ -547,7 +566,7 @@ namespace MusicShopDesktopApp
             this.menuStripPhotoEdit.Location = new System.Drawing.Point(66, 150);
             this.menuStripPhotoEdit.Name = "menuStripPhotoEdit";
             this.menuStripPhotoEdit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStripPhotoEdit.Size = new System.Drawing.Size(150, 30);
+            this.menuStripPhotoEdit.Size = new System.Drawing.Size(150, 28);
             this.menuStripPhotoEdit.TabIndex = 2;
             this.menuStripPhotoEdit.Text = "menuStrip1";
             // 
@@ -558,7 +577,7 @@ namespace MusicShopDesktopApp
             this.buttonImageChange,
             this.buttonImageDrop});
             this.buttonImageEdit.Name = "buttonImageEdit";
-            this.buttonImageEdit.Size = new System.Drawing.Size(121, 26);
+            this.buttonImageEdit.Size = new System.Drawing.Size(121, 24);
             this.buttonImageEdit.Text = "Изображение";
             // 
             // buttonImageSet
@@ -595,6 +614,17 @@ namespace MusicShopDesktopApp
             this.pictureBoxImage.TabIndex = 0;
             this.pictureBoxImage.TabStop = false;
             // 
+            // linkLabelSite
+            // 
+            this.linkLabelSite.AutoSize = true;
+            this.linkLabelSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.linkLabelSite.Location = new System.Drawing.Point(591, 260);
+            this.linkLabelSite.Name = "linkLabelSite";
+            this.linkLabelSite.Size = new System.Drawing.Size(289, 93);
+            this.linkLabelSite.TabIndex = 9;
+            this.linkLabelSite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabelSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSite_LinkClicked);
+            // 
             // timerUpdateOrganization
             // 
             this.timerUpdateOrganization.Enabled = true;
@@ -605,17 +635,6 @@ namespace MusicShopDesktopApp
             // 
             this.timerImage.Enabled = true;
             this.timerImage.Tick += new System.EventHandler(this.timerImage_Tick);
-            // 
-            // buttonSet
-            // 
-            this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSet.Location = new System.Drawing.Point(330, 3);
-            this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(365, 38);
-            this.buttonSet.TabIndex = 1;
-            this.buttonSet.Text = "Задать/Установить/Изменить";
-            this.buttonSet.UseVisualStyleBackColor = true;
-            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
             // 
             // OrganizationsForm
             // 
@@ -646,6 +665,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -697,6 +717,7 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.ToolStripMenuItem buttonImageChange;
         private System.Windows.Forms.ToolStripMenuItem buttonImageDrop;
         private System.Windows.Forms.Button buttonSet;
+        private System.Windows.Forms.LinkLabel linkLabelSite;
     }
 }
 

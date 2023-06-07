@@ -438,6 +438,10 @@ namespace FileManegerJson
                     {
                         saveFile.Title = "Сохранение торговой точки";
                     }
+                    else if (file.IsStore)
+                    {
+                        saveFile.Title = "Сохранение торговой точки";
+                    }
 
 
                     if (saveFile.ShowDialog() == DialogResult.Cancel)
@@ -485,6 +489,12 @@ namespace FileManegerJson
                     else if (sender is PictureBoxTraidingPoint)
                     {
                         file.AsTraidingPoint.Content.SaveJson(saveFile.FileName);
+                    }
+
+                    else if (sender is PictureBoxStore)
+                    {
+                        file.AsStore.Content.SaveJson(saveFile.FileName);
+
                     }
 
                     MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -574,6 +584,7 @@ namespace FileManegerJson
             buttonSaveSity.Visible = file.IsSity;
             SaveOrganization.Visible = file.IsOrganizaion;
             buttonSaveTraidingPoint.Visible = file.IsTraidingPoint;
+            SaveStore.Visible = file.IsStore;
 
         }
 
@@ -695,6 +706,10 @@ namespace FileManegerJson
                 {
                     PB = new PictureBoxTraidingPoint();
                 }
+                else if (fileObject.IsStore)
+                {
+                    PB = new PictureBoxStore();
+                }
 
                 PB.Tag = folder[i].IndexText;
                 PB.Left = w;
@@ -749,6 +764,12 @@ namespace FileManegerJson
                     PictureBoxTraidingPoint file = PB as PictureBoxTraidingPoint;
                     file.TraidingPointFile = folder[i].AsTraidingPoint;
                     file.TraidingPointFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsStore)
+                {
+                    PictureBoxStore file = PB as PictureBoxStore;
+                    file.StoreFile = folder[i].AsStore;
+                    file.StoreFile.CopyFile = folder[i];
                 }
 
                 PB.BorderStyle = BorderStyle.Fixed3D;
@@ -1516,6 +1537,31 @@ namespace FileManegerJson
                             {
                                 note.Content = organization.CopyTraidingPoint();
                                 Folders[index].AsTraidingPoint.Content = note.Content.CopyTraidingPoint();
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        };
+                        Hide();
+
+                        form.ShowDialog();
+
+                        Show();
+                    }
+
+                    if (checkFile.IsStore)
+                    {
+                        StoreFile note = checkFile.AsStore;
+                        StorePointEditForm form = new StorePointEditForm(note.Content);
+                        form.ChangeOrganization += (organization) =>
+                        {
+
+                            int index = checkFile.TemporaryIndex;
+                            try
+                            {
+                                note.Content = organization.CopyStore();
+                                Folders[index].AsStore.Content = note.Content.CopyStore();
                             }
                             catch (Exception ex)
                             {
@@ -2430,7 +2476,7 @@ namespace FileManegerJson
 
         private void LoadDataBaseContent_Click(object sender, EventArgs e)
         {
-            FileClass folder = new NoteFile();
+            DataBaseFile folder = new DataBaseFile();
             OpenFiles.Filter = folder.TypesFileContentWithTxt;
 
             if (OpenFiles.ShowDialog() == DialogResult.OK)
@@ -2554,6 +2600,134 @@ namespace FileManegerJson
             FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsTraidingPoint;
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title = "Сохранение текста";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonStoreLoadContent_Click(object sender, EventArgs e)
+        {
+            FileClass folder = new StoreFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StoreFile image = new StoreFile
+                    {
+                        Name = OpenFiles.FileName,
+                        Content = (Store)FileClass.JsonRead(OpenFiles.FileName, typeof(Store))
+                    };
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonStoreLoadFile_Click(object sender, EventArgs e)
+        {
+            FileClass folder = new StoreFile();
+            OpenFiles.Filter = folder.AllTypesFile;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StoreFile image = StoreFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonStoreCreate_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new StoreFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void buttonSaveStoreContent_Click(object sender, EventArgs e)
+        {
+            StoreFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsStore;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение торговой точки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveStoreJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsStore;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение торговой точки";
             saveFile.FileName = textFile.Name;
             saveFile.Filter = textFile.TypesFileJsonWithTxt;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using FileManegerJson;
 
 namespace MusicShopDesktopApp
 {
@@ -1018,6 +1019,19 @@ namespace MusicShopDesktopApp
                 return point.DeletePounktOfIssueFromDB();
         }
 
+
+        public Store CopyStore()
+            => new Store()
+            {
+                Name = Name,
+                Address = Address,
+                Telephone = Contact.Telephone,
+                Email = Contact.Email,
+                Schedule = Schedule,
+                SitePath = SitePath,
+                Shop = Shop.Name,
+                PounktOfIssue = PounktOfIssue.Name
+            };
 
     }
 }

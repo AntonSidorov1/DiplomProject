@@ -627,5 +627,21 @@ namespace MusicShopDesktopApp
                 MessageBox.Show("Не удалось изменить пункт выдачи", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonByStore_Click(object sender, EventArgs e)
+        {
+            StorePointEditForm form = new StorePointEditForm(point.CopyStore());
+            form.ChangeName += SetName;
+            form.ChangeAddress += SetAddress;
+            form.ChangePhone += SetPhone;
+            form.ChangeEmail += SetEmail;
+            form.ChangeScedule += SetSchedule;
+            form.ChangeSitePath += SetSite;
+            form.ChangeShop += SetShop;
+            form.ChangePickupPoint += SetPickupPoint;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
     }
 }

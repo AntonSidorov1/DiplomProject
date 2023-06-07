@@ -218,6 +218,7 @@ namespace FileManegerJson
         public void ClearTexts() => Remove(f => f.IsText);
         public void ClearDataBase() => Remove(f => f.IsDataBase);
         public void ClearNotes() => Remove(f => f.IsNote);
+        public void ClearStores() => Remove(f => f.IsStore);
         public void ClearOrganizaions() => Remove(f => f.IsOrganizaion);
         public void ClearSities() => Remove(f => f.IsSity);
         public void ClearTraidingPoints() => Remove(f => f.IsTraidingPoint);
@@ -569,6 +570,40 @@ namespace FileManegerJson
                 try
                 {
                     ClearNotes();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
+        public StoreFile[] StoresArray
+        {
+            get => StoresList.ToArray();
+            set => StoresList = new List<StoreFile>(value);
+        }
+
+        public List<StoreFile> StoresList
+        {
+            get
+            {
+                List<StoreFile> folders = new List<StoreFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsStore);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsStore)
+                        folders.Add(folders1[i].AsStore);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearStores();
                     Add(value);
                 }
                 catch

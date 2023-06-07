@@ -108,6 +108,13 @@ namespace FileManegerJson
             return new DistributingPoint(this);
         }
 
+        public Store CopyStore()
+        {
+            return new Store(this);
+        }
+
+
+        public void LoadJson(string jsonFile) => SetParameter((ProductParameter)FileClass.JsonRead(jsonFile, GetType()));
 
     }
 }
