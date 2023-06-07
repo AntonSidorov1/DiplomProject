@@ -243,6 +243,7 @@ namespace MusicShopDesktopApp
                         values += ",@image";
                     }
                     command.CommandText = $"Insert Into [Organization]({columnName}) " +
+                        $"Output INSERTED.OrganizationID " +
                         $"Values({values})";
                     SqlParameterCollection parameters = command.Parameters;
                     parameters.AddWithValue("@name", organization.Name);
@@ -254,7 +255,16 @@ namespace MusicShopDesktopApp
                     {
                         parameters.AddWithValue("@image", organization.LogotipBytes);
                     }
-                    command.ExecuteNonQuery();
+
+                    try
+                    {
+                        organization.ID = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    catch (Exception e)
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
                 }
                 catch (Exception e)
                 {

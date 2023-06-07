@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using FileManegerJson;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,6 +169,8 @@ namespace MusicShopDesktopApp
             textInputSchedule.Text = point.Schedule;
             textInputSitePath.Text = point.SitePath;
             textInputTelephone.Text = point.Contact.Telephone;
+            textInputShop.Text = point.Shop.Name;
+            textInputPounktOfIssue.Text = point.PounktOfIssue.Name;
 
             textInputAddress.ReadOnly = true;
             textInputEmail.ReadOnly = true;
@@ -175,6 +178,8 @@ namespace MusicShopDesktopApp
             textInputSchedule.ReadOnly = true;
             textInputSitePath.ReadOnly = true;
             textInputTelephone.ReadOnly = true;
+            textInputShop.ReadOnly = true;
+            textInputPounktOfIssue.ReadOnly = true;
 
             return true;
         }
@@ -233,7 +238,10 @@ namespace MusicShopDesktopApp
             if (point.AddToDB())
             {
                 MessageBox.Show("Торговый пункт успешно добавлен", "Добавление торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                if (point.ID < 1)
+                    Close();
+                else
+                    timerUpdate_Tick(sender, e);
             }
             else
             {
@@ -241,13 +249,52 @@ namespace MusicShopDesktopApp
             }
         }
 
+        bool ChangeOrg(ref string data)
+        {
+            FormNoteEdit form = new FormNoteEdit(data);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if (form.Save)
+            {
+                data = form.Value;
+                return true;
+            }
+            return false;
+        }
+
         private void buttonNameSet_Click(object sender, EventArgs e)
         {
             if (!UpdateForm())
                 return;
             timerUpdate.Stop();
-            point.Name = Interaction.InputBox("Введите новое название", "Редактирование склада", point.Name);
+            //point.Name = Interaction.InputBox("Введите новое название", "Редактирование склада", point.Name);
 
+            string name = point.Name;
+
+            if(!ChangeOrg(ref name))
+            {
+                if(point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                        return;
+                }
+            }
+            SetName(name);
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+        void SetName(string name)
+        {
+            point.Name = name;
+            textInputName.Text = name;
+
+            if (point.ID < 1)
+                return;
             if (point.UpdateNameAtDB())
             {
                 MessageBox.Show("Название торгового пункта успешно изменено", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -256,10 +303,6 @@ namespace MusicShopDesktopApp
             {
                 MessageBox.Show("Не удалось изменить название торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
 
         private void buttonSchedule_Click(object sender, EventArgs e)
@@ -268,8 +311,32 @@ namespace MusicShopDesktopApp
                 return;
             timerUpdate.Stop();
 
-            point.Schedule = Interaction.InputBox("Введите новый режим работы", "Редактирование торгового пункта", point.Schedule);
 
+            string name = point.Address;
+
+            if (!ChangeOrg(ref name))
+            {
+                if (point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                    return;
+                }
+            }
+            SetSchedule(name);
+
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+        void SetSchedule(string schedule)
+        {
+            point.Schedule = schedule;
+            textInputSchedule.Text = schedule;
+            if (point.ID < 1)
+                return;
             if (point.UpdateScheduleAtDB())
             {
                 MessageBox.Show("Режим работы торгового пункта успешно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -278,10 +345,6 @@ namespace MusicShopDesktopApp
             {
                 MessageBox.Show("Не удалось изменить режим работы торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
 
         private void buttonPhone_Click(object sender, EventArgs e)
@@ -290,8 +353,31 @@ namespace MusicShopDesktopApp
                 return;
             timerUpdate.Stop();
 
-            point.Contact.Telephone = Interaction.InputBox("Введите новый телефон", "Редактирование торгового пункта", point.Contact.Telephone);
+            string name = point.Contact.Telephone;
 
+            if (!ChangeOrg(ref name))
+            {
+                if (point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                    return;
+                }
+            }
+            SetPhone(name);
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+
+        void SetPhone(string phone)
+        {
+            point.Contact.Telephone = phone;
+            textInputTelephone.Text = phone;
+            if (point.ID < 1)
+                return;
             if (point.UpdatePhoneAtDB())
             {
                 MessageBox.Show("Телефон торгового пункта успешно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -300,11 +386,8 @@ namespace MusicShopDesktopApp
             {
                 MessageBox.Show("Не удалось изменить телефон торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
+
 
         private void buttonAddress_Click(object sender, EventArgs e)
         {
@@ -312,8 +395,30 @@ namespace MusicShopDesktopApp
                 return;
             timerUpdate.Stop();
 
-            point.Address = Interaction.InputBox("Введите новый адрес", "Редактирование торгового пункта", point.Address);
+            string name = point.Address;
 
+            if (!ChangeOrg(ref name))
+            {
+                if (point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                    return;
+                }
+            }
+            SetAddress(name);
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+        void SetAddress(string address)
+        {
+            point.Address = address;
+            textInputAddress.Text = address;
+            if (point.ID < 1)
+                return;
             if (point.UpdateAddressAtDB())
             {
                 MessageBox.Show("Адрес торгового пункта успешно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -323,9 +428,6 @@ namespace MusicShopDesktopApp
                 MessageBox.Show("Не удалось изменить адрес торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
 
         private void buttonSite_Click(object sender, EventArgs e)
@@ -334,8 +436,30 @@ namespace MusicShopDesktopApp
                 return;
             timerUpdate.Stop();
 
-            point.SitePath = Interaction.InputBox("Введите новый путь на сайте", "Редактирование торгового пункта", point.SitePath);
+            string name = point.SitePath;
 
+            if (!ChangeOrg(ref name))
+            {
+                if (point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                    return;
+                }
+            }
+            SetSite(name);
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+        void SetSite(string site)
+        {
+            point.SitePath = site;
+            textInputSitePath.Text = site;
+            if (point.ID < 1)
+                return;
             if (point.UpdateSiteAtDB())
             {
                 MessageBox.Show("Сайт торгового пункта успешно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -345,9 +469,6 @@ namespace MusicShopDesktopApp
                 MessageBox.Show("Не удалось изменить сайт торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
 
         private void buttonEmail_Click(object sender, EventArgs e)
@@ -356,7 +477,30 @@ namespace MusicShopDesktopApp
                 return;
             timerUpdate.Stop();
 
-            point.Contact.Email = Interaction.InputBox("Введите новый E-mail", "Редактирование торгового пункта", point.Contact.Email);
+            string name = point.Contact.Email;
+
+            if (!ChangeOrg(ref name))
+            {
+                if (point.ID > 0)
+                {
+                    timerUpdate.Start();
+                    UpdateForm();
+                    return;
+                }
+            }
+            SetEmail(name);
+
+            timerUpdate.Start();
+            if (!UpdateForm())
+                return;
+        }
+
+        void SetEmail(string email)
+        {
+            point.Contact.Email = email;
+            textInputEmail.Text = email;
+            if (point.ID < 1)
+                return;
 
             if (point.UpdateEmailAtDB())
             {
@@ -367,9 +511,6 @@ namespace MusicShopDesktopApp
                 MessageBox.Show("Не удалось изменить E-mail торгового пункта", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            timerUpdate.Start();
-            if (!UpdateForm())
-                return;
         }
 
         private void textInputName_ReadOnlyChanged(object arg1, EventArgs arg2)
@@ -400,6 +541,91 @@ namespace MusicShopDesktopApp
         private void textInputEmail_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
             buttonEmail.Visible = textInputEmail.ReadOnly;
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(point.Data, "Торговый пункт", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void textInputShop_InputText_Changed(object arg1, EventArgs arg2)
+        {
+
+        }
+
+        private void textInputShop_GetText(string text)
+        {
+            point.Shop.UpdateData(text);
+        }
+
+        private void textInputPounktOfIssue_GetText(string text)
+        {
+            point.PounktOfIssue.UpdateData(text);
+        }
+
+        private void buttonShopSet_Click(object sender, EventArgs e)
+        {
+            if (!UpdateView())
+                return;
+            timerUpdate.Stop();
+            string shop = point.Shop.Name;
+            if(ChangeOrg(ref shop))
+            {
+                SetShop(shop);
+            }
+
+            if (!UpdateView())
+                return;
+        }
+
+        void SetShop(string shop)
+        {
+            textInputShop.Text = shop;
+            point.Shop.UpdateData(shop);
+            if (point.ID < 1)
+                return;
+
+            if(point.UpdateShopAtDB())
+            {
+                MessageBox.Show("Магазин успшно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Не удалось изменить магазин", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonPickupPointSet_Click(object sender, EventArgs e)
+        {
+            if (!UpdateView())
+                return;
+            timerUpdate.Stop();
+            string shop = point.PounktOfIssue.Name;
+            if (ChangeOrg(ref shop))
+            {
+                SetPickupPoint(shop);
+            }
+
+            if (!UpdateView())
+                return;
+        }
+
+        void SetPickupPoint(string pounktOfIssue)
+        {
+            textInputPounktOfIssue.Text = pounktOfIssue;
+            point.PounktOfIssue.UpdateData(pounktOfIssue);
+            if (point.ID < 1)
+                return;
+
+
+            if (point.UpdatePickupPointAtDB())
+            {
+                MessageBox.Show("Пункт выдачи успшно изменён", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Не удалось изменить пункт выдачи", "Редактирование торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

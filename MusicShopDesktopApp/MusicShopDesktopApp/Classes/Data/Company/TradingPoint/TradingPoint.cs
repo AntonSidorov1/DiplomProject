@@ -179,6 +179,13 @@ namespace MusicShopDesktopApp
             set => PounktOfIssue.Existence = value;
         }
 
+
+        public void UpdatePointData()
+        {
+            Shop.UpdateExience();
+            PounktOfIssue.UpdateExience();
+        }
+
         /// <summary>
         /// Установить магазин по ID из базы данных
         /// </summary>
@@ -452,6 +459,7 @@ namespace MusicShopDesktopApp
         public bool AddToDB() => AddToDB(this);
         public static bool AddToDB(TradingPoint shop)
         {
+            shop.UpdatePointData();
             TradingPoint stock = shop;
             try
             {
@@ -469,7 +477,8 @@ namespace MusicShopDesktopApp
                         $"[PounktStockID]," +
                         $"[PounktTelephone]," +
                         $"[PounktEmail]," +
-                        $"[SitePath])" +
+                        $"[SitePath]) " +
+                        $"Output INSERTED.PounktID " +
                         $" Values (@address, {stock.OrganizationID}, @name, @schedule, {stock.StockID}, @phone, @email, @site)";
                     SqlParameterCollection parameters = command.Parameters;
                     parameters.AddWithValue("@name", stock.Name);
@@ -478,7 +487,14 @@ namespace MusicShopDesktopApp
                     parameters.AddWithValue("@phone", stock.Contact.Telephone);
                     parameters.AddWithValue("@email", stock.Contact.Email);
                     parameters.AddWithValue("@site", stock.SitePath);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        stock.ID = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                    catch
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -489,6 +505,17 @@ namespace MusicShopDesktopApp
                 try
                 {
                     connection.Close();
+                }
+                catch
+                {
+
+                }
+
+                try
+                {
+
+                    stock.SetShopAtDB();
+                    stock.SetPounktOfIssueAtDB();
                 }
                 catch
                 {
@@ -774,7 +801,7 @@ namespace MusicShopDesktopApp
         public static bool SetShopAtDB(int id, string name)
         {
             
-            if (name.Length < 1)
+            if (name.Length < 1 || id < 1)
                 return false;
             try
             {
@@ -835,7 +862,7 @@ namespace MusicShopDesktopApp
         public static bool SetPounktOfIssueAtDB(int id, string name)
         {
 
-            if (name.Length < 1)
+            if (name.Length < 1 || id < 1)
                 return false;
             try
             {
@@ -928,6 +955,17 @@ namespace MusicShopDesktopApp
             }
         }
 
+        public bool UpdateShopAtDB() => UpdateShopAtDB(this);
+
+        public static bool UpdateShopAtDB(TradingPoint point)
+        {
+            point.UpdatePointData();
+            if (point.Shop.Existence)
+                return point.SetShopAtDB();
+            else
+                return point.DeleteShopFromDB();
+        }
+
         public bool DeletePounktOfIssueFromDB() => DeletePounktOfIssueFromDB(this);
         public static bool DeletePounktOfIssueFromDB(Part shop)
             => DeletePounktOfIssueFromDB(shop.ID);
@@ -968,6 +1006,17 @@ namespace MusicShopDesktopApp
             }
         }
 
+
+        public bool UpdatePickupPointAtDB() => UpdatePickupPointAtDB(this);
+
+        public static bool UpdatePickupPointAtDB(TradingPoint point)
+        {
+            point.UpdatePointData();
+            if (point.PounktOfIssue.Existence)
+                return point.SetPounktOfIssueAtDB();
+            else
+                return point.DeletePounktOfIssueFromDB();
+        }
 
 
     }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace MusicShopDesktopApp
 {
@@ -130,7 +129,17 @@ namespace MusicShopDesktopApp
 
         private void textBoxInput_TextChanged(object sender, EventArgs e)
         {
-            
+            GetText?.Invoke(Text);
+        }
+
+        public delegate void GetTextControl(string text);
+
+        public event GetTextControl GetText;
+
+        public GetTextControl GetTextProperty
+        {
+            get => GetText;
+            set => GetText = value;
         }
 
         private void groupBoxTitle_Enter(object sender, EventArgs e)

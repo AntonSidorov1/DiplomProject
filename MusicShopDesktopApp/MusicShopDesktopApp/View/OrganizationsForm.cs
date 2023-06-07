@@ -271,7 +271,10 @@ namespace MusicShopDesktopApp
             if (organization.AddToDB())
             {
                 MessageBox.Show("Организация успешно добавлена", "Добавление организации", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                if (organization.ID < 1)
+                    Close();
+                else
+                    timerUpdate_Tick(sender, e);
             }
             else
             {
