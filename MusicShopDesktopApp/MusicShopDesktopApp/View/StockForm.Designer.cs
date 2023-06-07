@@ -64,6 +64,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSitySet = new System.Windows.Forms.Button();
             this.buttonUpdateTextSity = new System.Windows.Forms.Button();
+            this.buttonAddSiy = new System.Windows.Forms.Button();
             this.comboBoxWithNameSities = new MusicShopDesktopApp.ComboBoxWithName();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSet = new System.Windows.Forms.Button();
@@ -72,7 +73,10 @@ namespace MusicShopDesktopApp
             this.timerSaveShow = new System.Windows.Forms.Timer(this.components);
             this.timerUpdateSity = new System.Windows.Forms.Timer(this.components);
             this.timerUpdateSities = new System.Windows.Forms.Timer(this.components);
-            this.buttonAddSiy = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.задатьИзмнитьУстановитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadByTraidingPoint = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadByStock = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -85,6 +89,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -246,6 +251,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.buttonSave, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.menuStrip1, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(192, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -562,7 +568,7 @@ namespace MusicShopDesktopApp
             this.buttonSitySet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSitySet.Location = new System.Drawing.Point(3, 3);
             this.buttonSitySet.Name = "buttonSitySet";
-            this.buttonSitySet.Size = new System.Drawing.Size(128, 28);
+            this.buttonSitySet.Size = new System.Drawing.Size(129, 28);
             this.buttonSitySet.TabIndex = 3;
             this.buttonSitySet.Text = "Задать";
             this.buttonSitySet.UseVisualStyleBackColor = true;
@@ -571,13 +577,24 @@ namespace MusicShopDesktopApp
             // buttonUpdateTextSity
             // 
             this.buttonUpdateTextSity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonUpdateTextSity.Location = new System.Drawing.Point(137, 3);
+            this.buttonUpdateTextSity.Location = new System.Drawing.Point(138, 3);
             this.buttonUpdateTextSity.Name = "buttonUpdateTextSity";
-            this.buttonUpdateTextSity.Size = new System.Drawing.Size(128, 28);
+            this.buttonUpdateTextSity.Size = new System.Drawing.Size(129, 28);
             this.buttonUpdateTextSity.TabIndex = 4;
             this.buttonUpdateTextSity.Text = "Установить";
             this.buttonUpdateTextSity.UseVisualStyleBackColor = true;
             this.buttonUpdateTextSity.Click += new System.EventHandler(this.buttonUpdateTextSity_Click);
+            // 
+            // buttonAddSiy
+            // 
+            this.buttonAddSiy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAddSiy.Location = new System.Drawing.Point(273, 3);
+            this.buttonAddSiy.Name = "buttonAddSiy";
+            this.buttonAddSiy.Size = new System.Drawing.Size(129, 28);
+            this.buttonAddSiy.TabIndex = 5;
+            this.buttonAddSiy.Text = "Добавить";
+            this.buttonAddSiy.UseVisualStyleBackColor = true;
+            this.buttonAddSiy.Click += new System.EventHandler(this.buttonAddSiy_Click);
             // 
             // comboBoxWithNameSities
             // 
@@ -662,16 +679,39 @@ namespace MusicShopDesktopApp
             this.timerUpdateSities.Interval = 30000;
             this.timerUpdateSities.Tick += new System.EventHandler(this.timerUpdateSities_Tick);
             // 
-            // buttonAddSiy
+            // menuStrip1
             // 
-            this.buttonAddSiy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddSiy.Location = new System.Drawing.Point(271, 3);
-            this.buttonAddSiy.Name = "buttonAddSiy";
-            this.buttonAddSiy.Size = new System.Drawing.Size(131, 28);
-            this.buttonAddSiy.TabIndex = 5;
-            this.buttonAddSiy.Text = "Добавить";
-            this.buttonAddSiy.UseVisualStyleBackColor = true;
-            this.buttonAddSiy.Click += new System.EventHandler(this.buttonAddSiy_Click);
+            this.menuStrip1.Font = new System.Drawing.Font("Lucida Console", 10.2F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.задатьИзмнитьУстановитьToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(423, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(423, 30);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // задатьИзмнитьУстановитьToolStripMenuItem
+            // 
+            this.задатьИзмнитьУстановитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LoadByTraidingPoint,
+            this.LoadByStock});
+            this.задатьИзмнитьУстановитьToolStripMenuItem.Name = "задатьИзмнитьУстановитьToolStripMenuItem";
+            this.задатьИзмнитьУстановитьToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.задатьИзмнитьУстановитьToolStripMenuItem.Text = "Задать/Измнить/Установить";
+            // 
+            // LoadByTraidingPoint
+            // 
+            this.LoadByTraidingPoint.Name = "LoadByTraidingPoint";
+            this.LoadByTraidingPoint.Size = new System.Drawing.Size(270, 26);
+            this.LoadByTraidingPoint.Text = "Как торговую точку";
+            this.LoadByTraidingPoint.Click += new System.EventHandler(this.LoadByTraidingPoint_Click);
+            // 
+            // LoadByStock
+            // 
+            this.LoadByStock.Name = "LoadByStock";
+            this.LoadByStock.Size = new System.Drawing.Size(270, 26);
+            this.LoadByStock.Text = "Как склад";
             // 
             // StockForm
             // 
@@ -684,6 +724,7 @@ namespace MusicShopDesktopApp
             this.Controls.Add(this.panelTitle);
             this.Font = new System.Drawing.Font("Lucida Console", 10.2F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(538, 544);
             this.Name = "StockForm";
@@ -700,12 +741,15 @@ namespace MusicShopDesktopApp
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -754,6 +798,10 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.Button buttonDropSity;
         private System.Windows.Forms.Timer timerUpdateSities;
         private System.Windows.Forms.Button buttonAddSiy;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem задатьИзмнитьУстановитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LoadByTraidingPoint;
+        private System.Windows.Forms.ToolStripMenuItem LoadByStock;
     }
 }
 

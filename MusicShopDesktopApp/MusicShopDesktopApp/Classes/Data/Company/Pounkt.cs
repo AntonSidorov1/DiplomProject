@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -82,5 +83,13 @@ namespace MusicShopDesktopApp
         public virtual string AddressData => Address;
 
         public string ItemData => $"«{Name}», «{AddressData}»";
+
+        public DistributingPoint CopyDistributingPoint() => new DistributingPoint
+        {
+            Name = Name,
+            Email = Contact.Email,
+            Telephone = Contact.Email,
+            Address = Address
+        };
     }
 }

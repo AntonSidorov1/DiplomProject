@@ -746,5 +746,18 @@ namespace MusicShopDesktopApp
 
             timerUpdateSities_Tick(sender, e);
         }
+
+        private void LoadByTraidingPoint_Click(object sender, EventArgs e)
+        {
+            TraidingPointEditForm editForm = new TraidingPointEditForm(stock.CopyDistributingPoint());
+            editForm.ChangeName += SetName;
+            editForm.ChangeAddress += SetAddress;
+            editForm.ChangePhone += SetPhone;
+            editForm.ChangeEmail += SetEmail;
+
+            Hide();
+            editForm.ShowDialog();
+            Show();
+        }
     }
 }

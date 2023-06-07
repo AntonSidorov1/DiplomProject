@@ -29,7 +29,6 @@ namespace MusicShopDesktopApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,8 +45,8 @@ namespace MusicShopDesktopApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.notifyIconApp = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.notifyIconApp = new System.Windows.Forms.NotifyIcon();
+            this.timerDateTime = new System.Windows.Forms.Timer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,7 +54,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanelRole = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxRoles = new System.Windows.Forms.ComboBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
             this.buttonStart = new System.Windows.Forms.ToolStripButton();
             this.buttonLast = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -164,7 +163,7 @@ namespace MusicShopDesktopApp
             this.labelAccountName = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.labelFIO = new System.Windows.Forms.Label();
-            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.timerUpdate = new System.Windows.Forms.Timer();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -428,7 +427,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel18.Controls.Add(this.groupBoxRoles, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 31);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -509,7 +508,7 @@ namespace MusicShopDesktopApp
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1031, 28);
+            this.bindingNavigator1.Size = new System.Drawing.Size(1031, 31);
             this.bindingNavigator1.TabIndex = 8;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -519,7 +518,7 @@ namespace MusicShopDesktopApp
             this.buttonStart.Image = ((System.Drawing.Image)(resources.GetObject("buttonStart.Image")));
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.RightToLeftAutoMirrorImage = true;
-            this.buttonStart.Size = new System.Drawing.Size(29, 25);
+            this.buttonStart.Size = new System.Drawing.Size(29, 28);
             this.buttonStart.Text = "Переместить в начало";
             this.buttonStart.ToolTipText = "Перейти в начало";
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
@@ -530,7 +529,7 @@ namespace MusicShopDesktopApp
             this.buttonLast.Image = ((System.Drawing.Image)(resources.GetObject("buttonLast.Image")));
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.RightToLeftAutoMirrorImage = true;
-            this.buttonLast.Size = new System.Drawing.Size(29, 25);
+            this.buttonLast.Size = new System.Drawing.Size(29, 28);
             this.buttonLast.Text = "Переместить назад";
             this.buttonLast.ToolTipText = "Перейти назад";
             this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
@@ -538,7 +537,7 @@ namespace MusicShopDesktopApp
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 28);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // textIndex
             // 
@@ -555,7 +554,7 @@ namespace MusicShopDesktopApp
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 28);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // buttonNext
             // 
@@ -563,7 +562,7 @@ namespace MusicShopDesktopApp
             this.buttonNext.Image = ((System.Drawing.Image)(resources.GetObject("buttonNext.Image")));
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.RightToLeftAutoMirrorImage = true;
-            this.buttonNext.Size = new System.Drawing.Size(29, 25);
+            this.buttonNext.Size = new System.Drawing.Size(29, 28);
             this.buttonNext.Text = "Переместить вперед";
             this.buttonNext.ToolTipText = "Перейти вперед";
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
@@ -574,7 +573,7 @@ namespace MusicShopDesktopApp
             this.buttonEnd.Image = ((System.Drawing.Image)(resources.GetObject("buttonEnd.Image")));
             this.buttonEnd.Name = "buttonEnd";
             this.buttonEnd.RightToLeftAutoMirrorImage = true;
-            this.buttonEnd.Size = new System.Drawing.Size(29, 25);
+            this.buttonEnd.Size = new System.Drawing.Size(29, 28);
             this.buttonEnd.Text = "Переместить в конец";
             this.buttonEnd.ToolTipText = "Перейти в конец";
             this.buttonEnd.Click += new System.EventHandler(this.buttonEnd_Click);
@@ -582,13 +581,13 @@ namespace MusicShopDesktopApp
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 28);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // comboBoxMain
             // 
             this.comboBoxMain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMain.Name = "comboBoxMain";
-            this.comboBoxMain.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxMain.Size = new System.Drawing.Size(121, 31);
             this.comboBoxMain.SelectedIndexChanged += new System.EventHandler(this.comboBoxMain_SelectedIndexChanged);
             // 
             // toolStripButton1
@@ -596,7 +595,7 @@ namespace MusicShopDesktopApp
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(252, 25);
+            this.toolStripButton1.Size = new System.Drawing.Size(252, 28);
             this.toolStripButton1.Text = "Фильтры в виде торговых пунктов";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -607,7 +606,7 @@ namespace MusicShopDesktopApp
             this.toolStripButtonPoint.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPoint.Image")));
             this.toolStripButtonPoint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonPoint.Name = "toolStripButtonPoint";
-            this.toolStripButtonPoint.Size = new System.Drawing.Size(202, 25);
+            this.toolStripButtonPoint.Size = new System.Drawing.Size(202, 28);
             this.toolStripButtonPoint.Text = "Данные о торговом пункте";
             this.toolStripButtonPoint.Click += new System.EventHandler(this.toolStripButtonPoint_Click);
             // 
@@ -1757,7 +1756,7 @@ namespace MusicShopDesktopApp
             this.menuStripSettings.Location = new System.Drawing.Point(813, 5);
             this.menuStripSettings.Margin = new System.Windows.Forms.Padding(5);
             this.menuStripSettings.Name = "menuStripSettings";
-            this.menuStripSettings.Size = new System.Drawing.Size(219, 25);
+            this.menuStripSettings.Size = new System.Drawing.Size(219, 30);
             this.menuStripSettings.TabIndex = 0;
             this.menuStripSettings.Text = "menuStrip1";
             // 
@@ -1768,7 +1767,7 @@ namespace MusicShopDesktopApp
             this.buttonUserMenagement,
             this.подключениеКБазеДанныхToolStripMenuItem});
             this.профильИНастройкиToolStripMenuItem.Name = "профильИНастройкиToolStripMenuItem";
-            this.профильИНастройкиToolStripMenuItem.Size = new System.Drawing.Size(212, 21);
+            this.профильИНастройкиToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.профильИНастройкиToolStripMenuItem.Text = "Аккаунт и настройки";
             // 
             // аккаунтToolStripMenuItem

@@ -351,7 +351,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(128, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(248, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(248, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -363,7 +363,7 @@
             this.вывестиНаОкноToolStripMenuItem});
             this.toolStripMenuItemFile.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
-            this.toolStripMenuItemFile.Size = new System.Drawing.Size(71, 24);
+            this.toolStripMenuItemFile.Size = new System.Drawing.Size(71, 26);
             this.toolStripMenuItemFile.Text = "Файл";
             this.toolStripMenuItemFile.DropDownOpening += new System.EventHandler(this.toolStripMenuItemDoingFile_Click);
             this.toolStripMenuItemFile.Click += new System.EventHandler(this.toolStripMenuItemDoingFile_Click);
@@ -395,6 +395,8 @@
             this.SaveOrganization,
             this.buttonSaveTraidingPoint});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
             this.contextMenuStrip1.Size = new System.Drawing.Size(583, 340);
             // 
             // buttonDropFile
@@ -649,7 +651,7 @@
             this.ToBynaryJson,
             this.TextJsonSave});
             this.toolStripMenuItemSave.Name = "toolStripMenuItemSave";
-            this.toolStripMenuItemSave.Size = new System.Drawing.Size(239, 24);
+            this.toolStripMenuItemSave.Size = new System.Drawing.Size(239, 26);
             this.toolStripMenuItemSave.Text = "Сохранить картинку";
             // 
             // SaveImage
@@ -1118,10 +1120,10 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.каталогToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 25);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 30);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(312, 25);
+            this.menuStrip2.Size = new System.Drawing.Size(312, 30);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -1132,7 +1134,7 @@
             this.вывестиИзФайлаToolStripMenuItem,
             this.добавитьВКаталогToolStripMenuItem});
             this.каталогToolStripMenuItem.Name = "каталогToolStripMenuItem";
-            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 21);
+            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 26);
             this.каталогToolStripMenuItem.Text = "Каталог (Добавления и вывод)";
             // 
             // SaveFolder
@@ -1424,7 +1426,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(312, 25);
+            this.menuStrip3.Size = new System.Drawing.Size(312, 30);
             this.menuStrip3.TabIndex = 1;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -1436,7 +1438,7 @@
             this.DropLink});
             this.связьСФайломкаталогомToolStripMenuItem.Font = new System.Drawing.Font("Lucida Console", 10F);
             this.связьСФайломкаталогомToolStripMenuItem.Name = "связьСФайломкаталогомToolStripMenuItem";
-            this.связьСФайломкаталогомToolStripMenuItem.Size = new System.Drawing.Size(162, 21);
+            this.связьСФайломкаталогомToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.связьСФайломкаталогомToolStripMenuItem.Text = "Связь с файлом";
             // 
             // CreateLink
