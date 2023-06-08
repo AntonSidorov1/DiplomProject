@@ -69,6 +69,13 @@ namespace MusicShopDesktopApp
             }
         }
 
+        public bool ContainsByIdInLower(Part part) => ContainsByIdInLower(part.Name);
+        public T GetByIdInLower(Part part) => GetByIdInLower(part.Name);
+        public int IndexByIdInLower(Part part) => IndexByIdInLower(part.Name);
+
+        public bool ContainsByIdInLower(string name) => GetAbstractThis().Any(p => p.EqualsNameInLower(name));
+        public T GetByIdInLower(string name) => GetAbstractThis().Find(p => p.EqualsNameInLower(name));
+        public int IndexByIdInLower(string name) => GetAbstractThis().FindIndex(p => p.EqualsNameInLower(name));
 
     }
 }

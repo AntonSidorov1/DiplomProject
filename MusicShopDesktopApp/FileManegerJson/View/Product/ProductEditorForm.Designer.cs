@@ -57,6 +57,9 @@ namespace FileManegerJson
             this.numericControlWithSetDiscount = new FileManegerJson.NumericControlWithSet();
             this.textInputEditDiscount = new FileManegerJson.TextInputEdit();
             this.textInputEditPriceWithDiscount = new FileManegerJson.TextInputEdit();
+            this.textBoxWihSetCategory = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetSupplier = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetManufacture = new FileManegerJson.TextBoxWihSet();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -66,15 +69,12 @@ namespace FileManegerJson
             this.checkBoxImage = new System.Windows.Forms.CheckBox();
             this.checkBoxPrice = new System.Windows.Forms.CheckBox();
             this.checkBoxDiscount = new System.Windows.Forms.CheckBox();
-            this.buttonAll = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxWihSetCategory = new FileManegerJson.TextBoxWihSet();
-            this.textBoxWihSetSupplier = new FileManegerJson.TextBoxWihSet();
-            this.textBoxWihSetManufacture = new FileManegerJson.TextBoxWihSet();
             this.checkBoxCategory = new System.Windows.Forms.CheckBox();
             this.checkBoxSupplier = new System.Windows.Forms.CheckBox();
             this.checkBoxManufacture = new System.Windows.Forms.CheckBox();
+            this.buttonAll = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -331,7 +331,7 @@ namespace FileManegerJson
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.Title = "Имя";
+            this.textBoxName.Title = "Название";
             this.textBoxName.UseSystemPasswordChar = false;
             this.textBoxName.Value = "";
             this.textBoxName.VirtualKeyBord = false;
@@ -623,6 +623,90 @@ namespace FileManegerJson
             this.textInputEditPriceWithDiscount.Value = "";
             this.textInputEditPriceWithDiscount.VirtualKeyBord = false;
             // 
+            // textBoxWihSetCategory
+            // 
+            this.textBoxWihSetCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetCategory.HaveKeyBord = false;
+            this.textBoxWihSetCategory.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetCategory.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetCategory.InputKeyPressToBox = null;
+            this.textBoxWihSetCategory.InputText = "";
+            this.textBoxWihSetCategory.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetCategory.Location = new System.Drawing.Point(4, 733);
+            this.textBoxWihSetCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetCategory.MaxLength = 32767;
+            this.textBoxWihSetCategory.MultiLine = false;
+            this.textBoxWihSetCategory.Name = "textBoxWihSetCategory";
+            this.textBoxWihSetCategory.NoReadOnly = true;
+            this.textBoxWihSetCategory.PasswordChar = '\0';
+            this.textBoxWihSetCategory.ReadOnly = false;
+            this.textBoxWihSetCategory.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetCategory.Size = new System.Drawing.Size(359, 144);
+            this.textBoxWihSetCategory.TabIndex = 8;
+            this.textBoxWihSetCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetCategory.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetCategory.Title = "Категория";
+            this.textBoxWihSetCategory.UseSystemPasswordChar = false;
+            this.textBoxWihSetCategory.Value = "";
+            this.textBoxWihSetCategory.VirtualKeyBord = false;
+            this.textBoxWihSetCategory.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetCategory_TextInputChanged);
+            // 
+            // textBoxWihSetSupplier
+            // 
+            this.textBoxWihSetSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetSupplier.HaveKeyBord = false;
+            this.textBoxWihSetSupplier.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetSupplier.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetSupplier.InputKeyPressToBox = null;
+            this.textBoxWihSetSupplier.InputText = "";
+            this.textBoxWihSetSupplier.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetSupplier.Location = new System.Drawing.Point(371, 733);
+            this.textBoxWihSetSupplier.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetSupplier.MaxLength = 32767;
+            this.textBoxWihSetSupplier.MultiLine = false;
+            this.textBoxWihSetSupplier.Name = "textBoxWihSetSupplier";
+            this.textBoxWihSetSupplier.NoReadOnly = true;
+            this.textBoxWihSetSupplier.PasswordChar = '\0';
+            this.textBoxWihSetSupplier.ReadOnly = false;
+            this.textBoxWihSetSupplier.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetSupplier.Size = new System.Drawing.Size(359, 144);
+            this.textBoxWihSetSupplier.TabIndex = 9;
+            this.textBoxWihSetSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetSupplier.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetSupplier.Title = "Поставщик";
+            this.textBoxWihSetSupplier.UseSystemPasswordChar = false;
+            this.textBoxWihSetSupplier.Value = "";
+            this.textBoxWihSetSupplier.VirtualKeyBord = false;
+            this.textBoxWihSetSupplier.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetSupplier_TextInputChanged);
+            // 
+            // textBoxWihSetManufacture
+            // 
+            this.textBoxWihSetManufacture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetManufacture.HaveKeyBord = false;
+            this.textBoxWihSetManufacture.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetManufacture.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetManufacture.InputKeyPressToBox = null;
+            this.textBoxWihSetManufacture.InputText = "";
+            this.textBoxWihSetManufacture.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetManufacture.Location = new System.Drawing.Point(4, 883);
+            this.textBoxWihSetManufacture.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetManufacture.MaxLength = 32767;
+            this.textBoxWihSetManufacture.MultiLine = false;
+            this.textBoxWihSetManufacture.Name = "textBoxWihSetManufacture";
+            this.textBoxWihSetManufacture.NoReadOnly = true;
+            this.textBoxWihSetManufacture.PasswordChar = '\0';
+            this.textBoxWihSetManufacture.ReadOnly = false;
+            this.textBoxWihSetManufacture.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetManufacture.Size = new System.Drawing.Size(359, 144);
+            this.textBoxWihSetManufacture.TabIndex = 10;
+            this.textBoxWihSetManufacture.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetManufacture.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetManufacture.Title = "Производитель";
+            this.textBoxWihSetManufacture.UseSystemPasswordChar = false;
+            this.textBoxWihSetManufacture.Value = "";
+            this.textBoxWihSetManufacture.VirtualKeyBord = false;
+            this.textBoxWihSetManufacture.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetManufacture_TextInputChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.AutoScroll = true;
@@ -737,6 +821,36 @@ namespace FileManegerJson
             this.checkBoxDiscount.Text = "Скидка";
             this.checkBoxDiscount.UseVisualStyleBackColor = true;
             // 
+            // checkBoxCategory
+            // 
+            this.checkBoxCategory.AutoSize = true;
+            this.checkBoxCategory.Location = new System.Drawing.Point(3, 165);
+            this.checkBoxCategory.Name = "checkBoxCategory";
+            this.checkBoxCategory.Size = new System.Drawing.Size(120, 21);
+            this.checkBoxCategory.TabIndex = 13;
+            this.checkBoxCategory.Text = "Категория";
+            this.checkBoxCategory.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSupplier
+            // 
+            this.checkBoxSupplier.AutoSize = true;
+            this.checkBoxSupplier.Location = new System.Drawing.Point(3, 192);
+            this.checkBoxSupplier.Name = "checkBoxSupplier";
+            this.checkBoxSupplier.Size = new System.Drawing.Size(120, 21);
+            this.checkBoxSupplier.TabIndex = 14;
+            this.checkBoxSupplier.Text = "Поставщик";
+            this.checkBoxSupplier.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxManufacture
+            // 
+            this.checkBoxManufacture.AutoSize = true;
+            this.checkBoxManufacture.Location = new System.Drawing.Point(3, 219);
+            this.checkBoxManufacture.Name = "checkBoxManufacture";
+            this.checkBoxManufacture.Size = new System.Drawing.Size(160, 21);
+            this.checkBoxManufacture.TabIndex = 15;
+            this.checkBoxManufacture.Text = "Пооизводитель";
+            this.checkBoxManufacture.UseVisualStyleBackColor = true;
+            // 
             // buttonAll
             // 
             this.buttonAll.Location = new System.Drawing.Point(3, 246);
@@ -767,120 +881,6 @@ namespace FileManegerJson
             this.label2.TabIndex = 2;
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // textBoxWihSetCategory
-            // 
-            this.textBoxWihSetCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetCategory.HaveKeyBord = false;
-            this.textBoxWihSetCategory.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetCategory.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetCategory.InputKeyPressToBox = null;
-            this.textBoxWihSetCategory.InputText = "";
-            this.textBoxWihSetCategory.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetCategory.Location = new System.Drawing.Point(4, 733);
-            this.textBoxWihSetCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetCategory.MaxLength = 32767;
-            this.textBoxWihSetCategory.MultiLine = false;
-            this.textBoxWihSetCategory.Name = "textBoxWihSetCategory";
-            this.textBoxWihSetCategory.NoReadOnly = true;
-            this.textBoxWihSetCategory.PasswordChar = '\0';
-            this.textBoxWihSetCategory.ReadOnly = false;
-            this.textBoxWihSetCategory.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetCategory.Size = new System.Drawing.Size(359, 144);
-            this.textBoxWihSetCategory.TabIndex = 8;
-            this.textBoxWihSetCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetCategory.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetCategory.Title = "Категория";
-            this.textBoxWihSetCategory.UseSystemPasswordChar = false;
-            this.textBoxWihSetCategory.Value = "";
-            this.textBoxWihSetCategory.VirtualKeyBord = false;
-            this.textBoxWihSetCategory.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetCategory_TextInputChanged);
-            // 
-            // textBoxWihSetSupplier
-            // 
-            this.textBoxWihSetSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetSupplier.HaveKeyBord = false;
-            this.textBoxWihSetSupplier.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetSupplier.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetSupplier.InputKeyPressToBox = null;
-            this.textBoxWihSetSupplier.InputText = "";
-            this.textBoxWihSetSupplier.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetSupplier.Location = new System.Drawing.Point(371, 733);
-            this.textBoxWihSetSupplier.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetSupplier.MaxLength = 32767;
-            this.textBoxWihSetSupplier.MultiLine = false;
-            this.textBoxWihSetSupplier.Name = "textBoxWihSetSupplier";
-            this.textBoxWihSetSupplier.NoReadOnly = true;
-            this.textBoxWihSetSupplier.PasswordChar = '\0';
-            this.textBoxWihSetSupplier.ReadOnly = false;
-            this.textBoxWihSetSupplier.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetSupplier.Size = new System.Drawing.Size(359, 144);
-            this.textBoxWihSetSupplier.TabIndex = 9;
-            this.textBoxWihSetSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetSupplier.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetSupplier.Title = "Поставщик";
-            this.textBoxWihSetSupplier.UseSystemPasswordChar = false;
-            this.textBoxWihSetSupplier.Value = "";
-            this.textBoxWihSetSupplier.VirtualKeyBord = false;
-            this.textBoxWihSetSupplier.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetSupplier_TextInputChanged);
-            // 
-            // textBoxWihSetManufacture
-            // 
-            this.textBoxWihSetManufacture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetManufacture.HaveKeyBord = false;
-            this.textBoxWihSetManufacture.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetManufacture.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetManufacture.InputKeyPressToBox = null;
-            this.textBoxWihSetManufacture.InputText = "";
-            this.textBoxWihSetManufacture.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetManufacture.Location = new System.Drawing.Point(4, 883);
-            this.textBoxWihSetManufacture.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetManufacture.MaxLength = 32767;
-            this.textBoxWihSetManufacture.MultiLine = false;
-            this.textBoxWihSetManufacture.Name = "textBoxWihSetManufacture";
-            this.textBoxWihSetManufacture.NoReadOnly = true;
-            this.textBoxWihSetManufacture.PasswordChar = '\0';
-            this.textBoxWihSetManufacture.ReadOnly = false;
-            this.textBoxWihSetManufacture.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetManufacture.Size = new System.Drawing.Size(359, 144);
-            this.textBoxWihSetManufacture.TabIndex = 10;
-            this.textBoxWihSetManufacture.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetManufacture.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetManufacture.Title = "Производитель";
-            this.textBoxWihSetManufacture.UseSystemPasswordChar = false;
-            this.textBoxWihSetManufacture.Value = "";
-            this.textBoxWihSetManufacture.VirtualKeyBord = false;
-            this.textBoxWihSetManufacture.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetManufacture_TextInputChanged);
-            // 
-            // checkBoxCategory
-            // 
-            this.checkBoxCategory.AutoSize = true;
-            this.checkBoxCategory.Location = new System.Drawing.Point(3, 165);
-            this.checkBoxCategory.Name = "checkBoxCategory";
-            this.checkBoxCategory.Size = new System.Drawing.Size(120, 21);
-            this.checkBoxCategory.TabIndex = 13;
-            this.checkBoxCategory.Text = "Категория";
-            this.checkBoxCategory.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxSupplier
-            // 
-            this.checkBoxSupplier.AutoSize = true;
-            this.checkBoxSupplier.Location = new System.Drawing.Point(3, 192);
-            this.checkBoxSupplier.Name = "checkBoxSupplier";
-            this.checkBoxSupplier.Size = new System.Drawing.Size(120, 21);
-            this.checkBoxSupplier.TabIndex = 14;
-            this.checkBoxSupplier.Text = "Поставщик";
-            this.checkBoxSupplier.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxManufacture
-            // 
-            this.checkBoxManufacture.AutoSize = true;
-            this.checkBoxManufacture.Location = new System.Drawing.Point(3, 219);
-            this.checkBoxManufacture.Name = "checkBoxManufacture";
-            this.checkBoxManufacture.Size = new System.Drawing.Size(160, 21);
-            this.checkBoxManufacture.TabIndex = 15;
-            this.checkBoxManufacture.Text = "Пооизводитель";
-            this.checkBoxManufacture.UseVisualStyleBackColor = true;
             // 
             // ProductEditorForm
             // 

@@ -474,6 +474,8 @@ namespace MusicShopDesktopApp
 
         public static bool AddToDB(Product product)
         {
+            if (product.Articul.Length < 1)
+                return false;
             try
             {
                 SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
@@ -1112,6 +1114,444 @@ namespace MusicShopDesktopApp
 
             return result;
         }
+
+
+        public ProductClass CopyEdit()
+        {
+            Product product = this;
+            return new ProductClass
+            {
+                Articul = product.Articul,
+                Name = product.Name,
+                Description = product.Description,
+                Photo = product.Photo,
+                Price = product.PriceWithOutDiscount,
+                Discount = product.Discount,
+                Category = product.Category.Name,
+                Manufacture = product.Manufacture.Name,
+                Supplier = product.Supplier.Name
+            };
+        }
+
+        public bool UpdateNameAtDB() => UpdateNameAtDB(this);
+        public static bool UpdateNameAtDB(Product product) => UpdateNameAtDB(product.ID, product.Name);
+
+        public static bool UpdateNameAtDB(int id, string name)
+        {
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductName]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateArticulAtDB() => UpdateArticulAtDB(this);
+        public static bool UpdateArticulAtDB(Product product) => UpdateArticulAtDB(product.ID, product.Articul);
+
+        public static bool UpdateArticulAtDB(int id, string name)
+        {
+            if (id < 1 || name.Length < 1)
+                return false;
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductArticle]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateDescriptionAtDB() => UpdateDescriptionAtDB(this);
+        public static bool UpdateDescriptionAtDB(Product product) => UpdateDescriptionAtDB(product.ID, product.Description);
+
+        public static bool UpdateDescriptionAtDB(int id, string name)
+        {
+            
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductDescription]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdatePriceAtDB() => UpdatePriceAtDB(this);
+        public static bool UpdatePriceAtDB(Product product) => UpdatePriceAtDB(product.ID, product.PriceWithOutDiscount);
+
+        public static bool UpdatePriceAtDB(int id, double price)
+        {
+            decimal name = Convert.ToDecimal(price);
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductCost]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateDiscountAtDB() => UpdateDiscountAtDB(this);
+        public static bool UpdateDiscountAtDB(Product product) => UpdateDiscountAtDB(product.ID, product.Discount);
+
+        public static bool UpdateDiscountAtDB(int id, int discount)
+        {
+            byte name = Convert.ToByte(discount);
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductDiscount]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateCategoryAtDB() => UpdateCategoryAtDB(this);
+        public static bool UpdateCategoryAtDB(Product product) => UpdateCategoryAtDB(product.ID, product.Category.ID);
+
+        public static bool UpdateCategoryAtDB(int id, int category)
+        {
+            int name = category;
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductCategoryID]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateSupplierAtDB() => UpdateSupplierAtDB(this);
+        public static bool UpdateSupplierAtDB(Product product) => UpdateSupplierAtDB(product.ID, product.Supplier.ID);
+
+        public static bool UpdateSupplierAtDB(int id, int category)
+        {
+            int name = category;
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductSupplierID]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateManufactureAtDB() => UpdateManufactureAtDB(this);
+        public static bool UpdateManufactureAtDB(Product product) => UpdateManufactureAtDB(product.ID, product.Supplier.ID);
+
+        public static bool UpdateManufactureAtDB(int id, int category)
+        {
+            int name = category;
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductManufactureID]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool SetPhotoAtDB() => SetPhotoAtDB(this);
+        public static bool SetPhotoAtDB(Product product) => SetPhotoAtDB(product.ID, product.BytesPhoto);
+
+        public static bool SetPhotoAtDB(int id, byte[] photo)
+        {
+            byte[] name = photo;
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductPhoto]=@name " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@name", name);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool DropPhotoAtDB() => DropPhotoAtDB(this);
+        public static bool DropPhotoAtDB(Product product) => DropPhotoAtDB(product.ID);
+
+        public static bool DropPhotoAtDB(int id)
+        {
+            
+            try
+            {
+                SqlConnection connection = DataBaseConfiguration.GetSqlConnection();
+                connection.Open();
+
+                try
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = $"Update [Product] Set [ProductPhoto]=null " +
+                        $"where [ProductID]={id}";
+                    command.Parameters.Clear();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    connection.Close();
+                    throw e;
+                }
+
+                try
+                {
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
     }
 }

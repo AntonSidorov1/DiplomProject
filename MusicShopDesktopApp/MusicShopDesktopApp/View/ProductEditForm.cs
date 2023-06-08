@@ -161,7 +161,7 @@ namespace MusicShopDesktopApp
         public new void Show()
         {
             base.Show();
-            if (!updatePart)
+            if (!updatePart && product.ID > 0)
             {
                 UpdateProduct();
                 timerUpdate.Start();
@@ -790,10 +790,11 @@ namespace MusicShopDesktopApp
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             menuStripDescription.Visible = updatePart && Helper.GetAccount().IsStockManager();
-            if (!updatePart)
+            if (!updatePart && product.ID > 0)
                 UpdateProduct();
             else
                 UpdateParts();
+            timerEditVieFewWindow_Tick(sender, e);
         }
 
         private void timerUpdate_Tick(object sender, EventArgs e)
@@ -1098,6 +1099,20 @@ namespace MusicShopDesktopApp
             textInputName_InputText_Changed(arg1, arg2);
         }
 
+        public Category GetCategory()
+        {
+            Category category = new Category();
+            try
+            {
+                category = categories.Get(comboBoxWithNameCategories.SelectedIndex);
+            }
+            catch
+            {
+
+            }
+            return category;
+        }
+
         private void comboBoxWithNameSupplier_SelectedIndexChanged(object arg1, EventArgs arg2)
         {
             Supplier supplier = new Supplier();
@@ -1115,6 +1130,20 @@ namespace MusicShopDesktopApp
             textInputName_InputText_Changed(arg1, arg2);
         }
 
+        public Supplier GetSupplier()
+        {
+            Supplier category = new Supplier();
+            try
+            {
+                category = suppliers.Get(comboBoxWithNameSupplier.SelectedIndex);
+            }
+            catch
+            {
+
+            }
+            return category;
+        }
+
         private void comboBoxManufacture_SelectedIndexChanged(object arg1, EventArgs arg2)
         {
             Manufacture manufacture = new Manufacture();
@@ -1130,6 +1159,20 @@ namespace MusicShopDesktopApp
             if (updatingPart)
                 product.Manufacture = manufacture;
             textInputName_InputText_Changed(arg1, arg2);
+        }
+
+        public Manufacture GetManufacture()
+        {
+            Manufacture category = new Manufacture();
+            try
+            {
+                category = manufactures.Get(comboBoxManufacture.SelectedIndex);
+            }
+            catch
+            {
+
+            }
+            return category;
         }
 
         private void textInputPriceWithOutDiscount_ValueChanged(object arg1, EventArgs arg2)
@@ -1185,6 +1228,13 @@ namespace MusicShopDesktopApp
             buttonCancel.Visible = true;
             buttonSave.Visible = true;
             SetReadOnly(false);
+
+            Text = text + $" {product.ID}";
+            labelTitle.Text = text + $" {product.ID}";
+            this.Text += " - " + Application.ProductName + " - " + Application.ProductVersion;
+
+
+            textInputArticul.NoReadOnly = product.ID < 1;
 
             try
             {
@@ -1612,6 +1662,368 @@ namespace MusicShopDesktopApp
         private void dropDescription_Click(object sender, EventArgs e)
         {
             textInputDescription.Text = "";
+        }
+
+        private void EditVieFewWindow_Click(object sender, EventArgs e)
+        {
+            product.Articul = textInputArticul.Text;
+            product.Name = textInputName.Text;
+            product.PriceWithOutDiscount = Convert.ToDouble(textInputPriceWithOutDiscount.Value);
+            product.Discount = Convert.ToInt32(textInputDiscount.Value);
+            product.Description = textInputDescription.Text;
+            product.Category = GetCategory();
+            product.Supplier = GetSupplier();
+            product.Manufacture = GetManufacture();
+
+            ProductEditorForm form = new ProductEditorForm(product.CopyEdit());
+
+            form.ChangeArticul += Form_ChangeArticul;
+            form.ChangeName += Form_ChangeName;
+            form.ChangeDescripion += Form_ChangeDescripion;
+            form.ChangePrice += Form_ChangePrice;
+            form.ChangeDiscount += Form_ChangeDiscount;
+            form.SetPhoto += Form_SetPhoto;
+            form.DropPhoto += Form_DropPhoto;
+            form.ChangeCategory += Form_ChangeCategory;
+            form.ChangeSupplier += Form_ChangeSupplier;
+            form.ChangeManufacture += Form_ChangeManufacture;
+
+            Hide();
+            form.ShowDialog();
+            Show();
+            timerEditVieFewWindow_Tick(sender, e);
+            buttonUpdate_Click(sender, e);
+        }
+
+        private void Form_ChangeManufacture(string paramter)
+        {
+            try
+            {
+                Manufacture category = new Manufacture() { Name = paramter };
+                ManufacturesList categories = ManufacturesList.GetListFromDB();
+                categories.RemoveAllByID(0);
+                if (!categories.ContainsByIdInLower(category))
+                {
+                    DialogResult result = MessageBox.Show("Введённого поставщика не существует. Вы хотите его добавить?", "Редактирование товара", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        throw new Exception();
+                    }
+                    if (!categories.AddToDB(category))
+                    {
+                        throw new Exception();
+                    }
+                    MessageBox.Show("Прозводителя успешно добавлен", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    categories.GetFromBD();
+                    comboBoxManufacture.Items.Clear();
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        comboBoxManufacture.Items.Add(categories[i].Name);
+                    }
+                    Form_ChangeManufacture(paramter);
+                    return;
+                }
+                product.Supplier = category;
+                comboBoxManufacture.SelectedIndex = categories.IndexByIdInLower(category);
+                category = categories.GetByIdInLower(category);
+                product.Supplier = category;
+                if (product.ID < 1 || updatePart)
+                {
+                    return;
+                }
+
+                if (!product.UpdateManufactureAtDB())
+                    throw new Exception();
+
+                MessageBox.Show("Прозводитель товара успешно изменён", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Не удалось изменить производителя товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form_ChangeSupplier(string paramter)
+        {
+            try
+            {
+                Supplier category = new Supplier() { Name = paramter };
+                SuppliersList categories = SuppliersList.GetListFromDB();
+                categories.RemoveAllByID(0);
+                if (!categories.ContainsByIdInLower(category))
+                {
+                    DialogResult result = MessageBox.Show("Введённого поставщика не существует. Вы хотите его добавить?", "Редактирование товара", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        throw new Exception();
+                    }
+                    if (!categories.AddToDB(category))
+                    {
+                        throw new Exception();
+                    }
+                    MessageBox.Show("Поставщик успешно добавлен", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    categories.GetFromBD();
+                    comboBoxWithNameSupplier.Items.Clear();
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        comboBoxWithNameSupplier.Items.Add(categories[i].Name);
+                    }
+                    Form_ChangeSupplier(paramter);
+                    return;
+                }
+                product.Supplier = category;
+                comboBoxWithNameSupplier.SelectedIndex = categories.IndexByIdInLower(category);
+                category = categories.GetByIdInLower(category);
+                product.Supplier = category;
+                if (product.ID < 1 || updatePart)
+                {
+                    return;
+                }
+
+                if (!product.UpdateSupplierAtDB())
+                    throw new Exception();
+
+                MessageBox.Show("Поставщик товара успешно изменён", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Не удалось изменить поставщика товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form_ChangeCategory(string paramter)
+        {
+            try
+            {
+                Category category = new Category() { Name = paramter };
+                CategoriesList categories = CategoriesList.GetListFromDB();
+                categories.RemoveAllByID(0);
+                if(!categories.ContainsByIdInLower(category))
+                {
+                    category.Filter.ID = 1;
+                    DialogResult result = MessageBox.Show("Введённой категории не существует. Вы хотите её добавить?", "Редактирование товара", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if(result == DialogResult.No)
+                    {
+                        throw new Exception();
+                    }
+                    if(!categories.AddCategoryToDB(category))
+                    {
+                        throw new Exception();
+                    }
+                    MessageBox.Show("Категория успешно добавлена", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    categories.GetFromBD();
+                    comboBoxWithNameCategories.Items.Clear();
+                    for (int i = 0; i < categories.Count; i++)
+                    {
+                        comboBoxWithNameCategories.Items.Add(categories[i].Name);
+                    }
+                    Form_ChangeCategory(paramter);
+                    return;
+                }
+                product.Category = category;
+                comboBoxWithNameCategories.SelectedIndex = categories.IndexByIdInLower(category);
+                category = categories.GetByIdInLower(category);
+                product.Category = category;
+                if (product.ID < 1 || updatePart)
+                {
+                    return;
+                }
+
+                if (!product.UpdateCategoryAtDB())
+                    throw new Exception();
+
+                MessageBox.Show("Категория товара успешно изменена", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Не удалось изменить категорию товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form_DropPhoto()
+        {
+            product.Photo = "";
+            if (product.ID > 0 && !updatePart)
+            {
+                if (product.DropPhotoAtDB())
+                {
+                    MessageBox.Show("Изображение товара успешно удалено", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось удалить изображение товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_SetPhoto(byte[] paramter)
+        {
+            product.BytesPhoto = paramter;
+            if(product.ID > 0 && !updatePart)
+            {
+                if (product.SetPhotoAtDB())
+                {
+                    MessageBox.Show("Изображение товара успешно изменено", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось изменить изображение товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_ChangeDiscount(int number)
+        {
+            product.Discount = number;
+            if (product.ID < 1 || updatePart)
+            {
+                textInputDiscount.Value = Convert.ToDecimal(product.Discount);
+            }
+            else
+            {
+
+                if (product.UpdateDiscountAtDB())
+                {
+                    MessageBox.Show("Скидка на товар успешно изменена", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось изменить скидку на товар", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_ChangePrice(double number)
+        {
+            product.PriceWithOutDiscount = number;
+            if (product.ID < 1 || updatePart)
+            {
+                textInputPriceWithOutDiscount.Value = Convert.ToDecimal(product.PriceWithOutDiscount);
+            }
+            else
+            {
+
+                if (product.UpdatePriceAtDB())
+                {
+                    MessageBox.Show("Цена товара успешно изменена", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось изменить цену товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_ChangeDescripion(string paramter)
+        {
+            product.Description = paramter;
+            if (product.ID < 1 || updatePart)
+            {
+                textInputDescription.Text = product.Description;
+            }
+            else
+            {
+
+                if (product.UpdateDescriptionAtDB())
+                {
+                    MessageBox.Show("Описание товара успешно изменено", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось изменить описание товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_ChangeName(string paramter)
+        {
+            product.Name = paramter;
+            if (product.ID < 1 || updatePart)
+            {
+                textInputName.Text = product.Name;
+            }
+            else
+            {
+
+                if (product.UpdateNameAtDB())
+                {
+                    MessageBox.Show("Название товара успешно изменено", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось изменить название товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Form_ChangeArticul(string paramter)
+        {
+            string articul = product.Articul;
+            product.Articul = paramter;
+            if (product.Articul.Trim() == articul)
+                return;
+            if(product.ID < 1)
+            {
+                textInputArticul.Text = product.Articul;
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Измнени артикля у товара может нарушить вывод информации о нём. \n " +
+                    "Вы хотите действительно изменить артикуль товара?", "редактирование товара", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
+                    result = MessageBox.Show("В избежании сбов работы системы, лучше артикуль не изменять, а добавить товар с новым артиклем. \n " +
+                    "Вы хотите хотите добавить товар вместо изменения его?", "редактирование товара", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if(result == DialogResult.Yes)
+                    {
+                        product.ID = 0;
+                        Form_ChangeArticul(paramter);
+                        return;
+                    }
+                    if(product.UpdateArticulAtDB())
+                    {
+                        MessageBox.Show("Артикуль товара успешно изменён", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось изменить артикуль товара", "Редактирование товара", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+        }
+
+        private void timerEditVieFewWindow_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (product.ID < 1)
+                {
+                    updatePart = true;
+                }
+            }
+            catch
+            {
+
+            }
+            AccountWithRoles account = Helper.GetAccount();
+            menuStripDescription.Visible = updatePart && account.IsStockManager();
+            menuStripEdit.Visible = account.IsStockManager();
+
+
+            try
+            {
+                pictureBoxImage.Image = product.Image;
+            }
+            catch
+            {
+                pictureBoxImage.Image = Properties.Resources.Logotip1;
+            }
+
         }
     }
 }

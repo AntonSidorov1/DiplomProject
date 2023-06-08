@@ -73,8 +73,8 @@ namespace FileManegerJson
         [DataMember]
         public double Price
         {
-            get => price;
-            set => price = value;
+            get => Math.Round(price, 2);
+            set => price = Math.Round(value, 2);
         }
 
         /// <summary>
@@ -91,8 +91,8 @@ namespace FileManegerJson
         /// </summary>
         public double DiscountSum
         {
-            get => Price * DiscountReal;
-            set => DiscountReal = value / Price;
+            get => Math.Round(Price * DiscountReal, 2);
+            set => DiscountReal = Math.Round(value / Price);
         }
 
         /// <summary>
@@ -100,8 +100,8 @@ namespace FileManegerJson
         /// </summary>
         public double PriceWithDiscount
         {
-            get => Price - DiscountSum;
-            set => Price = value + DiscountSum;
+            get => Math.Round(Price - DiscountSum, 2);
+            set => Price = Math.Round(value + DiscountSum, 2);
         }
 
         string articul = "";

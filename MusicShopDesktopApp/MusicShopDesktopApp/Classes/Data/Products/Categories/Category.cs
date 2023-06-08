@@ -69,5 +69,7 @@ namespace MusicShopDesktopApp
                 Filter = this.Filter,
                 RootCategoryID = this.RootCategoryID
             };
+
+
     }
 }

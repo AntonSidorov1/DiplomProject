@@ -282,7 +282,7 @@ namespace FileManegerJson
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.Title = "Имя";
+            this.textBoxName.Title = "Название";
             this.textBoxName.UseSystemPasswordChar = false;
             this.textBoxName.Value = "";
             this.textBoxName.VirtualKeyBord = false;

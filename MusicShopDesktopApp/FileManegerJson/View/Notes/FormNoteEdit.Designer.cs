@@ -117,7 +117,7 @@ namespace FileManegerJson
             this.textInputNewValue.TabIndex = 2;
             this.textInputNewValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputNewValue.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textInputNewValue.Title = "Ново значение";
+            this.textInputNewValue.Title = "Новое значение";
             this.textInputNewValue.UseSystemPasswordChar = false;
             this.textInputNewValue.Value = "";
             this.textInputNewValue.VirtualKeyBord = false;

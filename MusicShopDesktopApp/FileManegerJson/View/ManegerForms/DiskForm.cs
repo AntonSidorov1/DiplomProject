@@ -442,6 +442,10 @@ namespace FileManegerJson
                     {
                         saveFile.Title = "Сохранение торговой точки";
                     }
+                    else if (file.IsProduct)
+                    {
+                        saveFile.Title = "Сохранение товара";
+                    }
 
 
                     if (saveFile.ShowDialog() == DialogResult.Cancel)
@@ -494,6 +498,12 @@ namespace FileManegerJson
                     else if (sender is PictureBoxStore)
                     {
                         file.AsStore.Content.SaveJson(saveFile.FileName);
+
+                    }
+
+                    else if (sender is PictureBoxProduct)
+                    {
+                        file.AsProduct.Content.SaveJson(saveFile.FileName);
 
                     }
 
@@ -585,6 +595,7 @@ namespace FileManegerJson
             SaveOrganization.Visible = file.IsOrganizaion;
             buttonSaveTraidingPoint.Visible = file.IsTraidingPoint;
             SaveStore.Visible = file.IsStore;
+            buttonProductSave.Visible = file.IsProduct;
 
         }
 
@@ -2798,12 +2809,124 @@ namespace FileManegerJson
 
         private void butonLoadProductFromFile_Click(object sender, EventArgs e)
         {
+            FileClass folder = new ProductFile();
+            OpenFiles.Filter = folder.AllTypesFile;
 
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ProductFile image = ProductFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonProductFromFileByContent_Click(object sender, EventArgs e)
         {
+            FileClass folder = new ProductFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
 
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ProductFile image = new ProductFile
+                    {
+                        Name = OpenFiles.FileName,
+                        Content = (ProductClass)FileClass.JsonRead(OpenFiles.FileName, typeof(ProductClass))
+                    };
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveProductContent_Click(object sender, EventArgs e)
+        {
+            ProductFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsProduct;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение торговой точки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonProductSaveJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsProduct;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение торговой точки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void DropLink_Click(object sender, EventArgs e)

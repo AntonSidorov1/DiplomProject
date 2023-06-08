@@ -74,6 +74,9 @@
             this.SaveStore = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonProductSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveProductContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonProductSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,6 +180,7 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonClearFolder = new System.Windows.Forms.Button();
             this.folderButonUpdate = new FileManegerJson.FolderButon();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -405,10 +409,11 @@
             this.buttonSaveSity,
             this.SaveOrganization,
             this.buttonSaveTraidingPoint,
-            this.SaveStore});
+            this.SaveStore,
+            this.buttonProductSave});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.OwnerItem = this.toolStripMenuItemDoingFile;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 364);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 388);
             // 
             // buttonDropFile
             // 
@@ -643,6 +648,29 @@
             this.buttonSaveStoreJson.Size = new System.Drawing.Size(260, 26);
             this.buttonSaveStoreJson.Text = "Как Json";
             this.buttonSaveStoreJson.Click += new System.EventHandler(this.buttonSaveStoreJson_Click);
+            // 
+            // buttonProductSave
+            // 
+            this.buttonProductSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonSaveProductContent,
+            this.buttonProductSaveJson});
+            this.buttonProductSave.Name = "buttonProductSave";
+            this.buttonProductSave.Size = new System.Drawing.Size(582, 24);
+            this.buttonProductSave.Text = "Сохранить товар";
+            // 
+            // buttonSaveProductContent
+            // 
+            this.buttonSaveProductContent.Name = "buttonSaveProductContent";
+            this.buttonSaveProductContent.Size = new System.Drawing.Size(260, 26);
+            this.buttonSaveProductContent.Text = "Как содержимое";
+            this.buttonSaveProductContent.Click += new System.EventHandler(this.buttonSaveProductContent_Click);
+            // 
+            // buttonProductSaveJson
+            // 
+            this.buttonProductSaveJson.Name = "buttonProductSaveJson";
+            this.buttonProductSaveJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonProductSaveJson.Text = "Как json";
+            this.buttonProductSaveJson.Click += new System.EventHandler(this.buttonProductSaveJson_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -1676,12 +1704,24 @@
             this.folderButonUpdate.UpdaeFloder += new FileManegerJson.FolderButon.GetFolder(this.FromFolderClass);
             this.folderButonUpdate.Click += new System.EventHandler(this.folderButonUpdate_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 23);
+            this.button1.TabIndex = 165;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictireFile_MouseDown);
+            // 
             // DiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(1382, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.folderButonUpdate);
             this.Controls.Add(this.buttonClearFolder);
             this.Controls.Add(this.buttonUpdate);
@@ -1886,5 +1926,9 @@
         private System.Windows.Forms.ToolStripMenuItem buttonProductCreate;
         private System.Windows.Forms.ToolStripMenuItem butonLoadProductFromFile;
         private System.Windows.Forms.ToolStripMenuItem buttonProductFromFileByContent;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem buttonProductSave;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveProductContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonProductSaveJson;
     }
 }
