@@ -41,11 +41,16 @@ namespace FileManegerJson
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRunWindowEdit = new System.Windows.Forms.Button();
             this.buttonByManager = new System.Windows.Forms.Button();
+            this.VieFewWindow = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxName = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetAddress = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetPhone = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetEmail = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetShedule = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetSitePath = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetShop = new FileManegerJson.TextBoxWihSet();
+            this.textBoxWihSetPickupPoint = new FileManegerJson.TextBoxWihSet();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,18 +58,13 @@ namespace FileManegerJson
             this.checkBoxAddress = new System.Windows.Forms.CheckBox();
             this.checkBoxPhone = new System.Windows.Forms.CheckBox();
             this.checkBoxEmail = new System.Windows.Forms.CheckBox();
+            this.checkBoxShedule = new System.Windows.Forms.CheckBox();
+            this.checkBoxSitePath = new System.Windows.Forms.CheckBox();
+            this.checkBoxShop = new System.Windows.Forms.CheckBox();
+            this.checkBoxPickupPoint = new System.Windows.Forms.CheckBox();
             this.buttonAll = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.VieFewWindow = new System.Windows.Forms.Button();
-            this.textBoxWihSetShedule = new FileManegerJson.TextBoxWihSet();
-            this.checkBoxShedule = new System.Windows.Forms.CheckBox();
-            this.textBoxWihSetSitePath = new FileManegerJson.TextBoxWihSet();
-            this.checkBoxSitePath = new System.Windows.Forms.CheckBox();
-            this.textBoxWihSetShop = new FileManegerJson.TextBoxWihSet();
-            this.textBoxWihSetPickupPoint = new FileManegerJson.TextBoxWihSet();
-            this.checkBoxShop = new System.Windows.Forms.CheckBox();
-            this.checkBoxPickupPoint = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -251,6 +251,17 @@ namespace FileManegerJson
             this.buttonByManager.UseVisualStyleBackColor = true;
             this.buttonByManager.Click += new System.EventHandler(this.buttonByManager_Click);
             // 
+            // VieFewWindow
+            // 
+            this.VieFewWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VieFewWindow.Location = new System.Drawing.Point(3, 3);
+            this.VieFewWindow.Name = "VieFewWindow";
+            this.VieFewWindow.Size = new System.Drawing.Size(279, 36);
+            this.VieFewWindow.TabIndex = 2;
+            this.VieFewWindow.Text = "Через отдельное окно";
+            this.VieFewWindow.UseVisualStyleBackColor = true;
+            this.VieFewWindow.Click += new System.EventHandler(this.VieFewWindow_Click);
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 4;
@@ -384,6 +395,118 @@ namespace FileManegerJson
             this.textBoxWihSetEmail.VirtualKeyBord = false;
             this.textBoxWihSetEmail.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetEmail_TextInputChanged);
             // 
+            // textBoxWihSetShedule
+            // 
+            this.textBoxWihSetShedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetShedule.HaveKeyBord = false;
+            this.textBoxWihSetShedule.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetShedule.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetShedule.InputKeyPressToBox = null;
+            this.textBoxWihSetShedule.InputText = "";
+            this.textBoxWihSetShedule.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetShedule.Location = new System.Drawing.Point(434, 3);
+            this.textBoxWihSetShedule.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetShedule.MaxLength = 32767;
+            this.textBoxWihSetShedule.MultiLine = false;
+            this.textBoxWihSetShedule.Name = "textBoxWihSetShedule";
+            this.textBoxWihSetShedule.NoReadOnly = true;
+            this.textBoxWihSetShedule.PasswordChar = '\0';
+            this.textBoxWihSetShedule.ReadOnly = false;
+            this.textBoxWihSetShedule.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetShedule.Size = new System.Drawing.Size(207, 154);
+            this.textBoxWihSetShedule.TabIndex = 5;
+            this.textBoxWihSetShedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetShedule.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetShedule.Title = "Режим работы";
+            this.textBoxWihSetShedule.UseSystemPasswordChar = false;
+            this.textBoxWihSetShedule.Value = "";
+            this.textBoxWihSetShedule.VirtualKeyBord = false;
+            this.textBoxWihSetShedule.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetShedule_TextInputChanged);
+            // 
+            // textBoxWihSetSitePath
+            // 
+            this.textBoxWihSetSitePath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetSitePath.HaveKeyBord = false;
+            this.textBoxWihSetSitePath.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetSitePath.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetSitePath.InputKeyPressToBox = null;
+            this.textBoxWihSetSitePath.InputText = "";
+            this.textBoxWihSetSitePath.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetSitePath.Location = new System.Drawing.Point(434, 163);
+            this.textBoxWihSetSitePath.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetSitePath.MaxLength = 32767;
+            this.textBoxWihSetSitePath.MultiLine = false;
+            this.textBoxWihSetSitePath.Name = "textBoxWihSetSitePath";
+            this.textBoxWihSetSitePath.NoReadOnly = true;
+            this.textBoxWihSetSitePath.PasswordChar = '\0';
+            this.textBoxWihSetSitePath.ReadOnly = false;
+            this.textBoxWihSetSitePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetSitePath.Size = new System.Drawing.Size(207, 155);
+            this.textBoxWihSetSitePath.TabIndex = 6;
+            this.textBoxWihSetSitePath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetSitePath.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetSitePath.Title = "Путь на сайте ";
+            this.textBoxWihSetSitePath.UseSystemPasswordChar = false;
+            this.textBoxWihSetSitePath.Value = "";
+            this.textBoxWihSetSitePath.VirtualKeyBord = false;
+            this.textBoxWihSetSitePath.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetSitePath_TextInputChanged);
+            // 
+            // textBoxWihSetShop
+            // 
+            this.textBoxWihSetShop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetShop.HaveKeyBord = false;
+            this.textBoxWihSetShop.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetShop.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetShop.InputKeyPressToBox = null;
+            this.textBoxWihSetShop.InputText = "";
+            this.textBoxWihSetShop.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetShop.Location = new System.Drawing.Point(649, 3);
+            this.textBoxWihSetShop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetShop.MaxLength = 32767;
+            this.textBoxWihSetShop.MultiLine = false;
+            this.textBoxWihSetShop.Name = "textBoxWihSetShop";
+            this.textBoxWihSetShop.NoReadOnly = true;
+            this.textBoxWihSetShop.PasswordChar = '\0';
+            this.textBoxWihSetShop.ReadOnly = false;
+            this.textBoxWihSetShop.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetShop.Size = new System.Drawing.Size(210, 154);
+            this.textBoxWihSetShop.TabIndex = 7;
+            this.textBoxWihSetShop.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetShop.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetShop.Title = "Магазин";
+            this.textBoxWihSetShop.UseSystemPasswordChar = false;
+            this.textBoxWihSetShop.Value = "";
+            this.textBoxWihSetShop.VirtualKeyBord = false;
+            this.textBoxWihSetShop.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetShop_TextInputChanged);
+            // 
+            // textBoxWihSetPickupPoint
+            // 
+            this.textBoxWihSetPickupPoint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWihSetPickupPoint.HaveKeyBord = false;
+            this.textBoxWihSetPickupPoint.InputBackColor = System.Drawing.Color.White;
+            this.textBoxWihSetPickupPoint.InputForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBoxWihSetPickupPoint.InputKeyPressToBox = null;
+            this.textBoxWihSetPickupPoint.InputText = "";
+            this.textBoxWihSetPickupPoint.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetPickupPoint.Location = new System.Drawing.Point(649, 163);
+            this.textBoxWihSetPickupPoint.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBoxWihSetPickupPoint.MaxLength = 32767;
+            this.textBoxWihSetPickupPoint.MultiLine = false;
+            this.textBoxWihSetPickupPoint.Name = "textBoxWihSetPickupPoint";
+            this.textBoxWihSetPickupPoint.NoReadOnly = true;
+            this.textBoxWihSetPickupPoint.PasswordChar = '\0';
+            this.textBoxWihSetPickupPoint.ReadOnly = false;
+            this.textBoxWihSetPickupPoint.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetPickupPoint.Size = new System.Drawing.Size(210, 155);
+            this.textBoxWihSetPickupPoint.TabIndex = 8;
+            this.textBoxWihSetPickupPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxWihSetPickupPoint.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxWihSetPickupPoint.Title = "ПунктВыдачи";
+            this.textBoxWihSetPickupPoint.UseSystemPasswordChar = false;
+            this.textBoxWihSetPickupPoint.Value = "";
+            this.textBoxWihSetPickupPoint.VirtualKeyBord = false;
+            this.textBoxWihSetPickupPoint.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetPickupPoint_TextInputChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -415,6 +538,7 @@ namespace FileManegerJson
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Controls.Add(this.checkBoxName);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxAddress);
@@ -475,6 +599,46 @@ namespace FileManegerJson
             this.checkBoxEmail.Text = "E-mail";
             this.checkBoxEmail.UseVisualStyleBackColor = true;
             // 
+            // checkBoxShedule
+            // 
+            this.checkBoxShedule.AutoSize = true;
+            this.checkBoxShedule.Location = new System.Drawing.Point(3, 111);
+            this.checkBoxShedule.Name = "checkBoxShedule";
+            this.checkBoxShedule.Size = new System.Drawing.Size(150, 21);
+            this.checkBoxShedule.TabIndex = 8;
+            this.checkBoxShedule.Text = "Режим работы";
+            this.checkBoxShedule.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSitePath
+            // 
+            this.checkBoxSitePath.AutoSize = true;
+            this.checkBoxSitePath.Location = new System.Drawing.Point(3, 138);
+            this.checkBoxSitePath.Name = "checkBoxSitePath";
+            this.checkBoxSitePath.Size = new System.Drawing.Size(160, 21);
+            this.checkBoxSitePath.TabIndex = 9;
+            this.checkBoxSitePath.Text = "Путь на сайте";
+            this.checkBoxSitePath.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShop
+            // 
+            this.checkBoxShop.AutoSize = true;
+            this.checkBoxShop.Location = new System.Drawing.Point(3, 165);
+            this.checkBoxShop.Name = "checkBoxShop";
+            this.checkBoxShop.Size = new System.Drawing.Size(100, 21);
+            this.checkBoxShop.TabIndex = 10;
+            this.checkBoxShop.Text = "Магазин";
+            this.checkBoxShop.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPickupPoint
+            // 
+            this.checkBoxPickupPoint.AutoSize = true;
+            this.checkBoxPickupPoint.Location = new System.Drawing.Point(3, 192);
+            this.checkBoxPickupPoint.Name = "checkBoxPickupPoint";
+            this.checkBoxPickupPoint.Size = new System.Drawing.Size(150, 21);
+            this.checkBoxPickupPoint.TabIndex = 11;
+            this.checkBoxPickupPoint.Text = "Пункт выдачи";
+            this.checkBoxPickupPoint.UseVisualStyleBackColor = true;
+            // 
             // buttonAll
             // 
             this.buttonAll.Location = new System.Drawing.Point(3, 219);
@@ -505,169 +669,6 @@ namespace FileManegerJson
             this.label2.TabIndex = 2;
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // VieFewWindow
-            // 
-            this.VieFewWindow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VieFewWindow.Location = new System.Drawing.Point(3, 3);
-            this.VieFewWindow.Name = "VieFewWindow";
-            this.VieFewWindow.Size = new System.Drawing.Size(279, 36);
-            this.VieFewWindow.TabIndex = 2;
-            this.VieFewWindow.Text = "Через отдельное окно";
-            this.VieFewWindow.UseVisualStyleBackColor = true;
-            this.VieFewWindow.Click += new System.EventHandler(this.VieFewWindow_Click);
-            // 
-            // textBoxWihSetShedule
-            // 
-            this.textBoxWihSetShedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetShedule.HaveKeyBord = false;
-            this.textBoxWihSetShedule.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetShedule.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetShedule.InputKeyPressToBox = null;
-            this.textBoxWihSetShedule.InputText = "";
-            this.textBoxWihSetShedule.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetShedule.Location = new System.Drawing.Point(434, 3);
-            this.textBoxWihSetShedule.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetShedule.MaxLength = 32767;
-            this.textBoxWihSetShedule.MultiLine = false;
-            this.textBoxWihSetShedule.Name = "textBoxWihSetShedule";
-            this.textBoxWihSetShedule.NoReadOnly = true;
-            this.textBoxWihSetShedule.PasswordChar = '\0';
-            this.textBoxWihSetShedule.ReadOnly = false;
-            this.textBoxWihSetShedule.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetShedule.Size = new System.Drawing.Size(207, 154);
-            this.textBoxWihSetShedule.TabIndex = 5;
-            this.textBoxWihSetShedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetShedule.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetShedule.Title = "Режим работы";
-            this.textBoxWihSetShedule.UseSystemPasswordChar = false;
-            this.textBoxWihSetShedule.Value = "";
-            this.textBoxWihSetShedule.VirtualKeyBord = false;
-            this.textBoxWihSetShedule.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetShedule_TextInputChanged);
-            // 
-            // checkBoxShedule
-            // 
-            this.checkBoxShedule.AutoSize = true;
-            this.checkBoxShedule.Location = new System.Drawing.Point(3, 111);
-            this.checkBoxShedule.Name = "checkBoxShedule";
-            this.checkBoxShedule.Size = new System.Drawing.Size(150, 21);
-            this.checkBoxShedule.TabIndex = 8;
-            this.checkBoxShedule.Text = "Режим работы";
-            this.checkBoxShedule.UseVisualStyleBackColor = true;
-            // 
-            // textBoxWihSetSitePath
-            // 
-            this.textBoxWihSetSitePath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetSitePath.HaveKeyBord = false;
-            this.textBoxWihSetSitePath.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetSitePath.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetSitePath.InputKeyPressToBox = null;
-            this.textBoxWihSetSitePath.InputText = "";
-            this.textBoxWihSetSitePath.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetSitePath.Location = new System.Drawing.Point(434, 163);
-            this.textBoxWihSetSitePath.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetSitePath.MaxLength = 32767;
-            this.textBoxWihSetSitePath.MultiLine = false;
-            this.textBoxWihSetSitePath.Name = "textBoxWihSetSitePath";
-            this.textBoxWihSetSitePath.NoReadOnly = true;
-            this.textBoxWihSetSitePath.PasswordChar = '\0';
-            this.textBoxWihSetSitePath.ReadOnly = false;
-            this.textBoxWihSetSitePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetSitePath.Size = new System.Drawing.Size(207, 155);
-            this.textBoxWihSetSitePath.TabIndex = 6;
-            this.textBoxWihSetSitePath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetSitePath.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetSitePath.Title = "Путь на сайте ";
-            this.textBoxWihSetSitePath.UseSystemPasswordChar = false;
-            this.textBoxWihSetSitePath.Value = "";
-            this.textBoxWihSetSitePath.VirtualKeyBord = false;
-            this.textBoxWihSetSitePath.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetSitePath_TextInputChanged);
-            // 
-            // checkBoxSitePath
-            // 
-            this.checkBoxSitePath.AutoSize = true;
-            this.checkBoxSitePath.Location = new System.Drawing.Point(3, 138);
-            this.checkBoxSitePath.Name = "checkBoxSitePath";
-            this.checkBoxSitePath.Size = new System.Drawing.Size(160, 21);
-            this.checkBoxSitePath.TabIndex = 9;
-            this.checkBoxSitePath.Text = "Путь на сайте";
-            this.checkBoxSitePath.UseVisualStyleBackColor = true;
-            // 
-            // textBoxWihSetShop
-            // 
-            this.textBoxWihSetShop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetShop.HaveKeyBord = false;
-            this.textBoxWihSetShop.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetShop.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetShop.InputKeyPressToBox = null;
-            this.textBoxWihSetShop.InputText = "";
-            this.textBoxWihSetShop.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetShop.Location = new System.Drawing.Point(649, 3);
-            this.textBoxWihSetShop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetShop.MaxLength = 32767;
-            this.textBoxWihSetShop.MultiLine = false;
-            this.textBoxWihSetShop.Name = "textBoxWihSetShop";
-            this.textBoxWihSetShop.NoReadOnly = true;
-            this.textBoxWihSetShop.PasswordChar = '\0';
-            this.textBoxWihSetShop.ReadOnly = false;
-            this.textBoxWihSetShop.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetShop.Size = new System.Drawing.Size(210, 154);
-            this.textBoxWihSetShop.TabIndex = 7;
-            this.textBoxWihSetShop.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetShop.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetShop.Title = "Магазин";
-            this.textBoxWihSetShop.UseSystemPasswordChar = false;
-            this.textBoxWihSetShop.Value = "";
-            this.textBoxWihSetShop.VirtualKeyBord = false;
-            this.textBoxWihSetShop.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetShop_TextInputChanged);
-            // 
-            // textBoxWihSetPickupPoint
-            // 
-            this.textBoxWihSetPickupPoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWihSetPickupPoint.HaveKeyBord = false;
-            this.textBoxWihSetPickupPoint.InputBackColor = System.Drawing.Color.White;
-            this.textBoxWihSetPickupPoint.InputForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBoxWihSetPickupPoint.InputKeyPressToBox = null;
-            this.textBoxWihSetPickupPoint.InputText = "";
-            this.textBoxWihSetPickupPoint.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetPickupPoint.Location = new System.Drawing.Point(649, 163);
-            this.textBoxWihSetPickupPoint.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxWihSetPickupPoint.MaxLength = 32767;
-            this.textBoxWihSetPickupPoint.MultiLine = false;
-            this.textBoxWihSetPickupPoint.Name = "textBoxWihSetPickupPoint";
-            this.textBoxWihSetPickupPoint.NoReadOnly = true;
-            this.textBoxWihSetPickupPoint.PasswordChar = '\0';
-            this.textBoxWihSetPickupPoint.ReadOnly = false;
-            this.textBoxWihSetPickupPoint.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetPickupPoint.Size = new System.Drawing.Size(210, 155);
-            this.textBoxWihSetPickupPoint.TabIndex = 8;
-            this.textBoxWihSetPickupPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxWihSetPickupPoint.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetPickupPoint.Title = "ПунктВыдачи";
-            this.textBoxWihSetPickupPoint.UseSystemPasswordChar = false;
-            this.textBoxWihSetPickupPoint.Value = "";
-            this.textBoxWihSetPickupPoint.VirtualKeyBord = false;
-            this.textBoxWihSetPickupPoint.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetPickupPoint_TextInputChanged);
-            // 
-            // checkBoxShop
-            // 
-            this.checkBoxShop.AutoSize = true;
-            this.checkBoxShop.Location = new System.Drawing.Point(3, 165);
-            this.checkBoxShop.Name = "checkBoxShop";
-            this.checkBoxShop.Size = new System.Drawing.Size(100, 21);
-            this.checkBoxShop.TabIndex = 10;
-            this.checkBoxShop.Text = "Магазин";
-            this.checkBoxShop.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPickupPoint
-            // 
-            this.checkBoxPickupPoint.AutoSize = true;
-            this.checkBoxPickupPoint.Location = new System.Drawing.Point(3, 192);
-            this.checkBoxPickupPoint.Name = "checkBoxPickupPoint";
-            this.checkBoxPickupPoint.Size = new System.Drawing.Size(150, 21);
-            this.checkBoxPickupPoint.TabIndex = 11;
-            this.checkBoxPickupPoint.Text = "Пункт выдачи";
-            this.checkBoxPickupPoint.UseVisualStyleBackColor = true;
             // 
             // StorePointEditForm
             // 

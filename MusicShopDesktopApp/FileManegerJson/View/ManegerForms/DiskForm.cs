@@ -710,6 +710,10 @@ namespace FileManegerJson
                 {
                     PB = new PictureBoxStore();
                 }
+                else if (fileObject.IsProduct)
+                {
+                    PB = new PictureBoxProduct();
+                }
 
                 PB.Tag = folder[i].IndexText;
                 PB.Left = w;
@@ -770,6 +774,12 @@ namespace FileManegerJson
                     PictureBoxStore file = PB as PictureBoxStore;
                     file.StoreFile = folder[i].AsStore;
                     file.StoreFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsProduct)
+                {
+                    PictureBoxProduct file = PB as PictureBoxProduct;
+                    file.ProductFile = folder[i].AsProduct;
+                    file.ProductFile.CopyFile = folder[i];
                 }
 
                 PB.BorderStyle = BorderStyle.Fixed3D;
@@ -1562,6 +1572,31 @@ namespace FileManegerJson
                             {
                                 note.Content = organization.CopyStore();
                                 Folders[index].AsStore.Content = note.Content.CopyStore();
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        };
+                        Hide();
+
+                        form.ShowDialog();
+
+                        Show();
+                    }
+
+                    if (checkFile.IsProduct)
+                    {
+                        ProductFile note = checkFile.AsProduct;
+                        ProductEditorForm form = new ProductEditorForm(note.Content);
+                        form.ChangeOrganization += (organization) =>
+                        {
+
+                            int index = checkFile.TemporaryIndex;
+                            try
+                            {
+                                note.Content = organization.CopyProduct();
+                                Folders[index].AsProduct.Content = note.Content.CopyProduct();
                             }
                             catch (Exception ex)
                             {
@@ -2753,6 +2788,22 @@ namespace FileManegerJson
                     MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void buttonProductCreate_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new ProductFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void butonLoadProductFromFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonProductFromFileByContent_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void DropLink_Click(object sender, EventArgs e)

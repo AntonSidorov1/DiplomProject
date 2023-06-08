@@ -31,6 +31,10 @@ namespace FileManegerJson
         public DisributingFacilities ParametrOrganizaion => Parameter.CopyOrganization();
         public DistributingPoint ParameterTraidingPoint => Parameter.CopyTraidingPoint();
         public Store ParameterStore => Parameter.CopyStore();
+        public CategoryClass ParameterCategory => Parameter.CopyCategory();
+        public ManufactureClass ParameterManufacture => Parameter.CopyManufacture();
+        public SupplierClass ParameterSupplier => Parameter.CopySupplier();
+        public ProductClass ParameterProduct => Parameter.CopyProduct();
 
 
 

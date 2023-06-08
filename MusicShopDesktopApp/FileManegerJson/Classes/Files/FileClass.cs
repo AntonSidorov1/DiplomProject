@@ -213,6 +213,9 @@ namespace FileManegerJson
         public ImageFile AsImage => this as ImageFile;
         public ImageFile AsImageWithAttachment => AsImage;
 
+        public bool IsProduct => this is ProductFile;
+        public ProductFile AsProduct => this as ProductFile;
+
         public ImageFile ToImageWithAttachment() => new ImageFile(this.AsImage);
 
 

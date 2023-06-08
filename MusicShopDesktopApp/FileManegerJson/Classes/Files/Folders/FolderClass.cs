@@ -222,6 +222,7 @@ namespace FileManegerJson
         public void ClearOrganizaions() => Remove(f => f.IsOrganizaion);
         public void ClearSities() => Remove(f => f.IsSity);
         public void ClearTraidingPoints() => Remove(f => f.IsTraidingPoint);
+        public void ClearProducts() => Remove(f => f.IsProduct);
 
 
         public ImageFilesList ImageList
@@ -570,6 +571,40 @@ namespace FileManegerJson
                 try
                 {
                     ClearNotes();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
+        public ProductFile[] ProductsArray
+        {
+            get => ProductList.ToArray();
+            set => ProductList = new List<ProductFile>(value);
+        }
+
+        public List<ProductFile> ProductList
+        {
+            get
+            {
+                List<ProductFile> folders = new List<ProductFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsProduct);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsProduct)
+                        folders.Add(folders1[i].AsProduct);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearProducts();
                     Add(value);
                 }
                 catch

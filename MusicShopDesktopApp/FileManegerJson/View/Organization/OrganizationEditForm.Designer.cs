@@ -41,6 +41,7 @@ namespace FileManegerJson
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRunWindowEdit = new System.Windows.Forms.Button();
             this.buttonByManager = new System.Windows.Forms.Button();
+            this.buttonTraidingPoint = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxName = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetAddress = new FileManegerJson.TextBoxWihSet();
@@ -64,7 +65,6 @@ namespace FileManegerJson
             this.buttonAll = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonTraidingPoint = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -252,6 +252,17 @@ namespace FileManegerJson
             this.buttonByManager.Text = "Через менеджер";
             this.buttonByManager.UseVisualStyleBackColor = true;
             this.buttonByManager.Click += new System.EventHandler(this.buttonByManager_Click);
+            // 
+            // buttonTraidingPoint
+            // 
+            this.buttonTraidingPoint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonTraidingPoint.Location = new System.Drawing.Point(257, 3);
+            this.buttonTraidingPoint.Name = "buttonTraidingPoint";
+            this.buttonTraidingPoint.Size = new System.Drawing.Size(248, 36);
+            this.buttonTraidingPoint.TabIndex = 2;
+            this.buttonTraidingPoint.Text = "Как торговую точку";
+            this.buttonTraidingPoint.UseVisualStyleBackColor = true;
+            this.buttonTraidingPoint.Click += new System.EventHandler(this.buttonTraidingPoint_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -505,6 +516,7 @@ namespace FileManegerJson
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Controls.Add(this.checkBoxName);
             this.flowLayoutPanel1.Controls.Add(this.checkBoxAddress);
@@ -613,17 +625,6 @@ namespace FileManegerJson
             this.label2.TabIndex = 2;
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // buttonTraidingPoint
-            // 
-            this.buttonTraidingPoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonTraidingPoint.Location = new System.Drawing.Point(257, 3);
-            this.buttonTraidingPoint.Name = "buttonTraidingPoint";
-            this.buttonTraidingPoint.Size = new System.Drawing.Size(248, 36);
-            this.buttonTraidingPoint.TabIndex = 2;
-            this.buttonTraidingPoint.Text = "Как торговую точку";
-            this.buttonTraidingPoint.UseVisualStyleBackColor = true;
-            this.buttonTraidingPoint.Click += new System.EventHandler(this.buttonTraidingPoint_Click);
             // 
             // OrganizationEditForm
             // 

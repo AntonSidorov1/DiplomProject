@@ -222,13 +222,27 @@ namespace FileManegerJson
 
         private void buttonSet_Click(object sender, EventArgs e)
         {
-            FormNoteEdit form = new FormNoteEdit(Value);
-            Hide();
-            form.ShowDialog();
-            Show();
-            if(form.Save)
+            if (!MultiLine)
             {
-                Value = form.Value;
+                FormNoteEdit form = new FormNoteEdit(Value);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (form.Save)
+                {
+                    Value = form.Value;
+                }
+            }
+            else
+            {
+                TextForm form = new TextForm(Value);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (form.Save)
+                {
+                    Value = form.Value;
+                }
             }
         }
     }

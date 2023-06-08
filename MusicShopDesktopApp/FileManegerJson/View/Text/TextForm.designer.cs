@@ -9,5 +9,6 @@ namespace FileManegerJson
         #endregion
 
         private System.Windows.Forms.Button buttonSet;
+        private System.Windows.Forms.Button buttonVieWindow;
     }
 }

@@ -74,6 +74,7 @@
             this.SaveStore = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,6 @@
             this.TextJsonSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.Image = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TimerDateTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -156,6 +156,10 @@
             this.buttonStoreCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonStoreLoadFile = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonStoreLoadContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.товарToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonProductCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.butonLoadProductFromFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonProductFromFileByContent = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.связьСФайломкаталогомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateLink = new System.Windows.Forms.ToolStripMenuItem();
@@ -403,8 +407,7 @@
             this.buttonSaveTraidingPoint,
             this.SaveStore});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
-            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItemDoingFile;
             this.contextMenuStrip1.Size = new System.Drawing.Size(583, 364);
             // 
             // buttonDropFile
@@ -641,6 +644,13 @@
             this.buttonSaveStoreJson.Text = "Как Json";
             this.buttonSaveStoreJson.Click += new System.EventHandler(this.buttonSaveStoreJson_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
+            this.toolStripMenuItem1.Text = "Свойства";
+            // 
             // выборФайлаToolStripMenuItem1
             // 
             this.выборФайлаToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -740,13 +750,6 @@
             this.Image.TabIndex = 1;
             this.Image.TabStop = false;
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
-            this.toolStripMenuItem1.Text = "Свойства";
-            // 
             // TimerDateTime
             // 
             this.TimerDateTime.Enabled = true;
@@ -762,7 +765,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.groupBox3.Size = new System.Drawing.Size(257, 127);
+            this.groupBox3.Size = new System.Drawing.Size(257, 103);
             this.groupBox3.TabIndex = 153;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата и время";
@@ -783,7 +786,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(247, 101);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(247, 77);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label6
@@ -791,10 +794,10 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Lucida Console", 12F);
-            this.label6.Location = new System.Drawing.Point(5, 50);
+            this.label6.Location = new System.Drawing.Point(5, 38);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 51);
+            this.label6.Size = new System.Drawing.Size(77, 39);
             this.label6.TabIndex = 3;
             this.label6.Text = "Дата";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -821,7 +824,7 @@
             this.label7.Location = new System.Drawing.Point(5, 0);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 50);
+            this.label7.Size = new System.Drawing.Size(77, 38);
             this.label7.TabIndex = 2;
             this.label7.Text = "Время";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -831,7 +834,7 @@
             this.TextDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.TextDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextDate.Font = new System.Drawing.Font("Lucida Console", 15F);
-            this.TextDate.Location = new System.Drawing.Point(92, 53);
+            this.TextDate.Location = new System.Drawing.Point(92, 41);
             this.TextDate.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.TextDate.Mask = "00/00/0000";
             this.TextDate.Name = "TextDate";
@@ -1139,7 +1142,7 @@
             // 
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Controls.Add(this.menuStrip3);
-            this.panel2.Location = new System.Drawing.Point(6, 206);
+            this.panel2.Location = new System.Drawing.Point(6, 146);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(312, 58);
@@ -1154,7 +1157,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 25);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(312, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(312, 25);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -1165,7 +1168,7 @@
             this.вывестиИзФайлаToolStripMenuItem,
             this.добавитьВКаталогToolStripMenuItem});
             this.каталогToolStripMenuItem.Name = "каталогToolStripMenuItem";
-            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 24);
+            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 21);
             this.каталогToolStripMenuItem.Text = "Каталог (Добавления и вывод)";
             // 
             // SaveFolder
@@ -1216,7 +1219,8 @@
             this.городToolStripMenuItem,
             this.торговуюСетьToolStripMenuItem,
             this.торговуюТочкуToolStripMenuItem,
-            this.торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem});
+            this.торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem,
+            this.товарToolStripMenuItem});
             this.добавитьВКаталогToolStripMenuItem.Name = "добавитьВКаталогToolStripMenuItem";
             this.добавитьВКаталогToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.добавитьВКаталогToolStripMenuItem.Text = "Добавить в каталог";
@@ -1480,6 +1484,37 @@
             this.buttonStoreLoadContent.Text = "Из файла, как содержимое";
             this.buttonStoreLoadContent.Click += new System.EventHandler(this.buttonStoreLoadContent_Click);
             // 
+            // товарToolStripMenuItem
+            // 
+            this.товарToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonProductCreate,
+            this.butonLoadProductFromFile,
+            this.buttonProductFromFileByContent});
+            this.товарToolStripMenuItem.Name = "товарToolStripMenuItem";
+            this.товарToolStripMenuItem.Size = new System.Drawing.Size(530, 26);
+            this.товарToolStripMenuItem.Text = "Товар";
+            // 
+            // buttonProductCreate
+            // 
+            this.buttonProductCreate.Name = "buttonProductCreate";
+            this.buttonProductCreate.Size = new System.Drawing.Size(320, 26);
+            this.buttonProductCreate.Text = "Создать";
+            this.buttonProductCreate.Click += new System.EventHandler(this.buttonProductCreate_Click);
+            // 
+            // butonLoadProductFromFile
+            // 
+            this.butonLoadProductFromFile.Name = "butonLoadProductFromFile";
+            this.butonLoadProductFromFile.Size = new System.Drawing.Size(320, 26);
+            this.butonLoadProductFromFile.Text = "Из файла";
+            this.butonLoadProductFromFile.Click += new System.EventHandler(this.butonLoadProductFromFile_Click);
+            // 
+            // buttonProductFromFileByContent
+            // 
+            this.buttonProductFromFileByContent.Name = "buttonProductFromFileByContent";
+            this.buttonProductFromFileByContent.Size = new System.Drawing.Size(320, 26);
+            this.buttonProductFromFileByContent.Text = "Из файла, как содржимое";
+            this.buttonProductFromFileByContent.Click += new System.EventHandler(this.buttonProductFromFileByContent_Click);
+            // 
             // menuStrip3
             // 
             this.menuStrip3.Font = new System.Drawing.Font("Lucida Console", 10F);
@@ -1597,10 +1632,10 @@
             // CloseWindow
             // 
             this.CloseWindow.Font = new System.Drawing.Font("Lucida Console", 12F);
-            this.CloseWindow.Location = new System.Drawing.Point(40, 143);
+            this.CloseWindow.Location = new System.Drawing.Point(40, 118);
             this.CloseWindow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CloseWindow.Name = "CloseWindow";
-            this.CloseWindow.Size = new System.Drawing.Size(251, 26);
+            this.CloseWindow.Size = new System.Drawing.Size(100, 26);
             this.CloseWindow.TabIndex = 161;
             this.CloseWindow.Text = "Назад";
             this.CloseWindow.UseVisualStyleBackColor = true;
@@ -1609,10 +1644,10 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Font = new System.Drawing.Font("Lucida Console", 12F);
-            this.buttonUpdate.Location = new System.Drawing.Point(40, 175);
+            this.buttonUpdate.Location = new System.Drawing.Point(151, 118);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(251, 26);
+            this.buttonUpdate.Size = new System.Drawing.Size(137, 26);
             this.buttonUpdate.TabIndex = 162;
             this.buttonUpdate.Text = "Обновить";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -1847,5 +1882,9 @@
         private System.Windows.Forms.ToolStripMenuItem SaveStore;
         private System.Windows.Forms.ToolStripMenuItem buttonSaveStoreContent;
         private System.Windows.Forms.ToolStripMenuItem buttonSaveStoreJson;
+        private System.Windows.Forms.ToolStripMenuItem товарToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonProductCreate;
+        private System.Windows.Forms.ToolStripMenuItem butonLoadProductFromFile;
+        private System.Windows.Forms.ToolStripMenuItem buttonProductFromFileByContent;
     }
 }

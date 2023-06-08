@@ -113,6 +113,26 @@ namespace FileManegerJson
             return new Store(this);
         }
 
+        public SupplierClass CopySupplier()
+        {
+            return new SupplierClass(this);
+        }
+
+        public ManufactureClass CopyManufacture()
+        {
+            return new ManufactureClass(this);
+        }
+
+        public CategoryClass CopyCategory()
+        {
+            return new CategoryClass(this);
+        }
+
+        public ProductClass CopyProduct()
+        {
+            return new ProductClass(this);
+        }
+
 
         public void LoadJson(string jsonFile) => SetParameter((ProductParameter)FileClass.JsonRead(jsonFile, GetType()));
 

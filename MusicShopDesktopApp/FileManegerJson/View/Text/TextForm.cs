@@ -17,6 +17,14 @@ namespace FileManegerJson
         SaveFileDialog SaveFile1 = new SaveFileDialog();
         OpenFileDialog OpenFile1 = new OpenFileDialog();
 
+        string valueText = "";
+
+        public string Value
+        {
+            get => EditText.Text;
+            set => EditText.Text = value;
+        }
+
         public EditTextByFile EditText { get => editText; set => editText = value; }
 
         List<FileDialog> fileDialogs = new List<FileDialog>();
@@ -208,6 +216,18 @@ namespace FileManegerJson
             disk.Dispose();
         }
 
+        private void buttonVieWindow_Click(object sender, EventArgs e)
+        {
+            TextForm form = new TextForm(TextInFile.Text);
+            Hide();
+            form.ShowDialog();
+            Show();
+            if(form.Save)
+            {
+                TextInFile.Text = form.Value;
+            }
+        }
+
         private void InitializeComponent()
         {
             FileManegerJson.EditTextByFile editTextByFile1 = new FileManegerJson.EditTextByFile();
@@ -216,8 +236,9 @@ namespace FileManegerJson
             this.OpenFile = new System.Windows.Forms.Button();
             this.SaveFile = new System.Windows.Forms.Button();
             this.VirtualKeyBord = new System.Windows.Forms.CheckBox();
-            this.TextInFile = new FileManegerJson.KeyBordTextView();
             this.buttonSet = new System.Windows.Forms.Button();
+            this.buttonVieWindow = new System.Windows.Forms.Button();
+            this.TextInFile = new FileManegerJson.KeyBordTextView();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,25 +254,26 @@ namespace FileManegerJson
             this.tableLayoutPanel1.Controls.Add(this.VirtualKeyBord, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.TextInFile, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonSet, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonVieWindow, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(778, 477);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(873, 402);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ButtonBack
             // 
             this.ButtonBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonBack.Location = new System.Drawing.Point(10, 10);
-            this.ButtonBack.Margin = new System.Windows.Forms.Padding(10);
+            this.ButtonBack.Location = new System.Drawing.Point(9, 7);
+            this.ButtonBack.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.ButtonBack.Name = "ButtonBack";
-            this.ButtonBack.Padding = new System.Windows.Forms.Padding(5);
-            this.ButtonBack.Size = new System.Drawing.Size(239, 60);
+            this.ButtonBack.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ButtonBack.Size = new System.Drawing.Size(272, 45);
             this.ButtonBack.TabIndex = 0;
             this.ButtonBack.Text = "Назад";
             this.ButtonBack.UseVisualStyleBackColor = true;
@@ -260,11 +282,11 @@ namespace FileManegerJson
             // OpenFile
             // 
             this.OpenFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OpenFile.Location = new System.Drawing.Point(269, 10);
-            this.OpenFile.Margin = new System.Windows.Forms.Padding(10);
+            this.OpenFile.Location = new System.Drawing.Point(299, 7);
+            this.OpenFile.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.OpenFile.Name = "OpenFile";
-            this.OpenFile.Padding = new System.Windows.Forms.Padding(5);
-            this.OpenFile.Size = new System.Drawing.Size(239, 60);
+            this.OpenFile.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OpenFile.Size = new System.Drawing.Size(273, 45);
             this.OpenFile.TabIndex = 1;
             this.OpenFile.Text = "Открыть";
             this.OpenFile.UseVisualStyleBackColor = true;
@@ -273,11 +295,11 @@ namespace FileManegerJson
             // SaveFile
             // 
             this.SaveFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SaveFile.Location = new System.Drawing.Point(528, 10);
-            this.SaveFile.Margin = new System.Windows.Forms.Padding(10);
+            this.SaveFile.Location = new System.Drawing.Point(590, 7);
+            this.SaveFile.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.SaveFile.Name = "SaveFile";
-            this.SaveFile.Padding = new System.Windows.Forms.Padding(5);
-            this.SaveFile.Size = new System.Drawing.Size(240, 60);
+            this.SaveFile.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SaveFile.Size = new System.Drawing.Size(274, 45);
             this.SaveFile.TabIndex = 2;
             this.SaveFile.Text = "Сохранить ";
             this.SaveFile.UseVisualStyleBackColor = true;
@@ -286,16 +308,39 @@ namespace FileManegerJson
             // VirtualKeyBord
             // 
             this.VirtualKeyBord.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.VirtualKeyBord, 2);
             this.VirtualKeyBord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VirtualKeyBord.Location = new System.Drawing.Point(10, 90);
-            this.VirtualKeyBord.Margin = new System.Windows.Forms.Padding(10);
+            this.VirtualKeyBord.Location = new System.Drawing.Point(9, 66);
+            this.VirtualKeyBord.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.VirtualKeyBord.Name = "VirtualKeyBord";
-            this.VirtualKeyBord.Size = new System.Drawing.Size(498, 42);
+            this.VirtualKeyBord.Size = new System.Drawing.Size(272, 32);
             this.VirtualKeyBord.TabIndex = 3;
             this.VirtualKeyBord.Text = "Виртуальная клавиатура";
             this.VirtualKeyBord.UseVisualStyleBackColor = true;
             this.VirtualKeyBord.CheckedChanged += new System.EventHandler(this.VirtualKeyBord_CheckedChanged);
+            // 
+            // buttonSet
+            // 
+            this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSet.Location = new System.Drawing.Point(590, 66);
+            this.buttonSet.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.buttonSet.Name = "buttonSet";
+            this.buttonSet.Size = new System.Drawing.Size(274, 32);
+            this.buttonSet.TabIndex = 5;
+            this.buttonSet.Text = "Задать/Сохранить/изменить";
+            this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
+            // 
+            // buttonVieWindow
+            // 
+            this.buttonVieWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonVieWindow.Location = new System.Drawing.Point(299, 66);
+            this.buttonVieWindow.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.buttonVieWindow.Name = "buttonVieWindow";
+            this.buttonVieWindow.Size = new System.Drawing.Size(273, 32);
+            this.buttonVieWindow.TabIndex = 6;
+            this.buttonVieWindow.Text = "Через отдельное окно";
+            this.buttonVieWindow.UseVisualStyleBackColor = true;
+            this.buttonVieWindow.Click += new System.EventHandler(this.buttonVieWindow_Click);
             // 
             // TextInFile
             // 
@@ -308,13 +353,13 @@ namespace FileManegerJson
             this.TextInFile.HaveKeyBord = false;
             this.TextInFile.InputPole = true;
             this.TextInFile.KeyBordForm = null;
-            this.TextInFile.Location = new System.Drawing.Point(20, 162);
-            this.TextInFile.Margin = new System.Windows.Forms.Padding(20);
-            this.TextInFile.MarginAll = 20;
-            this.TextInFile.MarginBottom = 20;
-            this.TextInFile.MarginLeft = 20;
-            this.TextInFile.MarginRight = 20;
-            this.TextInFile.MarginTop = 20;
+            this.TextInFile.Location = new System.Drawing.Point(18, 120);
+            this.TextInFile.Margin = new System.Windows.Forms.Padding(18, 15, 18, 15);
+            this.TextInFile.MarginAll = -1;
+            this.TextInFile.MarginBottom = 15;
+            this.TextInFile.MarginLeft = 18;
+            this.TextInFile.MarginRight = 18;
+            this.TextInFile.MarginTop = 15;
             this.TextInFile.Multiline = true;
             this.TextInFile.MultiLine = true;
             this.TextInFile.Multyline = true;
@@ -323,11 +368,11 @@ namespace FileManegerJson
             this.TextInFile.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TextInFile.SelectionEnd = 0;
             this.TextInFile.SelectionsStartBigEnd = false;
-            this.TextInFile.Size = new System.Drawing.Size(738, 295);
+            this.TextInFile.Size = new System.Drawing.Size(837, 267);
             this.TextInFile.TabIndex = 4;
             this.TextInFile.TagString = "0";
             this.TextInFile.TextInPole = "";
-            this.TextInFile.TextMargin = new System.Windows.Forms.Padding(20);
+            this.TextInFile.TextMargin = new System.Windows.Forms.Padding(18, 15, 18, 15);
             this.TextInFile.TextPadding = new System.Windows.Forms.Padding(0);
             this.TextInFile.TextRegion = null;
             this.TextInFile.ValueInPole = "";
@@ -335,27 +380,16 @@ namespace FileManegerJson
             this.TextInFile.VirtualKeyBord = false;
             this.TextInFile.TextChanged += new System.EventHandler(this.TextInFile_TextChanged);
             // 
-            // buttonSet
-            // 
-            this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSet.Location = new System.Drawing.Point(528, 90);
-            this.buttonSet.Margin = new System.Windows.Forms.Padding(10);
-            this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(240, 42);
-            this.buttonSet.TabIndex = 5;
-            this.buttonSet.Text = "Задать/Сохранить/изменить";
-            this.buttonSet.UseVisualStyleBackColor = true;
-            this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
-            // 
             // TextForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 477);
+            this.ClientSize = new System.Drawing.Size(873, 402);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "TextForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Текстовый редактор";
             this.Load += new System.EventHandler(this.TextEditorForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

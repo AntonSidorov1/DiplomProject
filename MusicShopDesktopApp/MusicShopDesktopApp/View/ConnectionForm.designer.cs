@@ -29,9 +29,8 @@ namespace MusicShopDesktopApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionForm));
-            this.notifyIconApp = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIconApp = new System.Windows.Forms.NotifyIcon();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxLogotip = new System.Windows.Forms.PictureBox();
@@ -41,7 +40,7 @@ namespace MusicShopDesktopApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.timerDateTime = new System.Windows.Forms.Timer();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelTools = new System.Windows.Forms.Panel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -471,6 +470,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputDataSourse.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputDataSourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputDataSourse.GetTextProperty = null;
             this.textInputDataSourse.InputBackColor = System.Drawing.Color.White;
             this.textInputDataSourse.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputDataSourse.InputKeyPressToBox = null;
@@ -499,6 +499,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputInitialCatalog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputInitialCatalog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputInitialCatalog.GetTextProperty = null;
             this.textInputInitialCatalog.InputBackColor = System.Drawing.Color.White;
             this.textInputInitialCatalog.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputInitialCatalog.InputKeyPressToBox = null;
@@ -549,6 +550,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputUserID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputUserID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputUserID.GetTextProperty = null;
             this.textInputUserID.InputBackColor = System.Drawing.Color.White;
             this.textInputUserID.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputUserID.InputKeyPressToBox = null;
@@ -577,6 +579,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputPassword.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputPassword.GetTextProperty = null;
             this.textInputPassword.InputBackColor = System.Drawing.Color.White;
             this.textInputPassword.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputPassword.InputKeyPressToBox = null;

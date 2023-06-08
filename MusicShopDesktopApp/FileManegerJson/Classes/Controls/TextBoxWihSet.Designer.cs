@@ -39,15 +39,14 @@ namespace FileManegerJson
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.textBoxInput, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonSet, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.40206F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.59794F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 154);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -72,7 +71,7 @@ namespace FileManegerJson
             this.textBoxInput.ReadOnly = false;
             this.textBoxInput.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.textBoxInput.ShortcutsEnabled = true;
-            this.textBoxInput.Size = new System.Drawing.Size(258, 91);
+            this.textBoxInput.Size = new System.Drawing.Size(258, 98);
             this.textBoxInput.TabIndex = 0;
             this.textBoxInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxInput.TextScrollBar = System.Windows.Forms.ScrollBars.None;
@@ -91,9 +90,10 @@ namespace FileManegerJson
             // buttonSet
             // 
             this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSet.Location = new System.Drawing.Point(3, 100);
+            this.buttonSet.Location = new System.Drawing.Point(10, 114);
+            this.buttonSet.Margin = new System.Windows.Forms.Padding(10);
             this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(258, 51);
+            this.buttonSet.Size = new System.Drawing.Size(244, 30);
             this.buttonSet.TabIndex = 1;
             this.buttonSet.Text = "Задать";
             this.buttonSet.UseVisualStyleBackColor = true;

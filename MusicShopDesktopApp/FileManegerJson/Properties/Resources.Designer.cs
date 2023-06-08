@@ -63,6 +63,16 @@ namespace FileManegerJson.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Category {
+            get {
+                object obj = ResourceManager.GetObject("Category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ClientServer {
             get {
                 object obj = ResourceManager.GetObject("ClientServer", resourceCulture);
@@ -76,6 +86,16 @@ namespace FileManegerJson.Properties {
         internal static System.Drawing.Bitmap IndexLink {
             get {
                 object obj = ResourceManager.GetObject("IndexLink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Manufacure {
+            get {
+                object obj = ResourceManager.GetObject("Manufacure", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +133,16 @@ namespace FileManegerJson.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Product {
+            get {
+                object obj = ResourceManager.GetObject("Product", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sity {
             get {
                 object obj = ResourceManager.GetObject("Sity", resourceCulture);
@@ -126,6 +156,16 @@ namespace FileManegerJson.Properties {
         internal static System.Drawing.Bitmap Store {
             get {
                 object obj = ResourceManager.GetObject("Store", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Supplier {
+            get {
+                object obj = ResourceManager.GetObject("Supplier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

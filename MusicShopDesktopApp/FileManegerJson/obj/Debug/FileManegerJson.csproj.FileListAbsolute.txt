@@ -33,3 +33,6 @@ D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.OrganizationEditForm.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.TraidingPointEditForm.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.StorePointEditForm.resources
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.ProductEditorForm.resources
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.NumericControlEdit.resources
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.NumericControlWithSet.resources
