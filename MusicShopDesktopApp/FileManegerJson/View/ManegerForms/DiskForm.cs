@@ -128,7 +128,7 @@ namespace FileManegerJson
 
         ContextMenuFileClass ContextMenuFileClass => contextMenuStrip1 as ContextMenuFileClass;
 
-        int selectedIndexAddOne = 6;
+        int selectedIndexAddOne = 7;
         ComboBoxNameClear[] choises;
         object[] pounkts = new object[] {"ничего",
             "Удалять",
@@ -137,6 +137,7 @@ namespace FileManegerJson
             "Сохранять содержимое на устройстве",
             "Вызов контекстного меню",
             "Открывать",
+            "Показывать свойства",
             "Увеличить размер на 1",
             "Увеличить размер на 2",
             "Увеличить размер на 3",
@@ -398,6 +399,14 @@ namespace FileManegerJson
                 return;
             }
 
+            if (selectedIndex == 7)
+            {
+                ContextMenuFileClass.File = Pix.GetFileNow();
+                ContextMenuFileClass.File.CopyFile = Pix.FileNowInFolder();
+                MenuItemProperty_Click(sender, e);
+                return;
+            }
+
             if (selectedIndex == 4)
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
@@ -445,6 +454,18 @@ namespace FileManegerJson
                     else if (file.IsProduct)
                     {
                         saveFile.Title = "Сохранение товара";
+                    }
+                    else if (file.IsCategory)
+                    {
+                        saveFile.Title = "Сохранение категории товаров";
+                    }
+                    else if (file.IsSupplier)
+                    {
+                        saveFile.Title = "Сохранение поставщика товаров";
+                    }
+                    else if (file.IsManufacture)
+                    {
+                        saveFile.Title = "Сохранение производителя товаров";
                     }
 
 
@@ -507,6 +528,24 @@ namespace FileManegerJson
 
                     }
 
+                    else if (sender is PictureBoxCategory)
+                    {
+                        file.AsCategory.Content.SaveJson(saveFile.FileName);
+
+                    }
+
+                    else if (sender is PictureBoxSupplier)
+                    {
+                        file.AsSupplier.Content.SaveJson(saveFile.FileName);
+
+                    }
+
+                    else if (sender is PictureBoxManufacture)
+                    {
+                        file.AsManufacture.Content.SaveJson(saveFile.FileName);
+
+                    }
+
                     MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch
@@ -530,6 +569,12 @@ namespace FileManegerJson
             {
                 Pix.Left += (e.X - x0);
                 Pix.Top += (e.Y - y0);
+                if (Pix.Left < 2)
+                    Pix.Left = 2;
+                if (Pix.Top < 2)
+                    Pix.Top = 2;
+                if (Pix.Left > PanelImage.Width - 50)
+                    Pix.Left = PanelImage.Width - 50;
             }
         }
 
@@ -596,6 +641,9 @@ namespace FileManegerJson
             buttonSaveTraidingPoint.Visible = file.IsTraidingPoint;
             SaveStore.Visible = file.IsStore;
             buttonProductSave.Visible = file.IsProduct;
+            buttonSaveCategory.Visible = file.IsCategory;
+            buttonSupplierSave.Visible = file.IsSupplier;
+            buttonManufactureSave.Visible = file.IsManufacture;
 
         }
 
@@ -725,6 +773,18 @@ namespace FileManegerJson
                 {
                     PB = new PictureBoxProduct();
                 }
+                else if (fileObject.IsCategory)
+                {
+                    PB = new PictureBoxCategory();
+                }
+                else if (fileObject.IsSupplier)
+                {
+                    PB = new PictureBoxSupplier();
+                }
+                else if (fileObject.IsManufacture)
+                {
+                    PB = new PictureBoxManufacture();
+                }
 
                 PB.Tag = folder[i].IndexText;
                 PB.Left = w;
@@ -791,6 +851,24 @@ namespace FileManegerJson
                     PictureBoxProduct file = PB as PictureBoxProduct;
                     file.ProductFile = folder[i].AsProduct;
                     file.ProductFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsCategory)
+                {
+                    PictureBoxCategory file = PB as PictureBoxCategory;
+                    file.CategoryFile = folder[i].AsCategory;
+                    file.CategoryFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsSupplier)
+                {
+                    PictureBoxSupplier file = PB as PictureBoxSupplier;
+                    file.SupplierFile = folder[i].AsSupplier;
+                    file.SupplierFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsManufacture)
+                {
+                    PictureBoxManufacture file = PB as PictureBoxManufacture;
+                    file.ManufactureFile = folder[i].AsManufacture;
+                    file.ManufactureFile.CopyFile = folder[i];
                 }
 
                 PB.BorderStyle = BorderStyle.Fixed3D;
@@ -1608,6 +1686,81 @@ namespace FileManegerJson
                             {
                                 note.Content = organization.CopyProduct();
                                 Folders[index].AsProduct.Content = note.Content.CopyProduct();
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        };
+                        Hide();
+
+                        form.ShowDialog();
+
+                        Show();
+                    }
+
+                    if (checkFile.IsCategory)
+                    {
+                        CategoryFile note = checkFile.AsCategory;
+                        CategoryEditForm form = new CategoryEditForm(note.Content);
+                        form.ChangeOrganization += (organization) =>
+                        {
+
+                            int index = checkFile.TemporaryIndex;
+                            try
+                            {
+                                note.Content = organization.CopyCategory();
+                                Folders[index].AsCategory.Content = note.Content.CopyCategory();
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        };
+                        Hide();
+
+                        form.ShowDialog();
+
+                        Show();
+                    }
+
+                    if (checkFile.IsSupplier)
+                    {
+                        SupplierFile note = checkFile.AsSupplier;
+                        SupplierEditForm form = new SupplierEditForm(note.Content);
+                        form.ChangeOrganization += (organization) =>
+                        {
+
+                            int index = checkFile.TemporaryIndex;
+                            try
+                            {
+                                note.Content = organization.CopySupplier();
+                                Folders[index].AsSupplier.Content = note.Content.CopySupplier();
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        };
+                        Hide();
+
+                        form.ShowDialog();
+
+                        Show();
+                    }
+
+                    if (checkFile.IsManufacture)
+                    {
+                        ManufactureFile note = checkFile.AsManufacture;
+                        ManufactureEditForm form = new ManufactureEditForm(note.Content);
+                        form.ChangeOrganization += (organization) =>
+                        {
+
+                            int index = checkFile.TemporaryIndex;
+                            try
+                            {
+                                note.Content = organization.CopyManufacture();
+                                Folders[index].AsManufacture.Content = note.Content.CopyManufacture();
                             }
                             catch (Exception ex)
                             {
@@ -2902,6 +3055,412 @@ namespace FileManegerJson
             FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsProduct;
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title = "Сохранение торговой точки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+        private void buttonCategoryCreate_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new CategoryFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void buttonCategoryFromFileByContent_Click(object sender, EventArgs e)
+        {
+            ProductParameterFile folder = new CategoryFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ProductParameterFile image = folder;
+                    folder.Name = OpenFiles.FileName;
+                    folder.LoadContentJson(OpenFiles.FileName);
+
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonCategoryFile_Click(object sender, EventArgs e)
+        {
+            FileClass folder = new CategoryFile();
+            OpenFiles.Filter = folder.AllTypesFile;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    CategoryFile image = CategoryFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveCategoryContent_Click(object sender, EventArgs e)
+        {
+            CategoryFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsCategory;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение категории товаров";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveCategoryJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsCategory;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение категории товаров";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSupplierCreate_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new SupplierFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void buttonSupplierByContent_Click(object sender, EventArgs e)
+        {
+            ProductParameterFile folder = new SupplierFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ProductParameterFile image = folder;
+                    folder.Name = OpenFiles.FileName;
+                    folder.LoadContentJson(OpenFiles.FileName);
+
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSupplierContenSave_Click(object sender, EventArgs e)
+        {
+            SupplierFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsSupplier;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение поставщика товаров";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSupplierSaveJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsSupplier;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение поставщика товаров";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSupplierFromFile_Click(object sender, EventArgs e)
+        {
+            FileClass folder = new SupplierFile();
+            OpenFiles.Filter = folder.AllTypesFile;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    SupplierFile image = SupplierFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void butonCreateManufacture_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new ManufactureFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void butonAddFolderContent_Click(object sender, EventArgs e)
+        {
+            FolderClass folder = new FolderClass();
+            OpenFolder.Filter = folder.TypesFileJsonWithTxt;
+            if (OpenFolder.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Folders.AddContenFromJson(OpenFolder.FileName);
+
+                    FromFolderClass(Folders);
+                    path = OpenFolder.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonManufactureFromFileByContent_Click(object sender, EventArgs e)
+        {
+            ProductParameterFile folder = new ManufactureFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ProductParameterFile image = folder;
+                    folder.Name = OpenFiles.FileName;
+                    folder.LoadContentJson(OpenFiles.FileName);
+
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void butonMaufacureFromFile_Click(object sender, EventArgs e)
+        {
+            FileClass folder = new ManufactureFile();
+            OpenFiles.Filter = folder.AllTypesFile;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ManufactureFile image = ManufactureFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonManufacureConentSave_Click(object sender, EventArgs e)
+        {
+            ManufactureFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsManufacture;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение производителя товаров";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonManufacureSaveJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsManufacture;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение производителя товаров";
             saveFile.FileName = textFile.Name;
             saveFile.Filter = textFile.TypesFileJsonWithTxt;
 

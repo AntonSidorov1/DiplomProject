@@ -18,6 +18,8 @@ namespace FileManegerJson
 
         public override string TypeDisk => "h";
 
+        public override string FileType => "Жёсткий диск";
+
         public override void SetContentFile(FileClass file)
         {
             

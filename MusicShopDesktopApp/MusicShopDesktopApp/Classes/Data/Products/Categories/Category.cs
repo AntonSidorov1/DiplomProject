@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -69,6 +70,15 @@ namespace MusicShopDesktopApp
                 Filter = this.Filter,
                 RootCategoryID = this.RootCategoryID
             };
+
+        public CategoryClass CopyEdit()
+        {
+            return new CategoryClass
+            {
+                Name = Name,
+                Filter = Filter.Name
+            };
+        }
 
 
     }

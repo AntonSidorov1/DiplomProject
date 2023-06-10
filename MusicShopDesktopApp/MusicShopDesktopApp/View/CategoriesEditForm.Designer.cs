@@ -74,6 +74,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCopyEdit = new System.Windows.Forms.Button();
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
+            this.buttonEditVieWindows = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -448,6 +449,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel7.Controls.Add(this.labelCategoryEditName, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.menuStrip2, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.menuStrip1, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.buttonEditVieWindows, 1, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 20);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -482,6 +484,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputCategoryName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputCategoryName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputCategoryName.GetTextProperty = null;
             this.textInputCategoryName.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputCategoryName.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputCategoryName.InputKeyPressToBox = null;
@@ -624,6 +627,17 @@ namespace MusicShopDesktopApp
             this.buttonDeleteCategory.UseVisualStyleBackColor = true;
             this.buttonDeleteCategory.Click += new System.EventHandler(this.buttonDeleteCategory_Click);
             // 
+            // buttonEditVieWindows
+            // 
+            this.buttonEditVieWindows.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEditVieWindows.Location = new System.Drawing.Point(216, 89);
+            this.buttonEditVieWindows.Name = "buttonEditVieWindows";
+            this.buttonEditVieWindows.Size = new System.Drawing.Size(207, 44);
+            this.buttonEditVieWindows.TabIndex = 5;
+            this.buttonEditVieWindows.Text = "Редактировать через другое окно";
+            this.buttonEditVieWindows.UseVisualStyleBackColor = true;
+            this.buttonEditVieWindows.Click += new System.EventHandler(this.buttonEditVieWindows_Click);
+            // 
             // CategoriesEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -717,6 +731,7 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buttonUpdateCategory;
         private System.Windows.Forms.ToolStripMenuItem buttonCutToNowCategory;
+        private System.Windows.Forms.Button buttonEditVieWindows;
     }
 }
 

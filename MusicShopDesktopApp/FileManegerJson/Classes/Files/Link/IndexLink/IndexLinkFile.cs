@@ -81,5 +81,7 @@ namespace FileManegerJson
         }
 
         public override Bitmap ImageDefault => Properties.Resources.IndexLink;
+
+        public override string FileType => "Индексная ссылка";
     }
 }

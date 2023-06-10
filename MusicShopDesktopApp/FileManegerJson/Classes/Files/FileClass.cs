@@ -43,12 +43,19 @@ namespace FileManegerJson
         public bool IsStore => this is StoreFile;
         public StoreFile AsStore => this as StoreFile;
 
+        public bool IsSupplier => this is SupplierFile;
+        public SupplierFile AsSupplier => this as SupplierFile;
+
+        public bool IsManufacture => this is ManufactureFile;
+        public ManufactureFile AsManufacture => this as ManufactureFile;
+
         public override void FromFile(AbstractFileClass file)
         {
             base.FromFile(file);
             if(file is FileClass)
             {
                 Name = (file as FileClass).Name;
+                IndexFile = file.AsFileClass.IndexFile;
             }
         }
 
@@ -56,7 +63,9 @@ namespace FileManegerJson
         {
             get
             {
-                string text = $"Индекс файла {Index} \n" +
+                string text = $"Тип файла: {FileType} \n" +
+                    $"Индекс файла {Index} \n" +
+                    $"Файловый индекс: {IndexFile} \n" +
                     "Имя: " + FileName + "\n" + base.PropertyOfFile + $"\n" +
             $"";
                 string message = "";
@@ -84,6 +93,7 @@ namespace FileManegerJson
             FileName = DefaultName;
             GetData();
             Create();
+            CreateThisIndexFile();
         }
 
         protected virtual void Create()
@@ -216,6 +226,9 @@ namespace FileManegerJson
         public bool IsProduct => this is ProductFile;
         public ProductFile AsProduct => this as ProductFile;
 
+        public bool IsCategory => this is CategoryFile;
+        public CategoryFile AsCategory => this as CategoryFile;
+
         public ImageFile ToImageWithAttachment() => new ImageFile(this.AsImage);
 
 
@@ -344,6 +357,7 @@ namespace FileManegerJson
         {
             parent = folder;
             TemporaryIndex = Index;
+            CreateThisIndexFile();
             return this;
         }
 
@@ -375,6 +389,7 @@ namespace FileManegerJson
         {
             SetAbstractFile(file);
             TemporaryIndex = file.TemporaryIndex;
+            IndexFile = file.IndexFile;
         }
 
         public void FromFileClass(FileClass file)
@@ -890,5 +905,57 @@ namespace FileManegerJson
 
         public IndexLinkFile CreateIndexLink() => IndexLinkFile.CraeteLink(this);
 
+        string indexFile = "";
+
+        [DataMember]
+        public string IndexFile
+        {
+            get => indexFile;
+            set => indexFile = value;
+        }
+
+
+        public virtual void CreateThisIndexFile()
+        {
+
+            try
+            {
+                Parent.CreateIndexFile(this);
+            }
+            catch
+            {
+                if (IndexFile == null || IndexFile is null)
+                {
+                    SetIndex();
+                    CreateThisIndexFile();
+                }
+                else if (IndexFile.Length < 1)
+                {
+                    SetIndex();
+                    CreateThisIndexFile();
+                }
+            }
+
+        }
+
+        void SetIndex()
+        {
+            string result = "";
+            for (int i = 0; i < 20; i++)
+            {
+                result += rand.Next(10) % 10;
+            }
+            IndexFile = result;
+        }
+
+        Random rand = new Random();
+
+        /// <summary>
+        /// Тип файла
+        /// </summary>
+        public abstract string FileType { get; }
     }
+
+    
+    
 }

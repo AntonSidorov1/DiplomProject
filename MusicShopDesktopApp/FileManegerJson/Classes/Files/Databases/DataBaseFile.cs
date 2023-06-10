@@ -59,6 +59,8 @@ namespace FileManegerJson
             set => dataBase = value;
         }
 
+        public override string FileType => "Строка подключения к базе данных";
+
         public override void FromFile(AbstractFileClass file)
         {
             base.FromFile(file);

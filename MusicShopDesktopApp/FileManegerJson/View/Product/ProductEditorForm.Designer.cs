@@ -848,7 +848,7 @@ namespace FileManegerJson
             this.checkBoxManufacture.Name = "checkBoxManufacture";
             this.checkBoxManufacture.Size = new System.Drawing.Size(160, 21);
             this.checkBoxManufacture.TabIndex = 15;
-            this.checkBoxManufacture.Text = "Пооизводитель";
+            this.checkBoxManufacture.Text = "Производитель";
             this.checkBoxManufacture.UseVisualStyleBackColor = true;
             // 
             // buttonAll

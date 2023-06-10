@@ -56,6 +56,7 @@ namespace MusicShopDesktopApp
             this.buttonManufactureEdit = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.labelmanufactureEditName = new System.Windows.Forms.Label();
+            this.buttonEditVieWindow = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -264,6 +265,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputManufactureName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputManufactureName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputManufactureName.GetTextProperty = null;
             this.textInputManufactureName.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputManufactureName.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputManufactureName.InputKeyPressToBox = null;
@@ -295,6 +297,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel3.SetColumnSpan(this.tableLayoutPanel4, 2);
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.buttonEditVieWindow, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.buttonAddManufacture, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.buttonDeleteManufacture, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.buttonManufactureCopyEdit, 0, 0);
@@ -379,6 +382,17 @@ namespace MusicShopDesktopApp
             this.labelmanufactureEditName.Text = "label1";
             this.labelmanufactureEditName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // buttonEditVieWindow
+            // 
+            this.buttonEditVieWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEditVieWindow.Location = new System.Drawing.Point(269, 103);
+            this.buttonEditVieWindow.Name = "buttonEditVieWindow";
+            this.buttonEditVieWindow.Size = new System.Drawing.Size(260, 55);
+            this.buttonEditVieWindow.TabIndex = 5;
+            this.buttonEditVieWindow.Text = "Редактировать отдельным окном";
+            this.buttonEditVieWindow.UseVisualStyleBackColor = true;
+            this.buttonEditVieWindow.Click += new System.EventHandler(this.buttonEditVieWindow_Click);
+            // 
             // ManufacturesEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -441,6 +455,7 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label labelmanufactureEditName;
         private System.Windows.Forms.Button buttonManufactureEdit;
+        private System.Windows.Forms.Button buttonEditVieWindow;
     }
 }
 

@@ -37,18 +37,18 @@ namespace FileManegerJson
         {
         }
 
-        public override string TypesFileJson => "Store Json (*.storej)|*.storej|Store File (*.storef)|*.storef";
+        public override string TypesFileJson => "Category Json (*.catj)|*.catj|Category File (*.catf)|*.catf";
 
-        public override string TypesFileContent => "Store Content (*.storec)|*.storec|Store File (*.storef)|*.storef";
+        public override string TypesFileContent => "Category Content (*.catc)|*.catc|Category File (*.catf)|*.catf";
 
-        public override string IndexClassName => "StoreFile";
+        public override string IndexClassName => "CategoryFile";
 
         public override FileClass Copy()
         {
             return Create(this);
         }
 
-        public override ProductParameterFile CreateNewFile() => new StoreFile();
+        public override ProductParameterFile CreateNewFile() => new CategoryFile();
 
         public override void SetParametersContent(CategoryClass content)
         {
@@ -71,6 +71,8 @@ namespace FileManegerJson
             }
 
         }
+
+        public override string FileType => "Категория товаров";
 
         public override void SetContentFile(FileClass file)
         {

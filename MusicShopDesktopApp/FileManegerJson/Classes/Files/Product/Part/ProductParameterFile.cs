@@ -37,6 +37,13 @@ namespace FileManegerJson
         public ProductClass ParameterProduct => Parameter.CopyProduct();
 
 
+        public void LoadContentJson(string jsonFile) => Parameter.LoadJson(jsonFile);
+
+        public ProductParameterFile LoadContentJsonWihReturn(string jsonFile)
+        {
+            LoadContentJson(jsonFile);
+            return this;
+        }
 
 
     }

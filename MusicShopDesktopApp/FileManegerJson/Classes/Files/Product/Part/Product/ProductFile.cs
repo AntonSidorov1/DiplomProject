@@ -72,6 +72,8 @@ namespace FileManegerJson
 
         }
 
+        public override string FileType => "Товар";
+
         public override void SetContentFile(FileClass file)
         {
             if (file.IsProductParameter)

@@ -95,7 +95,16 @@
     <Compile Include="Classes\Controls\PictureBoxBynary.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Controls\PictureBoxManufacture.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxSupplier.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Controls\PictureBoxDataBaseFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxCategory.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Controls\PictureBoxStore.cs">
@@ -175,6 +184,8 @@
     <Compile Include="Classes\Files\Product\Part\Organization\OrganizaionFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Category\CategoryFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Store\StoreFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Manufacture\ManufactureFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Supplier\SupplierFile.cs" />
     <Compile Include="Classes\Files\Product\Part\TraidingPointFile.cs" />
     <Compile Include="Classes\Products\Parts\DisributingFacilities\DisributingFacilities.cs" />
     <Compile Include="Classes\Products\Parts\Product\ProductClass.cs" />
@@ -196,6 +207,18 @@
     <Compile Include="Classes\LettersClass.cs" />
     <Compile Include="Classes\Products\Parts\ProductParameter.cs" />
     <Compile Include="Classes\Text\EditTextByFile.cs" />
+    <Compile Include="View\Manufacture\ManufactureEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manufacture\ManufactureEditForm.Designer.cs">
+      <DependentUpon>ManufactureEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Supplier\SupplierEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Supplier\SupplierEditForm.Designer.cs">
+      <DependentUpon>SupplierEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Strore\StorePointEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +230,12 @@
     </Compile>
     <Compile Include="View\Product\ProductEditorForm.Designer.cs">
       <DependentUpon>ProductEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Category\CategoryEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Category\CategoryEditForm.Designer.cs">
+      <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TraidingPoint\TraidingPointEditForm.cs">
       <SubType>Form</SubType>
@@ -314,6 +343,12 @@
     <EmbeddedResource Include="Classes\Controls\TextInputEdit.resx">
       <DependentUpon>TextInputEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Manufacture\ManufactureEditForm.resx">
+      <DependentUpon>ManufactureEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Supplier\SupplierEditForm.resx">
+      <DependentUpon>SupplierEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Notes\FormNoteEdit.resx">
       <DependentUpon>FormNoteEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Product\ProductEditorForm.resx">
       <DependentUpon>ProductEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Category\CategoryEditForm.resx">
+      <DependentUpon>CategoryEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TraidingPoint\TraidingPointEditForm.resx">
       <DependentUpon>TraidingPointEditForm.cs</DependentUpon>
@@ -387,13 +425,25 @@
     <Folder Include="View\WPF\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Клиент-сервер.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Индексная ссылка.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Город.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Товар.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Блокнот.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Производитель.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Поставщик.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Категория.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Торговая сеть.jpg" />
@@ -405,22 +455,10 @@
     <None Include="Resources\Торговый пункт с режимом работы.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Категория.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Поставщик.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Производитель.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Товар.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Заметка.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Блокнот.png" />
+    <None Include="Resources\Клиент-сервер.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -136,5 +136,6 @@ namespace FileManegerJson
 
         public void LoadJson(string jsonFile) => SetParameter((ProductParameter)FileClass.JsonRead(jsonFile, GetType()));
 
+
     }
 }

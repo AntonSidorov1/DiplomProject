@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -279,6 +280,21 @@ namespace MusicShopDesktopApp
         private void textInputSupplierName_InputText_Changed(object arg1, EventArgs arg2)
         {
             supplierEdit.Name = textInputManufactureName.Text;
+        }
+
+        private void buttonEditVieWindow_Click(object sender, EventArgs e)
+        {
+            ManufactureEditForm form = new ManufactureEditForm(supplierEdit.CopyEdit());
+            form.ChangeName += Form_ChangeName;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void Form_ChangeName(string paramter)
+        {
+            supplierEdit.Name = paramter;
+            textInputManufactureName.Text = paramter;
         }
     }
 }

@@ -56,6 +56,7 @@ namespace MusicShopDesktopApp
             this.buttonSupplierEdit = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.labelSupplierEditName = new System.Windows.Forms.Label();
+            this.buttonEditVieWindow = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();
@@ -264,6 +265,7 @@ namespace MusicShopDesktopApp
             // 
             this.textInputSupplierName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textInputSupplierName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textInputSupplierName.GetTextProperty = null;
             this.textInputSupplierName.InputBackColor = System.Drawing.SystemColors.Window;
             this.textInputSupplierName.InputForeColor = System.Drawing.SystemColors.WindowText;
             this.textInputSupplierName.InputKeyPressToBox = null;
@@ -271,6 +273,7 @@ namespace MusicShopDesktopApp
             this.textInputSupplierName.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputSupplierName.Location = new System.Drawing.Point(273, 3);
             this.textInputSupplierName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textInputSupplierName.MaxLength = 32767;
             this.textInputSupplierName.MinimumSize = new System.Drawing.Size(124, 53);
             this.textInputSupplierName.MultiLine = false;
             this.textInputSupplierName.Name = "textInputSupplierName";
@@ -281,6 +284,7 @@ namespace MusicShopDesktopApp
             this.textInputSupplierName.ShortcutsEnabled = true;
             this.textInputSupplierName.Size = new System.Drawing.Size(261, 95);
             this.textInputSupplierName.TabIndex = 1;
+            this.textInputSupplierName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textInputSupplierName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
             this.textInputSupplierName.Title = "Новое имя поставщика";
             this.textInputSupplierName.UseSystemPasswordChar = false;
@@ -297,6 +301,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanel4.Controls.Add(this.buttonDeleteSupplier, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.buttonSupplierCopyEdit, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.buttonSupplierEdit, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.buttonEditVieWindow, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 104);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -377,6 +382,17 @@ namespace MusicShopDesktopApp
             this.labelSupplierEditName.Text = "label1";
             this.labelSupplierEditName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // buttonEditVieWindow
+            // 
+            this.buttonEditVieWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEditVieWindow.Location = new System.Drawing.Point(269, 103);
+            this.buttonEditVieWindow.Name = "buttonEditVieWindow";
+            this.buttonEditVieWindow.Size = new System.Drawing.Size(260, 55);
+            this.buttonEditVieWindow.TabIndex = 4;
+            this.buttonEditVieWindow.Text = "Редактировать отдельным окном";
+            this.buttonEditVieWindow.UseVisualStyleBackColor = true;
+            this.buttonEditVieWindow.Click += new System.EventHandler(this.buttonEditVieWindow_Click);
+            // 
             // SuppliersEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -439,6 +455,7 @@ namespace MusicShopDesktopApp
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label labelSupplierEditName;
         private System.Windows.Forms.Button buttonSupplierEdit;
+        private System.Windows.Forms.Button buttonEditVieWindow;
     }
 }
 

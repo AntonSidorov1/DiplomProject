@@ -88,6 +88,7 @@ namespace FileManegerJson
 
         public override Bitmap BitmapView => Properties.Resources.NotePad;
 
+        public override string FileType => "Текст";
 
         public static TextFile Load(string fileName)
         {

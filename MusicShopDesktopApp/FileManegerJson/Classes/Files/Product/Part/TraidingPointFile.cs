@@ -112,5 +112,7 @@ namespace FileManegerJson
 
 
         public override Bitmap BitmapView => Properties.Resources.TraidingPoint;
+
+        public override string FileType => "Торговая точка";
     }
 }

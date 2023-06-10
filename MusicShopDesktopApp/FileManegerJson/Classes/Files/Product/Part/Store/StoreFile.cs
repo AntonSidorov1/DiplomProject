@@ -72,6 +72,8 @@ namespace FileManegerJson
 
         }
 
+        public override string FileType => "Торговая точка с режимом работы";
+
         public override void SetContentFile(FileClass file)
         {
             if (file.IsProductParameter)

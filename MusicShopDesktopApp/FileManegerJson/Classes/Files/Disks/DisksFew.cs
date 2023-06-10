@@ -192,6 +192,8 @@ namespace FileManegerJson
 
         public override string IndexClassName => "";
 
+        public override string FileType => "Набор дисков";
+
         public override FileClass Copy()
         {
             return this;

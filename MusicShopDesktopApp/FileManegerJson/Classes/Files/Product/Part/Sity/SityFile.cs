@@ -86,6 +86,8 @@ namespace FileManegerJson
 
         public override Bitmap BitmapView => Properties.Resources.Sity;
 
+        public override string FileType => "Город";
+
         public override void SetContentFile(FileClass file)
         {
             if (file.IsProductParameter)

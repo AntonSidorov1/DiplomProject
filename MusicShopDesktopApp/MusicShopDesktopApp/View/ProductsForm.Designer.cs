@@ -29,6 +29,7 @@ namespace MusicShopDesktopApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,8 +46,8 @@ namespace MusicShopDesktopApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.notifyIconApp = new System.Windows.Forms.NotifyIcon();
-            this.timerDateTime = new System.Windows.Forms.Timer();
+            this.notifyIconApp = new System.Windows.Forms.NotifyIcon(this.components);
+            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,7 +55,7 @@ namespace MusicShopDesktopApp
             this.tableLayoutPanelRole = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxRoles = new System.Windows.Forms.ComboBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.buttonStart = new System.Windows.Forms.ToolStripButton();
             this.buttonLast = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -163,7 +164,7 @@ namespace MusicShopDesktopApp
             this.labelAccountName = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.labelFIO = new System.Windows.Forms.Label();
-            this.timerUpdate = new System.Windows.Forms.Timer();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.panelTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogotip)).BeginInit();

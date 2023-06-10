@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -554,6 +555,31 @@ namespace MusicShopDesktopApp
             textInputCategoryName.Text = categoryEdit.Name;
 
             UpdateForm();
+        }
+
+        private void buttonEditVieWindows_Click(object sender, EventArgs e)
+        {
+            CategoryEditForm form = new CategoryEditForm(categoryEdit.CopyEdit());
+            form.ChangeName += Form_ChangeName;
+            form.ChangeFilter += Form_ChangeFilter;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void Form_ChangeFilter(string paramter)
+        {
+            int index = categoriesFilters.IndexByIdInLower(paramter) - 1;
+            if(index >= 0)
+            {
+                comboBoxEditFilters.SelectedIndex = index;
+            }
+        }
+
+        private void Form_ChangeName(string paramter)
+        {
+            categoryEdit.Name = paramter;
+            textInputCategoryName.Text = paramter;
         }
     }
 }

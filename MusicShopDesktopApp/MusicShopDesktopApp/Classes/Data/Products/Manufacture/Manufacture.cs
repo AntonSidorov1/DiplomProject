@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace MusicShopDesktopApp
                 ID = this.ID,
                 Name = this.Name
             };
+
+        public ManufactureClass CopyEdit() => new ManufactureClass(Name);
     }
 }

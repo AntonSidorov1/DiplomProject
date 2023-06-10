@@ -180,7 +180,7 @@ namespace FileManegerJson
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNoteEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Редактирование";
+            this.Text = "Редактирование заметки";
             this.Load += new System.EventHandler(this.FormNoteEdit_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

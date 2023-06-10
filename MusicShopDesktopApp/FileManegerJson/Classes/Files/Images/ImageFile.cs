@@ -308,5 +308,7 @@ namespace FileManegerJson
         }
 
         public override Bitmap BitmapView => new Bitmap(Image);
+
+        public override string FileType => "Изображние";
     }
 }

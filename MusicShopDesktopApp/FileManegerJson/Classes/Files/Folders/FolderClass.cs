@@ -25,6 +25,68 @@ namespace FileManegerJson
             FileName = name;
         }
         
+        public FileClass GetByIndexFile(string indexFile)
+        {
+            if (indexFile == IndexFile)
+                return this;
+            else
+                return Find(f => f.IndexFile.Trim() == indexFile.Trim());
+        }
+
+        public int IndexFileByIndexFile(string indexFile)
+        {
+
+            return FindIndex(f => f.IndexFile.Trim() == indexFile.Trim());
+        }
+
+        public bool ContainsFileByIndexFile(string indexFile)
+        {
+            if (indexFile == null || indexFile is null)
+                return true;
+            if (indexFile.Length < 1)
+                return true;
+            if (indexFile == IndexFile)
+                return true;
+            return fileClasses.Any(f => f.IndexFile.Trim() == indexFile.Trim());
+        }
+
+        public void CreateIndexFile(FileClass file) => file.IndexFile = CreateIndexFile(file.IndexFile);
+
+        public string CreateIndexFile(string indexFile)
+        {
+            while(ContainsFileByIndexFile(indexFile))
+            {
+                string result = "";
+                for(int i = 0; i < 20; i++)
+                {
+                    result += (rand.Next(10)).ToString();
+                }
+                indexFile = result;
+            }
+            return indexFile;
+        }
+
+        public override void CreateThisIndexFile()
+        {
+            if (IndexFile != null && !(IndexFile is null))
+                if (IndexFile.Length > 0)
+                {
+                    try
+                    {
+                        base.CreateThisIndexFile();
+                    }
+                    catch
+                    {
+
+                    }
+                    return;
+                }
+            CreateIndexFile(this);
+            CreateThisIndexFile();
+        }
+
+
+        Random rand = new Random();
 
         public FolderClass(IEnumerable<FileClass> files, string name = DefaultName) :this(name)
         {
@@ -223,6 +285,10 @@ namespace FileManegerJson
         public void ClearSities() => Remove(f => f.IsSity);
         public void ClearTraidingPoints() => Remove(f => f.IsTraidingPoint);
         public void ClearProducts() => Remove(f => f.IsProduct);
+        public void ClearCategories() => Remove(f => f.IsCategory);
+        public void ClearSuppliers() => Remove(f => f.IsSupplier);
+        public void ClearManufactures() => Remove(f => f.IsManufacture);
+
 
 
         public ImageFilesList ImageList
@@ -581,6 +647,108 @@ namespace FileManegerJson
         }
 
         [DataMember]
+        public CategoryFile[] CategoriesArray
+        {
+            get => CategoriesList.ToArray();
+            set => CategoriesList = new List<CategoryFile>(value);
+        }
+
+        public List<CategoryFile> CategoriesList
+        {
+            get
+            {
+                List<CategoryFile> folders = new List<CategoryFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsCategory);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsCategory)
+                        folders.Add(folders1[i].AsCategory);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearCategories();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
+        public SupplierFile[] SuppliersArray
+        {
+            get => SuppliersList.ToArray();
+            set => SuppliersList = new List<SupplierFile>(value);
+        }
+
+        public List<SupplierFile> SuppliersList
+        {
+            get
+            {
+                List<SupplierFile> folders = new List<SupplierFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsSupplier);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsSupplier)
+                        folders.Add(folders1[i].AsSupplier);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearSuppliers();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
+        public ManufactureFile[] ManufacturesArray
+        {
+            get => ManufacturesList.ToArray();
+            set => ManufacturesList = new List<ManufactureFile>(value);
+        }
+
+        public List<ManufactureFile> ManufacturesList
+        {
+            get
+            {
+                List<ManufactureFile> folders = new List<ManufactureFile>();
+                List<FileClass> folders1 = FindAll(f => f.IsManufacture);
+                for (int i = 0; i < folders1.Count; i++)
+                {
+                    if (folders1[i].IsManufacture)
+                        folders.Add(folders1[i].AsManufacture);
+                }
+                return folders;
+            }
+            set
+            {
+                try
+                {
+                    ClearManufactures();
+                    Add(value);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        [DataMember]
         public ProductFile[] ProductsArray
         {
             get => ProductList.ToArray();
@@ -833,6 +1001,11 @@ namespace FileManegerJson
                 return files;
         }
 
+        public void AddContenFromJson(string fileName)
+        {
+            
+            AddRange(LoadJsonNew(fileName));
+        }
 
         public override void LoadJson(string fileName, bool bytes = false)
         {
@@ -846,11 +1019,20 @@ namespace FileManegerJson
             }
         }
 
+        public static FolderClass LoadJsonNew(string fileName) 
+        {
+            FolderClass folder = new FolderClass();
+            folder.LoadJson(fileName);
+            return folder;
+        }
+
         public override void SetContentFile(FileClass file)
         {
             
         }
 
         public List<FileClass> ListNoImage => FindAll(f => !f.IsImage);
+
+        public override string FileType => "Каталог";
     }
 }

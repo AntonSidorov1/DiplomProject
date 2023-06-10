@@ -501,7 +501,7 @@ namespace FileManegerJson
             this.textBoxWihSetPickupPoint.TabIndex = 8;
             this.textBoxWihSetPickupPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxWihSetPickupPoint.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxWihSetPickupPoint.Title = "ПунктВыдачи";
+            this.textBoxWihSetPickupPoint.Title = "Пункт выдачи";
             this.textBoxWihSetPickupPoint.UseSystemPasswordChar = false;
             this.textBoxWihSetPickupPoint.Value = "";
             this.textBoxWihSetPickupPoint.VirtualKeyBord = false;

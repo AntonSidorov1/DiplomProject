@@ -84,6 +84,7 @@ namespace FileManegerJson
 
         }
 
+        public override string FileType => "Организация";
 
         public override void SetContentFile(FileClass file)
         {

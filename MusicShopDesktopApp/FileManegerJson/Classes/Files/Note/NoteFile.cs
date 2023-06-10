@@ -68,6 +68,7 @@ namespace FileManegerJson
 
         public override Bitmap BitmapView => Properties.Resources.Note;
 
+        public override string FileType => "Заметка";
 
         public override void FromFile(AbstractFileClass file)
         {
