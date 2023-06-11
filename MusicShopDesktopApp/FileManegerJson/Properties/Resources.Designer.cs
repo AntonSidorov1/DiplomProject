@@ -63,6 +63,16 @@ namespace FileManegerJson.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Catalog {
+            get {
+                object obj = ResourceManager.GetObject("Catalog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Category {
             get {
                 object obj = ResourceManager.GetObject("Category", resourceCulture);
@@ -146,6 +156,16 @@ namespace FileManegerJson.Properties {
         internal static System.Drawing.Bitmap Sity {
             get {
                 object obj = ResourceManager.GetObject("Sity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stock {
+            get {
+                object obj = ResourceManager.GetObject("Stock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

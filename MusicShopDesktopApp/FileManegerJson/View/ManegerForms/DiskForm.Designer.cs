@@ -71,6 +71,7 @@
             this.buttonSaveTraidingPoint = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveTraidingPointContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveTraidingPointJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveStock = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveStore = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreJson = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +85,10 @@
             this.buttonSupplierContenSave = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSupplierSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonManufactureSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonManufacureConentSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonManufacureSaveJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonFolderShowContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveCatalog = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,8 +143,8 @@
             this.картинкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddPicture = new System.Windows.Forms.ToolStripMenuItem();
             this.каталогToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.butonLoadCatalog = new System.Windows.Forms.ToolStripMenuItem();
+            this.butonCatalogCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.другойФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.текстToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateText = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,6 +170,10 @@
             this.TraidingPointCreae = new System.Windows.Forms.ToolStripMenuItem();
             this.TraidingPointJsonLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.TraidingPointContentLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.складToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockLoadFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockLoadFileContent = new System.Windows.Forms.ToolStripMenuItem();
             this.торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonStoreCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonStoreLoadFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,10 +183,6 @@
             this.butonLoadProductFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonProductFromFileByContent = new System.Windows.Forms.ToolStripMenuItem();
             this.параметрТовараToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonManufactureCreate = new System.Windows.Forms.ToolStripMenuItem();
-            this.butonCreateManufacture = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonManufactureFromFileByContent = new System.Windows.Forms.ToolStripMenuItem();
-            this.butonMaufacureFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.катгориюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCategoryCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCategoryFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,6 +191,10 @@
             this.buttonSupplierCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSupplierFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSupplierByContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonManufactureCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.butonCreateManufacture = new System.Windows.Forms.ToolStripMenuItem();
+            this.butonMaufacureFromFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonManufactureFromFileByContent = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.связьСФайломкаталогомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateLink = new System.Windows.Forms.ToolStripMenuItem();
@@ -204,8 +213,9 @@
             this.buttonClearFolder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.folderButonUpdate = new FileManegerJson.FolderButon();
-            this.buttonManufacureConentSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonManufacureSaveJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonFolderContent = new System.Windows.Forms.Button();
+            this.buttonStockSaveContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -440,13 +450,16 @@
             this.buttonSaveSity,
             this.SaveOrganization,
             this.buttonSaveTraidingPoint,
+            this.buttonSaveStock,
             this.SaveStore,
             this.buttonProductSave,
             this.buttonSaveCategory,
             this.buttonSupplierSave,
-            this.buttonManufactureSave});
+            this.buttonManufactureSave,
+            this.buttonFolderShowContent,
+            this.buttonSaveCatalog});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 488);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 560);
             // 
             // buttonDropFile
             // 
@@ -621,6 +634,7 @@
             this.SaveOrganization.Name = "SaveOrganization";
             this.SaveOrganization.Size = new System.Drawing.Size(582, 24);
             this.SaveOrganization.Text = "Сохранить организацию (Торговую сеть)";
+            this.SaveOrganization.Click += new System.EventHandler(this.SaveOrganization_Click);
             // 
             // buttonSaveOrgContent
             // 
@@ -658,6 +672,15 @@
             this.buttonSaveTraidingPointJson.Size = new System.Drawing.Size(260, 26);
             this.buttonSaveTraidingPointJson.Text = "Как Json";
             this.buttonSaveTraidingPointJson.Click += new System.EventHandler(this.buttonSaveTraidingPointJson_Click);
+            // 
+            // buttonSaveStock
+            // 
+            this.buttonSaveStock.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonStockSaveContent,
+            this.buttonStockSaveJson});
+            this.buttonSaveStock.Name = "buttonSaveStock";
+            this.buttonSaveStock.Size = new System.Drawing.Size(582, 24);
+            this.buttonSaveStock.Text = "Сохранить склад";
             // 
             // SaveStore
             // 
@@ -759,6 +782,34 @@
             this.buttonManufactureSave.Name = "buttonManufactureSave";
             this.buttonManufactureSave.Size = new System.Drawing.Size(582, 24);
             this.buttonManufactureSave.Text = "Сохранить производителя товаров";
+            // 
+            // buttonManufacureConentSave
+            // 
+            this.buttonManufacureConentSave.Name = "buttonManufacureConentSave";
+            this.buttonManufacureConentSave.Size = new System.Drawing.Size(260, 26);
+            this.buttonManufacureConentSave.Text = "Как содержимое";
+            this.buttonManufacureConentSave.Click += new System.EventHandler(this.buttonManufacureConentSave_Click);
+            // 
+            // buttonManufacureSaveJson
+            // 
+            this.buttonManufacureSaveJson.Name = "buttonManufacureSaveJson";
+            this.buttonManufacureSaveJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonManufacureSaveJson.Text = "Как Json";
+            this.buttonManufacureSaveJson.Click += new System.EventHandler(this.buttonManufacureSaveJson_Click);
+            // 
+            // buttonFolderShowContent
+            // 
+            this.buttonFolderShowContent.Name = "buttonFolderShowContent";
+            this.buttonFolderShowContent.Size = new System.Drawing.Size(582, 24);
+            this.buttonFolderShowContent.Text = "Информация и содержимое";
+            this.buttonFolderShowContent.Click += new System.EventHandler(this.buttonFolderShowContent_Click);
+            // 
+            // buttonSaveCatalog
+            // 
+            this.buttonSaveCatalog.Name = "buttonSaveCatalog";
+            this.buttonSaveCatalog.Size = new System.Drawing.Size(582, 24);
+            this.buttonSaveCatalog.Text = "Сохранить каталог";
+            this.buttonSaveCatalog.Click += new System.EventHandler(this.buttonSaveCatalog_Click);
             // 
             // выборФайлаToolStripMenuItem1
             // 
@@ -1380,6 +1431,7 @@
             this.создатьПодкаталогССодержимымToolStripMenuItem.Name = "создатьПодкаталогССодержимымToolStripMenuItem";
             this.создатьПодкаталогССодержимымToolStripMenuItem.Size = new System.Drawing.Size(400, 26);
             this.создатьПодкаталогССодержимымToolStripMenuItem.Text = "Создать подкаталог с содержимым";
+            this.создатьПодкаталогССодержимымToolStripMenuItem.Click += new System.EventHandler(this.butonLoadCatalog_Click);
             // 
             // добавитьВКаталогToolStripMenuItem
             // 
@@ -1393,6 +1445,7 @@
             this.городToolStripMenuItem,
             this.торговуюСетьToolStripMenuItem,
             this.торговуюТочкуToolStripMenuItem,
+            this.складToolStripMenuItem,
             this.торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem,
             this.товарToolStripMenuItem,
             this.параметрТовараToolStripMenuItem});
@@ -1418,23 +1471,25 @@
             // каталогToolStripMenuItem1
             // 
             this.каталогToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
+            this.butonLoadCatalog,
+            this.butonCatalogCreate});
             this.каталогToolStripMenuItem1.Name = "каталогToolStripMenuItem1";
             this.каталогToolStripMenuItem1.Size = new System.Drawing.Size(530, 26);
             this.каталогToolStripMenuItem1.Text = "Каталог";
             // 
-            // toolStripMenuItem3
+            // butonLoadCatalog
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(170, 26);
-            this.toolStripMenuItem3.Text = "Из файла";
+            this.butonLoadCatalog.Name = "butonLoadCatalog";
+            this.butonLoadCatalog.Size = new System.Drawing.Size(170, 26);
+            this.butonLoadCatalog.Text = "Из файла";
+            this.butonLoadCatalog.Click += new System.EventHandler(this.butonLoadCatalog_Click);
             // 
-            // toolStripMenuItem4
+            // butonCatalogCreate
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(170, 26);
-            this.toolStripMenuItem4.Text = "Создать";
+            this.butonCatalogCreate.Name = "butonCatalogCreate";
+            this.butonCatalogCreate.Size = new System.Drawing.Size(170, 26);
+            this.butonCatalogCreate.Text = "Создать";
+            this.butonCatalogCreate.Click += new System.EventHandler(this.butonCatalogCreate_Click);
             // 
             // другойФайлToolStripMenuItem
             // 
@@ -1628,6 +1683,37 @@
             this.TraidingPointContentLoad.Text = "Из файла, как содржимое";
             this.TraidingPointContentLoad.Click += new System.EventHandler(this.TraidingPointContentLoad_Click);
             // 
+            // складToolStripMenuItem
+            // 
+            this.складToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonStockCreate,
+            this.buttonStockLoadFile,
+            this.buttonStockLoadFileContent});
+            this.складToolStripMenuItem.Name = "складToolStripMenuItem";
+            this.складToolStripMenuItem.Size = new System.Drawing.Size(530, 26);
+            this.складToolStripMenuItem.Text = "Склад";
+            // 
+            // buttonStockCreate
+            // 
+            this.buttonStockCreate.Name = "buttonStockCreate";
+            this.buttonStockCreate.Size = new System.Drawing.Size(330, 26);
+            this.buttonStockCreate.Text = "Создать";
+            this.buttonStockCreate.Click += new System.EventHandler(this.buttonStockCreate_Click);
+            // 
+            // buttonStockLoadFile
+            // 
+            this.buttonStockLoadFile.Name = "buttonStockLoadFile";
+            this.buttonStockLoadFile.Size = new System.Drawing.Size(330, 26);
+            this.buttonStockLoadFile.Text = "Из файла";
+            this.buttonStockLoadFile.Click += new System.EventHandler(this.buttonStockLoadFile_Click);
+            // 
+            // buttonStockLoadFileContent
+            // 
+            this.buttonStockLoadFileContent.Name = "buttonStockLoadFileContent";
+            this.buttonStockLoadFileContent.Size = new System.Drawing.Size(330, 26);
+            this.buttonStockLoadFileContent.Text = "Из файла, как содержимое";
+            this.buttonStockLoadFileContent.Click += new System.EventHandler(this.buttonStockLoadFileContent_Click);
+            // 
             // торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem
             // 
             this.торговуюТочкуСДополнительнымиПараметрамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1700,37 +1786,6 @@
             this.параметрТовараToolStripMenuItem.Size = new System.Drawing.Size(530, 26);
             this.параметрТовараToolStripMenuItem.Text = "Параметр товара";
             // 
-            // buttonManufactureCreate
-            // 
-            this.buttonManufactureCreate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.butonCreateManufacture,
-            this.butonMaufacureFromFile,
-            this.buttonManufactureFromFileByContent});
-            this.buttonManufactureCreate.Name = "buttonManufactureCreate";
-            this.buttonManufactureCreate.Size = new System.Drawing.Size(224, 26);
-            this.buttonManufactureCreate.Text = "Производитель";
-            // 
-            // butonCreateManufacture
-            // 
-            this.butonCreateManufacture.Name = "butonCreateManufacture";
-            this.butonCreateManufacture.Size = new System.Drawing.Size(330, 26);
-            this.butonCreateManufacture.Text = "Создать";
-            this.butonCreateManufacture.Click += new System.EventHandler(this.butonCreateManufacture_Click);
-            // 
-            // buttonManufactureFromFileByContent
-            // 
-            this.buttonManufactureFromFileByContent.Name = "buttonManufactureFromFileByContent";
-            this.buttonManufactureFromFileByContent.Size = new System.Drawing.Size(330, 26);
-            this.buttonManufactureFromFileByContent.Text = "Из файла, как содержимое";
-            this.buttonManufactureFromFileByContent.Click += new System.EventHandler(this.buttonManufactureFromFileByContent_Click);
-            // 
-            // butonMaufacureFromFile
-            // 
-            this.butonMaufacureFromFile.Name = "butonMaufacureFromFile";
-            this.butonMaufacureFromFile.Size = new System.Drawing.Size(330, 26);
-            this.butonMaufacureFromFile.Text = "Из файла";
-            this.butonMaufacureFromFile.Click += new System.EventHandler(this.butonMaufacureFromFile_Click);
-            // 
             // катгориюToolStripMenuItem
             // 
             this.катгориюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1738,7 +1793,7 @@
             this.buttonCategoryFile,
             this.buttonCategoryFromFileByContent});
             this.катгориюToolStripMenuItem.Name = "катгориюToolStripMenuItem";
-            this.катгориюToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.катгориюToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.катгориюToolStripMenuItem.Text = "Категорию";
             // 
             // buttonCategoryCreate
@@ -1769,7 +1824,7 @@
             this.buttonSupplierFromFile,
             this.buttonSupplierByContent});
             this.поставщикToolStripMenuItem.Name = "поставщикToolStripMenuItem";
-            this.поставщикToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.поставщикToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.поставщикToolStripMenuItem.Text = "Поставщика";
             // 
             // buttonSupplierCreate
@@ -1792,6 +1847,37 @@
             this.buttonSupplierByContent.Size = new System.Drawing.Size(330, 26);
             this.buttonSupplierByContent.Text = "Из файла, как содержимое";
             this.buttonSupplierByContent.Click += new System.EventHandler(this.buttonSupplierByContent_Click);
+            // 
+            // buttonManufactureCreate
+            // 
+            this.buttonManufactureCreate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.butonCreateManufacture,
+            this.butonMaufacureFromFile,
+            this.buttonManufactureFromFileByContent});
+            this.buttonManufactureCreate.Name = "buttonManufactureCreate";
+            this.buttonManufactureCreate.Size = new System.Drawing.Size(220, 26);
+            this.buttonManufactureCreate.Text = "Производитель";
+            // 
+            // butonCreateManufacture
+            // 
+            this.butonCreateManufacture.Name = "butonCreateManufacture";
+            this.butonCreateManufacture.Size = new System.Drawing.Size(330, 26);
+            this.butonCreateManufacture.Text = "Создать";
+            this.butonCreateManufacture.Click += new System.EventHandler(this.butonCreateManufacture_Click);
+            // 
+            // butonMaufacureFromFile
+            // 
+            this.butonMaufacureFromFile.Name = "butonMaufacureFromFile";
+            this.butonMaufacureFromFile.Size = new System.Drawing.Size(330, 26);
+            this.butonMaufacureFromFile.Text = "Из файла";
+            this.butonMaufacureFromFile.Click += new System.EventHandler(this.butonMaufacureFromFile_Click);
+            // 
+            // buttonManufactureFromFileByContent
+            // 
+            this.buttonManufactureFromFileByContent.Name = "buttonManufactureFromFileByContent";
+            this.buttonManufactureFromFileByContent.Size = new System.Drawing.Size(330, 26);
+            this.buttonManufactureFromFileByContent.Text = "Из файла, как содержимое";
+            this.buttonManufactureFromFileByContent.Click += new System.EventHandler(this.buttonManufactureFromFileByContent_Click);
             // 
             // menuStrip3
             // 
@@ -1943,7 +2029,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(64, 227);
+            this.button1.Location = new System.Drawing.Point(74, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 23);
             this.button1.TabIndex = 165;
@@ -1965,19 +2051,29 @@
             this.folderButonUpdate.UpdaeFloder += new FileManegerJson.FolderButon.GetFolder(this.FromFolderClass);
             this.folderButonUpdate.Click += new System.EventHandler(this.folderButonUpdate_Click);
             // 
-            // buttonManufacureConentSave
+            // buttonFolderContent
             // 
-            this.buttonManufacureConentSave.Name = "buttonManufacureConentSave";
-            this.buttonManufacureConentSave.Size = new System.Drawing.Size(260, 26);
-            this.buttonManufacureConentSave.Text = "Как содержимое";
-            this.buttonManufacureConentSave.Click += new System.EventHandler(this.buttonManufacureConentSave_Click);
+            this.buttonFolderContent.Location = new System.Drawing.Point(42, 206);
+            this.buttonFolderContent.Name = "buttonFolderContent";
+            this.buttonFolderContent.Size = new System.Drawing.Size(249, 28);
+            this.buttonFolderContent.TabIndex = 166;
+            this.buttonFolderContent.Text = "Содержимое каталога";
+            this.buttonFolderContent.UseVisualStyleBackColor = true;
+            this.buttonFolderContent.Click += new System.EventHandler(this.buttonFolderContent_Click);
             // 
-            // buttonManufacureSaveJson
+            // buttonStockSaveContent
             // 
-            this.buttonManufacureSaveJson.Name = "buttonManufacureSaveJson";
-            this.buttonManufacureSaveJson.Size = new System.Drawing.Size(260, 26);
-            this.buttonManufacureSaveJson.Text = "Как Json";
-            this.buttonManufacureSaveJson.Click += new System.EventHandler(this.buttonManufacureSaveJson_Click);
+            this.buttonStockSaveContent.Name = "buttonStockSaveContent";
+            this.buttonStockSaveContent.Size = new System.Drawing.Size(260, 26);
+            this.buttonStockSaveContent.Text = "Как содержимое";
+            this.buttonStockSaveContent.Click += new System.EventHandler(this.buttonStockSaveContent_Click);
+            // 
+            // buttonStockSaveJson
+            // 
+            this.buttonStockSaveJson.Name = "buttonStockSaveJson";
+            this.buttonStockSaveJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonStockSaveJson.Text = "Как Json";
+            this.buttonStockSaveJson.Click += new System.EventHandler(this.buttonStockSaveJson_Click);
             // 
             // DiskForm
             // 
@@ -1985,6 +2081,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(1382, 562);
+            this.Controls.Add(this.buttonFolderContent);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.folderButonUpdate);
             this.Controls.Add(this.buttonClearFolder);
@@ -2084,8 +2181,8 @@
         private System.Windows.Forms.ToolStripMenuItem картинкуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem каталогToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem AddPicture;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem butonLoadCatalog;
+        private System.Windows.Forms.ToolStripMenuItem butonCatalogCreate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem другойФайлToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog FolderSave;
@@ -2225,5 +2322,15 @@
         private System.Windows.Forms.ToolStripMenuItem buttonManufactureSave;
         private System.Windows.Forms.ToolStripMenuItem buttonManufacureConentSave;
         private System.Windows.Forms.ToolStripMenuItem buttonManufacureSaveJson;
+        private System.Windows.Forms.Button buttonFolderContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonFolderShowContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveCatalog;
+        private System.Windows.Forms.ToolStripMenuItem складToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buttonStockCreate;
+        private System.Windows.Forms.ToolStripMenuItem buttonStockLoadFile;
+        private System.Windows.Forms.ToolStripMenuItem buttonStockLoadFileContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonSaveStock;
+        private System.Windows.Forms.ToolStripMenuItem buttonStockSaveContent;
+        private System.Windows.Forms.ToolStripMenuItem buttonStockSaveJson;
     }
 }

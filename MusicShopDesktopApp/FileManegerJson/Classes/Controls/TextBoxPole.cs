@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace FileManegerJson
 {
+    public delegate void GetControlText(string text);
     public class TextBoxPoleView: TextBox, KeyBordControlView
     {
         protected TextBox TextBox => this;
@@ -17,13 +18,27 @@ namespace FileManegerJson
             base.KeyPress += TextBox_KeyPress;
             TextBox.Enter += TextBox_Enter;
             TextBox.Leave += TextBox_Leave;
+            TextBox.TextChanged += TextBox_TextChanged;
 
             //DefaultPadding
 
             
         }
 
-        
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            GetText?.Invoke(Text);
+        }
+
+        public event GetControlText GetText;
+
+        public GetControlText GetTextProperty
+        {
+            get => GetText;
+            set => GetText = value;
+        }
+
+        public void GetTextEvent() => GetText?.Invoke(Text);
 
         bool virtalKeyBord = false;
         protected bool VirtualKeyBord1 { get => virtalKeyBord; set => virtalKeyBord = value; }

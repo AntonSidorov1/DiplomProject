@@ -43,6 +43,9 @@ namespace FileManegerJson
         public bool IsStore => this is StoreFile;
         public StoreFile AsStore => this as StoreFile;
 
+        public bool IsStock => this is StockFile;
+        public StockFile AsStock => this as StockFile;
+
         public bool IsSupplier => this is SupplierFile;
         public SupplierFile AsSupplier => this as SupplierFile;
 
@@ -954,8 +957,12 @@ namespace FileManegerJson
         /// Тип файла
         /// </summary>
         public abstract string FileType { get; }
+
+        public virtual string InfoInFolder => $"Индекс: {Index} ({IndexFile}); Тип: \"{FileType}\"; Имя: \"{Name}\"; Имя файла \"{IndexFileName}\" \n";
+
+
+        public virtual string GetListContent() => InfoInFolder;
     }
 
-    
     
 }

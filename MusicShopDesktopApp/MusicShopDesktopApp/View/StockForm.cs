@@ -448,8 +448,11 @@ namespace MusicShopDesktopApp
             textInputSity.Text = stock.Sity.Name;
         }
 
+        void SetSity() => buttonUpdateTextSity_Click(buttonUpdateTextSity, new EventArgs());
+
         private void buttonUpdateTextSity_Click(object sender, EventArgs e)
         {
+            
             if(textInputSity.Text.Length < 1)
             {
                 MessageBox.Show("Введите название города в строке поиска", "Редактирование склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -493,10 +496,10 @@ namespace MusicShopDesktopApp
                     };
                     if(!sity1.AddToDB())
                     {
-                        MessageBox.Show("Не удалось добавить город", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Не удалось добавить город", "Добавление города", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         throw new Exception();
                     }
-                    MessageBox.Show("Город успешно добавлен", "Добавлеение города", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Город успешно добавлен", "Добавление города", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     sities.GetFromBD();
                     stock.Sity = sities.GetOfName(sity);
                 }
@@ -761,6 +764,30 @@ namespace MusicShopDesktopApp
             Hide();
             editForm.ShowDialog();
             Show();
+        }
+
+        private void LoadByStock_Click(object sender, EventArgs e)
+        {
+            StockPointEditForm editForm = new StockPointEditForm(stock.CopyEdit());
+            editForm.ChangeName += SetName;
+            editForm.ChangeAddress += SetAddress;
+            editForm.ChangePhone += SetPhone;
+            editForm.ChangeEmail += SetEmail;
+            editForm.ChangeSity += EditForm_ChangeSity;
+
+            Hide();
+            editForm.ShowDialog();
+            Show();
+        }
+
+        private void EditForm_ChangeSity(string paramter)
+        {
+            textInputSity.Text = paramter;
+            DialogResult dialog = MessageBox.Show("Город был введён в строку поиска. Вы хотите его изменииь у склада?",
+                "Редактировани склада",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+                SetSity();
         }
     }
 }

@@ -312,7 +312,7 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
 
 
-            string name = point.Address;
+            string name = point.Schedule;
 
             if (!ChangeOrg(ref name))
             {

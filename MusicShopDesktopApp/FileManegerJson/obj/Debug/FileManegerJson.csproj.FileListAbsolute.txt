@@ -39,3 +39,5 @@ D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.CategoryEditForm.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.SupplierEditForm.resources
 D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.ManufactureEditForm.resources
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.NumericText.resources
+D:\Visual Studio\repos\FileManegerJson\FileManegerJson\obj\Debug\FileManegerJson.StockPointEditForm.resources

@@ -113,6 +113,11 @@ namespace FileManegerJson
             return new Store(this);
         }
 
+        public StoreHouse CopyStock()
+        {
+            return new StoreHouse(this);
+        }
+
         public SupplierClass CopySupplier()
         {
             return new SupplierClass(this);

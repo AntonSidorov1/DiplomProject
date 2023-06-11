@@ -35,6 +35,7 @@ namespace FileManegerJson
         public ManufactureClass ParameterManufacture => Parameter.CopyManufacture();
         public SupplierClass ParameterSupplier => Parameter.CopySupplier();
         public ProductClass ParameterProduct => Parameter.CopyProduct();
+        public StoreHouse ParameterStock=> Parameter.CopyStock();
 
 
         public void LoadContentJson(string jsonFile) => Parameter.LoadJson(jsonFile);

@@ -89,6 +89,12 @@
     <Compile Include="Classes\Controls\NumericControlWithSet.Designer.cs">
       <DependentUpon>NumericControlWithSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Controls\NumericText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\NumericText.Designer.cs">
+      <DependentUpon>NumericText.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Controls\PanelTagString.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +102,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Controls\PictureBoxManufacture.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxCatalog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxStock.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Controls\PictureBoxSupplier.cs">
@@ -183,6 +195,7 @@
     <Compile Include="Classes\Files\Product\Part\Product\ProductFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Organization\OrganizaionFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Category\CategoryFile.cs" />
+    <Compile Include="Classes\Files\Product\Part\Stock\StockFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Store\StoreFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Manufacture\ManufactureFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Supplier\SupplierFile.cs" />
@@ -192,7 +205,7 @@
     <Compile Include="Classes\Products\Parts\Pounkt\DistributingPoint.cs" />
     <Compile Include="Classes\Files\Product\Part\ProductParameterFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Sity\SityFile.cs" />
-    <Compile Include="Classes\Files\Product\Part\Stock\StoreHouse.cs" />
+    <Compile Include="Classes\Products\Parts\Stock\StoreHouse.cs" />
     <Compile Include="Classes\NoteClass.cs" />
     <Compile Include="Classes\Products\Parts\Store\Store.cs" />
     <Compile Include="Classes\Products\Parts\Manufacture\ManufactureClass.cs" />
@@ -207,11 +220,19 @@
     <Compile Include="Classes\LettersClass.cs" />
     <Compile Include="Classes\Products\Parts\ProductParameter.cs" />
     <Compile Include="Classes\Text\EditTextByFile.cs" />
+    <Compile Include="Classes\Values\ValueNumber.cs" />
+    <Compile Include="Classes\Values\ValuesInConrol.cs" />
     <Compile Include="View\Manufacture\ManufactureEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Manufacture\ManufactureEditForm.Designer.cs">
       <DependentUpon>ManufactureEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stock\StockPointEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Stock\StockPointEditForm.Designer.cs">
+      <DependentUpon>StockPointEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Supplier\SupplierEditForm.cs">
       <SubType>Form</SubType>
@@ -337,6 +358,9 @@
     <EmbeddedResource Include="Classes\Controls\NumericControlWithSet.resx">
       <DependentUpon>NumericControlWithSet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Controls\NumericText.resx">
+      <DependentUpon>NumericText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Classes\Controls\TextBoxWihSet.resx">
       <DependentUpon>TextBoxWihSet.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manufacture\ManufactureEditForm.resx">
       <DependentUpon>ManufactureEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Stock\StockPointEditForm.resx">
+      <DependentUpon>StockPointEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Supplier\SupplierEditForm.resx">
       <DependentUpon>SupplierEditForm.cs</DependentUpon>
@@ -459,6 +486,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Клиент-сервер.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Каталог.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Склад.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

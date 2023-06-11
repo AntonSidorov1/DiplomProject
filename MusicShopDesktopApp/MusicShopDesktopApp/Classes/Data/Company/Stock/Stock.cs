@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileManegerJson;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -396,6 +397,15 @@ namespace MusicShopDesktopApp
             }
         }
 
+
+        public StoreHouse CopyEdit() => new StoreHouse()
+        {
+            Name = Name,
+            Address = Address,
+            Email = Contact.Email,
+            Telephone = Contact.Telephone,
+            Sity = Sity.Name
+        };
 
     }
 }

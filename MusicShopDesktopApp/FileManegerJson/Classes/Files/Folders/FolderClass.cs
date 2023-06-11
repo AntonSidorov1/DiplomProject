@@ -1034,5 +1034,56 @@ namespace FileManegerJson
         public List<FileClass> ListNoImage => FindAll(f => !f.IsImage);
 
         public override string FileType => "Каталог";
+
+        public override Bitmap BitmapView => Properties.Resources.Catalog;
+
+        public FolderClass AddFolder(string name = "")
+        {
+            FolderClass folder = new FolderClass(name);
+            FileClass file = folder;
+            Add(file);
+            CreateIndexFile(file);
+            return folder;
+        }
+
+        public FolderClass AddFolderFromJson(string fileName)
+        {
+            FolderClass folder = AddFolder();
+            folder.LoadJson(fileName);
+            return folder;
+        }
+
+        public override string InfoInFolder => base.InfoInFolder.Trim('\n').Trim() + $"; {GetObjectsCountText(Count)} \n";
+
+
+        public static string GetObjectsCountText(int number)
+        {
+            int count = number;
+            number = number % 100;
+            if (number > 4 && number < 21 || number == 0)
+                return count + " объектов";
+            number %= 10;
+            if(number == 1)
+                return count + " объект";
+            if (number > 1 && number < 5)
+                return count + " объекта";
+            else
+                return count + " объектов";
+
+        }
+
+        public string[] GetFilesContent()
+        {
+            List<string> files = new List<string>();
+            files.Add(base.GetListContent().Trim('\n').Trim() + ":\n\n");
+            for(int i = 0; i < Count; i++)
+            {
+                files.Add(this[i].InfoInFolder);
+            }
+            return files.ToArray();
+        }
+
+        public override string GetListContent() => string.Join("\n", GetFilesContent());
+
     }
 }
