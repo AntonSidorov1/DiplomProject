@@ -27,6 +27,11 @@ namespace FileManegerJson
 
         }
 
+        public SupplierEditForm(string name):this(new ProductParameter(name))
+        {
+
+        }
+
         ProductParameter organization = new ProductParameter();
 
         ProductParameter organizationUpdate = new ProductParameter();

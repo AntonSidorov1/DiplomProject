@@ -411,5 +411,40 @@ namespace FileManegerJson
         {
             Product.Manufacture = text;
         }
+
+        private void buttonSupplierChange_Click(object sender, EventArgs e)
+        {
+            SupplierEditForm form = new SupplierEditForm(Product.Supplier);
+            form.ChangeName += Form_ChangeSupplier;
+            form.ChangeOrganization += Form_ChangeOrganization1;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void Form_ChangeOrganization1(ProductParameter organization)
+        {
+            UpdateOrganization();
+        }
+
+        private void buttonManufacureChange_Click(object sender, EventArgs e)
+        {
+            ManufactureEditForm form = new ManufactureEditForm(Product.Manufacture);
+            form.ChangeName += Form_ChangeManufacture;
+            form.ChangeOrganization += Form_ChangeOrganization1;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void buttonCategoryChange_Click(object sender, EventArgs e)
+        {
+            CategoryEditForm form = new CategoryEditForm(Product.Category);
+            form.ChangeName += Form_ChangeCategory;
+            form.ChangeOrganization += Form_ChangeOrganization1;
+            Hide();
+            form.ShowDialog();
+            Show();
+        }
     }
 }

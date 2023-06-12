@@ -72,6 +72,8 @@
             this.buttonSaveTraidingPointContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveTraidingPointJson = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStock = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockSaveContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonStockSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveStore = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveStoreJson = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,8 +216,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.folderButonUpdate = new FileManegerJson.FolderButon();
             this.buttonFolderContent = new System.Windows.Forms.Button();
-            this.buttonStockSaveContent = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonStockSaveJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripFewFile = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.музыкальнуюПозициюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нотуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.структуруНотыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.музыкальнуюПоследовательностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гаммуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.структуруГаммыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -240,6 +248,7 @@
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            this.contextMenuStripFewFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -459,7 +468,9 @@
             this.buttonFolderShowContent,
             this.buttonSaveCatalog});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 560);
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 532);
             // 
             // buttonDropFile
             // 
@@ -681,6 +692,20 @@
             this.buttonSaveStock.Name = "buttonSaveStock";
             this.buttonSaveStock.Size = new System.Drawing.Size(582, 24);
             this.buttonSaveStock.Text = "Сохранить склад";
+            // 
+            // buttonStockSaveContent
+            // 
+            this.buttonStockSaveContent.Name = "buttonStockSaveContent";
+            this.buttonStockSaveContent.Size = new System.Drawing.Size(260, 26);
+            this.buttonStockSaveContent.Text = "Как содержимое";
+            this.buttonStockSaveContent.Click += new System.EventHandler(this.buttonStockSaveContent_Click);
+            // 
+            // buttonStockSaveJson
+            // 
+            this.buttonStockSaveJson.Name = "buttonStockSaveJson";
+            this.buttonStockSaveJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonStockSaveJson.Text = "Как Json";
+            this.buttonStockSaveJson.Click += new System.EventHandler(this.buttonStockSaveJson_Click);
             // 
             // SaveStore
             // 
@@ -1493,6 +1518,7 @@
             // 
             // другойФайлToolStripMenuItem
             // 
+            this.другойФайлToolStripMenuItem.DropDown = this.contextMenuStripFewFile;
             this.другойФайлToolStripMenuItem.Name = "другойФайлToolStripMenuItem";
             this.другойФайлToolStripMenuItem.Size = new System.Drawing.Size(530, 26);
             this.другойФайлToolStripMenuItem.Text = "Другой файл";
@@ -2061,19 +2087,65 @@
             this.buttonFolderContent.UseVisualStyleBackColor = true;
             this.buttonFolderContent.Click += new System.EventHandler(this.buttonFolderContent_Click);
             // 
-            // buttonStockSaveContent
+            // contextMenuStripFewFile
             // 
-            this.buttonStockSaveContent.Name = "buttonStockSaveContent";
-            this.buttonStockSaveContent.Size = new System.Drawing.Size(260, 26);
-            this.buttonStockSaveContent.Text = "Как содержимое";
-            this.buttonStockSaveContent.Click += new System.EventHandler(this.buttonStockSaveContent_Click);
+            this.contextMenuStripFewFile.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contextMenuStripFewFile.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripFewFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.музыкальнуюПозициюToolStripMenuItem,
+            this.музыкальнуюПоследовательностьToolStripMenuItem});
+            this.contextMenuStripFewFile.Name = "contextMenuStripFewFile";
+            this.contextMenuStripFewFile.Size = new System.Drawing.Size(377, 76);
             // 
-            // buttonStockSaveJson
+            // музыкальнуюПозициюToolStripMenuItem
             // 
-            this.buttonStockSaveJson.Name = "buttonStockSaveJson";
-            this.buttonStockSaveJson.Size = new System.Drawing.Size(260, 26);
-            this.buttonStockSaveJson.Text = "Как Json";
-            this.buttonStockSaveJson.Click += new System.EventHandler(this.buttonStockSaveJson_Click);
+            this.музыкальнуюПозициюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.нотуToolStripMenuItem,
+            this.структуруНотыToolStripMenuItem});
+            this.музыкальнуюПозициюToolStripMenuItem.Name = "музыкальнуюПозициюToolStripMenuItem";
+            this.музыкальнуюПозициюToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
+            this.музыкальнуюПозициюToolStripMenuItem.Text = "Музыкальную позицию";
+            // 
+            // нотуToolStripMenuItem
+            // 
+            this.нотуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьToolStripMenuItem});
+            this.нотуToolStripMenuItem.Name = "нотуToolStripMenuItem";
+            this.нотуToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.нотуToolStripMenuItem.Text = "Ноту";
+            // 
+            // структуруНотыToolStripMenuItem
+            // 
+            this.структуруНотыToolStripMenuItem.Name = "структуруНотыToolStripMenuItem";
+            this.структуруНотыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.структуруНотыToolStripMenuItem.Text = "Структуру ноты";
+            // 
+            // музыкальнуюПоследовательностьToolStripMenuItem
+            // 
+            this.музыкальнуюПоследовательностьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.гаммуToolStripMenuItem,
+            this.структуруГаммыToolStripMenuItem});
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Name = "музыкальнуюПоследовательностьToolStripMenuItem";
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Text = "Музыкальную последовательность";
+            // 
+            // гаммуToolStripMenuItem
+            // 
+            this.гаммуToolStripMenuItem.Name = "гаммуToolStripMenuItem";
+            this.гаммуToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.гаммуToolStripMenuItem.Text = "Гамму";
+            // 
+            // структуруГаммыToolStripMenuItem
+            // 
+            this.структуруГаммыToolStripMenuItem.Name = "структуруГаммыToolStripMenuItem";
+            this.структуруГаммыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.структуруГаммыToolStripMenuItem.Text = "Структуру гаммы";
+            // 
+            // создатьToolStripMenuItem
+            // 
+            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.создатьToolStripMenuItem.Text = "Создать";
             // 
             // DiskForm
             // 
@@ -2139,6 +2211,7 @@
             this.menuStrip2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            this.contextMenuStripFewFile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2332,5 +2405,13 @@
         private System.Windows.Forms.ToolStripMenuItem buttonSaveStock;
         private System.Windows.Forms.ToolStripMenuItem buttonStockSaveContent;
         private System.Windows.Forms.ToolStripMenuItem buttonStockSaveJson;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripFewFile;
+        private System.Windows.Forms.ToolStripMenuItem музыкальнуюПозициюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem нотуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem структуруНотыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem музыкальнуюПоследовательностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem гаммуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem структуруГаммыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
     }
 }

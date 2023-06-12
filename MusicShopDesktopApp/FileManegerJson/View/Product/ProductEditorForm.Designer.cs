@@ -60,6 +60,9 @@ namespace FileManegerJson
             this.textBoxWihSetCategory = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetSupplier = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetManufacture = new FileManegerJson.TextBoxWihSet();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonManufacureChange = new System.Windows.Forms.Button();
+            this.buttonSupplierChange = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -75,6 +78,7 @@ namespace FileManegerJson
             this.buttonAll = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonCategoryChange = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,6 +95,7 @@ namespace FileManegerJson
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -295,9 +300,11 @@ namespace FileManegerJson
             this.tableLayoutPanel6.Controls.Add(this.textBoxWihSetCategory, 0, 6);
             this.tableLayoutPanel6.Controls.Add(this.textBoxWihSetSupplier, 1, 6);
             this.tableLayoutPanel6.Controls.Add(this.textBoxWihSetManufacture, 0, 7);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 7);
+            this.tableLayoutPanel6.Controls.Add(this.buttonCategoryChange, 0, 8);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 9;
+            this.tableLayoutPanel6.RowCount = 10;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -306,8 +313,9 @@ namespace FileManegerJson
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(734, 1054);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(734, 1192);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // textBoxName
@@ -707,6 +715,46 @@ namespace FileManegerJson
             this.textBoxWihSetManufacture.VirtualKeyBord = false;
             this.textBoxWihSetManufacture.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxWihSetManufacture_TextInputChanged);
             // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Controls.Add(this.buttonManufacureChange, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.buttonSupplierChange, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(370, 883);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(361, 144);
+            this.tableLayoutPanel8.TabIndex = 11;
+            // 
+            // buttonManufacureChange
+            // 
+            this.buttonManufacureChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonManufacureChange.Location = new System.Drawing.Point(10, 82);
+            this.buttonManufacureChange.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonManufacureChange.Name = "buttonManufacureChange";
+            this.buttonManufacureChange.Size = new System.Drawing.Size(341, 52);
+            this.buttonManufacureChange.TabIndex = 1;
+            this.buttonManufacureChange.Text = "Изменить производителя в своём редакторе";
+            this.buttonManufacureChange.UseVisualStyleBackColor = true;
+            this.buttonManufacureChange.Click += new System.EventHandler(this.buttonManufacureChange_Click);
+            // 
+            // buttonSupplierChange
+            // 
+            this.buttonSupplierChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSupplierChange.Location = new System.Drawing.Point(10, 10);
+            this.buttonSupplierChange.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonSupplierChange.Name = "buttonSupplierChange";
+            this.buttonSupplierChange.Size = new System.Drawing.Size(341, 52);
+            this.buttonSupplierChange.TabIndex = 0;
+            this.buttonSupplierChange.Text = "Изменить поставщика в своём редакторе";
+            this.buttonSupplierChange.UseVisualStyleBackColor = true;
+            this.buttonSupplierChange.Click += new System.EventHandler(this.buttonSupplierChange_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.AutoScroll = true;
@@ -882,6 +930,19 @@ namespace FileManegerJson
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // buttonCategoryChange
+            // 
+            this.tableLayoutPanel6.SetColumnSpan(this.buttonCategoryChange, 2);
+            this.buttonCategoryChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCategoryChange.Location = new System.Drawing.Point(10, 1040);
+            this.buttonCategoryChange.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonCategoryChange.Name = "buttonCategoryChange";
+            this.buttonCategoryChange.Size = new System.Drawing.Size(714, 30);
+            this.buttonCategoryChange.TabIndex = 12;
+            this.buttonCategoryChange.Text = "Изменить категорию в своём редакторе";
+            this.buttonCategoryChange.UseVisualStyleBackColor = true;
+            this.buttonCategoryChange.Click += new System.EventHandler(this.buttonCategoryChange_Click);
+            // 
             // ProductEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -911,6 +972,7 @@ namespace FileManegerJson
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -966,5 +1028,9 @@ namespace FileManegerJson
         private System.Windows.Forms.CheckBox checkBoxCategory;
         private System.Windows.Forms.CheckBox checkBoxSupplier;
         private System.Windows.Forms.CheckBox checkBoxManufacture;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Button buttonSupplierChange;
+        private System.Windows.Forms.Button buttonManufacureChange;
+        private System.Windows.Forms.Button buttonCategoryChange;
     }
 }

@@ -27,6 +27,11 @@ namespace FileManegerJson
 
         }
 
+        public CategoryEditForm(string name):this(new CategoryClass(name))
+        {
+
+        }
+
         CategoryClass organization = new CategoryClass();
 
         CategoryClass organizationUpdate = new CategoryClass();

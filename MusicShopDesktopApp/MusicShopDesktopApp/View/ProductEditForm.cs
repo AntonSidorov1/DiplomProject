@@ -1701,6 +1701,7 @@ namespace MusicShopDesktopApp
             {
                 Manufacture category = new Manufacture() { Name = paramter };
                 ManufacturesList categories = ManufacturesList.GetListFromDB();
+                manufactures = categories;
                 categories.RemoveAllByID(0);
                 if (!categories.ContainsByIdInLower(category))
                 {
@@ -1750,6 +1751,7 @@ namespace MusicShopDesktopApp
             {
                 Supplier category = new Supplier() { Name = paramter };
                 SuppliersList categories = SuppliersList.GetListFromDB();
+                suppliers = categories;
                 categories.RemoveAllByID(0);
                 if (!categories.ContainsByIdInLower(category))
                 {
@@ -1798,7 +1800,7 @@ namespace MusicShopDesktopApp
             try
             {
                 Category category = new Category() { Name = paramter };
-                CategoriesList categories = CategoriesList.GetListFromDB();
+                categories = CategoriesList.GetListFromDB();
                 categories.RemoveAllByID(0);
                 if(!categories.ContainsByIdInLower(category))
                 {
@@ -1823,10 +1825,11 @@ namespace MusicShopDesktopApp
                     Form_ChangeCategory(paramter);
                     return;
                 }
-                product.Category = category;
-                comboBoxWithNameCategories.SelectedIndex = categories.IndexByIdInLower(category);
+
                 category = categories.GetByIdInLower(category);
-                product.Category = category;
+                product.Category = category.CopyCategory();
+                comboBoxWithNameCategories.SelectedIndex = categories.IndexOfByID(category);
+                product.Category = category.CopyCategory();
                 if (product.ID < 1 || updatePart)
                 {
                     return;
