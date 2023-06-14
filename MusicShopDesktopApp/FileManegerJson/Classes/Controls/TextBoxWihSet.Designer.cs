@@ -31,8 +31,11 @@ namespace FileManegerJson
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxInput = new FileManegerJson.TextInputEdit();
+            this.tableLayoutPanelEdit = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSet = new System.Windows.Forms.Button();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -40,13 +43,14 @@ namespace FileManegerJson
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.textBoxInput, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSet, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanelEdit, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 154);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -87,17 +91,46 @@ namespace FileManegerJson
             this.textBoxInput.InputKeyDown += new System.Action<object, System.Windows.Forms.KeyEventArgs>(this.textBoxInput_KeyDown);
             this.textBoxInput.InputKeyUp += new System.Action<object, System.Windows.Forms.KeyEventArgs>(this.textBoxInput_KeyUp);
             // 
+            // tableLayoutPanelEdit
+            // 
+            this.tableLayoutPanelEdit.ColumnCount = 2;
+            this.tableLayoutPanelEdit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelEdit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelEdit.Controls.Add(this.buttonSet, 0, 0);
+            this.tableLayoutPanelEdit.Controls.Add(this.buttonShow, 1, 0);
+            this.tableLayoutPanelEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelEdit.Location = new System.Drawing.Point(3, 107);
+            this.tableLayoutPanelEdit.Name = "tableLayoutPanelEdit";
+            this.tableLayoutPanelEdit.RowCount = 1;
+            this.tableLayoutPanelEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEdit.Size = new System.Drawing.Size(258, 44);
+            this.tableLayoutPanelEdit.TabIndex = 2;
+            // 
             // buttonSet
             // 
             this.buttonSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSet.Location = new System.Drawing.Point(10, 114);
+            this.buttonSet.Location = new System.Drawing.Point(10, 10);
             this.buttonSet.Margin = new System.Windows.Forms.Padding(10);
             this.buttonSet.Name = "buttonSet";
-            this.buttonSet.Size = new System.Drawing.Size(244, 30);
+            this.buttonSet.Size = new System.Drawing.Size(109, 24);
             this.buttonSet.TabIndex = 1;
             this.buttonSet.Text = "Задать";
             this.buttonSet.UseVisualStyleBackColor = true;
+            this.buttonSet.VisibleChanged += new System.EventHandler(this.buttonSet_VisibleChanged);
             this.buttonSet.Click += new System.EventHandler(this.buttonSet_Click);
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonShow.Location = new System.Drawing.Point(139, 10);
+            this.buttonShow.Margin = new System.Windows.Forms.Padding(10);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(109, 24);
+            this.buttonShow.TabIndex = 2;
+            this.buttonShow.Text = "Просмотреть";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // TextBoxWihSet
             // 
@@ -108,6 +141,7 @@ namespace FileManegerJson
             this.Size = new System.Drawing.Size(264, 154);
             this.Load += new System.EventHandler(this.TextBoxWihSet_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanelEdit.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -117,5 +151,7 @@ namespace FileManegerJson
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private TextInputEdit textBoxInput;
         private System.Windows.Forms.Button buttonSet;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEdit;
+        private System.Windows.Forms.Button buttonShow;
     }
 }

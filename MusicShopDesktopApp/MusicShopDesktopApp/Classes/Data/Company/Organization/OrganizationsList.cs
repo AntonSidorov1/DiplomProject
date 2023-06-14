@@ -144,5 +144,18 @@ namespace MusicShopDesktopApp
         }
 
         public override Organization Get() => new Organization();
+
+
+        public static Organization GetByIDFromDB(int id)
+        {
+            return GetListFromDB().GetByID(id);
+        }
+
+        public static Organization GetByIDFromDB(Part id)
+        {
+            return GetListFromDB().GetByID(id);
+        }
+
+
     }
 }

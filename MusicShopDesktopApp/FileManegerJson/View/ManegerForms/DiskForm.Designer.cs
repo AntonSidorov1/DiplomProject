@@ -38,7 +38,6 @@
             this.ImageClear = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelIndex = new System.Windows.Forms.TextBox();
-            this.textBoxFileName = new FileManegerJson.TextInputEdit();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDoingFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +90,7 @@
             this.buttonManufacureSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonFolderShowContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveCatalog = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +103,6 @@
             this.TextJsonSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.Image = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TimerDateTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -116,10 +115,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ClickDouble = new FileManegerJson.ComboBoxNameClear();
-            this.ButtonLeft = new FileManegerJson.ComboBoxNameClear();
-            this.ButtonMiddle = new FileManegerJson.ComboBoxNameClear();
-            this.ButtonRight = new FileManegerJson.ComboBoxNameClear();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -148,6 +143,14 @@
             this.butonLoadCatalog = new System.Windows.Forms.ToolStripMenuItem();
             this.butonCatalogCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.другойФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripFewFile = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.музыкальнуюПозициюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нотуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.структуруНотыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.музыкальнуюПоследовательностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гаммуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.структуруГаммыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.текстToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateText = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonLoadtextFromFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,16 +217,13 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonClearFolder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.folderButonUpdate = new FileManegerJson.FolderButon();
             this.buttonFolderContent = new System.Windows.Forms.Button();
-            this.contextMenuStripFewFile = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.музыкальнуюПозициюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.нотуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.структуруНотыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.музыкальнуюПоследовательностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.гаммуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.структуруГаммыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderButonUpdate = new FileManegerJson.FolderButon();
+            this.ClickDouble = new FileManegerJson.ComboBoxNameClear();
+            this.ButtonLeft = new FileManegerJson.ComboBoxNameClear();
+            this.ButtonMiddle = new FileManegerJson.ComboBoxNameClear();
+            this.ButtonRight = new FileManegerJson.ComboBoxNameClear();
+            this.textBoxFileName = new FileManegerJson.TextInputEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -247,8 +247,8 @@
             this.groupBox7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
             this.contextMenuStripFewFile.SuspendLayout();
+            this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -369,42 +369,6 @@
             this.labelIndex.Size = new System.Drawing.Size(80, 24);
             this.labelIndex.TabIndex = 22;
             // 
-            // textBoxFileName
-            // 
-            this.textBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.textBoxFileName.ClearVisible = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.textBoxFileName, 2);
-            this.textBoxFileName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxFileName.Font = new System.Drawing.Font("Lucida Console", 12F);
-            this.textBoxFileName.HaveKeyBord = false;
-            this.textBoxFileName.InputBackColor = System.Drawing.SystemColors.Window;
-            this.textBoxFileName.InputForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxFileName.InputKeyPressToBox = null;
-            this.textBoxFileName.InputText = "";
-            this.textBoxFileName.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxFileName.Location = new System.Drawing.Point(0, 23);
-            this.textBoxFileName.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxFileName.MaxLength = 32767;
-            this.textBoxFileName.MinimumSize = new System.Drawing.Size(233, 80);
-            this.textBoxFileName.MultiLine = false;
-            this.textBoxFileName.Name = "textBoxFileName";
-            this.textBoxFileName.NoReadOnly = true;
-            this.textBoxFileName.PasswordChar = '\0';
-            this.textBoxFileName.ReadOnly = false;
-            this.textBoxFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxFileName.ShortcutsEnabled = true;
-            this.textBoxFileName.Size = new System.Drawing.Size(242, 80);
-            this.textBoxFileName.TabIndex = 21;
-            this.textBoxFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxFileName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxFileName.Title = "Имя";
-            this.textBoxFileName.UseSystemPasswordChar = false;
-            this.textBoxFileName.Value = "";
-            this.textBoxFileName.VirtualKeyBord = false;
-            this.textBoxFileName.InputText_Changed += new System.Action<object, System.EventArgs>(this.textBoxFileName_TextChanged);
-            this.textBoxFileName.InputLeave += new System.Action<object, System.EventArgs>(this.buttonIndexNameOK_Click);
-            this.textBoxFileName.InputKeyDown += new System.Action<object, System.Windows.Forms.KeyEventArgs>(this.textBoxIndexFileName_KeyDown);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -416,7 +380,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(128, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(248, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(248, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -428,7 +392,7 @@
             this.вывестиНаОкноToolStripMenuItem});
             this.toolStripMenuItemFile.Font = new System.Drawing.Font("Lucida Console", 12F);
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
-            this.toolStripMenuItemFile.Size = new System.Drawing.Size(71, 24);
+            this.toolStripMenuItemFile.Size = new System.Drawing.Size(71, 26);
             this.toolStripMenuItemFile.Text = "Файл";
             this.toolStripMenuItemFile.DropDownOpening += new System.EventHandler(this.toolStripMenuItemDoingFile_Click);
             this.toolStripMenuItemFile.Click += new System.EventHandler(this.toolStripMenuItemDoingFile_Click);
@@ -836,6 +800,13 @@
             this.buttonSaveCatalog.Text = "Сохранить каталог";
             this.buttonSaveCatalog.Click += new System.EventHandler(this.buttonSaveCatalog_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
+            this.toolStripMenuItem1.Text = "Свойства";
+            // 
             // выборФайлаToolStripMenuItem1
             // 
             this.выборФайлаToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -877,7 +848,7 @@
             this.ToBynaryJson,
             this.TextJsonSave});
             this.toolStripMenuItemSave.Name = "toolStripMenuItemSave";
-            this.toolStripMenuItemSave.Size = new System.Drawing.Size(239, 24);
+            this.toolStripMenuItemSave.Size = new System.Drawing.Size(239, 26);
             this.toolStripMenuItemSave.Text = "Сохранить картинку";
             // 
             // SaveImage
@@ -934,13 +905,6 @@
             this.Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Image.TabIndex = 1;
             this.Image.TabStop = false;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
-            this.toolStripMenuItem1.Text = "Свойства";
             // 
             // TimerDateTime
             // 
@@ -1117,106 +1081,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(414, 129);
             this.tableLayoutPanel1.TabIndex = 154;
-            // 
-            // ClickDouble
-            // 
-            this.ClickDouble.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
-            this.ClickDouble.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
-            this.ClickDouble.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClickDouble.ClearedProperty = null;
-            this.ClickDouble.ClearVisible = true;
-            this.ClickDouble.CliearingProperty = null;
-            this.ClickDouble.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClickDouble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ClickDouble.DropDownWith = 320;
-            this.ClickDouble.Font = new System.Drawing.Font("Lucida Console", 10F);
-            this.ClickDouble.Location = new System.Drawing.Point(4, 68);
-            this.ClickDouble.Margin = new System.Windows.Forms.Padding(4);
-            this.ClickDouble.Name = "ClickDouble";
-            this.ClickDouble.NoReadOnly = true;
-            this.ClickDouble.ReadOnly = false;
-            this.ClickDouble.SelectedIndex = -1;
-            this.ClickDouble.SelectedIndexChangedProperty = null;
-            this.ClickDouble.Size = new System.Drawing.Size(199, 57);
-            this.ClickDouble.TabIndex = 0;
-            this.ClickDouble.Title = "Двойной щелчок";
-            this.ClickDouble.Value = "";
-            this.ClickDouble.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
-            // 
-            // ButtonLeft
-            // 
-            this.ButtonLeft.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonLeft.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonLeft.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ButtonLeft.ClearedProperty = null;
-            this.ButtonLeft.ClearVisible = true;
-            this.ButtonLeft.CliearingProperty = null;
-            this.ButtonLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonLeft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ButtonLeft.DropDownWith = 320;
-            this.ButtonLeft.Font = new System.Drawing.Font("Lucida Console", 10F);
-            this.ButtonLeft.Location = new System.Drawing.Point(4, 4);
-            this.ButtonLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonLeft.Name = "ButtonLeft";
-            this.ButtonLeft.NoReadOnly = true;
-            this.ButtonLeft.ReadOnly = false;
-            this.ButtonLeft.SelectedIndex = -1;
-            this.ButtonLeft.SelectedIndexChangedProperty = null;
-            this.ButtonLeft.Size = new System.Drawing.Size(199, 56);
-            this.ButtonLeft.TabIndex = 0;
-            this.ButtonLeft.Title = "Левая кнопка";
-            this.ButtonLeft.Value = "";
-            this.ButtonLeft.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
-            // 
-            // ButtonMiddle
-            // 
-            this.ButtonMiddle.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonMiddle.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonMiddle.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ButtonMiddle.ClearedProperty = null;
-            this.ButtonMiddle.ClearVisible = true;
-            this.ButtonMiddle.CliearingProperty = null;
-            this.ButtonMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonMiddle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ButtonMiddle.DropDownWith = 320;
-            this.ButtonMiddle.Font = new System.Drawing.Font("Lucida Console", 10F);
-            this.ButtonMiddle.Location = new System.Drawing.Point(211, 68);
-            this.ButtonMiddle.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonMiddle.Name = "ButtonMiddle";
-            this.ButtonMiddle.NoReadOnly = true;
-            this.ButtonMiddle.ReadOnly = false;
-            this.ButtonMiddle.SelectedIndex = -1;
-            this.ButtonMiddle.SelectedIndexChangedProperty = null;
-            this.ButtonMiddle.Size = new System.Drawing.Size(199, 57);
-            this.ButtonMiddle.TabIndex = 0;
-            this.ButtonMiddle.Title = "Средняя кнопка";
-            this.ButtonMiddle.Value = "";
-            this.ButtonMiddle.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
-            // 
-            // ButtonRight
-            // 
-            this.ButtonRight.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonRight.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
-            this.ButtonRight.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ButtonRight.ClearedProperty = null;
-            this.ButtonRight.ClearVisible = true;
-            this.ButtonRight.CliearingProperty = null;
-            this.ButtonRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonRight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ButtonRight.DropDownWith = 320;
-            this.ButtonRight.Font = new System.Drawing.Font("Lucida Console", 10F);
-            this.ButtonRight.Location = new System.Drawing.Point(211, 4);
-            this.ButtonRight.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonRight.Name = "ButtonRight";
-            this.ButtonRight.NoReadOnly = true;
-            this.ButtonRight.ReadOnly = false;
-            this.ButtonRight.SelectedIndex = -1;
-            this.ButtonRight.SelectedIndexChangedProperty = null;
-            this.ButtonRight.Size = new System.Drawing.Size(199, 56);
-            this.ButtonRight.TabIndex = 0;
-            this.ButtonRight.Title = "Правая кнопка";
-            this.ButtonRight.Value = "";
-            this.ButtonRight.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
             // 
             // tableLayoutPanel5
             // 
@@ -1403,10 +1267,10 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.каталогToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 25);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 30);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(312, 25);
+            this.menuStrip2.Size = new System.Drawing.Size(312, 30);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -1417,7 +1281,7 @@
             this.вывестиИзФайлаToolStripMenuItem,
             this.добавитьВКаталогToolStripMenuItem});
             this.каталогToolStripMenuItem.Name = "каталогToolStripMenuItem";
-            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 21);
+            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(302, 26);
             this.каталогToolStripMenuItem.Text = "Каталог (Добавления и вывод)";
             // 
             // SaveFolder
@@ -1522,6 +1386,67 @@
             this.другойФайлToolStripMenuItem.Name = "другойФайлToolStripMenuItem";
             this.другойФайлToolStripMenuItem.Size = new System.Drawing.Size(530, 26);
             this.другойФайлToolStripMenuItem.Text = "Другой файл";
+            // 
+            // contextMenuStripFewFile
+            // 
+            this.contextMenuStripFewFile.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contextMenuStripFewFile.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripFewFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.музыкальнуюПозициюToolStripMenuItem,
+            this.музыкальнуюПоследовательностьToolStripMenuItem});
+            this.contextMenuStripFewFile.Name = "contextMenuStripFewFile";
+            this.contextMenuStripFewFile.OwnerItem = this.другойФайлToolStripMenuItem;
+            this.contextMenuStripFewFile.Size = new System.Drawing.Size(377, 48);
+            // 
+            // музыкальнуюПозициюToolStripMenuItem
+            // 
+            this.музыкальнуюПозициюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.нотуToolStripMenuItem,
+            this.структуруНотыToolStripMenuItem});
+            this.музыкальнуюПозициюToolStripMenuItem.Name = "музыкальнуюПозициюToolStripMenuItem";
+            this.музыкальнуюПозициюToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
+            this.музыкальнуюПозициюToolStripMenuItem.Text = "Музыкальную позицию";
+            // 
+            // нотуToolStripMenuItem
+            // 
+            this.нотуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьToolStripMenuItem});
+            this.нотуToolStripMenuItem.Name = "нотуToolStripMenuItem";
+            this.нотуToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.нотуToolStripMenuItem.Text = "Ноту";
+            // 
+            // создатьToolStripMenuItem
+            // 
+            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.создатьToolStripMenuItem.Text = "Создать";
+            // 
+            // структуруНотыToolStripMenuItem
+            // 
+            this.структуруНотыToolStripMenuItem.Name = "структуруНотыToolStripMenuItem";
+            this.структуруНотыToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.структуруНотыToolStripMenuItem.Text = "Структуру ноты";
+            // 
+            // музыкальнуюПоследовательностьToolStripMenuItem
+            // 
+            this.музыкальнуюПоследовательностьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.гаммуToolStripMenuItem,
+            this.структуруГаммыToolStripMenuItem});
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Name = "музыкальнуюПоследовательностьToolStripMenuItem";
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
+            this.музыкальнуюПоследовательностьToolStripMenuItem.Text = "Музыкальную последовательность";
+            // 
+            // гаммуToolStripMenuItem
+            // 
+            this.гаммуToolStripMenuItem.Name = "гаммуToolStripMenuItem";
+            this.гаммуToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.гаммуToolStripMenuItem.Text = "Гамму";
+            // 
+            // структуруГаммыToolStripMenuItem
+            // 
+            this.структуруГаммыToolStripMenuItem.Name = "структуруГаммыToolStripMenuItem";
+            this.структуруГаммыToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.структуруГаммыToolStripMenuItem.Text = "Структуру гаммы";
             // 
             // текстToolStripMenuItem
             // 
@@ -1914,7 +1839,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(312, 25);
+            this.menuStrip3.Size = new System.Drawing.Size(312, 30);
             this.menuStrip3.TabIndex = 1;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -1926,7 +1851,7 @@
             this.DropLink});
             this.связьСФайломкаталогомToolStripMenuItem.Font = new System.Drawing.Font("Lucida Console", 10F);
             this.связьСФайломкаталогомToolStripMenuItem.Name = "связьСФайломкаталогомToolStripMenuItem";
-            this.связьСФайломкаталогомToolStripMenuItem.Size = new System.Drawing.Size(162, 21);
+            this.связьСФайломкаталогомToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.связьСФайломкаталогомToolStripMenuItem.Text = "Связь с файлом";
             // 
             // CreateLink
@@ -2064,6 +1989,16 @@
             this.button1.Visible = false;
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictireFile_MouseDown);
             // 
+            // buttonFolderContent
+            // 
+            this.buttonFolderContent.Location = new System.Drawing.Point(42, 206);
+            this.buttonFolderContent.Name = "buttonFolderContent";
+            this.buttonFolderContent.Size = new System.Drawing.Size(249, 28);
+            this.buttonFolderContent.TabIndex = 166;
+            this.buttonFolderContent.Text = "Содержимое каталога";
+            this.buttonFolderContent.UseVisualStyleBackColor = true;
+            this.buttonFolderContent.Click += new System.EventHandler(this.buttonFolderContent_Click);
+            // 
             // folderButonUpdate
             // 
             this.folderButonUpdate.Folder = null;
@@ -2077,75 +2012,141 @@
             this.folderButonUpdate.UpdaeFloder += new FileManegerJson.FolderButon.GetFolder(this.FromFolderClass);
             this.folderButonUpdate.Click += new System.EventHandler(this.folderButonUpdate_Click);
             // 
-            // buttonFolderContent
+            // ClickDouble
             // 
-            this.buttonFolderContent.Location = new System.Drawing.Point(42, 206);
-            this.buttonFolderContent.Name = "buttonFolderContent";
-            this.buttonFolderContent.Size = new System.Drawing.Size(249, 28);
-            this.buttonFolderContent.TabIndex = 166;
-            this.buttonFolderContent.Text = "Содержимое каталога";
-            this.buttonFolderContent.UseVisualStyleBackColor = true;
-            this.buttonFolderContent.Click += new System.EventHandler(this.buttonFolderContent_Click);
+            this.ClickDouble.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
+            this.ClickDouble.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
+            this.ClickDouble.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClickDouble.ClearedProperty = null;
+            this.ClickDouble.ClearVisible = true;
+            this.ClickDouble.CliearingProperty = null;
+            this.ClickDouble.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClickDouble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClickDouble.DropDownWith = 320;
+            this.ClickDouble.Font = new System.Drawing.Font("Lucida Console", 10F);
+            this.ClickDouble.Location = new System.Drawing.Point(4, 68);
+            this.ClickDouble.Margin = new System.Windows.Forms.Padding(4);
+            this.ClickDouble.Name = "ClickDouble";
+            this.ClickDouble.NoReadOnly = true;
+            this.ClickDouble.ReadOnly = false;
+            this.ClickDouble.SelectedIndex = -1;
+            this.ClickDouble.SelectedIndexChangedProperty = null;
+            this.ClickDouble.Size = new System.Drawing.Size(199, 57);
+            this.ClickDouble.TabIndex = 0;
+            this.ClickDouble.Title = "Двойной щелчок";
+            this.ClickDouble.Value = "";
+            this.ClickDouble.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
             // 
-            // contextMenuStripFewFile
+            // ButtonLeft
             // 
-            this.contextMenuStripFewFile.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.contextMenuStripFewFile.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripFewFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.музыкальнуюПозициюToolStripMenuItem,
-            this.музыкальнуюПоследовательностьToolStripMenuItem});
-            this.contextMenuStripFewFile.Name = "contextMenuStripFewFile";
-            this.contextMenuStripFewFile.Size = new System.Drawing.Size(377, 76);
+            this.ButtonLeft.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonLeft.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonLeft.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ButtonLeft.ClearedProperty = null;
+            this.ButtonLeft.ClearVisible = true;
+            this.ButtonLeft.CliearingProperty = null;
+            this.ButtonLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonLeft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ButtonLeft.DropDownWith = 320;
+            this.ButtonLeft.Font = new System.Drawing.Font("Lucida Console", 10F);
+            this.ButtonLeft.Location = new System.Drawing.Point(4, 4);
+            this.ButtonLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonLeft.Name = "ButtonLeft";
+            this.ButtonLeft.NoReadOnly = true;
+            this.ButtonLeft.ReadOnly = false;
+            this.ButtonLeft.SelectedIndex = -1;
+            this.ButtonLeft.SelectedIndexChangedProperty = null;
+            this.ButtonLeft.Size = new System.Drawing.Size(199, 56);
+            this.ButtonLeft.TabIndex = 0;
+            this.ButtonLeft.Title = "Левая кнопка";
+            this.ButtonLeft.Value = "";
+            this.ButtonLeft.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
             // 
-            // музыкальнуюПозициюToolStripMenuItem
+            // ButtonMiddle
             // 
-            this.музыкальнуюПозициюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.нотуToolStripMenuItem,
-            this.структуруНотыToolStripMenuItem});
-            this.музыкальнуюПозициюToolStripMenuItem.Name = "музыкальнуюПозициюToolStripMenuItem";
-            this.музыкальнуюПозициюToolStripMenuItem.Size = new System.Drawing.Size(376, 22);
-            this.музыкальнуюПозициюToolStripMenuItem.Text = "Музыкальную позицию";
+            this.ButtonMiddle.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonMiddle.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonMiddle.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ButtonMiddle.ClearedProperty = null;
+            this.ButtonMiddle.ClearVisible = true;
+            this.ButtonMiddle.CliearingProperty = null;
+            this.ButtonMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonMiddle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ButtonMiddle.DropDownWith = 320;
+            this.ButtonMiddle.Font = new System.Drawing.Font("Lucida Console", 10F);
+            this.ButtonMiddle.Location = new System.Drawing.Point(211, 68);
+            this.ButtonMiddle.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonMiddle.Name = "ButtonMiddle";
+            this.ButtonMiddle.NoReadOnly = true;
+            this.ButtonMiddle.ReadOnly = false;
+            this.ButtonMiddle.SelectedIndex = -1;
+            this.ButtonMiddle.SelectedIndexChangedProperty = null;
+            this.ButtonMiddle.Size = new System.Drawing.Size(199, 57);
+            this.ButtonMiddle.TabIndex = 0;
+            this.ButtonMiddle.Title = "Средняя кнопка";
+            this.ButtonMiddle.Value = "";
+            this.ButtonMiddle.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
             // 
-            // нотуToolStripMenuItem
+            // ButtonRight
             // 
-            this.нотуToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьToolStripMenuItem});
-            this.нотуToolStripMenuItem.Name = "нотуToolStripMenuItem";
-            this.нотуToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.нотуToolStripMenuItem.Text = "Ноту";
+            this.ButtonRight.BorderStyleExternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonRight.BorderStyleInternal = System.Windows.Forms.BorderStyle.None;
+            this.ButtonRight.BorderStyleMiddle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ButtonRight.ClearedProperty = null;
+            this.ButtonRight.ClearVisible = true;
+            this.ButtonRight.CliearingProperty = null;
+            this.ButtonRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonRight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ButtonRight.DropDownWith = 320;
+            this.ButtonRight.Font = new System.Drawing.Font("Lucida Console", 10F);
+            this.ButtonRight.Location = new System.Drawing.Point(211, 4);
+            this.ButtonRight.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonRight.Name = "ButtonRight";
+            this.ButtonRight.NoReadOnly = true;
+            this.ButtonRight.ReadOnly = false;
+            this.ButtonRight.SelectedIndex = -1;
+            this.ButtonRight.SelectedIndexChangedProperty = null;
+            this.ButtonRight.Size = new System.Drawing.Size(199, 56);
+            this.ButtonRight.TabIndex = 0;
+            this.ButtonRight.Title = "Правая кнопка";
+            this.ButtonRight.Value = "";
+            this.ButtonRight.Clearing += new FileManegerJson.ComboBoxNameClear.ClearControl(this.comboBoxLeft_Clearing);
             // 
-            // структуруНотыToolStripMenuItem
+            // textBoxFileName
             // 
-            this.структуруНотыToolStripMenuItem.Name = "структуруНотыToolStripMenuItem";
-            this.структуруНотыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.структуруНотыToolStripMenuItem.Text = "Структуру ноты";
-            // 
-            // музыкальнуюПоследовательностьToolStripMenuItem
-            // 
-            this.музыкальнуюПоследовательностьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.гаммуToolStripMenuItem,
-            this.структуруГаммыToolStripMenuItem});
-            this.музыкальнуюПоследовательностьToolStripMenuItem.Name = "музыкальнуюПоследовательностьToolStripMenuItem";
-            this.музыкальнуюПоследовательностьToolStripMenuItem.Size = new System.Drawing.Size(322, 24);
-            this.музыкальнуюПоследовательностьToolStripMenuItem.Text = "Музыкальную последовательность";
-            // 
-            // гаммуToolStripMenuItem
-            // 
-            this.гаммуToolStripMenuItem.Name = "гаммуToolStripMenuItem";
-            this.гаммуToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.гаммуToolStripMenuItem.Text = "Гамму";
-            // 
-            // структуруГаммыToolStripMenuItem
-            // 
-            this.структуруГаммыToolStripMenuItem.Name = "структуруГаммыToolStripMenuItem";
-            this.структуруГаммыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.структуруГаммыToolStripMenuItem.Text = "Структуру гаммы";
-            // 
-            // создатьToolStripMenuItem
-            // 
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.создатьToolStripMenuItem.Text = "Создать";
+            this.textBoxFileName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.textBoxFileName.ClearVisible = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.textBoxFileName, 2);
+            this.textBoxFileName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxFileName.Font = new System.Drawing.Font("Lucida Console", 12F);
+            this.textBoxFileName.HaveKeyBord = false;
+            this.textBoxFileName.InputBackColor = System.Drawing.SystemColors.Window;
+            this.textBoxFileName.InputForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxFileName.InputKeyPressToBox = null;
+            this.textBoxFileName.InputText = "";
+            this.textBoxFileName.InputTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxFileName.Location = new System.Drawing.Point(0, 23);
+            this.textBoxFileName.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxFileName.MaxLength = 32767;
+            this.textBoxFileName.MinimumSize = new System.Drawing.Size(233, 80);
+            this.textBoxFileName.MultiLine = false;
+            this.textBoxFileName.Name = "textBoxFileName";
+            this.textBoxFileName.NoReadOnly = true;
+            this.textBoxFileName.PasswordChar = '\0';
+            this.textBoxFileName.ReadOnly = false;
+            this.textBoxFileName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxFileName.ShortcutsEnabled = true;
+            this.textBoxFileName.Size = new System.Drawing.Size(242, 80);
+            this.textBoxFileName.TabIndex = 21;
+            this.textBoxFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxFileName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
+            this.textBoxFileName.Title = "Имя";
+            this.textBoxFileName.UseSystemPasswordChar = false;
+            this.textBoxFileName.Value = "";
+            this.textBoxFileName.VirtualKeyBord = false;
+            this.textBoxFileName.InputText_Changed += new System.Action<object, System.EventArgs>(this.textBoxFileName_TextChanged);
+            this.textBoxFileName.InputLeave += new System.Action<object, System.EventArgs>(this.buttonIndexNameOK_Click);
+            this.textBoxFileName.InputKeyDown += new System.Action<object, System.Windows.Forms.KeyEventArgs>(this.textBoxIndexFileName_KeyDown);
             // 
             // DiskForm
             // 
@@ -2209,9 +2210,9 @@
             this.panel2.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.contextMenuStripFewFile.ResumeLayout(false);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            this.contextMenuStripFewFile.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

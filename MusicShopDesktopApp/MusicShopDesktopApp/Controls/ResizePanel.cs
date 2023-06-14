@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows.Forms;
 
 namespace MusicShopDesktopApp
 {
+    public delegate void ControlSizeUpdate(Control control, Size size);
     public class ResizePanel : FlowLayoutPanel
     {
         public ResizePanel() : base()
@@ -27,7 +29,12 @@ namespace MusicShopDesktopApp
                 controls[i].Width = this.Width - DeltaWith;
                 controls[i].Refresh();
             }
+            SizeUpdated?.Invoke(this, new EventArgs());
+            ControlSizeUpdated?.Invoke(this, Size);
         }
+
+        public event EventHandler SizeUpdated;
+        public event ControlSizeUpdate ControlSizeUpdated;
 
         int deltaWith = 80;
 

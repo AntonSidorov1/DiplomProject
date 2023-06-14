@@ -1671,6 +1671,207 @@ namespace MusicShopDesktopApp
             buttonUpdate_Click(sender, e);
         }
 
+        private void buttonSityShow_Click(object sender, EventArgs e)
+        {
+            if (comboBoxWithNameSities.SelectedIndex < 1)
+            {
+                MessageBox.Show("Выберите город", "просмотр города", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Sity sity = new Sity();
+            try
+            {
+                sity = sities[comboBoxWithNameSities.SelectedIndex - 1];
+                SityEditForm form = new SityEditForm(sity.Name);
+                form.SetReadOnly(false);
+                Hide();
+
+                form.ShowDialog();
+                Show();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Выбранный город больше не существует", "Изменение городов", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Выбранный город больше не существует", "Изменение городов", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            catch
+            {
+                MessageBox.Show("Выбранный город больше не существует", "Изменение городов", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+
+
+        }
+
+        private void buttonStockShow_Click(object sender, EventArgs e)
+        {
+            int index = listWithNameStocks.CurrentCell.RowIndex;
+            if (index < 1)
+            {
+                MessageBox.Show("Склад не выбран", "Изменение склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            if (index > 0)
+            {
+                Stock sity = new Stock();
+                try
+                {
+                    sity = stocks[index - 1];
+                    int id = sity.ID;
+
+                    StockPointEditForm form = new StockPointEditForm(sity.CopyEdit());
+                    form.SetReadOnly(false);
+                    Hide();
+                    form.ShowDialog();
+                    Show();
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Выбранный склад больше не существует", "Изменение склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show("Выбранный склад больше не существует", "Изменение склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch
+                {
+                    MessageBox.Show("Выбранный склад больше не существует", "Изменение склада", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+
+
+            }
+        }
+
+        private void buttonOrganizationShow_Click(object sender, EventArgs e)
+        {
+            int index = comboBoxWithNameOrganization.SelectedIndex;
+            if (index < 1)
+            {
+                MessageBox.Show("Организация не выбрана", "Изменение организаций", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            if (index > 0)
+            {
+                Organization sity = new Organization();
+                try
+                {
+                    sity = organizations[index - 1];
+                    int id = sity.ID;
+                    OrganizationEditForm form = new OrganizationEditForm(sity.CopyOrganizationEdit());
+                    form.SetReadOnly(false);
+                    Hide();
+                    form.ShowDialog();
+                    Show();
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Выбранная организация больше не существует", "Изменение организаций", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show("Выбранный организация больше не существует", "Изменение организаций", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch
+                {
+                    MessageBox.Show("Выбранный организация больше не существует", "Изменение организаций", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+
+
+
+
+            }
+        }
+
+        private void buttonPointShow_Click(object sender, EventArgs e)
+        {
+            TradingPoint tradingPoint = new TradingPoint();
+
+            timerUpdate.Stop();
+            int index = comboBoxWithNameSities.SelectedIndex;
+
+
+            index = dataGridViewPounkts.CurrentCell.RowIndex;
+            if (index < 1)
+            {
+                MessageBox.Show("Торговый пункт не выбран", "Изменение торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                buttonUpdate_Click(sender, e);
+                return;
+            }
+            if (index > 0)
+            {
+
+                try
+                {
+                    tradingPoint = points[index - 1];
+                    int id = tradingPoint.ID;
+                    ShopEditForm shopEdit = new ShopEditForm(tradingPoint);
+                    shopEdit.SetReadOnly(false);
+                    Hide();
+                    shopEdit.ShowDialog();
+                    Show();
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Выбранный торговый пункт больше не существует", "Изменение торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show("Выбранный торговый пункт больше не существует", "Изменение торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+                catch
+                {
+                    MessageBox.Show("Выбранный торговый пункт больше не существует", "Изменение торгового пункта", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    buttonUpdate_Click(sender, e);
+                    return;
+                }
+            }
+
+            //EditTraidingPoint(tradingPoint, sender, e);
+        }
+
         TradingPointsList points = new TradingPointsList();
         void GetPounkts()
         {

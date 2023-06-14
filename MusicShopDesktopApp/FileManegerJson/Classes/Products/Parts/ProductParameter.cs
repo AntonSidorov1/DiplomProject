@@ -13,7 +13,7 @@ namespace FileManegerJson
     /// Параметр товара
     /// </summary>
     [DataContract]
-    public class ProductParameter
+    public class ProductParameter : AbstractNotesClass
     {
         string name = "";
 
@@ -141,6 +141,14 @@ namespace FileManegerJson
 
         public void LoadJson(string jsonFile) => SetParameter((ProductParameter)FileClass.JsonRead(jsonFile, GetType()));
 
+        public override string GetName()
+        {
+            return Name;
+        }
 
+        public override void SetName(string name)
+        {
+            Name = name;
+        }
     }
 }

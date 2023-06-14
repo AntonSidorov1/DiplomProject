@@ -139,5 +139,16 @@ namespace MusicShopDesktopApp
 
 
         public override Stock Get() => new Stock();
+
+        public static Stock GetByIDFromDB(int id)
+        {
+            return GetListFromDB().GetByID(id);
+        }
+
+        public static Stock GetByIDFromDB(Part id)
+        {
+            return GetListFromDB().GetByID(id);
+        }
+
     }
 }

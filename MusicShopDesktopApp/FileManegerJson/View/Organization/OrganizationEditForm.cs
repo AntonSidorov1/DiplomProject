@@ -74,6 +74,20 @@ namespace FileManegerJson
 
         }
 
+        public void SetReadOnly(bool check)
+        {
+            groupBoxChange.Visible = check;
+            textBoxName.NoReadOnly = check;
+            textBoxWihSite.NoReadOnly = check;
+            textBoxWihSetAddress.NoReadOnly = check;
+            textBoxWihSetPhone.NoReadOnly = check;
+            textBoxWihSetEmail.NoReadOnly = check;
+
+            buttonDrop.Visible = check;
+            buttonSet.Visible = check;
+            tableLayoutPanelSave.Visible = check;
+        }
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             Close();

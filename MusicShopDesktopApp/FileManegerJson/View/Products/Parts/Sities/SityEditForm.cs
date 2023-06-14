@@ -107,6 +107,18 @@ namespace FileManegerJson
             textInputNewValue.Value = Value;
         }
 
+        public void SetReadOnly(bool check)
+        {
+            textInputNewValue.NoReadOnly = check;
+            buttonSetDialog.Visible = check;
+            buttonCamcel.Visible = check;
+            buttonOK.Visible = check;
+            buttonFewWindow.Visible = check;
+            buttonSity.Visible = check;
+            buttonTexInput.Visible = check;
+            checkBoxKeyBord.Visible = check;
+        }
+
         private void buttonFewWindow_Click(object sender, EventArgs e)
         {
             SityEditForm form = new SityEditForm(textInputNewValue.Text);

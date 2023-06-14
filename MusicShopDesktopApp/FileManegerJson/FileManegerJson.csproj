@@ -200,6 +200,9 @@
     <Compile Include="Classes\Files\Product\Part\Manufacture\ManufactureFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Supplier\SupplierFile.cs" />
     <Compile Include="Classes\Files\Product\Part\TraidingPointFile.cs" />
+    <Compile Include="Classes\Music\Note\AbstractNotesClass.cs" />
+    <Compile Include="Classes\Music\Note\NoteInGammaClass.cs" />
+    <Compile Include="Classes\Music\Note\NotePozitionClass.cs" />
     <Compile Include="Classes\Products\Parts\DisributingFacilities\DisributingFacilities.cs" />
     <Compile Include="Classes\Products\Parts\Product\ProductClass.cs" />
     <Compile Include="Classes\Products\Parts\Pounkt\DistributingPoint.cs" />
@@ -492,6 +495,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Склад.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

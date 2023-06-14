@@ -71,6 +71,11 @@ namespace FileManegerJson
 
         }
 
+        public bool SaveVisible
+        {
+            get => tableLayoutPanelSave.Visible;
+            set => tableLayoutPanelSave.Visible = value;
+        }
         private void buttonBack_Click(object sender, EventArgs e)
         {
             Close();

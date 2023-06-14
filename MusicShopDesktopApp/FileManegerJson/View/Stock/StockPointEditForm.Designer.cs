@@ -37,7 +37,7 @@ namespace FileManegerJson
             this.buttonBack = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxChange = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRunWindowEdit = new System.Windows.Forms.Button();
             this.buttonByManager = new System.Windows.Forms.Button();
@@ -48,7 +48,9 @@ namespace FileManegerJson
             this.textBoxWihSetPhone = new FileManegerJson.TextBoxWihSet();
             this.textBoxWihSetEmail = new FileManegerJson.TextBoxWihSet();
             this.textBoxSity = new FileManegerJson.TextBoxWihSet();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonChangeSity = new System.Windows.Forms.Button();
+            this.tableLayoutPanelSave = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxName = new System.Windows.Forms.CheckBox();
@@ -59,8 +61,6 @@ namespace FileManegerJson
             this.buttonAll = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonChangeSity = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,12 +70,12 @@ namespace FileManegerJson
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxChange.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanelSave.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -146,7 +146,7 @@ namespace FileManegerJson
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(678, 96);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Торговая точка";
+            this.label1.Text = "Склад";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonBack
@@ -176,7 +176,7 @@ namespace FileManegerJson
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel3);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanelSave);
             this.splitContainer1.Size = new System.Drawing.Size(1114, 398);
             this.splitContainer1.SplitterDistance = 869;
             this.splitContainer1.SplitterWidth = 10;
@@ -187,7 +187,7 @@ namespace FileManegerJson
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.groupBoxChange, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
@@ -198,16 +198,16 @@ namespace FileManegerJson
             this.tableLayoutPanel4.Size = new System.Drawing.Size(869, 398);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // groupBox1
+            // groupBoxChange
             // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(863, 65);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Задать/Изменить/Сохранить";
+            this.groupBoxChange.Controls.Add(this.tableLayoutPanel5);
+            this.groupBoxChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxChange.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxChange.Name = "groupBoxChange";
+            this.groupBoxChange.Size = new System.Drawing.Size(863, 65);
+            this.groupBoxChange.TabIndex = 0;
+            this.groupBoxChange.TabStop = false;
+            this.groupBoxChange.Text = "Задать/Изменить/Сохранить";
             // 
             // tableLayoutPanel5
             // 
@@ -302,7 +302,7 @@ namespace FileManegerJson
             this.textBoxName.TabIndex = 0;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.TextScrollBar = System.Windows.Forms.ScrollBars.None;
-            this.textBoxName.Title = "Имя";
+            this.textBoxName.Title = "Название";
             this.textBoxName.UseSystemPasswordChar = false;
             this.textBoxName.Value = "";
             this.textBoxName.VirtualKeyBord = false;
@@ -417,22 +417,48 @@ namespace FileManegerJson
             this.textBoxSity.VirtualKeyBord = false;
             this.textBoxSity.TextInputChanged += new FileManegerJson.TextBoxWihSet.ControlChanged(this.textBoxSity_TextInputChanged);
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel7
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.buttonSave, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(235, 398);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel7.Controls.Add(this.buttonChangeSity, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(577, 163);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(283, 155);
+            this.tableLayoutPanel7.TabIndex = 6;
+            // 
+            // buttonChangeSity
+            // 
+            this.buttonChangeSity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonChangeSity.Location = new System.Drawing.Point(3, 3);
+            this.buttonChangeSity.Name = "buttonChangeSity";
+            this.buttonChangeSity.Size = new System.Drawing.Size(277, 61);
+            this.buttonChangeSity.TabIndex = 0;
+            this.buttonChangeSity.Text = "Изменить город другим окном";
+            this.buttonChangeSity.UseVisualStyleBackColor = true;
+            this.buttonChangeSity.Click += new System.EventHandler(this.buttonChangeSity_Click);
+            // 
+            // tableLayoutPanelSave
+            // 
+            this.tableLayoutPanelSave.ColumnCount = 1;
+            this.tableLayoutPanelSave.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSave.Controls.Add(this.buttonSave, 0, 0);
+            this.tableLayoutPanelSave.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.tableLayoutPanelSave.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanelSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSave.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelSave.Name = "tableLayoutPanelSave";
+            this.tableLayoutPanelSave.RowCount = 3;
+            this.tableLayoutPanelSave.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelSave.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelSave.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSave.Size = new System.Drawing.Size(235, 398);
+            this.tableLayoutPanelSave.TabIndex = 0;
             // 
             // buttonSave
             // 
@@ -547,32 +573,6 @@ namespace FileManegerJson
             this.label2.Text = "Сохранять:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.buttonChangeSity, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(577, 163);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(283, 155);
-            this.tableLayoutPanel7.TabIndex = 6;
-            // 
-            // buttonChangeSity
-            // 
-            this.buttonChangeSity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonChangeSity.Location = new System.Drawing.Point(3, 3);
-            this.buttonChangeSity.Name = "buttonChangeSity";
-            this.buttonChangeSity.Size = new System.Drawing.Size(277, 61);
-            this.buttonChangeSity.TabIndex = 0;
-            this.buttonChangeSity.Text = "Изменить город другим окном";
-            this.buttonChangeSity.UseVisualStyleBackColor = true;
-            this.buttonChangeSity.Click += new System.EventHandler(this.buttonChangeSity_Click);
-            // 
             // StockPointEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
@@ -595,14 +595,14 @@ namespace FileManegerJson
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxChange.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanelSave.ResumeLayout(false);
+            this.tableLayoutPanelSave.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -616,10 +616,10 @@ namespace FileManegerJson
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSave;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxChange;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button buttonRunWindowEdit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

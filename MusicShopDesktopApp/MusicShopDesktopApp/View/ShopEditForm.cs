@@ -146,6 +146,21 @@ namespace MusicShopDesktopApp
             return true;
         }
 
+        bool readOnly = true;
+
+        public void SetReadOnly(bool check)
+        {
+            buttonAddress.Visible = check;
+            buttonNameSet.Visible = check;
+            buttonEmail.Visible = check;
+            buttonPhone.Visible = check;
+            buttonSite.Visible = check;
+            buttonSchedule.Visible = check;
+            buttonShopSet.Visible = check;
+            buttonPounktOfIssue.Visible = check;
+            readOnly = check;
+        }
+
         public bool UpdateShop()
         {
             try
@@ -515,32 +530,32 @@ namespace MusicShopDesktopApp
 
         private void textInputName_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
-            buttonNameSet.Visible = textInputName.ReadOnly;
+            //buttonNameSet.Visible = textInputName.ReadOnly;
         }
 
         private void textInputSchedule_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
-            buttonSchedule.Visible = textInputSchedule.ReadOnly;
+            //buttonSchedule.Visible = textInputSchedule.ReadOnly;
         }
 
         private void textInputTelephone_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
-            buttonPhone.Visible = textInputTelephone.ReadOnly;
+           // buttonPhone.Visible = textInputTelephone.ReadOnly;
         }
 
         private void textInputAddress_RegionChanged(object sender, EventArgs e)
         {
-            buttonAddress.Visible = textInputAddress.ReadOnly;
+           // buttonAddress.Visible = textInputAddress.ReadOnly;
         }
 
         private void textInputSitePath_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
-            buttonSite.Visible = textInputSitePath.ReadOnly;
+            //buttonSite.Visible = textInputSitePath.ReadOnly;
         }
 
         private void textInputEmail_ReadOnlyChanged(object arg1, EventArgs arg2)
         {
-            buttonEmail.Visible = textInputEmail.ReadOnly;
+            //buttonEmail.Visible = textInputEmail.ReadOnly;
         }
 
         private void buttonInfo_Click(object sender, EventArgs e)
@@ -631,6 +646,7 @@ namespace MusicShopDesktopApp
         private void buttonByStore_Click(object sender, EventArgs e)
         {
             StorePointEditForm form = new StorePointEditForm(point.CopyStore());
+            form.SetReadOnly(readOnly);
             form.ChangeName += SetName;
             form.ChangeAddress += SetAddress;
             form.ChangePhone += SetPhone;
@@ -642,6 +658,41 @@ namespace MusicShopDesktopApp
             Hide();
             form.ShowDialog();
             Show();
+        }
+
+        private void buttonInfoStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Stock stock = StocksList.GetByIDFromDB(point.Stock);
+
+                StockPointEditForm form = new StockPointEditForm(stock.CopyEdit());
+                form.SetReadOnly(false);
+                Hide();
+                form.ShowDialog();
+                Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void buttonOrgInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Organization organization = OrganizationsList.GetByIDFromDB(point.Organization);
+                OrganizationEditForm form = new OrganizationEditForm(organization.CopyOrganizationEdit());
+                form.SetReadOnly(false);
+                Hide();
+                form.ShowDialog();
+                Show();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -198,6 +198,7 @@ namespace FileManegerJson
 
         private void textBoxInput_ReadOnlyChanged(object sender, EventArgs e)
         {
+            buttonSet.Visible = NoReadOnly;
             ReadOnlyChanged?.Invoke(sender, e);
         }
 
@@ -244,6 +245,20 @@ namespace FileManegerJson
                     Value = form.Value;
                 }
             }
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Value, Title);
+        }
+
+        private void buttonSet_VisibleChanged(object sender, EventArgs e)
+        {
+            Button set = (sender as Button);
+            tableLayoutPanelEdit.ColumnStyles[0].SizeType = set.Visible ? SizeType.Percent : SizeType.Absolute;
+            tableLayoutPanelEdit.ColumnStyles[0].Width = !set.Visible ? 5 : 50;
+            tableLayoutPanelEdit.ColumnStyles[1].Width = 50;
+
         }
     }
 }

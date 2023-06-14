@@ -224,6 +224,7 @@ namespace MusicShopDesktopApp
         ManufacturesList manufactures = new ManufacturesList();
         void UpdateProduct()
         {
+            resizePanelDescription.SizeUpdate();
             menuStripDescription.Visible = false;
             updatePart = false;
             timerUpdate.Stop();
@@ -1221,6 +1222,7 @@ namespace MusicShopDesktopApp
 
         void UpdateParts()
         {
+            resizePanelDescription.SizeUpdate();
             menuStripDescription.Visible = Helper.GetAccount().IsStockManager();
             timerUpdateParts.Stop();
             updatePart = true;
@@ -2027,6 +2029,11 @@ namespace MusicShopDesktopApp
                 pictureBoxImage.Image = Properties.Resources.Logotip1;
             }
 
+        }
+
+        private void buttonSetPoint_Click(object sender, EventArgs e)
+        {
+            setPoints();
         }
     }
 }
