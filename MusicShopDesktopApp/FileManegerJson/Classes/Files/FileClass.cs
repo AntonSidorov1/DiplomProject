@@ -430,6 +430,10 @@ namespace FileManegerJson
             {
                 result = file.AsProductParameter.CreateNewFile();
             }
+            else if(file.IsIntNote)
+            {
+                result = new IntNoteFile();
+            }
 
             result.SetFileClass(file);
             return result;
@@ -902,6 +906,12 @@ namespace FileManegerJson
 
         public bool IsNote=> this is NoteFile;
         public NoteFile AsNote => this as NoteFile;
+
+        public bool IsIntNote => this is IntNoteFile;
+        public IntNoteFile AsIntNote => this as IntNoteFile;
+
+        public bool IsIntValue => this is IntNoteFile;
+        public IntNoteFile AsIntValue => this as IntNoteFile;
 
         public bool IsIndexLink => this is IndexLinkFile;
         public IndexLinkFile AsIndexLink => this as IndexLinkFile;

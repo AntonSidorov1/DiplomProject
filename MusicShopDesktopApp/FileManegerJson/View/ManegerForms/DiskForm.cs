@@ -435,6 +435,10 @@ namespace FileManegerJson
                     {
                         saveFile.Title = "Сохранение заметки";
                     }
+                    else if (file.IsIntNote)
+                    {
+                        saveFile.Title = "Сохранение заметки";
+                    }
                     else if (file.IsSity)
                     {
                         saveFile.Title = "Сохранение города";
@@ -508,6 +512,10 @@ namespace FileManegerJson
                     else if(sender is PictureBoxNote)
                     {
                         file.AsNote.Content.SaveJson(saveFile.FileName);
+                    }
+                    else if (sender is PictureBoxIntNote)
+                    {
+                        file.AsIntNote.Content.SaveJson(saveFile.FileName);
                     }
 
                     else if (sender is PictureBoxSity)
@@ -667,6 +675,7 @@ namespace FileManegerJson
             buttonManufactureSave.Visible = file.IsManufacture;
             buttonSaveCatalog.Visible = file.IsFolder;
             buttonSaveStock.Visible = file.IsStock;
+            buttonSaveIntNote.Visible = file.IsIntNote;
 
         }
 
@@ -772,6 +781,10 @@ namespace FileManegerJson
                 {
                     PB = new PictureBoxNote();
                 }
+                else if (fileObject.IsIntNote)
+                {
+                    PB = new PictureBoxIntNote();
+                }
                 else if (fileObject.IsDataBase)
                 {
                     PB = new PictureBoxDataBaseFile();
@@ -852,6 +865,12 @@ namespace FileManegerJson
                 {
                     PictureBoxNote file = PB as PictureBoxNote;
                     file.NoteFile = folder[i].AsNote;
+                    file.NoteFile.CopyFile = folder[i];
+                }
+                else if (fileObject.IsIntNote)
+                {
+                    PictureBoxIntNote file = PB as PictureBoxIntNote;
+                    file.NoteFile = folder[i].AsIntNote;
                     file.NoteFile.CopyFile = folder[i];
                 }
                 else if (fileObject.IsSity)
@@ -1611,6 +1630,38 @@ namespace FileManegerJson
                                 Folders[index].AsNote.Content = note.Content.CopyNote();
                             }
                             catch(Exception ex)
+                            {
+
+                            }
+                        }
+
+                        Show();
+                    }
+
+                    if (checkFile.IsIntNote)
+                    {
+                        IntNoteFile note = checkFile.AsIntNote;
+                        FormIntNoteEdit form = new FormIntNoteEdit(note.Content.Value);
+                        Hide();
+
+                        form.ShowDialog();
+                        Show();
+                        if (form.Save)
+                        {
+                            try
+                            {
+                                note.Content.Value = form.IntValue;
+                                int index = checkFile.TemporaryIndex;
+                                try
+                                {
+                                    Folders[index].AsIntNote.Content = note.Content.Copy();
+                                }
+                                catch (Exception ex)
+                                {
+
+                                }
+                            }
+                            catch
                             {
 
                             }
@@ -3745,6 +3796,132 @@ namespace FileManegerJson
                     try
                     {
                         textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonIntNoteCreate_Click(object sender, EventArgs e)
+        {
+            Folders.Add(new IntNoteFile());
+            folderButonUpdate.UpdateContent();
+        }
+
+        private void buttonIntNoteFromFile_Click(object sender, EventArgs e)
+        {
+            IntNoteFile folder = new IntNoteFile();
+            OpenFiles.Filter = folder.AllTypesFile;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    IntNoteFile image = IntNoteFile.Load(OpenFiles.FileName);
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonIntNoteByContent_Click(object sender, EventArgs e)
+        {
+            IntNoteFile folder = new IntNoteFile();
+            OpenFiles.Filter = folder.TypesFileContentWithTxt;
+
+            if (OpenFiles.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    folder = IntNoteFile.LoadContent(OpenFiles.FileName);
+                    IntNoteFile image = folder;
+
+                    if (image is null || image == null)
+                        throw new Exception();
+
+                    Folders.Add(image);
+                    FromFolderClass(Folders);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Уважаемый пользователь \n" +
+                        "Невозможно открыть выбранный вами файл \n" +
+                        "Пожалуйста, выберите другой файл и повторите попытку \n" +
+                        "С уважением, Создатель программы, Сидоров Антон Дмитриевич",
+                        "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveIntNoteContent_Click(object sender, EventArgs e)
+        {
+            IntNoteFile textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsIntNote;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение заметки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileContentWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.Content.SaveJson(saveFile.FileName);
+
+                        MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        //writer.Close();
+                        throw ex;
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось сохранить файл", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void buttonSaveIntNoteJson_Click(object sender, EventArgs e)
+        {
+            FileClass textFile = (contextMenuStrip1 as ContextMenuFileClass).File.AsFileClass.AsIntNote;
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Сохранение заметки";
+            saveFile.FileName = textFile.Name;
+            saveFile.Filter = textFile.TypesFileJsonWithTxt;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    try
+                    {
+                        textFile.SaveJson(saveFile.FileName);
 
                         MessageBox.Show("Файл успешно сохранён", saveFile.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

@@ -91,6 +91,7 @@ namespace FileManegerJson
         ""};
             editTextByFile1.Text = "";
             this.textBoxInput.EditText = editTextByFile1;
+            this.textBoxInput.GetTextProperty = null;
             this.textBoxInput.HaveKeyBord = false;
             this.textBoxInput.InputPole = true;
             this.textBoxInput.KeyBordForm = null;
@@ -117,6 +118,7 @@ namespace FileManegerJson
             this.textBoxInput.ValueInPole = "";
             this.textBoxInput.ValueInputToPole = true;
             this.textBoxInput.VirtualKeyBord = false;
+            this.textBoxInput.UpdateText += new FileManegerJson.UpdateTextControl(this.textBoxInput_UpdateText);
             this.textBoxInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxInput_KeyPress);
             this.textBoxInput.ReadOnlyChanged += new System.EventHandler(this.textBoxInput_ReadOnlyChanged);
             this.textBoxInput.TextChanged += new System.EventHandler(this.TextBoxInput_TextChanged);

@@ -19,7 +19,25 @@ namespace FileManegerJson
 
         private void buttonSet_Click(object sender, EventArgs e)
         {
+            if(DecimalPlaces < 1)
+            {
+                string text = Convert.ToString(Value);
+                FormIntNoteEdit form = new FormIntNoteEdit(text);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (form.Save)
+                {
+                    try
+                    {
+                        Value = Convert.ToDecimal(form.Value);
+                    }
+                    catch
+                    {
 
+                    }
+                }
+            }
         }
 
         public event NumericControlEdit.GetControl GetValue;
@@ -75,7 +93,13 @@ namespace FileManegerJson
         public int DecimalPlaces
         {
             get => textBoxInput.DecimalPlaces;
-            set => textBoxInput.DecimalPlaces = value;
+            set
+            {
+                int number = value;
+                if (number < 0)
+                    number = 0;
+                textBoxInput.DecimalPlaces = number;
+            }
         }
 
         public new BorderStyle BorderStyle

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileManegerJson;
 using Microsoft.VisualBasic;
 
 namespace MusicShopDesktopApp
@@ -243,8 +244,20 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", textInputStockNow.Text);
-                if(!product.SetProductToStock(stockID, Convert.ToInt32(quantity)))
+                FormIntNoteEdit form = new FormIntNoteEdit(textInputStockNow.Value);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
+                if (!product.SetProductToStock(stockID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
                 }
@@ -316,7 +329,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", textInputShopNow.Text);
+                FormIntNoteEdit form = new FormIntNoteEdit(textInputShopNow.Value);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
                 if (!product.SetProductToShop(shopID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -337,7 +362,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Перенаправление товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
                 if (!product.RunFromShopToStock(shopID, stockID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -358,7 +395,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Перенаправление товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
                 if (!product.RunFromStockToShop(stockID, shopID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -379,7 +428,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if(!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
                 if (!product.AddToStock(stockID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -400,7 +461,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
                 if (!product.AddToShop(shopID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -421,7 +494,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
                 if (!product.SubToStock(stockID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();
@@ -442,7 +527,19 @@ namespace MusicShopDesktopApp
             timerUpdate.Stop();
             try
             {
-                string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+                FormIntNoteEdit form = new FormIntNoteEdit(0);
+                Hide();
+                form.ShowDialog();
+                Show();
+                if (!form.Save)
+                {
+                    timerUpdate_Tick(sender, e);
+                    timerUpdate.Start();
+                    return;
+                }
+                int quantity = form.IntValue;
+                //string quantity = Interaction.InputBox("Введите количество товара", "Редактирование позиции товара", "0");
+
                 if (!product.SubToShop(shopID, Convert.ToInt32(quantity)))
                 {
                     throw new Exception();

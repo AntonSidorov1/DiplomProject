@@ -19,7 +19,7 @@ namespace FileManegerJson
 
         private void TextBoxWihSet_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -260,5 +260,14 @@ namespace FileManegerJson
             tableLayoutPanelEdit.ColumnStyles[1].Width = 50;
 
         }
+
+        private void textBoxInput_UpdateText(ref string text)
+        {
+            UpdateText?.Invoke(ref text);
+        }
+
+
+        public event UpdateTextControl UpdateText;
+
     }
 }

@@ -136,6 +136,9 @@
   <data name="Note" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Заметка.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoteInt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Заметка в виде числа.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NotePad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Блокнот.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

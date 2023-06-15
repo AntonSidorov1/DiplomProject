@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace FileManegerJson
 {
+    public delegate void UpdateTextControl(ref string text);
     public partial class TextInputEdit : UserControl
     {
         public TextInputEdit()
@@ -20,6 +21,9 @@ namespace FileManegerJson
             
             
         }
+
+        public event UpdateTextControl UpdateText;
+
 
         public bool VirtualKeyBord
         {
@@ -276,6 +280,18 @@ namespace FileManegerJson
         private void tableLayoutPanelPole_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBoxInput_UpdateText(ref string text)
+        {
+            try
+            {
+                UpdateText?.Invoke(ref text);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

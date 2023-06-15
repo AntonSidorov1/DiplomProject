@@ -25,9 +25,22 @@ namespace FileManegerJson
             
         }
 
+        public event UpdateTextControl UpdateText;
+
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string text = Text;
+                UpdateText(ref text);
+                Text = text;
+            }
+            catch
+            {
+
+            }
             GetText?.Invoke(Text);
+            
         }
 
         public event GetControlText GetText;

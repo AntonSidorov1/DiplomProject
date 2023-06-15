@@ -83,6 +83,7 @@ namespace FileManegerJson
             this.textBoxInput.UseSystemPasswordChar = false;
             this.textBoxInput.Value = "";
             this.textBoxInput.VirtualKeyBord = false;
+            this.textBoxInput.UpdateText += new FileManegerJson.UpdateTextControl(this.textBoxInput_UpdateText);
             this.textBoxInput.InputText_Changed += new System.Action<object, System.EventArgs>(this.TextBoxInput_TextChanged);
             this.textBoxInput.ReadOnlyChanged += new System.Action<object, System.EventArgs>(this.textBoxInput_ReadOnlyChanged);
             this.textBoxInput.InputKeyPress += new System.Action<object, System.Windows.Forms.KeyPressEventArgs>(this.textBoxInput_KeyPress);

@@ -77,6 +77,9 @@
     <Compile Include="Classes\Controls\KeyBordTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Controls\NumberEditTextWithSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Classes\Controls\NumericControlEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +108,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Controls\PictureBoxCatalog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Controls\PictureBoxIntNote.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Controls\PictureBoxStock.cs">
@@ -191,6 +197,7 @@
     <Compile Include="Classes\Files\Link\IndexLink\IndexLinkFile.cs" />
     <Compile Include="Classes\Files\Link\LinkFile.cs" />
     <Compile Include="Classes\Files\NameFile.cs" />
+    <Compile Include="Classes\Files\Note\IntNoteFile.cs" />
     <Compile Include="Classes\Files\Note\NoteFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Product\ProductFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Organization\OrganizaionFile.cs" />
@@ -200,6 +207,7 @@
     <Compile Include="Classes\Files\Product\Part\Manufacture\ManufactureFile.cs" />
     <Compile Include="Classes\Files\Product\Part\Supplier\SupplierFile.cs" />
     <Compile Include="Classes\Files\Product\Part\TraidingPointFile.cs" />
+    <Compile Include="Classes\IntNote.cs" />
     <Compile Include="Classes\Music\Note\AbstractNotesClass.cs" />
     <Compile Include="Classes\Music\Note\NoteInGammaClass.cs" />
     <Compile Include="Classes\Music\Note\NotePozitionClass.cs" />
@@ -230,6 +238,12 @@
     </Compile>
     <Compile Include="View\Manufacture\ManufactureEditForm.Designer.cs">
       <DependentUpon>ManufactureEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Notes\FormIntNoteEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Notes\FormIntNoteEdit.Designer.cs">
+      <DependentUpon>FormIntNoteEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Stock\StockPointEditForm.cs">
       <SubType>Form</SubType>
@@ -373,6 +387,9 @@
     <EmbeddedResource Include="View\Manufacture\ManufactureEditForm.resx">
       <DependentUpon>ManufactureEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Notes\FormIntNoteEdit.resx">
+      <DependentUpon>FormIntNoteEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Stock\StockPointEditForm.resx">
       <DependentUpon>StockPointEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,6 +515,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Notes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Заметка в виде числа.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

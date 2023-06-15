@@ -123,6 +123,16 @@ namespace FileManegerJson.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoteInt {
+            get {
+                object obj = ResourceManager.GetObject("NoteInt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NotePad {
             get {
                 object obj = ResourceManager.GetObject("NotePad", resourceCulture);

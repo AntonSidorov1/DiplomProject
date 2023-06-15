@@ -63,7 +63,7 @@ namespace FileManegerJson
         private void buttonOK_Click(object sender, EventArgs e)
         {
             Save = true;
-            Value = textInputNewValue.Value;
+            Value = textBoxWihSetNewValue.Value;
             buttonCancel_Click(sender, e);
         }
 
@@ -74,14 +74,14 @@ namespace FileManegerJson
 
         private void FormNoteEdit_Load(object sender, EventArgs e)
         {
-            textInputNewValue.Value = Value;
+            textBoxWihSetNewValue.Value = Value;
             //textInputNewValue.VirtualKeyBord = true;
         }
 
         private void buttonTextChange_Click(object sender, EventArgs e)
         {
             NoteFile textFile = new NoteFile();
-            textFile.Content.Name = textInputNewValue.Text;
+            textFile.Content.Name = textBoxWihSetNewValue.Text;
 
             bool yes = false;
             DiskForm disk = new DiskForm(textFile, ref yes, this);
@@ -94,7 +94,7 @@ namespace FileManegerJson
                 if (disk.YesChoose)
                 {
 
-                    textInputNewValue.Text = textFile.Content.Name;
+                    textBoxWihSetNewValue.Text = textFile.Content.Name;
                 }
             }
             catch
@@ -107,24 +107,24 @@ namespace FileManegerJson
 
         private void buttonSetDialog_Click(object sender, EventArgs e)
         {
-            textInputNewValue.Text = Interaction.InputBox("Введите значние", "Новое значение", textInputNewValue.Text);
+            textBoxWihSetNewValue.Text = Interaction.InputBox("Введите значние", "Новое значение", textBoxWihSetNewValue.Text);
         }
 
         private void checkBoxKeyBord_CheckedChanged(object sender, EventArgs e)
         {
-            textInputNewValue.VirtualKeyBord = (sender as CheckBox).Checked;
+            textBoxWihSetNewValue.VirtualKeyBord = (sender as CheckBox).Checked;
         }
 
 
         private void buttonFewWindow_Click(object sender, EventArgs e)
         {
-            FormNoteEdit form = new FormNoteEdit(textInputNewValue.Text);
+            FormNoteEdit form = new FormNoteEdit(textBoxWihSetNewValue.Text);
             Hide();
             form.ShowDialog();
             Show();
             if (form.Save)
             {
-                textInputNewValue.Text = form.Value;
+                textBoxWihSetNewValue.Text = form.Value;
             }
         }
     }
