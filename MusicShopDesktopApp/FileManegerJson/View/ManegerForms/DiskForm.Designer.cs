@@ -92,6 +92,8 @@
             this.buttonFolderShowContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveCatalog = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveIntNote = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveIntNoteContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonSaveIntNoteJson = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -229,8 +231,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonFolderContent = new System.Windows.Forms.Button();
             this.folderButonUpdate = new FileManegerJson.FolderButon();
-            this.buttonSaveIntNoteContent = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonSaveIntNoteJson = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -476,7 +476,9 @@
             this.buttonSaveCatalog,
             this.buttonSaveIntNote});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 584);
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(583, 556);
             // 
             // buttonDropFile
             // 
@@ -850,6 +852,20 @@
             this.buttonSaveIntNote.Name = "buttonSaveIntNote";
             this.buttonSaveIntNote.Size = new System.Drawing.Size(582, 24);
             this.buttonSaveIntNote.Text = "Сохранить заметку";
+            // 
+            // buttonSaveIntNoteContent
+            // 
+            this.buttonSaveIntNoteContent.Name = "buttonSaveIntNoteContent";
+            this.buttonSaveIntNoteContent.Size = new System.Drawing.Size(260, 26);
+            this.buttonSaveIntNoteContent.Text = "Как содержимое";
+            this.buttonSaveIntNoteContent.Click += new System.EventHandler(this.buttonSaveIntNoteContent_Click);
+            // 
+            // buttonSaveIntNoteJson
+            // 
+            this.buttonSaveIntNoteJson.Name = "buttonSaveIntNoteJson";
+            this.buttonSaveIntNoteJson.Size = new System.Drawing.Size(260, 26);
+            this.buttonSaveIntNoteJson.Text = "Как Json";
+            this.buttonSaveIntNoteJson.Click += new System.EventHandler(this.buttonSaveIntNoteJson_Click);
             // 
             // выборФайлаToolStripMenuItem1
             // 
@@ -1547,6 +1563,7 @@
             this.музыкальнуюПоследовательностьToolStripMenuItem,
             this.заметкуВВидеЦелогоЧислаToolStripMenuItem});
             this.contextMenuStripFewFile.Name = "contextMenuStripFewFile";
+            this.contextMenuStripFewFile.OwnerItem = this.другойФайлToolStripMenuItem;
             this.contextMenuStripFewFile.Size = new System.Drawing.Size(377, 70);
             // 
             // музыкальнуюПозициюToolStripMenuItem
@@ -2193,20 +2210,6 @@
             this.folderButonUpdate.UseVisualStyleBackColor = true;
             this.folderButonUpdate.UpdaeFloder += new FileManegerJson.FolderButon.GetFolder(this.FromFolderClass);
             this.folderButonUpdate.Click += new System.EventHandler(this.folderButonUpdate_Click);
-            // 
-            // buttonSaveIntNoteContent
-            // 
-            this.buttonSaveIntNoteContent.Name = "buttonSaveIntNoteContent";
-            this.buttonSaveIntNoteContent.Size = new System.Drawing.Size(260, 26);
-            this.buttonSaveIntNoteContent.Text = "Как содержимое";
-            this.buttonSaveIntNoteContent.Click += new System.EventHandler(this.buttonSaveIntNoteContent_Click);
-            // 
-            // buttonSaveIntNoteJson
-            // 
-            this.buttonSaveIntNoteJson.Name = "buttonSaveIntNoteJson";
-            this.buttonSaveIntNoteJson.Size = new System.Drawing.Size(260, 26);
-            this.buttonSaveIntNoteJson.Text = "Как Json";
-            this.buttonSaveIntNoteJson.Click += new System.EventHandler(this.buttonSaveIntNoteJson_Click);
             // 
             // DiskForm
             // 

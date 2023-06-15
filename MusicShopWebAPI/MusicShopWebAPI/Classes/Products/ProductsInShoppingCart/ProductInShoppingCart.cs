@@ -82,8 +82,7 @@ namespace MusicShopWebAPI
         public override string GetData()
         {
             return base.GetData() + "\n" +
-                 QuantityText + "\n"+
-                 QuaontityInfo;
+                 QuantityText + "\n";
         }
 
         public override string QuantityText => "Колличество в заказе - " + Quantity + "\n" +
@@ -104,6 +103,8 @@ namespace MusicShopWebAPI
                         return "Нет в наличии";
                     Product product = GetProductsCheck().GetByID(this);
                     if (!product.IsWithCounkt())
+                        return "Нет в наличии";
+                    else if (product.AsWithCounkt().Quantity < 1)
                         return "Нет в наличии";
                     else
                         return Quantity + " из "+ product.AsWithCounkt().Quantity;
@@ -143,8 +144,7 @@ namespace MusicShopWebAPI
 
         public override string GetNameInfo()
         {
-            return base.GetNameInfo() + "\n" +
-                QuaontityInfo;
+            return base.GetNameInfo() + "\n";
         }
 
         public override ProductWithCount CopyProductWithCount()
