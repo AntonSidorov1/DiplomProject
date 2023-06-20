@@ -94,6 +94,7 @@
             this.buttonSaveIntNote = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveIntNoteContent = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSaveIntNoteJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выборФайлаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.неВыбиратьФайлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.файлВыбранToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +107,6 @@
             this.TextJsonSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.Image = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TimerDateTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -476,8 +476,7 @@
             this.buttonSaveCatalog,
             this.buttonSaveIntNote});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItem1;
-            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItemDoingFile;
             this.contextMenuStrip1.Size = new System.Drawing.Size(583, 556);
             // 
             // buttonDropFile
@@ -867,6 +866,13 @@
             this.buttonSaveIntNoteJson.Text = "Как Json";
             this.buttonSaveIntNoteJson.Click += new System.EventHandler(this.buttonSaveIntNoteJson_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
+            this.toolStripMenuItem1.Text = "Свойства";
+            // 
             // выборФайлаToolStripMenuItem1
             // 
             this.выборФайлаToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -965,13 +971,6 @@
             this.Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Image.TabIndex = 1;
             this.Image.TabStop = false;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDown = this.contextMenuStrip1;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 28);
-            this.toolStripMenuItem1.Text = "Свойства";
             // 
             // TimerDateTime
             // 
